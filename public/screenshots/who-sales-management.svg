@@ -1,0 +1,122 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 440" width="100%" height="100%">
+  <defs>
+    <linearGradient id="headerGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4338CA"/>
+      <stop offset="100%" stop-color="#312E81"/>
+    </linearGradient>
+    <filter id="cardShadow3" x="-4%" y="-4%" width="108%" height="112%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#0F172A" flood-opacity="0.06"/>
+    </filter>
+  </defs>
+
+  <!-- Frame Background -->
+  <rect width="720" height="440" rx="12" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5"/>
+
+  <!-- Top Window Bar -->
+  <path d="M0 12 Q0 0 12 0 L708 0 Q720 0 720 12 L720 36 L0 36 Z" fill="#F8FAFC"/>
+  <line x1="0" y1="36" x2="720" y2="36" stroke="#E2E8F0"/>
+  <circle cx="20" cy="18" r="4.5" fill="#EF4444"/>
+  <circle cx="36" cy="18" r="4.5" fill="#F59E0B"/>
+  <circle cx="52" cy="18" r="4.5" fill="#10B981"/>
+  <rect x="74" y="9" width="340" height="18" rx="4" fill="#FFFFFF" stroke="#E2E8F0"/>
+  <text x="86" y="22" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="10.5" fill="#64748B">estateforce.lightning.force.com/sales-ops/sla-gps-approvals</text>
+  <rect x="580" y="9" width="124" height="18" rx="9" fill="#EEF2FF"/>
+  <text x="590" y="22" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="10" fill="#4338CA" font-weight="700">Sales Floor Cockpit</text>
+
+  <!-- Header Banner -->
+  <g transform="translate(20, 48)">
+    <rect width="680" height="52" rx="8" fill="url(#headerGrad3)"/>
+    <text x="16" y="22" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="13" fill="#FFFFFF" font-weight="800">Sales Leadership Cockpit — 28 Reps Active across 3 Sites</text>
+    <text x="16" y="38" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="10.5" fill="#C7D2FE">Sub-5 Min Lead SLA: 94.2% Adherence • Verified Site Visits: 38 Today • 0 Pending Approvals</text>
+    <rect x="560" y="14" width="104" height="24" rx="4" fill="#6366F1"/>
+    <text x="572" y="30" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="10.5" fill="#FFFFFF" font-weight="700">Live Cadence</text>
+  </g>
+
+  <!-- Left: Rep Speed-to-Call SLA Countdown & GPS Geotag Verification -->
+  <g transform="translate(20, 112)">
+    <rect width="360" height="308" rx="8" fill="#FFFFFF" stroke="#E2E8F0" filter="url(#cardShadow3)"/>
+    <rect width="360" height="28" rx="8" fill="#F8FAFC"/>
+    <text x="14" y="19" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="11" fill="#0F172A" font-weight="800">Round-Robin Ingestion &amp; 5-Min SLA</text>
+
+    <!-- Inbound SLA Card -->
+    <g transform="translate(14, 38)">
+      <rect width="332" height="126" rx="6" fill="#EEF2FF" stroke="#C7D2FE"/>
+      <text x="12" y="20" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="11" fill="#3730A3" font-weight="800">⚡ Live Lead SLA Countdown Timer</text>
+      
+      <rect x="12" y="30" width="308" height="38" rx="4" fill="#FFFFFF" stroke="#E2E8F0"/>
+      <text x="20" y="46" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="10.5" fill="#0F172A" font-weight="700">Buyer: Sandeep Narang (Facebook Luxury Campaign)</text>
+      <text x="20" y="60" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="9" fill="#64748B">Allocated: Rep Karan Malhotra • Round-robin queue #3</text>
+      <rect x="236" y="36" width="76" height="24" rx="3" fill="#ECFDF5"/>
+      <text x="244" y="52" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="10.5" fill="#065F46" font-weight="800">⏱ 03:22</text>
+
+      <text x="12" y="86" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="9.5" fill="#334155">Automatic escalation to Sales Director phone if uncontacted at 05:00.</text>
+      
+      <rect x="12" y="96" width="144" height="22" rx="3" fill="#2563EB"/>
+      <text x="22" y="111" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="9.5" fill="#FFFFFF" font-weight="700">Click to Dial (Mobile)</text>
+
+      <rect x="166" y="96" width="154" height="22" rx="3" fill="#FFFFFF" stroke="#CBD5E1"/>
+      <text x="176" y="111" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="9.5" fill="#0F172A" font-weight="600">WhatsApp Greeting Sent ✓</text>
+    </g>
+
+    <!-- GPS Geotagged Visit Stamp -->
+    <g transform="translate(14, 176)">
+      <rect width="332" height="118" rx="6" fill="#F8FAFC" stroke="#E2E8F0"/>
+      <text x="12" y="20" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="11" fill="#0F172A" font-weight="700">GPS Geotagged Site-Visit Check-In</text>
+
+      <!-- Verified Checkin 1 -->
+      <rect x="12" y="32" width="308" height="34" rx="4" fill="#FFFFFF" stroke="#E2E8F0"/>
+      <text x="20" y="47" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="10" fill="#0F172A" font-weight="700">Serenity Towers Experience Centre</text>
+      <text x="20" y="60" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="8.5" fill="#64748B">Lat: 19.0760 N, Lon: 72.8777 E • Timestamp: 11:24 AM IST</text>
+      <rect x="236" y="38" width="76" height="20" rx="3" fill="#ECFDF5"/>
+      <text x="242" y="52" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="8.5" fill="#065F46" font-weight="800">✓ GPS VERIFIED</text>
+
+      <!-- Verified Checkin 2 -->
+      <rect x="12" y="72" width="308" height="34" rx="4" fill="#FFFFFF" stroke="#E2E8F0"/>
+      <text x="20" y="87" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="10" fill="#0F172A" font-weight="700">Grandview Show Apartment (Tower B)</text>
+      <text x="20" y="100" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="8.5" fill="#64748B">Lat: 19.0768 N, Lon: 72.8782 E • Client: Kapoor Family</text>
+      <rect x="236" y="78" width="76" height="20" rx="3" fill="#ECFDF5"/>
+      <text x="242" y="92" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="8.5" fill="#065F46" font-weight="800">✓ GPS VERIFIED</text>
+    </g>
+  </g>
+
+  <!-- Right: Instant Mobile Manager Discount Approval Matrix -->
+  <g transform="translate(396, 112)">
+    <rect width="304" height="308" rx="8" fill="#FFFFFF" stroke="#E2E8F0" filter="url(#cardShadow3)"/>
+    <rect width="304" height="28" rx="8" fill="#F8FAFC"/>
+    <text x="12" y="19" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="11" fill="#0F172A" font-weight="800">Director Mobile Approval Queue</text>
+
+    <!-- Approval Request 1 -->
+    <g transform="translate(12, 40)">
+      <rect width="280" height="96" rx="6" fill="#FEFCE8" stroke="#FEF08A"/>
+      <text x="10" y="18" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="10.5" fill="#854D0E" font-weight="700">Special Discount Request: Unit B-1403</text>
+      <text x="10" y="34" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="9.5" fill="#334155">Base Price: ₹2.85 Cr • Requested: ₹2.75 Cr (-3.5%)</text>
+      <text x="10" y="50" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="9.5" fill="#334155">Rep Reason: Ready buyer with 25% immediate token.</text>
+      
+      <rect x="10" y="64" width="124" height="24" rx="4" fill="#10B981"/>
+      <text x="26" y="80" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="9.5" fill="#FFFFFF" font-weight="800">✓ Approve on Mobile</text>
+
+      <rect x="144" y="64" width="124" height="24" rx="4" fill="#FFFFFF" stroke="#CBD5E1"/>
+      <text x="168" y="80" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="9.5" fill="#B91C1C" font-weight="700">Counter / Reject</text>
+    </g>
+
+    <!-- Rep Performance Funnel -->
+    <g transform="translate(12, 148)">
+      <rect width="280" height="146" rx="6" fill="#F8FAFC" stroke="#E2E8F0"/>
+      <text x="12" y="20" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="11" fill="#0F172A" font-weight="800">Weekly Team Conversion Funnel</text>
+
+      <text x="12" y="42" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="9.5" fill="#64748B">1. Inbound Leads Ingested: 480</text>
+      <rect x="12" y="48" width="256" height="8" rx="4" fill="#E2E8F0"/>
+      <rect x="12" y="48" width="256" height="8" rx="4" fill="#3B82F6"/>
+
+      <text x="12" y="74" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="9.5" fill="#64748B">2. GPS Verified Visits: 214 (44.5%)</text>
+      <rect x="12" y="80" width="256" height="8" rx="4" fill="#E2E8F0"/>
+      <rect x="12" y="80" width="180" height="8" rx="4" fill="#6366F1"/>
+
+      <text x="12" y="106" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="9.5" fill="#64748B">3. Token Allotments Sealed: 62 (28.9%)</text>
+      <rect x="12" y="112" width="256" height="8" rx="4" fill="#E2E8F0"/>
+      <rect x="12" y="112" width="110" height="8" rx="4" fill="#10B981"/>
+
+      <text x="12" y="136" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="9.5" fill="#0F172A" font-weight="700">Conversion Velocity: +38% Faster than Excel</text>
+    </g>
+  </g>
+</svg>

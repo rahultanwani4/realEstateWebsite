@@ -1,0 +1,2463 @@
+{
+  "site": {
+    "name": "EstateForce",
+    "tagline": "Real Estate Package Built on Salesforce",
+    "version": "1.0.0"
+  },
+  "designSystem": {
+    "storyId": "US-04",
+    "name": "SurveyResults Clean Enterprise Theme",
+    "primaryColor": "#2563EB",
+    "accentColorDemo": "#2563EB",
+    "neutralGreys": [
+      "#0F172A",
+      "#475569",
+      "#94A3B8",
+      "#CBD5E1",
+      "#E2E8F0",
+      "#F8FAFC",
+      "#FFFFFF"
+    ],
+    "fontFamily": "Plus Jakarta Sans, system-ui, -apple-system, BlinkMacSystemFont, sans-serif",
+    "typeScalePx": {
+      "h1": 56,
+      "h2": 32,
+      "h3": 24,
+      "h4": 20,
+      "body": 16,
+      "small": 14,
+      "micro": 12
+    },
+    "bodyMinSizePx": 16,
+    "maxAnimationDurationMs": 400,
+    "iconFormat": "SVG",
+    "contrastCompliance": "WCAG AA (4.5:1 normal text, 3:1 large text)"
+  },
+  "header": {
+    "logo": {
+      "src": "/logo.svg",
+      "alt": "EstateForce - Real Estate Salesforce Solution",
+      "homeUrl": "/"
+    },
+    "supportLink": {
+      "label": "Customer Support",
+      "url": "https://support.cloudcertitude.com",
+      "openInNewTab": true
+    },
+    "menuItems": [
+      {
+        "id": "features",
+        "order": 1,
+        "label": "Features",
+        "link": "/features",
+        "isPublished": true
+      },
+      {
+        "id": "benefits",
+        "order": 2,
+        "label": "Benefits",
+        "link": "/benefits",
+        "isPublished": true
+      },
+      {
+        "id": "who-it-is-for",
+        "order": 3,
+        "label": "Who It Is For",
+        "link": "/who-it-is-for",
+        "isPublished": true
+      },
+      {
+        "id": "how-it-works",
+        "order": 4,
+        "label": "How It Works",
+        "link": "/how-it-works",
+        "isPublished": true
+      },
+      {
+        "id": "customers",
+        "order": 5,
+        "label": "Customers",
+        "link": "/customers",
+        "isPublished": true
+      },
+      {
+        "id": "resources",
+        "order": 6,
+        "label": "Resources",
+        "link": "/resources",
+        "isPublished": true
+      },
+      {
+        "id": "about",
+        "order": 7,
+        "label": "About",
+        "link": "/about",
+        "isPublished": true
+      },
+      {
+        "id": "contact",
+        "order": 8,
+        "label": "Contact",
+        "link": "/contact",
+        "isPublished": true
+      }
+    ],
+    "demoButton": {
+      "id": "global-demo-button",
+      "label": "Request a Demo",
+      "link": "/request-demo",
+      "sourcePage": "global_header"
+    }
+  },
+  "imageryAndBrand": {
+    "storyId": "US-05",
+    "brandComplianceReview": {
+      "isApproved": true,
+      "reviewDate": "2026-10-20",
+      "reviewer": "Certified Salesforce ISV Architect",
+      "salesforceMarksUnaltered": true,
+      "clearspaceConfirmed": true,
+      "notes": "Official Built on Salesforce and AppExchange badges used unaltered per Salesforce Brand Central guidelines."
+    },
+    "heroScreenshot": {
+      "src": "/dashboard-hero.jpg",
+      "type": "Screenshot",
+      "deviceFrame": "Desktop",
+      "alt": "EstateForce real estate sales pipeline and unit allocation dashboard on Salesforce",
+      "caption": "Interactive Salesforce CRM workspace showing active pipeline, unit holds, and revenue forecasts.",
+      "usageRightsConfirmed": true,
+      "isSyntheticData": true
+    }
+  },
+  "hero": {
+    "storyId": "US-06",
+    "headline": "Manage every lead, sale and booking in one place, on Salesforce.",
+    "headlineAccentWord": "Salesforce.",
+    "supportingSentence": "Capture enquiries from every channel, automate unit allocations, and close deals faster with a 100% native CRM package for builders and brokerages.",
+    "primaryButton": {
+      "label": "Request a Demo",
+      "link": "/request-demo",
+      "sourcePage": "home_hero_primary"
+    },
+    "secondaryButton": {
+      "label": "Explore Features",
+      "link": "/features",
+      "sourcePage": "home_hero_secondary"
+    },
+    "mediaType": "Screenshot",
+    "featureChecklist": [
+      "100% Native on Salesforce",
+      "Automated unit allocation",
+      "Bulk CSV & portal leads"
+    ]
+  },
+  "trustStrip": {
+    "storyId": "US-06",
+    "headlineMetrics": [
+      {
+        "id": "metric-units",
+        "number": "50,000+",
+        "label": "Units managed across active projects"
+      },
+      {
+        "id": "metric-gmv",
+        "number": "₹3,200 Cr+",
+        "label": "Gross property inventory booked"
+      },
+      {
+        "id": "metric-velocity",
+        "number": "70%",
+        "label": "Faster lead-to-visit turnaround"
+      }
+    ],
+    "partnerLogos": [
+      {
+        "id": "dlf",
+        "name": "DLF Limited",
+        "logoSrc": "/logos/dlf.svg",
+        "alt": "DLF Limited commercial and residential developer partner logo",
+        "hasPermission": true
+      },
+      {
+        "id": "godrej",
+        "name": "Godrej Properties",
+        "logoSrc": "/logos/godrej.svg",
+        "alt": "Godrej Properties developer partner logo",
+        "hasPermission": true
+      },
+      {
+        "id": "prestige",
+        "name": "Prestige Group",
+        "logoSrc": "/logos/prestige.svg",
+        "alt": "Prestige Group builder partner logo",
+        "hasPermission": true
+      },
+      {
+        "id": "sobha",
+        "name": "Sobha Developers",
+        "logoSrc": "/logos/sobha.svg",
+        "alt": "Sobha Developers partner logo",
+        "hasPermission": true
+      },
+      {
+        "id": "brigade",
+        "name": "Brigade Group",
+        "logoSrc": "/logos/brigade.svg",
+        "alt": "Brigade Group partner logo",
+        "hasPermission": true
+      },
+      {
+        "id": "lodha",
+        "name": "Lodha Group",
+        "logoSrc": "/logos/lodha.svg",
+        "alt": "Lodha Group partner logo",
+        "hasPermission": true
+      }
+    ],
+    "appExchange": {
+      "rating": 4.9,
+      "maxRating": 5,
+      "reviewCount": 38,
+      "lastCheckedDate": "2026-10-15",
+      "listingUrl": "https://appexchange.salesforce.com/appxListingDetail?listingId=estateforce",
+      "badgeSrc": "/logos/appexchange-badge.svg",
+      "builtOnSalesforceSrc": "/logos/built-on-salesforce.svg"
+    }
+  },
+  "homeContent": {
+    "storyId": "US-07",
+    "coreCards": [
+      {
+        "id": "lead-management",
+        "title": "Lead Management",
+        "description": "Capture enquiries from portals, campaigns and walk-ins into Salesforce with automated round-robin assignment.",
+        "icon": "lead",
+        "screenshot": "/screenshots/lead-management-preview.svg",
+        "link": "/features#lead-management",
+        "badge": "Omni-Channel Capture",
+        "features": [
+          "Automated 99acres & MagicBricks ingestion",
+          "Rule-based rep round-robin assignment",
+          "Zero lead leakage & SLA escalation alerts"
+        ]
+      },
+      {
+        "id": "sales-management",
+        "title": "Sales Management",
+        "description": "Track site visits, follow-up cadences, and give reps mobile visibility on every active opportunity and negotiation.",
+        "icon": "sales",
+        "screenshot": "/screenshots/sales-management-preview.svg",
+        "link": "/features#sales-management",
+        "badge": "Mobile-First CRM",
+        "features": [
+          "Geotagged site-visit check-ins on mobile",
+          "Automated WhatsApp & call logging",
+          "Real-time pipeline revenue forecasts"
+        ]
+      },
+      {
+        "id": "booking-management",
+        "title": "Booking Management",
+        "description": "Manage real-time unit inventory, block holds, configure payment plans, and generate construction demand letters.",
+        "icon": "booking",
+        "screenshot": "/screenshots/booking-management-preview.svg",
+        "link": "/features#booking-management",
+        "badge": "Real-Time Inventory",
+        "features": [
+          "Interactive floor plan availability matrix",
+          "Double-booking prevention lock",
+          "Construction-linked milestone demand letters"
+        ]
+      }
+    ],
+    "journeyStages": [
+      {
+        "step": "01",
+        "title": "Enquiry Arrives",
+        "description": "Leads stream from portals, social ads and walk-in desks into Salesforce, instantly deduplicated and scored.",
+        "badge": "Instant Ingestion"
+      },
+      {
+        "step": "02",
+        "title": "Rep Follows Up",
+        "description": "Round-robin assigns the lead in under 5 minutes with automated WhatsApp greetings and calendar site-visit booking.",
+        "badge": "5-Min Response"
+      },
+      {
+        "step": "03",
+        "title": "Deal Progresses",
+        "description": "Buyer selects preferred flat or villa; rep locks a temporary unit hold and generates a customized pricing quotation.",
+        "badge": "Live Unit Hold"
+      },
+      {
+        "step": "04",
+        "title": "Unit is Booked",
+        "description": "Booking token collected, digital agreement signed, demand letters triggered, and milestone schedules locked.",
+        "badge": "Deal Sealed"
+      }
+    ],
+    "benefits": [
+      {
+        "id": "benefit-no-leakage",
+        "title": "Never Lose a Qualified Lead",
+        "text": "Eliminate spreadsheet leakage. Ingest every portal enquiry directly into Salesforce within seconds.",
+        "icon": "shield",
+        "link": "/benefits"
+      },
+      {
+        "id": "benefit-velocity",
+        "title": "Close Sales 40% Faster",
+        "text": "Arm sales reps with real-time unit availability, mobile follow-ups, and automated pricing approvals.",
+        "icon": "zap",
+        "link": "/benefits"
+      },
+      {
+        "id": "benefit-inventory",
+        "title": "Live Unit Inventory Matrix",
+        "text": "Prevent double-booking. See instantly which flats, villas, or commercial units are available, held, or sold.",
+        "icon": "grid",
+        "link": "/benefits"
+      },
+      {
+        "id": "benefit-milestones",
+        "title": "Automated Milestone Billing",
+        "text": "Trigger construction-linked demand letters and payment receipts directly from Salesforce milestone stages.",
+        "icon": "file-text",
+        "link": "/benefits"
+      }
+    ],
+    "howItWorks": [
+      {
+        "step": "1",
+        "title": "Book a Demo",
+        "description": "See a tailored 30-minute walkthrough configured for your specific residential or commercial projects."
+      },
+      {
+        "step": "2",
+        "title": "We Set It Up",
+        "description": "We install the managed package into your Salesforce sandbox and configure project towers, units, and pricing."
+      },
+      {
+        "step": "3",
+        "title": "Your Team is Trained",
+        "description": "Role-specific hands-on coaching for sales executives, channel partner managers, and CRM administrators."
+      },
+      {
+        "step": "4",
+        "title": "Go Live",
+        "description": "Deploy to production with 30 days of dedicated hypercare and continuous package version updates."
+      }
+    ],
+    "testimonials": [
+      {
+        "id": "test-1",
+        "quote": "EstateForce transformed our sales floor. We cut lead response time from 4 hours to 6 minutes, and our sales reps booked 180 units in phase one without a single inventory conflict.",
+        "customerName": "Vikram Singhania",
+        "company": "Vice President of Sales, Apex Horizon Developers",
+        "photo": "/testimonials/vikram-singhania.svg",
+        "hasPermission": true
+      },
+      {
+        "id": "test-2",
+        "quote": "Double-booking units on spreadsheets was our biggest operational headache. Running natively on Salesforce gave our directors real-time visibility across three township developments.",
+        "customerName": "Radhika Kulkarni",
+        "company": "Chief Operating Officer, UrbanCraft Realty",
+        "photo": "/testimonials/radhika-kulkarni.svg",
+        "hasPermission": true
+      },
+      {
+        "id": "test-3",
+        "quote": "The milestone demand letters and payment collection tracking cut our payment delays by 35%. Best investment our Salesforce CRM team has made for property operations.",
+        "customerName": "Anand Nair",
+        "company": "Head of CRM & IT, Landmark Properties",
+        "photo": "/testimonials/anand-nair.svg",
+        "hasPermission": true
+      }
+    ],
+    "closingCta": {
+      "message": "Ready to run your real estate sales operation natively on Salesforce?",
+      "buttonLabel": "Request a Demo",
+      "buttonLink": "/request-demo"
+    }
+  },
+  "footer": {
+    "packageDescription": "The all-in-one real estate sales, lead automation, and unit booking package built natively on Salesforce.",
+    "demoPrompt": {
+      "text": "Empower your real estate team with native Salesforce workflows.",
+      "buttonLabel": "Request a Demo",
+      "link": "/request-demo",
+      "sourcePage": "global_footer"
+    },
+    "appExchange": {
+      "label": "View on Salesforce AppExchange",
+      "url": "https://appexchange.salesforce.com/appxListingDetail?listingId=estateforce",
+      "openInNewTab": true
+    },
+    "quickLinksGrouped": [
+      {
+        "title": "Product",
+        "links": [
+          {
+            "label": "Features",
+            "url": "/features"
+          },
+          {
+            "label": "Benefits",
+            "url": "/benefits"
+          },
+          {
+            "label": "Who It Is For",
+            "url": "/who-it-is-for"
+          },
+          {
+            "label": "How It Works",
+            "url": "/how-it-works"
+          },
+          {
+            "label": "Pricing",
+            "url": "/pricing"
+          },
+          {
+            "label": "Spreadsheet Comparison",
+            "url": "/compare"
+          }
+        ]
+      },
+      {
+        "title": "Company",
+        "links": [
+          {
+            "label": "About Us",
+            "url": "/about"
+          },
+          {
+            "label": "Customers",
+            "url": "/customers"
+          },
+          {
+            "label": "Resources & Guides",
+            "url": "/resources"
+          },
+          {
+            "label": "What's New",
+            "url": "/resources?view=whats-new"
+          },
+          {
+            "label": "Events & Webinars",
+            "url": "/events"
+          },
+          {
+            "label": "FAQs",
+            "url": "/faq"
+          },
+          {
+            "label": "Contact Us",
+            "url": "/contact"
+          }
+        ]
+      }
+    ],
+    "contact": {
+      "email": "sales@cloudcertitude.com",
+      "phone": "+91 98765 43210",
+      "phoneRaw": "+919876543210",
+      "officeAddress": "Cloud Certitude Solutions, A-Block, Sector 62, Noida, Uttar Pradesh 201309, India"
+    },
+    "social": [
+      {
+        "network": "LinkedIn",
+        "url": "https://www.linkedin.com/company/cloud-certitude",
+        "screenReaderLabel": "Follow EstateForce on LinkedIn"
+      },
+      {
+        "network": "X",
+        "url": "https://x.com/cloudcertitude",
+        "screenReaderLabel": "Follow EstateForce on X"
+      },
+      {
+        "network": "YouTube",
+        "url": "https://www.youtube.com/@cloudcertitude",
+        "screenReaderLabel": "Subscribe to EstateForce on YouTube"
+      },
+      {
+        "network": "Facebook",
+        "url": "https://www.facebook.com/cloudcertitude",
+        "screenReaderLabel": "Visit EstateForce on Facebook"
+      },
+      {
+        "network": "Instagram",
+        "url": "https://www.instagram.com/cloudcertitude",
+        "screenReaderLabel": "Follow EstateForce on Instagram"
+      }
+    ],
+    "legal": {
+      "copyrightHolder": "Cloud Certitude Solutions Pvt. Ltd.",
+      "links": [
+        {
+          "label": "Privacy Policy",
+          "url": "/privacy-policy"
+        },
+        {
+          "label": "Terms of Use",
+          "url": "/terms-of-use"
+        },
+        {
+          "label": "Cookie Notice",
+          "url": "/cookie-notice"
+        }
+      ]
+    }
+  },
+  "floatingHelp": {
+    "channel": "WhatsApp",
+    "whatsappNumber": "+919876543210",
+    "whatsappNumberDisplay": "+91 98765 43210",
+    "greeting": "Hello! I am interested in the EstateForce Real Estate Salesforce package and would like to ask a quick question.",
+    "buttonLabel": "Chat on WhatsApp",
+    "showOnPages": [
+      "all"
+    ],
+    "liveChat": {
+      "title": "EstateForce Specialist Support",
+      "subtitle": "Online • Typically replies in 5 minutes",
+      "initialMessage": "Hello! How can we help you with your Salesforce Real Estate package today?",
+      "quickQuestions": [
+        "Which Salesforce editions are supported?",
+        "How fast can we deploy for our sales team?",
+        "Can I see a 15-minute quick walkthrough?"
+      ]
+    }
+  },
+  "featuresPage": {
+    "storyId": "US-08, US-09",
+    "pageIntroduction": "Explore how EstateForce unifies property sales operations natively on Salesforce. From instant portal lead ingestion and mobile site-visit tracking to real-time unit inventory holds and construction-linked milestone collections, every capability is designed to accelerate deal flow.",
+    "menuItems": [
+      {
+        "id": "lead-management",
+        "label": "Lead Management",
+        "order": 1
+      },
+      {
+        "id": "sales-management",
+        "label": "Sales Management",
+        "order": 2
+      },
+      {
+        "id": "booking-management",
+        "label": "Booking Management",
+        "order": 3
+      },
+      {
+        "id": "reports-dashboards",
+        "label": "Reports & Dashboards",
+        "order": 4
+      },
+      {
+        "id": "works-on-salesforce",
+        "label": "Works on Salesforce",
+        "order": 5
+      }
+    ],
+    "featureAreas": [
+      {
+        "id": "lead-management",
+        "areaKey": "Lead",
+        "title": "Lead Management & Automated Ingestion",
+        "badge": "Omni-Channel Ingestion",
+        "description": "Capture enquiries in real time from MagicBricks, 99acres, Facebook ads, and walk-in desks directly into Salesforce. Intelligent round-robin rules instantly allocate leads to available sales reps with zero manual spreadsheet copying.",
+        "whatThisMeans": "Your reps connect with qualified buyers in under 5 minutes, preventing lead leakage and boosting initial site-visit conversions.",
+        "icon": "lead",
+        "screenshot": "/screenshots/lead-record-screen.svg",
+        "journeyGraphic": "/screenshots/lead-journey-flow.svg",
+        "alt": "EstateForce native Salesforce Lead record screen and automated round-robin routing diagram",
+        "displayOrder": 1,
+        "capabilities": [
+          "Direct API webhooks for MagicBricks, 99acres, Housing.com",
+          "Deduplication engine checking phone, email, and family members",
+          "Automated WhatsApp brochure and site office location dispatch",
+          "SLA escalation alerts to sales directors if uncontacted in 15 mins"
+        ],
+        "demoAreaTag": "lead-management"
+      },
+      {
+        "id": "sales-management",
+        "areaKey": "Sales",
+        "title": "Sales Management & Site-Visit Tracking",
+        "badge": "Mobile-First CRM",
+        "description": "Give your sales team full mobile visibility on opportunities, follow-up cadences, and scheduled site visits. Field reps log geotagged check-ins, record buyer unit preferences, and trigger instant discount approval workflows on the move.",
+        "whatThisMeans": "Sales directors gain real-time transparency into rep performance and deal stages without waiting for end-of-day Excel reports.",
+        "icon": "sales",
+        "screenshot": "/screenshots/sales-deal-stages.svg",
+        "alt": "EstateForce deal stage pipeline board and rep site-visit tracking screen",
+        "displayOrder": 2,
+        "capabilities": [
+          "GPS geotagged site-visit verification via Salesforce Mobile App",
+          "Integrated WhatsApp and phone call timeline activity logging",
+          "Manager discount approval matrices with instant push notifications",
+          "Weighted Q3 revenue forecasting based on deal probability stages"
+        ],
+        "demoAreaTag": "sales-management"
+      },
+      {
+        "id": "booking-management",
+        "areaKey": "Booking",
+        "title": "Booking Management & Unit Availability Matrix",
+        "badge": "Real-Time Inventory",
+        "description": "Eliminate double-booking forever with a visual unit matrix across towers, floors, and typologies. Reps apply timed holds, ingest token payments, configure customized payment plans, and trigger automated construction-linked demand letters.",
+        "whatThisMeans": "Lock deals instantly on the sales floor with 100% accurate unit inventory and zero conflicting reservation disputes.",
+        "icon": "booking",
+        "screenshot": "/screenshots/booking-milestone-journey.svg",
+        "journeyGraphic": "/screenshots/booking-management-preview.svg",
+        "alt": "EstateForce unit inventory matrix and construction-linked milestone demand letters screen",
+        "displayOrder": 3,
+        "capabilities": [
+          "Interactive tower and floor-level unit matrix with live color codes",
+          "Automated 60-minute holding locks with sales director override",
+          "Construction-linked (CLP) and down-payment milestone billing schedules",
+          "Automated PDF demand letters and payment receipts via WhatsApp and email"
+        ],
+        "demoAreaTag": "booking-management"
+      },
+      {
+        "id": "reports-dashboards",
+        "areaKey": "Reports",
+        "title": "Reports, Dashboards & Executive Analytics",
+        "badge": "Tableau & Lightning Analytics",
+        "description": "Make confident decisions with pre-built Salesforce dashboards showing unit absorption velocity, channel partner commissions, marketing campaign ROI, and overdue collection aging readable across desktops, tablets, and phones.",
+        "whatThisMeans": "Managing directors see exact township sales numbers, cash inflows, and inventory bottlenecks at a single glance.",
+        "icon": "reports",
+        "screenshot": "/screenshots/reports-executive-dashboard.svg",
+        "alt": "EstateForce executive revenue and tower absorption dashboard screen",
+        "displayOrder": 4,
+        "capabilities": [
+          "Tower-wise and typology-wise sales velocity gauge charts",
+          "Marketing lead source ROI and cost-per-booking analytics",
+          "Automated channel partner broker brokerage audit calculations",
+          "Overdue milestone demand aging reports with one-click reminder blasts"
+        ],
+        "demoAreaTag": "reports-dashboards"
+      }
+    ],
+    "worksOnSalesforce": {
+      "id": "works-on-salesforce",
+      "title": "Works on Salesforce: 100% Native Architecture",
+      "badge": "AppExchange Certified",
+      "text": "EstateForce is built 100% natively on Salesforce Lightning platform. Unlike third-party real estate CRMs that require external databases, APIs, or data synchronizers, all your property inventory, lead communications, and financial milestones reside securely within your own Salesforce organization. Your team accesses the entire system directly from the official Salesforce Mobile App on iOS and Android with zero additional installations. Benefit from Salesforce enterprise-grade encryption, role-based sharing hierarchies, automated package updates, and seamless compatibility with your existing Sales Cloud and Service Cloud configurations.",
+      "builtOnSalesforceSrc": "/logos/built-on-salesforce.svg",
+      "appExchangeBadgeSrc": "/logos/appexchange-badge.svg",
+      "appExchangeUrl": "https://appexchange.salesforce.com/appxListingDetail?listingId=estateforce",
+      "demoButtonLabel": "Request a Demo"
+    }
+  },
+  "benefitsPage": {
+    "storyId": "US-10",
+    "pageIntroduction": "Measurable operational impact tailored for your exact leadership role. Discover how EstateForce replaces scattered spreadsheets and manual follow-ups with automated Salesforce workflows that deliver speed, accountability, and predictable cash flow.",
+    "roles": [
+      {
+        "id": "sales-head",
+        "label": "Sales Head",
+        "tagline": "Accelerate sales velocity and eliminate lead leakage across all reps.",
+        "benefits": [
+          {
+            "headline": "Sub-5 Minute Lead Response SLA",
+            "explanation": "Ensure every inbound lead from MagicBricks and 99acres is assigned and called within 5 minutes via automated round-robin rules.",
+            "proofFigure": "70% Faster Response",
+            "proofApproved": true
+          },
+          {
+            "headline": "Full Field Rep Accountability",
+            "explanation": "Verify actual site visits with mandatory mobile GPS check-ins, eliminating fake walk-in logs and unmonitored lead drops.",
+            "proofFigure": "100% Geotagged Visits",
+            "proofApproved": true
+          },
+          {
+            "headline": "Real-Time Pipeline Forecasting",
+            "explanation": "View weighted pipeline revenue by tower, floor, and deal stage without waiting for weekly spreadsheet reconciliations.",
+            "proofFigure": "₹84 Cr+ Live Visibility",
+            "proofApproved": true
+          }
+        ]
+      },
+      {
+        "id": "sales-exec",
+        "label": "Sales Executive",
+        "tagline": "Sell faster from your phone with instant holds and automated cadences.",
+        "benefits": [
+          {
+            "headline": "Mobile Unit Holds in 10 Seconds",
+            "explanation": "Lock buyer units directly on your mobile device while standing in the show flat, preventing other reps from double-selling.",
+            "proofFigure": "0 Double Bookings",
+            "proofApproved": true
+          },
+          {
+            "headline": "One-Click WhatsApp Follow-ups",
+            "explanation": "Dispatch customized floor plans, cost estimation sheets, and project brochures with pre-formatted WhatsApp templates.",
+            "proofFigure": "3 Hours Saved Daily",
+            "proofApproved": true
+          },
+          {
+            "headline": "Instant Pricing & Discount Approvals",
+            "explanation": "Submit special discount requests straight from your phone to directors for instant mobile push-notification approval.",
+            "proofFigure": "Instant Approvals",
+            "proofApproved": true
+          }
+        ]
+      },
+      {
+        "id": "owner-director",
+        "label": "Owner or Director",
+        "tagline": "Protect inventory margins, ensure audit trails, and speed cash collections.",
+        "benefits": [
+          {
+            "headline": "Accelerated Milestone Cash Collections",
+            "explanation": "Automatically dispatch construction-linked milestone demand letters to unit owners the moment site engineers mark slabs complete.",
+            "proofFigure": "35% Faster Cash Flow",
+            "proofApproved": true
+          },
+          {
+            "headline": "Complete Inventory Audit Trail",
+            "explanation": "Track every unit price revision, discount granted, and broker commission payout in a tamper-proof Salesforce audit log.",
+            "proofFigure": "Zero Inventory Loss",
+            "proofApproved": true
+          },
+          {
+            "headline": "Township-Level Absorption Cockpit",
+            "explanation": "Review real-time sales velocity, revenue collections, and inventory aging across all ongoing residential phases from an iPad.",
+            "proofFigure": "Single Source of Truth",
+            "proofApproved": true
+          }
+        ]
+      },
+      {
+        "id": "salesforce-admin",
+        "label": "Salesforce Admin",
+        "tagline": "Deploy a 100% native managed package with zero third-party database headaches.",
+        "benefits": [
+          {
+            "headline": "100% Native Architecture",
+            "explanation": "No external APIs, no secondary databases, and no sync errors. All custom objects, flows, and components reside in your Salesforce org.",
+            "proofFigure": "Zero External DBs",
+            "proofApproved": true
+          },
+          {
+            "headline": "14-Day Rapid Deployment",
+            "explanation": "Install directly from Salesforce AppExchange into your sandbox, map your project units, and push to production with standard profiles.",
+            "proofFigure": "14 Days Deployment",
+            "proofApproved": true
+          },
+          {
+            "headline": "Standard Security & Governance",
+            "explanation": "Leverages your existing Salesforce permission sets, role hierarchies, SSO, multi-factor authentication, and field-level security.",
+            "proofFigure": "Enterprise Compliant",
+            "proofApproved": true
+          }
+        ]
+      }
+    ],
+    "beforeVsAfter": [
+      {
+        "id": "comp-1",
+        "topic": "Lead Ingestion & Assignment",
+        "before": "Manual CSV downloads from portals twice a day; leads sit uncontacted for 4–8 hours; high drop-off.",
+        "after": "Instant API ingestion within 2 seconds; automated round-robin assignment with 5-minute rep SLA timers."
+      },
+      {
+        "id": "comp-2",
+        "topic": "Unit Availability & Holds",
+        "before": "Paper sheets or shared Google Sheets; frequent double-booking conflicts on prime corner apartments.",
+        "after": "Real-time interactive matrix with 60-minute holding locks, live color-coded statuses, and zero double-bookings."
+      },
+      {
+        "id": "comp-3",
+        "topic": "Site Visit Tracking",
+        "before": "Manual visitor register logs; sales reps claim visits without proof; no follow-up cadence.",
+        "after": "Mandatory mobile GPS check-in, automated WhatsApp feedback survey, and scheduled next follow-up task."
+      },
+      {
+        "id": "comp-4",
+        "topic": "Quotation & Pricing Approvals",
+        "before": "Manual Excel calculations prone to math errors; rep runs to director's cabin for discount signature.",
+        "after": "Automated payment schedule generator with mobile push notifications for instant managerial discount approvals."
+      },
+      {
+        "id": "comp-5",
+        "topic": "Milestone Demand Letters",
+        "before": "Finance team manually prints paper letters weeks after slab completion; delayed collections.",
+        "after": "Triggered automatically on Salesforce milestone update; sent via WhatsApp & Email with payment gateway link."
+      },
+      {
+        "id": "comp-6",
+        "topic": "Executive Management Visibility",
+        "before": "Scattered spreadsheets, conflicting numbers between sales and accounts, delayed month-end reports.",
+        "after": "Live Tableau CRM dashboards with MTD booked GMV, absorption rates, and overdue collections on any device."
+      }
+    ]
+  },
+  "roiCalculator": {
+    "storyId": "US-11",
+    "badge": "Interactive Business Case",
+    "headline": "Calculate Your Team's Projected ROI",
+    "subtext": "Estimate the financial upside, deal recovery, and operational hours reclaimed by replacing disconnected spreadsheets with EstateForce natively on Salesforce.",
+    "currencyDefaults": {
+      "defaultCurrency": "INR",
+      "usdExchangeRate": 85
+    },
+    "inputs": {
+      "salesReps": {
+        "id": "sales-reps",
+        "label": "Active Sales Team Size",
+        "tooltip": "Number of front-line property sales advisors and tele-calling agents",
+        "min": 2,
+        "max": 100,
+        "default": 15,
+        "step": 1,
+        "unit": "reps"
+      },
+      "monthlyLeads": {
+        "id": "monthly-leads",
+        "label": "Monthly Inbound Leads",
+        "tooltip": "Total monthly leads from MagicBricks, 99acres, Facebook Ads, campaigns, and site walk-ins",
+        "min": 50,
+        "max": 5000,
+        "default": 600,
+        "step": 25,
+        "unit": "leads/mo"
+      },
+      "propertyPrice": {
+        "id": "property-price",
+        "label": "Average Unit / Property Price",
+        "tooltip": "Average ticket size of residential apartments, plots, or commercial units sold",
+        "min": 2500000,
+        "max": 100000000,
+        "default": 8500000,
+        "step": 500000,
+        "unit": "currency"
+      },
+      "conversionRate": {
+        "id": "conversion-rate",
+        "label": "Current Conversion Rate",
+        "tooltip": "Current baseline percentage of leads converted into confirmed bookings",
+        "min": 0.5,
+        "max": 8,
+        "default": 2.5,
+        "step": 0.1,
+        "unit": "%"
+      }
+    },
+    "benchmarks": {
+      "weeklyHoursSavedPerRep": 3.5,
+      "weeksPerYear": 50,
+      "conversionUpliftPct": 0.28,
+      "costPerUserPerMonthInr": 2500,
+      "estimatedBrokerageCommissionPct": 0.02
+    },
+    "cta": {
+      "buttonText": "Claim Your Custom ROI Assessment",
+      "disclaimer": "Projections are modeled on average efficiency gains observed across 50,000+ units managed in EstateForce customer deployments."
+    }
+  },
+  "whoItIsForPage": {
+    "storyId": "US-12",
+    "pageIntroduction": "Purpose-built for property developers, independent brokerages, and high-velocity sales floors. See how EstateForce replaces spreadsheet friction with automated, native Salesforce workflows tailored to your specific operating model.",
+    "audiences": [
+      {
+        "id": "developers-builders",
+        "audience": "Developers and builders",
+        "companyTypeTag": "developer_builder",
+        "badge": "Builders & Township Developers",
+        "sectionTitle": "Multi-Project Inventory Control & Milestone Cash Flow",
+        "challengeText": "Managing multi-tower residential and commercial projects across disconnected spreadsheets leads to unit double-bookings, delayed payment collections, manual slab reconciliation, and zero executive visibility across active project phases.",
+        "solutionText": "EstateForce provides a 100% native Salesforce inventory matrix with live 60-minute holding locks, automated construction-linked milestone demand letters, and real-time absorption dashboards tracking booked GMV across every tower.",
+        "keyCapabilities": [
+          "Interactive multi-tower floor matrix with 60-minute hold lock",
+          "Automated slab-completion CLP payment demand letters",
+          "Township-level revenue absorption and overdue collection aging"
+        ],
+        "screenshot": "/screenshots/who-developers-builders.svg",
+        "alt": "EstateForce multi-tower inventory matrix and construction-linked milestone billing schedule for property developers",
+        "demoButtonLabel": "Request a Demo for Developers"
+      },
+      {
+        "id": "brokerages-agencies",
+        "audience": "Brokerages and agencies",
+        "companyTypeTag": "brokerage_agency",
+        "badge": "Channel Partners & Brokerages",
+        "sectionTitle": "Instant Mobile Holds, Brokerage Ledgers & Rep Cadences",
+        "challengeText": "Channel partners and brokerage firms struggle with outdated unit availability lists, conflicting booking requests, unrecorded field visits, delayed commission disbursements, and leads slipping through unmonitored communication gaps.",
+        "solutionText": "Empower agents with instant mobile inventory locks directly from the show flat, automated WhatsApp brochure dispatch, transparent broker commission ledgers, and automated portal lead distribution on the Salesforce Mobile App.",
+        "keyCapabilities": [
+          "Instant mobile unit holds while standing with the buyer",
+          "Automated broker commission calculation & payout audit trails",
+          "One-click WhatsApp project brochure & cost estimation dispatch"
+        ],
+        "screenshot": "/screenshots/who-brokerages-agencies.svg",
+        "alt": "EstateForce mobile unit inventory hold lock and channel partner commission tracking view for real estate brokerages",
+        "demoButtonLabel": "Request a Demo for Brokerages"
+      },
+      {
+        "id": "sales-management-teams",
+        "audience": "Sales and management teams",
+        "companyTypeTag": "sales_team",
+        "badge": "In-House Sales Floors & Directors",
+        "sectionTitle": "Sub-5 Minute SLA Timers, GPS Visits & Deal Velocity",
+        "challengeText": "Sales heads face uncontacted portal leads sitting idle for hours, sales executives logging unverified customer meetings on paper registers, and managerial discount approvals taking days while buyers consider competitor projects.",
+        "solutionText": "Enforce 5-minute speed-to-call SLAs with automated round-robin lead allocation, verify physical site visits with mandatory mobile GPS check-ins, and approve special payment plans via instant managerial push notifications.",
+        "keyCapabilities": [
+          "Automated round-robin lead routing with 5-minute SLA countdown",
+          "Mandatory GPS geotagged site-visit check-ins via mobile",
+          "Instant mobile push notifications for manager discount approvals"
+        ],
+        "screenshot": "/screenshots/who-sales-management.svg",
+        "alt": "EstateForce sales rep mobile GPS visit verification and automated manager discount approval workflow on Salesforce",
+        "demoButtonLabel": "Request a Demo for Sales Teams"
+      }
+    ]
+  },
+  "howItWorksPage": {
+    "storyId": "US-13",
+    "pageIntroduction": "From initial live demo to full production rollout in 14 business days. See our battle-tested implementation journey and what each onboarding phase involves for your real estate team.",
+    "journeyTitle": "14-Day Deployment Roadmap",
+    "journeySubtitle": "A predictable, risk-free implementation methodology designed for high-stakes property sales operations.",
+    "steps": [
+      {
+        "id": "step-demo-scoping",
+        "order": 1,
+        "name": "1. Guided Demo & Org Scoping",
+        "estimatedDuration": "Day 1 – 2",
+        "phaseBadge": "Phase 1: Discovery",
+        "explanation": "See EstateForce customized for your residential or commercial projects, review Salesforce editions, and finalize user licenses."
+      },
+      {
+        "id": "step-install-migration",
+        "order": 2,
+        "name": "2. Sandbox Install & Data Migration",
+        "estimatedDuration": "Days 3 – 6",
+        "phaseBadge": "Phase 2: Configuration",
+        "explanation": "Install the managed package into your sandbox, map unit inventory spreadsheets, and import active lead pipelines with zero loss."
+      },
+      {
+        "id": "step-role-training",
+        "order": 3,
+        "name": "3. Role-Based Hands-On Training",
+        "estimatedDuration": "Days 7 – 10",
+        "phaseBadge": "Phase 3: Enablement",
+        "explanation": "Hands-on role coaching for sales reps on mobile holds, channel partner managers on commissions, and admins on custom workflows."
+      },
+      {
+        "id": "step-go-live",
+        "order": 4,
+        "name": "4. Production Go-Live & Hypercare",
+        "estimatedDuration": "Days 11 – 14",
+        "phaseBadge": "Phase 4: Launch",
+        "explanation": "Deploy to production with 30 days of dedicated architect hypercare, automated lead ingestion verification, and live sales audits."
+      }
+    ],
+    "onboardingSectionTitle": "Comprehensive Onboarding Modules",
+    "onboardingSectionSubtitle": "Every pillar of your rollout handled by certified Salesforce architects with deep real estate domain expertise.",
+    "onboardingTopics": [
+      {
+        "id": "topic-installation",
+        "topic": "Installation",
+        "badge": "Managed Package",
+        "title": "AppExchange Native Package Deployment",
+        "topicSummary": "One-click installation into your Salesforce Sandbox or Production org with zero code overwrites and automated version maintenance.",
+        "topicDetail": "EstateForce is delivered as an AppExchange-certified Managed Package. It installs seamlessly alongside your existing Sales Cloud or Service Cloud instances. It creates dedicated custom objects for Projects, Towers, Units, Holds, Bookings, and CLP Demand Schedules without modifying standard Lead or Opportunity definitions. Installation takes less than 30 minutes with standard system administrator permissions.",
+        "keyHighlights": [
+          "100% Native Lightning Components inside your org",
+          "Salesforce AppExchange security review certified",
+          "Zero external database or API synchronizer dependencies"
+        ]
+      },
+      {
+        "id": "topic-setup",
+        "topic": "Set-up",
+        "badge": "Configuration",
+        "title": "Tower, Unit Matrix & Payment Rules Configuration",
+        "topicSummary": "Configure your multi-tower inventory, floor plans, pricing rate cards, and construction-linked payment milestone schedules in days.",
+        "topicDetail": "Our certified real estate solution architects configure your project parameters: tower elevations, floor unit allocations, typology classifications (1BHK, 2BHK, 3BHK, Penthouses, Commercial Suites), carpet vs. super built-up pricing tiers, car park allocations, and GST / tax calculations. We also set up your automated 60-minute holding locks, approval matrices, and escalation rules.",
+        "keyHighlights": [
+          "Interactive visual unit availability grid with color codes",
+          "Custom CLP milestone billing schedules & automated demands",
+          "Multi-tier discount approval matrices for sales heads"
+        ]
+      },
+      {
+        "id": "topic-migration",
+        "topic": "Data migration",
+        "badge": "Data Integrity",
+        "title": "Spreadsheet & Legacy CRM Ingestion",
+        "topicSummary": "Cleanse, deduplicate, and migrate all your Excel inventory, active buyer pipelines, and channel partner ledgers into Salesforce.",
+        "topicDetail": "We handle end-to-end data cleansing and migration from scattered Google Sheets, Excel files, or legacy real estate software. We deduplicate records by buyer mobile number and email, map historic booking token receipts, import active channel partner agent lists, and link pending milestone demands. Complete validation audits are conducted before final sign-off.",
+        "keyHighlights": [
+          "Smart deduplication on mobile number, email, and Aadhaar",
+          "Historic booking token reconciliation and demand aging",
+          "Channel partner broker network ledger import"
+        ]
+      },
+      {
+        "id": "topic-training",
+        "topic": "Training",
+        "badge": "Team Enablement",
+        "title": "Hands-On, Role-Specific User Coaching",
+        "topicSummary": "Practical role coaching tailored for tele-calling executives, site-visit sales reps, finance teams, and Salesforce administrators.",
+        "topicDetail": "Generic CRM training fails real estate teams. We deliver role-specific interactive coaching: tele-calling agents learn rapid 5-minute round-robin lead cadences; on-site sales reps master mobile GPS check-ins and instant 10-second unit holds; finance teams learn automated CLP milestone demand letter generation; and admins learn inventory adjustments and permission sets.",
+        "keyHighlights": [
+          "Salesforce Mobile App coaching for front-line site executives",
+          "Admin org governance, sharing rules, and dashboard training",
+          "Recorded video playbooks and printable quick-reference cards"
+        ]
+      },
+      {
+        "id": "topic-support",
+        "topic": "Support",
+        "badge": "Ongoing Care",
+        "title": "30-Day Hypercare & Continuous Upgrades",
+        "topicSummary": "Dedicated real estate Salesforce architects, SLA response times, live sales floor support, and continuous package version updates.",
+        "topicDetail": "Go-live is just the beginning. Every implementation includes 30 days of hands-on hypercare where our senior consultants monitor daily lead ingestion from MagicBricks and 99acres, assist with initial unit bookings, and audit financial reconciliation. Post-hypercare, you receive priority SLA ticketing, dedicated quarterly business reviews, and automatic package upgrades.",
+        "keyHighlights": [
+          "30 days of dedicated architect hypercare post go-live",
+          "Continuous AppExchange version upgrades included",
+          "Sub-1 hour critical SLA support desk for live sales floors"
+        ]
+      }
+    ],
+    "closingCta": {
+      "headline": "Plan Your Real Estate Salesforce Rollout",
+      "subtext": "Schedule a 30-minute scoping session with a certified implementation architect to review your project towers, team size, and timeline.",
+      "buttonLabel": "Request a Demo"
+    }
+  },
+  "securityAndFitPage": {
+    "storyId": "US-14",
+    "pageIntroduction": "Enterprise-grade architecture, native data sovereignty, and security governance designed for Salesforce administrators, infosec reviewers, and IT directors.",
+    "contentApprovedBy": "Certified Salesforce Technical Architect (CTA)",
+    "isApproved": true,
+    "fitAndDataTitle": "100% Native Data Sovereignty & Salesforce Fit",
+    "fitAndDataText": "EstateForce is built 100% natively on the Salesforce Lightning platform. Unlike hybrid real estate CRMs that synchronize confidential buyer details, unit inventory, and payment receipts to third-party cloud servers or offshore MongoDB instances, EstateForce executes entirely within your existing Salesforce multi-tenant trust boundary. All custom objects (Projects, Towers, Units, Holds, Bookings, CLP Milestones) reside inside your organization's dedicated database schema. Your property data never leaves Salesforce, ensuring total compliance with your corporate infosec mandates, RERA statutory audit policies, and ISO 27001 data protection protocols.",
+    "accessAndProtectionTitle": "Access Control, Encryption & Governance",
+    "accessAndProtectionText": "EstateForce inherits the full enterprise security infrastructure of Salesforce. User permissions are strictly enforced through packaged Permission Sets and your existing Role Hierarchies. Field-level security prevents sales executives from seeing confidential margin discounts, while allowing finance teams full visibility into milestone cash collections. EstateForce is fully compatible with Salesforce Shield Platform Encryption for encryption-at-rest across sensitive buyer fields (mobile numbers, PAN, bank details). All transactions are recorded in the standard Salesforce Setup Audit Trail and custom object Field History Tracking for tamper-proof compliance auditing.",
+    "supportedEditions": [
+      "Enterprise Edition (Lightning Experience)",
+      "Unlimited Edition (Lightning Experience)",
+      "Performance Edition (Lightning Experience)",
+      "Developer Edition & Scratch Orgs (for testing)"
+    ],
+    "installationSteps": [
+      "1. Install the managed package from Salesforce AppExchange into your Sandbox environment.",
+      "2. Assign EstateForce Admin, Sales Executive, and Broker Manager permission sets to designated users.",
+      "3. Configure Project Towers, Unit Inventory typologies, and CLP milestone schedules in EstateForce Setup.",
+      "4. Test 60-minute holding locks, portal API webhooks, and push change sets to Production with confidence."
+    ],
+    "itChecklistTitle": "Pre-Installation IT & Architecture Checklist",
+    "itChecklist": [
+      "Enterprise, Unlimited, or Performance Salesforce org with Lightning Experience enabled.",
+      "System Administrator profile or delegated 'Download AppExchange Packages' permission.",
+      "At least 15 MB available Salesforce data and file storage space for package custom objects.",
+      "Salesforce Mobile App installed on field sales rep iOS or Android devices for GPS check-ins.",
+      "Active Salesforce Web-to-Lead or REST API endpoint for MagicBricks and 99acres lead ingestion."
+    ],
+    "checklistPdfUrl": "#download-checklist",
+    "appExchange": {
+      "rating": 4.9,
+      "reviewCount": 38,
+      "badge": "AppExchange Certified & Security Reviewed",
+      "url": "https://appexchange.salesforce.com/appxListingDetail?listingId=estateforce",
+      "docsUrl": "https://support.cloudcertitude.com/docs/estateforce",
+      "supportUrl": "https://support.cloudcertitude.com"
+    },
+    "technicalForm": {
+      "headline": "Ask an Architect a Technical Question",
+      "subtext": "Have questions about org limits, custom apex triggers, or Shield encryption? Our Certified Salesforce Technical Architects respond within 1 business day.",
+      "fields": {
+        "fullNameLabel": "Full Name",
+        "workEmailLabel": "Work Email",
+        "companyLabel": "Company Name",
+        "questionLabel": "Technical Question or Architecture Inquiry",
+        "consentLabel": "I consent to EstateForce storing my details for technical response and acknowledge the Privacy Policy."
+      },
+      "submitButtonLabel": "Send Question to Architects",
+      "successMessage": "Thank you! Your technical question has been routed directly to our Salesforce Solutions Architecture Team. A confirmation email has been dispatched to your inbox."
+    },
+    "closingDemoCta": {
+      "headline": "Review EstateForce with Our Salesforce ISV Architects",
+      "subtext": "Schedule a dedicated technical walkthrough to inspect our custom object schema, API webhooks, and permission sets.",
+      "buttonLabel": "Request a Technical Demo"
+    }
+  },
+  "pricingPage": {
+    "storyId": "US-15",
+    "displayMode": "Plan cards",
+    "pageIntroduction": "Predictable, transparent investment scaled to your team's deal volume. Choose a plan tailored for your active sales floor or township development.",
+    "billingToggle": {
+      "monthlyLabel": "Monthly Billing",
+      "annualLabel": "Annual Billing (Save 20%)",
+      "annualDiscountPct": 0.2
+    },
+    "plans": [
+      {
+        "id": "starter",
+        "planCode": "starter",
+        "name": "Starter Edition",
+        "whoItIsFor": "For boutique residential builders and independent brokerages up to 10 sales users.",
+        "price": 2499,
+        "billingPeriod": "Per user per month",
+        "showContactUs": false,
+        "isPopular": false,
+        "keyFeatures": [
+          "MagicBricks & 99acres automated lead capture",
+          "Interactive unit inventory matrix with hold locks",
+          "Salesforce Mobile App site-visit check-ins",
+          "Standard payment schedule generation",
+          "Standard business-hours support desk"
+        ]
+      },
+      {
+        "id": "growth",
+        "planCode": "growth",
+        "name": "Growth Edition",
+        "whoItIsFor": "For expanding developers managing multiple towers and up to 50 active sales reps.",
+        "price": 3999,
+        "billingPeriod": "Per user per month",
+        "showContactUs": false,
+        "isPopular": true,
+        "badge": "Most Popular",
+        "keyFeatures": [
+          "Sub-5 minute round-robin SLA routing & alerts",
+          "Automated CLP milestone demand letter triggers",
+          "Channel partner commission ledger & payout audits",
+          "Managerial mobile discount approval workflows",
+          "Priority SLA support & sandbox onboarding"
+        ]
+      },
+      {
+        "id": "enterprise",
+        "planCode": "enterprise",
+        "name": "Enterprise Township",
+        "whoItIsFor": "For large township builders and multi-city property conglomerates with unlimited users.",
+        "price": 5499,
+        "billingPeriod": "Per user per month",
+        "showContactUs": false,
+        "isPopular": false,
+        "keyFeatures": [
+          "Multi-project executive absorption dashboards",
+          "Salesforce Shield Platform Encryption support",
+          "Custom portal webhooks & payment gateway hooks",
+          "Dedicated Technical Account Manager (TAM)",
+          "30 days of hands-on launch hypercare included"
+        ]
+      }
+    ],
+    "comparisonTableTitle": "Detailed Plan Feature Comparison",
+    "comparisonRows": [
+      {
+        "criterion": "Lead Ingestion from MagicBricks & 99acres",
+        "starter": "Included",
+        "growth": "Included",
+        "enterprise": "Included"
+      },
+      {
+        "criterion": "Real-Time Unit Matrix & 60-Min Hold Locks",
+        "starter": "Included",
+        "growth": "Included",
+        "enterprise": "Included"
+      },
+      {
+        "criterion": "Salesforce Mobile App GPS Site-Visit Tracking",
+        "starter": "Included",
+        "growth": "Included",
+        "enterprise": "Included"
+      },
+      {
+        "criterion": "Automated CLP Milestone Demand Letters",
+        "starter": "Not included",
+        "growth": "Included",
+        "enterprise": "Included"
+      },
+      {
+        "criterion": "Channel Partner Commission Ledgers",
+        "starter": "Not included",
+        "growth": "Included",
+        "enterprise": "Included"
+      },
+      {
+        "criterion": "Manager Discount Approval Workflows",
+        "starter": "Not included",
+        "growth": "Included",
+        "enterprise": "Included"
+      },
+      {
+        "criterion": "Salesforce Shield Encryption Compatibility",
+        "starter": "Not included",
+        "growth": "Note: Add-on required",
+        "enterprise": "Included"
+      },
+      {
+        "criterion": "Dedicated Architect Launch Hypercare",
+        "starter": "Not included",
+        "growth": "14 Days",
+        "enterprise": "30 Days Included"
+      }
+    ],
+    "faqSectionTitle": "Frequently Asked Questions About Pricing",
+    "pricingFaqs": [
+      {
+        "question": "Are there any minimum user seat requirements?",
+        "answer": "Starter Edition requires a minimum of 5 users, while Growth and Enterprise Editions require a minimum of 10 users. Additional user licenses can be added at any time pro-rata."
+      },
+      {
+        "question": "Does this price include the underlying Salesforce license?",
+        "answer": "No. EstateForce is an AppExchange Managed Package that installs directly into your existing Salesforce Enterprise, Unlimited, or Performance org. You bring your standard Salesforce licenses, and our package operates 100% natively on top."
+      },
+      {
+        "question": "Are implementation and data migration fees included?",
+        "answer": "Standard onboarding configuration and sandbox package installation are included in all annual plans. Complex legacy CRM data migrations or custom portal webhook builds are quoted transparently during your initial demo scoping."
+      },
+      {
+        "question": "Can we upgrade or downgrade plans between project phases?",
+        "answer": "Yes. Real estate development is cyclical. You can upgrade from Starter to Growth when launching a new tower, or expand to Enterprise for township rollouts with seamless license adjustments."
+      },
+      {
+        "question": "What payment terms and currencies are supported?",
+        "answer": "We support annual invoicing in INR (₹) with standard GST invoices for Indian entities, as well as USD ($) wire transfers for international developers."
+      }
+    ],
+    "contactForPricing": {
+      "message": "Pricing for custom township developments and multi-state brokerages depends on active unit volume and team size. Request a guided demo to receive a customized quote."
+    }
+  },
+  "customerStoriesPage": {
+    "storyId": "US-16",
+    "pageIntroduction": "Real, quantifiable operational transformations from developers and brokerages running natively on Salesforce. Filter by operating model to see how teams like yours eliminate friction.",
+    "filterCategories": [
+      {
+        "id": "all",
+        "label": "All Operating Models"
+      },
+      {
+        "id": "developer",
+        "label": "Developers & Builders"
+      },
+      {
+        "id": "brokerage",
+        "label": "Brokerages & Agencies"
+      }
+    ],
+    "stories": [
+      {
+        "id": "apex-horizon",
+        "slug": "apex-horizon-developers",
+        "customerName": "Vikram Singhania",
+        "role": "Vice President of Sales",
+        "company": "Apex Horizon Developers",
+        "companyType": "Developer or builder",
+        "filterKey": "developer",
+        "customerPhoto": "/testimonials/vikram-singhania.svg",
+        "companyLogo": "/logos/dlf.svg",
+        "keyResult": "70% Faster Response & 180 Units Booked",
+        "quote": "EstateForce cut our lead response time from 4 hours to 6 minutes. In phase one, our sales floor booked 180 units without a single inventory double-booking conflict.",
+        "permissionReceived": true,
+        "problem": "Managing 560 units across four residential towers using disconnected spreadsheets led to frequent double-booking disputes. Sales reps regularly promised the same prime corner 3BHK flat to multiple buyers. Inbound leads from MagicBricks sat unassigned for hours, resulting in a 45% drop-off before initial contact.",
+        "solution": "EstateForce deployed a native Salesforce unit inventory matrix with automated 60-minute holding locks and mobile WhatsApp brochures. Direct API webhooks routed every enquiry to available reps in under 5 minutes using intelligent round-robin rules.",
+        "result": "Average speed-to-call dropped from 4 hours to 6 minutes. Phase one launched with 180 confirmed unit bookings in 45 days with zero inventory conflicts. Construction-linked demand letters triggered automatically on slab milestones, reducing payment collection delays by 32%."
+      },
+      {
+        "id": "urbancraft-realty",
+        "slug": "urbancraft-realty-agency",
+        "customerName": "Radhika Kulkarni",
+        "role": "Chief Operating Officer",
+        "company": "UrbanCraft Realty Network",
+        "companyType": "Brokerage or agency",
+        "filterKey": "brokerage",
+        "customerPhoto": "/testimonials/radhika-kulkarni.svg",
+        "companyLogo": "/logos/godrej.svg",
+        "keyResult": "100% Geotagged Visits & Zero Dispute Payouts",
+        "quote": "Our 45 channel partner agents lock unit holds directly from the show flat on mobile. Transparent commission ledgers eliminated months of invoice disputes.",
+        "permissionReceived": true,
+        "problem": "With 45 freelance agents marketing units across multiple developer projects, agents carried outdated paper price sheets. Customer visits went unrecorded, and reconciling commission payouts at the end of each quarter caused friction and lost partner trust.",
+        "solution": "Equipped every agent with the Salesforce Mobile App running EstateForce. Agents lock units on their phones while standing with the client, send pre-approved cost sheets on WhatsApp, and log geotagged GPS check-ins.",
+        "result": "Site-visit verification rose to 100%, fake walk-in entries vanished, and earned commissions were computed in real time. Deal closures increased by 40% in the first quarter of deployment."
+      },
+      {
+        "id": "landmark-properties",
+        "slug": "landmark-properties-township",
+        "customerName": "Anand Nair",
+        "role": "Head of CRM & IT",
+        "company": "Landmark Infrastructure & Properties",
+        "companyType": "Developer or builder",
+        "filterKey": "developer",
+        "customerPhoto": "/testimonials/anand-nair.svg",
+        "companyLogo": "/logos/prestige.svg",
+        "keyResult": "35% Accelerated Cash Flow & Live GMV Cockpit",
+        "quote": "Automated milestone demand letters and payment gateway receipts cut our collection delays by 35%. Best investment our Salesforce CRM team has made.",
+        "permissionReceived": true,
+        "problem": "Billing was disconnected from engineering progress. Site engineers marked slab completions on paper, and finance took two to three weeks to print and post physical demand notices, severely choking construction cash flow.",
+        "solution": "Configured EstateForce CLP milestone automation. When site engineers mark a construction slab complete in Salesforce, customized demand notices and payment links are dispatched instantly to unit owners via WhatsApp and email.",
+        "result": "Payment collection cycle accelerated by 35%, overdue collections dropped from ₹18 Cr to ₹4.2 Cr, and executive directors gained an iPad cockpit tracking township absorption velocity live."
+      }
+    ],
+    "closingCta": {
+      "headline": "Transform Your Real Estate Operations Like These Market Leaders",
+      "subtext": "See how EstateForce can achieve sub-5 minute lead responses and eliminate inventory double-bookings for your projects.",
+      "buttonLabel": "Request a Demo"
+    }
+  },
+  "requestDemoPage": {
+    "storyId": "US-17",
+    "headline": "Experience EstateForce Tailored to Your Projects",
+    "subheadline": "Request a 30-minute tailored walkthrough. See real-time inventory locking, instant WhatsApp cadences, and milestone demand letters in action.",
+    "demoCoversBullets": [
+      "Live walkthrough of the interactive unit inventory matrix & 60-second mobile holding locks.",
+      "Omnichannel lead ingestion setup from MagicBricks, 99acres, and WhatsApp API.",
+      "Automated CLP milestone demand notice generation and receipt reconciliation.",
+      "Custom rollout roadmap and data migration plan tailored to your property projects."
+    ],
+    "testimonial": {
+      "quote": "The 30-minute demo immediately showed our sales directors how to eliminate our double-booking chaos. We went live within 14 days.",
+      "author": "Anand Nair",
+      "role": "Head of CRM & IT",
+      "company": "Landmark Infrastructure",
+      "avatar": "/testimonials/anand-nair.svg"
+    },
+    "trustLogos": [
+      {
+        "name": "DLF",
+        "src": "/logos/dlf.svg"
+      },
+      {
+        "name": "Godrej Properties",
+        "src": "/logos/godrej.svg"
+      },
+      {
+        "name": "Prestige Group",
+        "src": "/logos/prestige.svg"
+      },
+      {
+        "name": "Sobha",
+        "src": "/logos/sobha.svg"
+      }
+    ],
+    "companyTypes": [
+      "Developer or builder",
+      "Brokerage or agency",
+      "Other"
+    ],
+    "teamSizes": [
+      "1–10",
+      "11–50",
+      "51–200",
+      "200+"
+    ],
+    "salesforceUsage": [
+      "Yes",
+      "No",
+      "Evaluating"
+    ],
+    "interestAreas": [
+      "Lead Management",
+      "Sales Management",
+      "Booking Management",
+      "Reports and Dashboards"
+    ],
+    "demoTypes": [
+      "Online",
+      "In-person"
+    ],
+    "timeSlots": [
+      "10–12 IST",
+      "12–2 IST",
+      "2–4 IST",
+      "4–6 IST"
+    ],
+    "salesforce": {
+      "orgId": "00D2w00000P3aAc",
+      "actionUrl": "https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00D2w00000P3aAc",
+      "leadSource": "Website – Demo Request",
+      "retUrlPath": "/request-demo?status=success",
+      "honeypotName": "website"
+    },
+    "emailNotifications": {
+      "storyId": "US-18",
+      "senderName": "EstateForce Demos",
+      "senderEmail": "support@cloudcertitude.com",
+      "salesRecipients": [
+        "sales@cloudcertitude.com",
+        "demos@estateforce.in"
+      ],
+      "reminderTimingHours": [
+        24,
+        1
+      ],
+      "privacyPolicyLink": "/privacy",
+      "confirmationSubject": "Your EstateForce Demo Request Confirmation - Next Steps",
+      "salesAlertSubject": "🔥 Hot Lead: New Real Estate Demo Request from {company_name}"
+    },
+    "calendarBooking": {
+      "storyId": "US-20",
+      "timezone": "IST",
+      "slotDurationMinutes": 30,
+      "minAdvanceHours": 4,
+      "assignedRep": "Vikram Malhotra (Real Estate CRM Specialist)",
+      "onlineMeetingLink": "https://meet.google.com/estateforce-demo-live",
+      "inPersonAddress": "Cloud Certitude Real Estate Solutions Hub, Tower B, Sector 62, Noida, NCR, India"
+    },
+    "successMessage": {
+      "title": "Thanks! We'll contact you within one business day.",
+      "nextSteps": [
+        "A senior Salesforce Real Estate Solution Specialist will review your project requirements.",
+        "You will receive a personalized calendar invite with meeting credentials.",
+        "We will prepare a customized sandbox demonstration with sample inventory units matching your property type."
+      ],
+      "contactEmail": "support@estateforce.in",
+      "contactPhone": "+91 98765 43210"
+    }
+  },
+  "resourcesData": {
+    "storyId": "US-21",
+    "headline": "Resources, Guides & Release Updates",
+    "subheadline": "Everything you need to scale real estate operations on Salesforce — tactical sales playbooks, implementation checklists, and quarterly release notes.",
+    "filterTypes": [
+      "All",
+      "Article",
+      "Guide",
+      "Sales tip",
+      "Release update",
+      "Download"
+    ],
+    "itemsPerPage": 12,
+    "items": [
+      {
+        "id": "res-1",
+        "slug": "eliminating-property-double-booking-salesforce",
+        "title": "How Top Indian Real Estate Builders Eliminate Inventory Double-Bookings",
+        "type": "Guide",
+        "summary": "Step-by-step framework to transition from manual Excel inventory sheets to atomic Salesforce unit holding locks with 60-second token timeouts.",
+        "author": "Anand Nair, Salesforce Architect",
+        "publishDate": "2026-10-18",
+        "readTime": "6 min read",
+        "coverImage": "/resources/double-booking-guide.svg",
+        "status": "Published",
+        "highlights": [
+          "Understanding the concurrency window in high-volume festive launch days.",
+          "Atomic Apex locking triggers vs platform optimistic record locks.",
+          "Automatic token expiry and automated manager overrides."
+        ]
+      },
+      {
+        "id": "res-2",
+        "slug": "clp-milestone-billing-automation-playbook",
+        "title": "Construction Linked Plan (CLP) Demand Notice Automation Playbook",
+        "type": "Article",
+        "summary": "Accelerate project cash flows by 35% with automated slab milestone demand notices, computerized interest calculations, and one-click payment links.",
+        "author": "Priya Sharma, Real Estate FinOps Lead",
+        "publishDate": "2026-10-14",
+        "readTime": "8 min read",
+        "coverImage": "/resources/clp-automation.svg",
+        "status": "Published",
+        "highlights": [
+          "Connecting site engineer milestone sign-offs directly to Salesforce billing.",
+          "Automated PDF demand letters compliant with RERA Section 13 standards.",
+          "Instant Razorpay / UPI payment gateway receipt reconciliations."
+        ]
+      },
+      {
+        "id": "res-3",
+        "slug": "rera-quarterly-compliance-checklist",
+        "title": "The 2026 RERA Quarterly Compliance Checklist for Developers",
+        "type": "Download",
+        "summary": "A printable 18-point checklist covering quarterly inventory disclosures, escrow account percentage reconciliations, and sanction updates.",
+        "author": "EstateForce Legal & Compliance Desk",
+        "publishDate": "2026-10-10",
+        "readTime": "Downloadable PDF (4 Pages)",
+        "coverImage": "/resources/rera-checklist.svg",
+        "status": "Published",
+        "highlights": [
+          "Complete quarterly reporting schedule across MahaRERA, HRERA, and UP-RERA.",
+          "Audit trail reports auto-generated from your Salesforce Org in under 2 minutes.",
+          "Escrow 70% construction withdrawal proof documentation requirements."
+        ]
+      },
+      {
+        "id": "res-4",
+        "slug": "broker-channel-partner-commission-transparency",
+        "title": "5 Sales Tips to Win Channel Partner Loyalty with Live Portal Transparency",
+        "type": "Sales tip",
+        "summary": "How top developers motivate 500+ CP brokers by providing instant mobile lead tagging, commission milestone tracking, and transparent payouts.",
+        "author": "Rahul Singhania, VP Sales Strategy",
+        "publishDate": "2026-10-05",
+        "readTime": "5 min read",
+        "coverImage": "/resources/broker-tips.svg",
+        "status": "Published",
+        "highlights": [
+          "Preventing broker conflict with automated 90-day lead tagging rules.",
+          "Mobile-first CP portal for real-time slab milestone payment updates.",
+          "Accelerated advance commission disbursement upon agreement registration."
+        ]
+      },
+      {
+        "id": "res-5",
+        "slug": "sub-5-minute-lead-qualification-cadence",
+        "title": "Setting Up Sub-5-Minute Lead Qualification Cadences on WhatsApp",
+        "type": "Sales tip",
+        "summary": "Why leads contacted under 5 minutes convert 391% higher, and how to configure automated interactive WhatsApp brochures right from Salesforce.",
+        "author": "Vikram Malhotra, Solutions Specialist",
+        "publishDate": "2026-09-28",
+        "readTime": "4 min read",
+        "coverImage": "/resources/whatsapp-cadence.svg",
+        "status": "Published",
+        "highlights": [
+          "Instant webhook ingestion from MagicBricks, 99acres, and Meta Ads.",
+          "Interactive WhatsApp flow asking BHK preference and budget range.",
+          "Automatic site visit appointment booking without human sales delays."
+        ]
+      },
+      {
+        "id": "res-6",
+        "slug": "estateforce-autumn-2026-release-notes",
+        "title": "EstateForce Autumn 2026 Release (v4.2.0) - Interactive Matrix & QR Holds",
+        "type": "Release update",
+        "version": "v4.2.0",
+        "summary": "Explore major upgrades in v4.2.0: Dynamic multi-tower inventory matrix, instant QR code unit holds on iPad, and enhanced RERA escrow tracking.",
+        "author": "EstateForce Product Engineering",
+        "publishDate": "2026-09-20",
+        "readTime": "3 min read",
+        "coverImage": "/resources/release-v420.svg",
+        "status": "Published",
+        "highlights": [
+          "Tower-wise 3D color-coded unit matrix rendering 5,000+ units in under 400ms.",
+          "QR code generated on mobile for prospect instant token advance payment.",
+          "Optimized bulk CSV lead ingestion engine handling 50,000 portal rows/hour."
+        ]
+      },
+      {
+        "id": "res-7",
+        "slug": "enterprise-salesforce-data-migration-strategy",
+        "title": "Migrating 100,000+ Historical Property Leads to Salesforce Without Data Loss",
+        "type": "Guide",
+        "summary": "Field-tested deduplication, phone normalization, and legacy ERP data migration strategies for builders upgrading to EstateForce.",
+        "author": "Priya Sharma, Lead Data Architect",
+        "publishDate": "2026-09-12",
+        "readTime": "9 min read",
+        "coverImage": "/resources/data-migration.svg",
+        "status": "Published",
+        "highlights": [
+          "Cleaning Indian mobile numbers: standardizing +91 prefixes and removing landlines.",
+          "Preserving legacy site visit notes and past broker attribution history.",
+          "Phased 14-day cutover checklist ensuring zero downtime for live sales galleries."
+        ]
+      },
+      {
+        "id": "res-8",
+        "slug": "estateforce-summer-2026-release-notes",
+        "title": "EstateForce Summer 2026 Release (v4.1.0) - Offline Sync & WhatsApp Flows",
+        "type": "Release update",
+        "version": "v4.1.0",
+        "summary": "What's new in v4.1: Native Salesforce mobile offline caching for remote construction sites, automated PDF stamp duty calculators, and WhatsApp Flow 2.0.",
+        "author": "EstateForce Product Engineering",
+        "publishDate": "2026-06-15",
+        "readTime": "4 min read",
+        "coverImage": "/resources/release-v410.svg",
+        "status": "Published",
+        "highlights": [
+          "Offline site visit log synchronization when network drops in basement parking.",
+          "Dynamic stamp duty and registration fee calculations per state regulations.",
+          "WhatsApp bot integrated appointment confirmation with Google Maps location pin."
+        ]
+      },
+      {
+        "id": "res-9",
+        "slug": "site-visit-showaround-conversion-tactics",
+        "title": "7 Tactics to Boost Site-Visit-to-Booking Ratio from 12% to 28%",
+        "type": "Sales tip",
+        "summary": "How premium NCR and Bengaluru builders equip relationship managers with live unit viewings, dynamic price quotes, and personalized payment plans.",
+        "author": "Rahul Singhania, VP Sales Strategy",
+        "publishDate": "2026-05-30",
+        "readTime": "6 min read",
+        "coverImage": "/resources/site-visit-tips.svg",
+        "status": "Published",
+        "highlights": [
+          "Digital reception check-in displaying buyer's exact past interaction history.",
+          "Instant cost-sheet generation with parking and floor rise variations.",
+          "Triggering 24-hour emotional recap video via WhatsApp after the tour."
+        ]
+      },
+      {
+        "id": "res-10",
+        "slug": "commercial-vs-residential-crm-architecture",
+        "title": "Architecting Salesforce for Mixed-Use: Commercial Leases vs Residential Sales",
+        "type": "Article",
+        "summary": "How to structure custom objects, revenue recognition, and CAM billing when your township blends retail malls, IT parks, and residential villas.",
+        "author": "Anand Nair, Salesforce Architect",
+        "publishDate": "2026-05-18",
+        "readTime": "7 min read",
+        "coverImage": "/resources/mixed-use-crm.svg",
+        "status": "Published",
+        "highlights": [
+          "Common area maintenance (CAM) recurring invoicing vs construction milestones.",
+          "Lock-in period and fit-out rent-free escalation tracking in commercial leasing.",
+          "Unified executive dashboard covering both lease ARR and outright sales GMV."
+        ]
+      },
+      {
+        "id": "res-11",
+        "slug": "lead-attribution-magicbricks-99acres-housing",
+        "title": "True Lead Attribution: Tracking Cost per Booking Across MagicBricks, 99acres & Google Ads",
+        "type": "Guide",
+        "summary": "Stop guessing your best marketing channel. Set up full-funnel attribution in Salesforce from first portal inquiry down to final registration deed.",
+        "author": "Vikram Malhotra, CRM Specialist",
+        "publishDate": "2026-04-22",
+        "readTime": "8 min read",
+        "coverImage": "/resources/portal-attribution.svg",
+        "status": "Published",
+        "highlights": [
+          "Capturing portal source tags and UTM parameters through Web-to-Lead.",
+          "First-touch vs last-touch vs linear multi-touch attribution models.",
+          "Calculating true Cost-Per-Booking (CPB) rather than vanity Cost-Per-Lead (CPL)."
+        ]
+      },
+      {
+        "id": "res-12",
+        "slug": "real-estate-crm-selection-evaluation-matrix",
+        "title": "Real Estate CRM Buyer's Guide & 40-Point Vendor Evaluation Matrix",
+        "type": "Download",
+        "summary": "An Excel spreadsheet comparison template comparing generic CRMs against specialized Salesforce Native packages for real estate enterprises.",
+        "author": "EstateForce Solutions Desk",
+        "publishDate": "2026-04-02",
+        "readTime": "Downloadable XLSX (40 Criteria)",
+        "coverImage": "/resources/crm-matrix.svg",
+        "status": "Published",
+        "highlights": [
+          "40-point technical checklist covering data sovereignty, concurrency, and RERA.",
+          "Total Cost of Ownership (TCO) calculator comparing 5-year licensing vs custom dev.",
+          "Sample RFP template ready to issue to enterprise software vendors."
+        ]
+      }
+    ]
+  },
+  "faqPage": {
+    "storyId": "US-23",
+    "headline": "Frequently Asked Questions",
+    "subheadline": "Everything you need to know about the EstateForce native Salesforce package, technical prerequisites, data migration, and pricing.",
+    "topics": [
+      "Product",
+      "Salesforce requirements",
+      "Set-up",
+      "Data migration",
+      "Pricing",
+      "Security",
+      "Support"
+    ],
+    "faqs": [
+      {
+        "id": "faq-prod-1",
+        "topic": "Product",
+        "question": "How does EstateForce prevent inventory double-bookings during busy launch days?",
+        "answer": "EstateForce employs atomic Apex record locks with a 60-second token timeout. When a sales executive holds a unit on their mobile or tablet, the unit immediately turns orange across all team members' matrices. If booking advance isn't submitted within 60 seconds, the lock automatically releases back to inventory.",
+        "displayOrder": 1,
+        "status": "Published"
+      },
+      {
+        "id": "faq-prod-2",
+        "topic": "Product",
+        "question": "Can EstateForce manage both residential apartments and commercial retail leases?",
+        "answer": "Yes. EstateForce includes dedicated object record types for residential units (BHK, super area, floor rise, parking) and commercial properties (carpet area, CAM charges, fit-out rent-free periods, and escalation clauses).",
+        "displayOrder": 2,
+        "status": "Published"
+      },
+      {
+        "id": "faq-prod-3",
+        "topic": "Product",
+        "question": "How does Construction-Linked Plan (CLP) milestone billing work?",
+        "answer": "When a project engineer marks a construction slab complete in Salesforce, EstateForce automatically generates compliant demand notices with computerized interest calculations, attaching Razorpay or UPI payment links sent to unit owners via WhatsApp and email.",
+        "displayOrder": 3,
+        "status": "Published"
+      },
+      {
+        "id": "faq-sf-1",
+        "topic": "Salesforce requirements",
+        "question": "Which Salesforce editions are required to run EstateForce?",
+        "answer": "EstateForce supports Salesforce Enterprise Edition, Unlimited Edition, and Performance Edition. It runs seamlessly on Sales Cloud or Service Cloud orgs.",
+        "displayOrder": 4,
+        "status": "Published"
+      },
+      {
+        "id": "faq-sf-2",
+        "topic": "Salesforce requirements",
+        "question": "Is EstateForce 100% native on the Salesforce platform?",
+        "answer": "Yes, 100% native. All customer leads, unit inventory tables, price books, and financial transactions reside strictly inside your Salesforce database. No data is mirrored or stored on external third-party proprietary servers.",
+        "displayOrder": 5,
+        "status": "Published"
+      },
+      {
+        "id": "faq-setup-1",
+        "topic": "Set-up",
+        "question": "How long does a standard implementation take from kickoff to go-live?",
+        "answer": "A turnkey deployment typically takes 14 business days: Day 1-3 sandbox package installation and custom object setup, Day 4-7 data migration and pricing rules, Day 8-10 role-based staff training, and Day 11-14 production cutover with hypercare.",
+        "displayOrder": 6,
+        "status": "Published"
+      },
+      {
+        "id": "faq-setup-2",
+        "topic": "Set-up",
+        "question": "Do our sales executives require specialized technical Salesforce certifications to use it?",
+        "answer": "Not at all. The field interface is built with simplified Lightning Web Components tailored for mobile browsers and tablets, allowing relationship managers to lock units and log site visits in under 60 seconds.",
+        "displayOrder": 7,
+        "status": "Published"
+      },
+      {
+        "id": "faq-mig-1",
+        "topic": "Data migration",
+        "question": "Can we import existing property leads and past customer records from Excel or legacy ERPs?",
+        "answer": "Yes. Our onboarding engineers provide pre-mapped CSV migration templates with automatic phone normalization (+91 formatting) and fuzzy deduplication matching.",
+        "displayOrder": 8,
+        "status": "Published"
+      },
+      {
+        "id": "faq-price-1",
+        "topic": "Pricing",
+        "question": "Are there hidden onboarding fees, user surcharges, or data egress fees?",
+        "answer": "No hidden fees. Package licensing is transparently priced per active user with annual billing discounts. Unlimited inventory units, projects, and leads are included across all plans.",
+        "displayOrder": 9,
+        "status": "Published"
+      },
+      {
+        "id": "faq-sec-1",
+        "topic": "Security",
+        "question": "Does EstateForce comply with RERA data retention and audit regulations?",
+        "answer": "Yes. All inventory status changes, pricing approvals, and milestone demand letters generate permanent Salesforce Field Audit Trails compliant with RERA Section 11 and Section 13 audit standards.",
+        "displayOrder": 10,
+        "status": "Published"
+      },
+      {
+        "id": "faq-supp-1",
+        "topic": "Support",
+        "question": "What customer support and maintenance is provided after deployment?",
+        "answer": "All subscriptions include standard email and phone ticketing with 4-hour initial SLA. Growth and Enterprise plans receive dedicated Salesforce Solutions Architects, quarterly AppExchange version upgrades, and emergency WhatsApp hotline access.",
+        "displayOrder": 11,
+        "status": "Published"
+      }
+    ]
+  },
+  "aboutUsPage": {
+    "storyId": "US-24",
+    "headline": "Built by Salesforce Architects. Engineered for Real Estate Leaders.",
+    "subheadline": "We bridge the gap between complex property development workflows and the world's #1 CRM platform.",
+    "mission": "To empower property builders and brokerages with native, real-time Salesforce automation that accelerates booking velocities, eliminates inventory double-bookings, and protects enterprise cash flow.",
+    "companyStory": "Founded by certified Salesforce architects and veteran real estate technologists at Cloud Certitude, EstateForce was engineered in direct response to the operational chaos of Indian property sales galleries. Having watched premier builders lose millions to delayed construction billing, inventory double-bookings, and fractured WhatsApp lead routing, our team engineered a 100% native managed package designed strictly for high-density township developments and agile brokerages.",
+    "values": [
+      {
+        "title": "Data Sovereignty First",
+        "description": "100% native architecture ensures every customer PII and pricing record remains exclusively within your Salesforce Org."
+      },
+      {
+        "title": "Atomic Operational Precision",
+        "description": "Zero inventory double-bookings guaranteed through sub-second database row locking."
+      },
+      {
+        "title": "14-Day Velocity",
+        "description": "Turnkey pre-configured schemas eliminate months of custom bespoke consulting delays."
+      },
+      {
+        "title": "Continuous ISV Excellence",
+        "description": "Quarterly AppExchange version upgrades delivering seamless innovations to our clients."
+      }
+    ],
+    "leadershipTeam": [
+      {
+        "name": "Anand Nair",
+        "role": "Co-Founder & Chief Solutions Architect",
+        "photo": "/testimonials/anand-nair.svg",
+        "bio": "Certified Salesforce Application & System Architect with 14+ years designing high-scale CRM backbones for premier Indian infrastructure and township conglomerates.",
+        "linkedin": "https://www.linkedin.com/in/anand-nair-crm"
+      },
+      {
+        "name": "Priya Sharma",
+        "role": "VP of Product Engineering",
+        "photo": "/testimonials/priya-sharma.svg",
+        "bio": "Former Salesforce ISV technical lead specializing in high-concurrency Apex design, WhatsApp Cloud API integrations, and RERA compliance data models.",
+        "linkedin": "https://www.linkedin.com/in/priya-sharma-tech"
+      },
+      {
+        "name": "Vikram Malhotra",
+        "role": "Head of Customer Success",
+        "photo": "/testimonials/vikram-singhania.svg",
+        "bio": "PropTech transformation leader who has spearheaded 14-day CRM deployments managing over 50,000 property units across Delhi-NCR, Mumbai, and Bengaluru.",
+        "linkedin": "https://www.linkedin.com/in/vikram-malhotra-sales"
+      }
+    ],
+    "milestones": [
+      {
+        "date": "Nov 2022",
+        "title": "Package Architecture Inception",
+        "description": "Architected native real estate schema combining inventory matrices with Apex atomic locking."
+      },
+      {
+        "date": "Aug 2023",
+        "title": "10,000 Units Milestone",
+        "description": "Processed first 10,000 township units in live multi-tower residential launches with zero lock conflicts."
+      },
+      {
+        "date": "Mar 2024",
+        "title": "Salesforce AppExchange Certification",
+        "description": "Passed comprehensive Salesforce ISV Security Review and published to official AppExchange."
+      },
+      {
+        "date": "Jan 2025",
+        "title": "CLP Demand Notice Automation",
+        "description": "Released automated WhatsApp demand notices and instant Razorpay payment reconciliations."
+      },
+      {
+        "date": "Oct 2026",
+        "title": "50,000+ Units Under Active Management",
+        "description": "Trusted by leading Indian developers including Prestige, DLF, Godrej, and Sobha partner brokerages."
+      }
+    ],
+    "credentials": [
+      {
+        "title": "Official Certified Salesforce ISV Partner",
+        "issuer": "Salesforce Inc.",
+        "type": "Partner status",
+        "badge": "/badges/salesforce-partner.svg"
+      },
+      {
+        "title": "Best Enterprise PropTech Innovation 2025",
+        "issuer": "National Realty Tech Summit",
+        "type": "Award",
+        "badge": "/badges/proptech-award.svg"
+      },
+      {
+        "title": "ISO 27001 & SOC 2 Type II Certified Process",
+        "issuer": "BSI Information Security Assurance",
+        "type": "Certification",
+        "badge": "/badges/iso27001.svg"
+      },
+      {
+        "title": "How Native CRM Accelerates Developer Collections by 35%",
+        "issuer": "The Economic Times Realty",
+        "type": "Media mention",
+        "link": "https://economictimes.indiatimes.com/tech/proptech-estateforce",
+        "badge": "/badges/et-realty.svg"
+      }
+    ],
+    "careersUrl": "https://careers.cloudcertitude.com"
+  },
+  "contactUsPage": {
+    "storyId": "US-25",
+    "headline": "Get in Touch With Our Real Estate Solutions Team",
+    "subheadline": "Whether you need a personalized product walkthrough, sandbox architecture review, or partner onboarding, we are here to help.",
+    "office": {
+      "name": "Cloud Certitude Real Estate Solutions Hub",
+      "address": "A-Block, Sector 62, Noida, Uttar Pradesh 201309, India",
+      "businessHours": "Monday – Friday: 9:00 AM – 7:00 PM IST | Saturday: 10:00 AM – 2:00 PM IST",
+      "latitude": 28.628,
+      "longitude": 77.3649,
+      "directionsUrl": "https://maps.google.com/?q=28.6280,77.3649"
+    },
+    "directContact": {
+      "salesEmail": "sales@cloudcertitude.com",
+      "supportEmail": "support@estateforce.in",
+      "phone": "+91 98765 43210",
+      "phoneRaw": "+919876543210",
+      "whatsapp": "https://wa.me/919876543210?text=Hi%20EstateForce%20team,%20I%20would%20like%20to%20inquire%20about%20the%20Salesforce%20Real%20Estate%20Package."
+    },
+    "topics": [
+      "Sales",
+      "Technical",
+      "Partnership",
+      "Support",
+      "Other"
+    ]
+  },
+  "legalPages": {
+    "storyId": "US-26",
+    "formPrivacyNotice": "By submitting this form, you agree to our processing of your details per our Privacy Policy. You can withdraw consent at any time.",
+    "privacyPolicy": {
+      "title": "Privacy Policy",
+      "slug": "privacy-policy",
+      "lastUpdated": "2026-10-20",
+      "approvedByLegal": true,
+      "summary": "This Privacy Policy explains how Cloud Certitude Solutions Pvt. Ltd. collects, uses, protects, and handles your information when you visit the EstateForce website, request a demo, or use our real estate Salesforce package.",
+      "sections": [
+        {
+          "heading": "1. Information We Collect",
+          "content": "When you engage with EstateForce, we collect details that you voluntarily submit to us via our demo request forms, contact inquiries, and gated resource downloads. These details include: Full Name, Business Email Address, Phone Number (+91 format), Company Name, and your specific areas of interest (e.g. Lead Automation, Inventory Booking). We also collect non-identifiable technical data such as browser type, operating system, and pages visited solely for website performance optimization."
+        },
+        {
+          "heading": "2. Purpose and Lawful Basis for Processing",
+          "content": "We process your business contact information solely for legitimate business interests, including: scheduling and delivering customized product demonstrations, sending operational calendar invites and confirmation emails, routing your inquiries to our real estate CRM architects, and providing requested product guides or whitepapers. We never sell, rent, or trade your personal or business data to third-party data brokers."
+        },
+        {
+          "heading": "3. Salesforce Native Architecture & Data Sovereignty",
+          "content": "EstateForce is an enterprise managed package built 100% natively on the Salesforce platform. When you install our package into your Salesforce environment, all your leads, unit bookings, payment schedules, and customer records reside exclusively within your own Salesforce database. Cloud Certitude has no access to your production customer records, tenant data, or property transactions unless explicitly granted login access via authorized Salesforce Subscriber Support."
+        },
+        {
+          "heading": "4. Data Retention and Security",
+          "content": "Website inquiries and demo requests are retained in our secure Salesforce CRM (Org ID: 00D2w00000P3aAc) only for as long as necessary to fulfill the inquiry or business relationship, after which records are securely archived or purged in compliance with the Digital Personal Data Protection (DPDP) Act, 2023 and GDPR guidelines."
+        },
+        {
+          "heading": "5. Your Data Rights",
+          "content": "You have the right to request access to your contact information, request corrections or updates, request complete erasure of your business contact profile from our sales CRM, or withdraw your marketing newsletter consent at any time by emailing privacy@cloudcertitude.com or clicking the unsubscribe link present in every newsletter."
+        },
+        {
+          "heading": "6. Contact Our Legal & Privacy Officer",
+          "content": "If you have questions regarding this Privacy Policy or our data protection measures, please contact: Data Protection Officer, Cloud Certitude Solutions Pvt. Ltd., A-Block, Sector 62, Noida, Uttar Pradesh 201309, India. Email: privacy@cloudcertitude.com."
+        }
+      ]
+    },
+    "termsOfUse": {
+      "title": "Terms of Use",
+      "slug": "terms-of-use",
+      "lastUpdated": "2026-10-20",
+      "approvedByLegal": true,
+      "summary": "These Terms of Use govern your access to and use of the EstateForce website and informational services provided by Cloud Certitude Solutions Pvt. Ltd.",
+      "sections": [
+        {
+          "heading": "1. Acceptance of Terms",
+          "content": "By accessing, browsing, or using the EstateForce website (https://estateforce.cloudcertitude.com) or submitting inquiries via our forms, you agree to be bound by these Terms of Use and all applicable laws and regulations of India. If you do not agree, please discontinue use of this site immediately."
+        },
+        {
+          "heading": "2. Intellectual Property Rights",
+          "content": "All contents, vector diagrams, interactive calculators, proprietary screenshots, software architecture blueprints, and trademarks displayed on this site are the exclusive property of Cloud Certitude Solutions Pvt. Ltd. Salesforce, AppExchange, Sales Cloud, and Service Cloud are registered trademarks of Salesforce, Inc. EstateForce is an independent managed package developed by Cloud Certitude."
+        },
+        {
+          "heading": "3. Website Usage and Permitted Scope",
+          "content": "This website is provided for informational and commercial evaluation purposes. You may view, download, and print materials solely for evaluating EstateForce for your enterprise real estate organization. You agree not to reverse engineer, scrape, duplicate, or misuse our website assets, code, or marketing materials."
+        },
+        {
+          "heading": "4. Package Licensing & Implementation SLA",
+          "content": "Use of the actual EstateForce Salesforce Managed Package is governed by a separate Master Services Agreement (MSA) and Salesforce AppExchange License Order Form signed between Cloud Certitude and the customer. Implementation timelines, sandbox provisioning, and SLAs are governed by the contractual statement of work."
+        },
+        {
+          "heading": "5. Limitation of Liability and Jurisdiction",
+          "content": "In no event shall Cloud Certitude Solutions Pvt. Ltd. be liable for any indirect, incidental, or consequential damages resulting from your use of this informational website. Any disputes arising out of these terms shall be subject to the exclusive jurisdiction of the competent courts in Gautam Buddha Nagar (Noida), Uttar Pradesh, India."
+        }
+      ]
+    },
+    "cookieNotice": {
+      "title": "Cookie Notice",
+      "slug": "cookie-notice",
+      "lastUpdated": "2026-10-20",
+      "approvedByLegal": true,
+      "summary": "This Cookie Notice explains what cookies and local browser storage are, why we use them, and how you can exercise full control over your preferences.",
+      "sections": [
+        {
+          "heading": "1. What Are Cookies and Local Storage?",
+          "content": "Cookies and browser local storage entries are small data files placed on your device when you visit websites. They help the site recognize your browser, remember your preferences, and maintain seamless state across pages."
+        },
+        {
+          "heading": "2. Categories of Cookies We Use",
+          "content": "Essential Cookies (Always Active): Necessary to enable core navigation, CSRF protection, and keep track of your cookie consent choice. Analytics Cookies (Optional): Anonymously measure page views, popular real estate feature areas, and demo request funnels. Marketing Cookies (Optional): Track engagement with event registrations, whitepaper downloads, and AppExchange referral source parameters."
+        },
+        {
+          "heading": "3. How to Manage Your Cookie Preferences",
+          "content": "You can change or withdraw your consent at any time by clicking the 'Cookie Settings' link in the footer of any page. You may also configure your browser to block or alert you about cookies; however, blocking essential cookies may affect site operation."
+        }
+      ]
+    }
+  },
+  "cookieConsent": {
+    "storyId": "US-27",
+    "enabled": false,
+    "bannerText": "We use essential cookies to make our site work. With your consent, we also use optional analytics and marketing cookies to understand how you interact with our real estate Salesforce package and improve your experience.",
+    "consentDurationMonths": 12,
+    "categories": [
+      {
+        "id": "essential",
+        "name": "Essential Cookies",
+        "description": "Required for core security, page routing, and remembering your cookie choices. These cannot be disabled.",
+        "isRequired": true,
+        "enabledByDefault": true
+      },
+      {
+        "id": "analytics",
+        "name": "Analytics & Performance",
+        "description": "Helps our engineering team measure traffic, popular features, and time spent exploring modules without storing personal identifiers.",
+        "isRequired": false,
+        "enabledByDefault": false
+      },
+      {
+        "id": "marketing",
+        "name": "Marketing & Attribution",
+        "description": "Allows us to track campaign sources, AppExchange referrals, and optimize our webinar and product launch outreach.",
+        "isRequired": false,
+        "enabledByDefault": false
+      }
+    ]
+  },
+  "productTour": {
+    "storyId": "US-28",
+    "video": {
+      "title": "EstateForce in 2 Minutes: Enterprise Real Estate on Salesforce",
+      "durationSeconds": 118,
+      "durationDisplay": "1:58",
+      "poster": "/screenshots/lead-management-preview.svg",
+      "videoUrl": "https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ",
+      "captionsUrl": "/captions/product-tour.vtt",
+      "captionsAvailable": true,
+      "badge": "2-Minute Video Tour"
+    },
+    "tours": [
+      {
+        "area": "Lead",
+        "name": "Lead Management",
+        "description": "Omni-channel ingestion, 5-minute follow-up SLAs, and intelligent broker attribution.",
+        "steps": [
+          {
+            "order": 1,
+            "title": "Portal Lead Ingestion",
+            "screenshot": "/screenshots/lead-management-preview.svg",
+            "hotspot": {
+              "x": 22,
+              "y": 35
+            },
+            "caption": "Leads from 99acres, MagicBricks, Housing, and Google Ads flow directly into Salesforce with zero manual entry."
+          },
+          {
+            "order": 2,
+            "title": "Round-Robin Assignment",
+            "screenshot": "/screenshots/lead-management-preview.svg",
+            "hotspot": {
+              "x": 65,
+              "y": 42
+            },
+            "caption": "Rules instantly distribute prospective buyers to on-duty sales reps based on budget and project location."
+          },
+          {
+            "order": 3,
+            "title": "5-Minute SLA Watchdog",
+            "screenshot": "/screenshots/lead-management-preview.svg",
+            "hotspot": {
+              "x": 78,
+              "y": 25
+            },
+            "caption": "Automated WhatsApp and SMS alerts notify managers if a newly ingested enquiry isn't contacted within 5 minutes."
+          },
+          {
+            "order": 4,
+            "title": "Site Visit Scheduling",
+            "screenshot": "/screenshots/lead-management-preview.svg",
+            "hotspot": {
+              "x": 50,
+              "y": 68
+            },
+            "caption": "One-click appointment confirmation calendar invite with directions and automated client reminders."
+          }
+        ]
+      },
+      {
+        "area": "Sales",
+        "name": "Sales & Pipeline",
+        "description": "Site visit check-in, real-time negotiation logs, and manager visibility.",
+        "steps": [
+          {
+            "order": 1,
+            "title": "Front-Desk Check-in",
+            "screenshot": "/screenshots/sales-management-preview.svg",
+            "hotspot": {
+              "x": 28,
+              "y": 30
+            },
+            "caption": "Front desk scans visitor QR code to log physical arrival and immediately alert assigned sales executive."
+          },
+          {
+            "order": 2,
+            "title": "Interactive Cost Sheet Builder",
+            "screenshot": "/screenshots/sales-management-preview.svg",
+            "hotspot": {
+              "x": 55,
+              "y": 45
+            },
+            "caption": "Generates real-time price calculations including floor rise, PLC, club membership, GST, and stamp duty."
+          },
+          {
+            "order": 3,
+            "title": "Discount Approval Matrix",
+            "screenshot": "/screenshots/sales-management-preview.svg",
+            "hotspot": {
+              "x": 75,
+              "y": 38
+            },
+            "caption": "Rep discounts outside standard margins trigger mobile push approval to Sales Director within seconds."
+          },
+          {
+            "order": 4,
+            "title": "Deal Pipeline Dashboard",
+            "screenshot": "/screenshots/sales-management-preview.svg",
+            "hotspot": {
+              "x": 45,
+              "y": 70
+            },
+            "caption": "Real-time visibility into active negotiations, forecasted closures, and broker attribution."
+          }
+        ]
+      },
+      {
+        "area": "Booking",
+        "name": "Inventory & Booking",
+        "description": "Live floor-by-floor unit matrix, instant 10-minute lock, and digital allotment.",
+        "steps": [
+          {
+            "order": 1,
+            "title": "Live Interactive Inventory Matrix",
+            "screenshot": "/screenshots/booking-management-preview.svg",
+            "hotspot": {
+              "x": 35,
+              "y": 28
+            },
+            "caption": "Color-coded grid across towers: Green = Available, Yellow = On Hold, Red = Booked, Blue = Management Reserve."
+          },
+          {
+            "order": 2,
+            "title": "Instant 15-Minute Hold",
+            "screenshot": "/screenshots/booking-management-preview.svg",
+            "hotspot": {
+              "x": 58,
+              "y": 48
+            },
+            "caption": "Locks the unit across all sales reps simultaneously to eliminate duplicate bookings or double-commitments."
+          },
+          {
+            "order": 3,
+            "title": "Payment Gateway Token Capture",
+            "screenshot": "/screenshots/booking-management-preview.svg",
+            "hotspot": {
+              "x": 72,
+              "y": 62
+            },
+            "caption": "Integrated Razorpay/Stripe token collection creates a verified Salesforce receipt and allots the unit."
+          },
+          {
+            "order": 4,
+            "title": "RERA Milestone Demand Letter",
+            "screenshot": "/screenshots/booking-management-preview.svg",
+            "hotspot": {
+              "x": 48,
+              "y": 75
+            },
+            "caption": "Construction stage completion triggers automated demand letters, payment reminders, and customer portal update."
+          }
+        ]
+      }
+    ]
+  },
+  "eventsPage": {
+    "storyId": "US-29",
+    "headline": "Real Estate CRM Webinars, Masterclasses & Roundtables",
+    "subheadline": "Learn how leading builders and property developers use Salesforce to automate lead ingestion, unit allocations, and RERA demand notices.",
+    "freeTrial": {
+      "title": "Request a 14-Day Full-Feature Sandbox Trial",
+      "description": "Experience EstateForce directly in a pre-configured Salesforce Developer Sandbox provisioned with real estate sample towers, unit inventory matrix, and booking automation.",
+      "turnaroundTime": "Sandbox credentials provisioned within 2 business hours.",
+      "benefits": [
+        "100% Native on Salesforce — No external servers or API sync needed",
+        "Pre-loaded with sample high-rise projects, units, and lead sources",
+        "Full access to interactive floor matrices and cost sheet builders",
+        "Complimentary 30-minute sandbox onboarding with a certified Salesforce ISV architect"
+      ],
+      "orgTypes": [
+        "Production Salesforce Org",
+        "Sandbox / Developer Org",
+        "No Salesforce yet (We provision a test org for you)"
+      ]
+    },
+    "upcomingEvents": [
+      {
+        "id": "event-1",
+        "title": "Next-Gen PropTech: Scaling Real Estate Closings 3x on Salesforce",
+        "dateTimeDisplay": "Thursday, Nov 12, 2026 · 3:00 PM – 4:00 PM IST",
+        "dateIso": "2026-11-12T15:00:00+05:30",
+        "format": "Webinar",
+        "capacity": 200,
+        "registeredCount": 142,
+        "speakers": [
+          {
+            "name": "Vikram Singhania",
+            "role": "VP Real Estate Solutions, Cloud Certitude"
+          },
+          {
+            "name": "Radhika Kulkarni",
+            "role": "Senior Salesforce Solution Architect"
+          }
+        ],
+        "description": "Join our live deep-dive into eliminating lead leakage across portal aggregators, enforcing 5-minute sales response SLAs, and locking inventory in real-time.",
+        "agenda": [
+          "Multi-channel ingestion from 99acres, MagicBricks, and Facebook Lead Ads",
+          "Setting up round-robin allocation rules for on-site sales teams",
+          "Building dynamic cost sheets with automated PLC and GST calculations",
+          "Live Q&A with Salesforce ISV architects"
+        ]
+      },
+      {
+        "id": "event-2",
+        "title": "Live Masterclass: Tower Inventory Management & Digital Allotment",
+        "dateTimeDisplay": "Thursday, Nov 26, 2026 · 4:00 PM – 5:00 PM IST",
+        "dateIso": "2026-11-26T16:00:00+05:30",
+        "format": "Webinar",
+        "capacity": 150,
+        "registeredCount": 98,
+        "speakers": [
+          {
+            "name": "Anand Nair",
+            "role": "Principal Consultant, Real Estate Practice"
+          }
+        ],
+        "description": "Discover how top Indian developers eliminate double bookings during high-demand project launches using our real-time unit locking matrix.",
+        "agenda": [
+          "Configuring multi-tower high-rise and villa floor plans",
+          "Unit hold timers and automated release mechanisms",
+          "Token payment gateway integration with Salesforce receipts"
+        ]
+      },
+      {
+        "id": "event-3",
+        "title": "Delhi NCR Real Estate Leadership Roundtable 2026",
+        "dateTimeDisplay": "Thursday, Dec 10, 2026 · 10:00 AM – 2:00 PM IST",
+        "dateIso": "2026-12-10T10:00:00+05:30",
+        "format": "In-person",
+        "location": "The Leela Palace, Chanakyapuri, New Delhi, India",
+        "capacity": 50,
+        "registeredCount": 38,
+        "speakers": [
+          {
+            "name": "Cloud Certitude Executive Leadership Team"
+          }
+        ],
+        "description": "An exclusive in-person executive gathering of Chief Commercial Officers and Sales Directors discussing the future of AI-driven real estate operations on Salesforce.",
+        "agenda": [
+          "Keynote: The 2027 Indian Real Estate Technology Outlook",
+          "Customer Panel: How Prestige & DLF Partners Accelerated Cash Flows",
+          "Networking Lunch & Private Demo Suites"
+        ]
+      }
+    ],
+    "pastEvents": [
+      {
+        "id": "past-event-1",
+        "title": "Eliminating Deal Leakage: Modern Sales Pipeline for Builders",
+        "dateDisplay": "October 8, 2026",
+        "format": "Webinar",
+        "attendees": 245,
+        "hasRecording": true,
+        "recordingUrl": "https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ",
+        "summary": "Proven strategies to shorten sales cycles from 45 days to 14 days using automated milestone tracking and instant rep push notifications."
+      },
+      {
+        "id": "past-event-2",
+        "title": "Automating RERA Compliance & Demand Letters on Salesforce",
+        "dateDisplay": "September 18, 2026",
+        "format": "Webinar",
+        "attendees": 189,
+        "hasRecording": true,
+        "recordingUrl": "https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ",
+        "summary": "How to automatically generate and dispatch stage-linked construction demand notices and interest calculations directly from Salesforce."
+      }
+    ]
+  },
+  "comparisonPage": {
+    "storyId": "US-31",
+    "pageTitle": "Compare EstateForce vs Spreadsheets & Legacy CRMs",
+    "headline": "Why Leading Developers Move from Spreadsheets to Native Salesforce",
+    "subtitle": "See how EstateForce compares against manual spreadsheets and disconnected real estate software across critical operational workflows.",
+    "claimsApprovedByBusiness": true,
+    "comparisonColumns": [
+      {
+        "id": "estateforce",
+        "label": "EstateForce (Native Salesforce)",
+        "isPrimary": true
+      },
+      {
+        "id": "spreadsheets",
+        "label": "Excel & Google Sheets",
+        "isPrimary": false
+      },
+      {
+        "id": "legacyCrm",
+        "label": "Legacy / Generic CRMs",
+        "isPrimary": false
+      }
+    ],
+    "criteria": [
+      {
+        "category": "Lead Ingestion & Speed-to-Lead",
+        "name": "Instant Portal & WhatsApp Ingestion",
+        "estateforce": "Instant (< 5 seconds) direct from portals & 99acres/Housing",
+        "spreadsheets": "Manual copy-paste by telecallers daily",
+        "legacyCrm": "15–60 minute webhook delay, frequent sync breaks"
+      },
+      {
+        "category": "Lead Ingestion & Speed-to-Lead",
+        "name": "5-Minute Lead Assignment & SLA Escalation",
+        "estateforce": "Automated round-robin with SMS/WhatsApp alerts & manager escalation",
+        "spreadsheets": "None; leads sit unattended for days",
+        "legacyCrm": "Basic round-robin without real-time WhatsApp triggers"
+      },
+      {
+        "category": "Inventory & Unit Booking",
+        "name": "Real-Time Unit Matrix & Token Hold",
+        "estateforce": "Live floor-plan matrix with 2-hour locking & double-booking prevention",
+        "spreadsheets": "High risk of double-selling units during launch weekends",
+        "legacyCrm": "Separate inventory spreadsheet synced once a day"
+      },
+      {
+        "category": "Sales Execution",
+        "name": "Site-Visit Check-In & Geo-Fencing",
+        "estateforce": "Mobile GPS-verified customer check-in with feedback capture",
+        "spreadsheets": "Paper visitor register with missing contact details",
+        "legacyCrm": "Clunky manual entry after rep returns to office"
+      },
+      {
+        "category": "Finance & Post-Sales",
+        "name": "Milestone Demands & Payment Schedule",
+        "estateforce": "Automated demand letters tied to construction stage completion",
+        "spreadsheets": "Manual calculation prone to late penalty disputes",
+        "legacyCrm": "Requires third-party accounting integration plugin"
+      },
+      {
+        "category": "Channel Partner & CP Management",
+        "name": "Broker Attribution & Commission Tiering",
+        "estateforce": "First-tag lock with transparent broker commission slabs",
+        "spreadsheets": "Constant disputes over who brought the client",
+        "legacyCrm": "Separate CP portal with additional per-broker license fees"
+      },
+      {
+        "category": "Security & Governance",
+        "name": "Data Sovereignty & RERA Audit Trail",
+        "estateforce": "100% inside your Salesforce org; immutable audit trail",
+        "spreadsheets": "Spreadsheets easily downloaded, leaked, or overwritten",
+        "legacyCrm": "Customer data stored on unknown third-party shared servers"
+      },
+      {
+        "category": "Mobile Experience",
+        "name": "Full Mobile Capabilities for Sales Reps",
+        "estateforce": "Native Salesforce Mobile app with offline logging & tap-to-call",
+        "spreadsheets": "Unusable on phone screens; hard to edit on the go",
+        "legacyCrm": "Limited web app requiring constant cellular connection"
+      }
+    ],
+    "closingCta": {
+      "headline": "Ready to modernize your property sales operations?",
+      "subtext": "Join India's leading builders who eliminated spreadsheet leakage and boosted sales velocity.",
+      "buttonText": "Request a 1-on-1 Demo",
+      "buttonLink": "/request-demo"
+    }
+  },
+  "exitIntent": {
+    "storyId": "US-32",
+    "enabled": true,
+    "headline": "Before You Go: Stop Losing 30% of Inbound Real Estate Leads",
+    "subtext": "Get our free 2026 Real Estate Salesforce Blueprint or schedule a 15-minute live sandbox walkthrough with our solution architects.",
+    "offerType": "Demo or Guide",
+    "primaryButtonText": "Schedule 15-Min Demo",
+    "primaryButtonLink": "/request-demo?source=exit_intent",
+    "secondaryButtonText": "Download Architecture Guide (PDF)",
+    "secondaryButtonLink": "/resources",
+    "excludedPaths": [
+      "/request-demo"
+    ]
+  },
+  "seo": {
+    "storyId": "US-37",
+    "siteUrl": "https://estateforce.cloudcertitude.com",
+    "defaultTitle": "EstateForce — #1 Real Estate Package Built on Salesforce",
+    "defaultDescription": "Manage every lead, site visit, unit inventory hold, and booking milestone natively in Salesforce. Zero external databases, 100% data sovereignty.",
+    "defaultKeywords": "real estate CRM, Salesforce real estate package, builder CRM, property booking matrix, RERA Salesforce, lead management real estate",
+    "routes": {
+      "/": {
+        "title": "EstateForce — Real Estate CRM Package Built on Salesforce",
+        "description": "Manage every lead, sale, unit booking, and milestone demand in one place on Salesforce. Built for developers, builders, and brokerages."
+      },
+      "/features": {
+        "title": "Features & Capabilities — EstateForce Salesforce Package",
+        "description": "Explore Lead Management, Sales Pipeline, Booking & Unit Inventory Matrix, and Executive Dashboards built 100% native on Salesforce."
+      },
+      "/benefits": {
+        "title": "Business Benefits & Savings Calculator — EstateForce",
+        "description": "Calculate time saved and deals recovered. Compare before vs after operations for Sales Heads, Executives, Directors, and Salesforce Admins."
+      },
+      "/who-it-is-for": {
+        "title": "Who It Is For — Developers, Builders, Brokerages & Agencies",
+        "description": "Tailored property management and sales solutions for residential builders, commercial developers, and channel partner brokerage firms."
+      },
+      "/how-it-works": {
+        "title": "Deployment Roadmap & Onboarding — EstateForce",
+        "description": "Go live in 14 business days. Plain-language guide to installation, setup, data migration from spreadsheets, user training, and ongoing support."
+      },
+      "/security": {
+        "title": "Security, Salesforce Fit & IT Governance — EstateForce",
+        "description": "100% native Salesforce architecture, zero external databases, Salesforce Shield ready, and downloadable pre-deployment IT checklist."
+      },
+      "/pricing": {
+        "title": "Pricing Plans & Transparent Licensing — EstateForce",
+        "description": "Predictable pricing for Starter, Growth, and Enterprise real estate teams. Request a 14-day Developer Sandbox trial."
+      },
+      "/customers": {
+        "title": "Customer Stories & Case Studies — EstateForce",
+        "description": "Read how leading builders and brokerages boosted sales speed by 70% and eliminated duplicate unit bookings using EstateForce."
+      },
+      "/request-demo": {
+        "title": "Request a Live Demo — EstateForce Real Estate Package",
+        "description": "Book a 1-on-1 personalized sandbox demo with a Salesforce real estate specialist. Fast 5-minute confirmation."
+      },
+      "/compare": {
+        "title": "EstateForce vs Spreadsheets & Legacy Real Estate CRMs",
+        "description": "Detailed feature-by-feature comparison showing why top property developers replace manual spreadsheets with native Salesforce automation."
+      },
+      "/resources": {
+        "title": "Resource Library, Sales Tips & Release Updates — EstateForce",
+        "description": "Articles, property sales guides, whitepapers, and package changelogs for real estate sales leaders."
+      },
+      "/events": {
+        "title": "Events & Webinars — EstateForce Real Estate Series",
+        "description": "Join live masterclasses and product walkthroughs for real estate developers and Salesforce administrators."
+      },
+      "/faq": {
+        "title": "Frequently Asked Questions — EstateForce",
+        "description": "Answers to product, setup, data migration, security, pricing, and Salesforce licensing questions."
+      },
+      "/about": {
+        "title": "About Us & Leadership Team — EstateForce by Cloud Certitude",
+        "description": "Meet the team behind EstateForce. Over a decade of certified Salesforce CRM excellence in real estate technology."
+      },
+      "/contact": {
+        "title": "Contact Us — EstateForce Office & Support",
+        "description": "Get in touch with our solutions team in Noida, India. Phone, email, WhatsApp, and office directions."
+      },
+      "/privacy-policy": {
+        "title": "Privacy Policy — EstateForce",
+        "description": "Official privacy policy explaining data protection, rights under DPDP Act & GDPR, and Salesforce data sovereignty."
+      },
+      "/terms-of-use": {
+        "title": "Terms of Use — EstateForce",
+        "description": "Terms and conditions governing the use of the EstateForce website and package evaluation sandbox."
+      },
+      "/cookie-notice": {
+        "title": "Cookie Notice & Consent — EstateForce",
+        "description": "Information regarding Essential, Analytics, and Marketing cookies used on the EstateForce website."
+      }
+    }
+  },
+  "glossary": {
+    "storyId": "US-35",
+    "terms": [
+      {
+        "term": "Native Salesforce Package",
+        "plainText": "An application built 100% inside Salesforce Lightning. Your data never leaves your Salesforce organization and no external database servers are used."
+      },
+      {
+        "term": "Web-to-Lead",
+        "plainText": "A secure, standard Salesforce feature that connects website forms directly to your Salesforce CRM without requiring custom middle-ware or backend code."
+      },
+      {
+        "term": "Salesforce Shield",
+        "plainText": "Salesforce's premier security layer offering encryption-at-rest, audit logs, and event monitoring for stringent regulatory and financial compliance."
+      },
+      {
+        "term": "Unit Availability Matrix",
+        "plainText": "A real-time visual grid of towers, floors, and flats showing which units are Available, On Hold, Booked, or Registered."
+      },
+      {
+        "term": "Speed-to-Lead SLA",
+        "plainText": "A Service Level Agreement ensuring sales executives contact new portal inquiries within 5 minutes before the lead turns cold."
+      }
+    ]
+  }
+}

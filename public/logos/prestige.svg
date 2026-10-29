@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 40" fill="none">
+  <!-- Falcon/P Symbol -->
+  <path d="M12 28L18 10L24 16L30 8L28 28H12Z" fill="#0F172A"/>
+  <!-- Prestige Typography -->
+  <text x="38" y="22" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="15" font-weight="800" letter-spacing="1" fill="#0F172A">PRESTIGE</text>
+  <text x="39" y="32" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="8" font-weight="600" letter-spacing="1.5" fill="#64748B">GROUP</text>
+</svg>

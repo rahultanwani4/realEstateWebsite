@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 40" fill="none">
+  <!-- DLF Building Symbol -->
+  <path d="M12 28V12L24 6V28H12Z" fill="#1E293B"/>
+  <path d="M26 28V14L34 10V28H26Z" fill="#3B82F6"/>
+  <!-- DLF Typography -->
+  <text x="44" y="26" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="20" font-weight="800" letter-spacing="1.5" fill="#0F172A">DLF</text>
+  <text x="96" y="26" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="10" font-weight="600" letter-spacing="0.5" fill="#64748B">HOMES</text>
+</svg>

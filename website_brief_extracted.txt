@@ -1,0 +1,491 @@
+
+
+Real Estate Salesforce Package – Website Brief
+Prepared by: Vishakha Kumari | Version 1.0
+1. Purpose of This Document
+This brief tells the developer and designer what the website should look like and how
+visitors should experience it. It is written in plain language and does not prescribe
+technology; it describes pages, content, behaviour and the feel of the site.
+The website promotes a Salesforce package built for real estate companies. The
+package helps them manage their leads, sales and bookings in one place. The website has
+one main job: explain the package's features and benefits clearly and persuade visitors
+to request a demo.
+2. About the Package
+The package runs on Salesforce and gives real estate companies a ready-made way to run
+their sales operation. The website presents it through three core areas, plus supporting
+capabilities.
+AreaWhat it helps a real estate
+company do
+What the website should show
+Lead ManagementCapture enquiries from every
+source, assign them to sales
+reps, track follow-ups and site
+visits
+Screenshots of the lead list and
+lead record, a simple lead-journey
+graphic
+Sales ManagementMove prospects through a sales
+pipeline, manage offers and deal
+progress, see who is closing
+what
+Pipeline view, deal stages, sales
+team performance
+Booking
+Management
+Manage availability, hold and
+book units or properties, track
+booking status and payment
+milestones
+Availability and booking screens,
+a booking-journey graphic
+Real Estate Website – Look & Feel Brief for Developers
+Page 1 of 14
+
+The product team supplies the exact feature names and wording (see Section 11). The
+website must make it easy to update them.
+3. Business Goals
+1. Generate demo requests. This is the primary goal, and every page should lead towards
+it.
+2. Build trust and credibility with real estate companies and the Salesforce teams that
+support them.
+3. Explain the features and benefits so a visitor understands the value in under two
+minutes.
+4. Send visitors to the AppExchange listing where relevant.
+5. Give the sales team clean, complete lead information from every demo request.
+How we will measure success: number of demo requests per month, percentage of
+visitors who submit the demo form, time spent on the Features page, visits that come
+from the AppExchange, and how many visitors come back.
+4. Who Will Use the Website
+AreaWhat it helps a real estate
+company do
+What the website should show
+Reports and
+Dashboards
+See leads, sales and bookings at
+a glance for managers and
+owners
+Dashboard screenshots with
+clear, readable numbers
+Built on SalesforceWork on a platform real estate
+teams and IT already trust, with
+access on desktop and mobile
+"Built on Salesforce" message
+and, where permitted,
+AppExchange listing link
+Visitor typeWhat they want to knowWhat they should do
+Real estate developers
+and builders
+Can this manage our leads, unit
+bookings and sales team in one
+place?
+Request a demo
+Real estate brokerages
+and agencies
+Will this help our agents follow
+up faster and close more deals?
+Request a demo
+Real Estate Website – Look & Feel Brief for Developers
+Page 2 of 14
+
+5. Overall Look and Feel
+Style: Modern, clean, professional and trustworthy, in the style of good business
+software. Plenty of white space; not cluttered.
+Mood: Confident, helpful and straightforward. It should feel like a tool that makes a
+sales team's day easier.
+Colours: Use the company brand colours: one primary colour, one bright accent colour
+reserved for the "Request a Demo" button, and neutral greys and white elsewhere. The
+brand colours and logo come from the business team (see Section 11).
+Product screenshots: The product is the hero. Show clean, real screenshots of the
+leads, sales and bookings screens in simple device frames, with sample data that looks
+realistic and contains no real customer information.
+Photos: Real, high-quality images of homes, buildings and real estate sales teams at
+work. Avoid obviously fake stock photos.
+Fonts: One clean, easy-to-read font family for headings and body text. Large headings,
+comfortable body text size.
+Buttons: The main "Request a Demo" button must look the same everywhere, stand
+out from the rest of the page and use the accent colour.
+Icons: Simple, consistent line icons for features and benefits.
+Motion: Light, subtle animations only (gentle fade-ins, hover effects). Nothing that
+slows the page or distracts.
+Salesforce name and logo: Use of the Salesforce name, logo or AppExchange badge
+must follow Salesforce's brand guidelines.
+Visitor typeWhat they want to knowWhat they should do
+Sales heads and
+managers
+How do I see my pipeline, team
+performance and bookings?
+Request a demo
+Owners and directorsWhat is the business benefit,
+cost and risk?
+Request a demo or contact
+sales
+Salesforce admins and
+IT teams
+Does it fit our Salesforce setup,
+how is it installed, and is it
+secure?
+Read the technical overview,
+then request a demo
+Salesforce consultants
+and partners
+Can I recommend or implement
+this for my clients?
+Contact sales
+Real Estate Website – Look & Feel Brief for Developers
+Page 3 of 14
+
+6. Site Map (Pages and How They Connect)
+1. Home
+2. Features (with a section each for Lead, Sales and Booking Management, and Reports)
+3. Benefits
+4. Who It Is For
+5. How It Works
+6. Security and Salesforce Fit
+7. Pricing (or "Contact us for pricing")
+8. Customer Stories
+9. Request a Demo (the key page)
+10. Resources (blog, guides, release updates)
+11. FAQ
+12. About Us
+13. Contact Us
+14. Legal pages: Privacy Policy, Terms of Use, Cookie Notice
+7. Elements on Every Page
+7.1 Header (top of page)
+Company and product logo on the left (clicking it returns to Home).
+Menu: Features, Benefits, Who It Is For, How It Works, Customers, Resources, About,
+Contact.
+A prominent "Request a Demo" button on the right.
+The header stays visible when scrolling so the demo button is always reachable.
+On mobile, the menu collapses into a simple menu icon, and the demo button stays
+visible.
+7.2 Footer (bottom of page)
+Logo and a one-line description of the package.
+Quick links to all main pages and the AppExchange listing.
+Contact details: email, phone, office address.
+Social media icons.
+Real Estate Website – Look & Feel Brief for Developers
+Page 4 of 14
+
+Legal links and copyright.
+A smaller "Request a Demo" prompt.
+7.3 Floating help
+A small chat or WhatsApp button at the bottom-right corner so visitors can ask a quick
+question.
+8. Page-by-Page Description
+8.1 Home Page
+Goal: Make a strong first impression and send visitors to the demo form.
+Sections from top to bottom:
+1. Hero banner: A big headline stating the main promise (for example, "Manage every
+lead, sale and booking in one place, on Salesforce"), a short supporting sentence, and
+two buttons: Request a Demo (main) and See Features (secondary). Beside or behind
+the text, a large product screenshot or a short product video.
+2. Trust strip: Logos of customers or partners, a "Built on Salesforce" mark, and a link to
+the AppExchange listing. Headline numbers may be added once the business team
+provides them.
+3. Three core areas: Three large cards for Lead Management, Sales Management and
+Booking Management, each with an icon, a one-line description and a screenshot. Each
+card links to its section of the Features page.
+4. Benefits section: Three or four big benefits (for example, never lose a lead, close deals
+faster, see every booking at a glance), with a simple picture for each.
+5. From enquiry to booking: A simple visual that follows one customer through the
+package: enquiry arrives, sales rep follows up, deal progresses, unit is booked.
+6. How it works: A simple four-step visual (for example, 1. Book a demo, 2. We set it up for
+your team, 3. Your team is trained, 4. Go live).
+7. Testimonials: Two or three customer quotes with name, photo and company.
+8. Final call to action: A colourful band with a short message and the Request a Demo
+button.
+Real Estate Website – Look & Feel Brief for Developers
+Page 5 of 14
+
+8.2 Features Page
+Goal: Show exactly what the package can do, in the order a real estate sales team works.
+A short introduction at the top.
+One clear section for each area: Lead Management, Sales Management, Booking
+Management, and Reports and Dashboards.
+For each feature: an icon or screenshot, a short title, a two-to-three line description,
+and a "what this means for you" sentence.
+A sticky side menu or tabs so visitors can jump between the areas.
+A "Works on Salesforce" section covering mobile access and how the package fits with
+the rest of a company's Salesforce.
+A Request a Demo button after every area.
+8.3 Benefits Page
+Goal: Explain the value in business terms, not product terms.
+Organise by role (sales head, sales executive, owner or director, Salesforce admin).
+Each benefit has a bold headline, a short explanation and, where possible, a number or
+proof (for example, "Faster lead response"). Figures come from the business team.
+A simple "Before vs After" comparison showing life with spreadsheets and scattered
+tools against life with the package.
+A savings calculator where the visitor enters a few numbers (sales team size, leads per
+month) and sees an estimate of time saved and deals recovered.
+8.4 Who It Is For Page
+Short sections for real estate developers and builders, brokerages and agencies, and
+sales and management teams.
+Each section describes the typical daily challenge and how the package solves it, with
+a matching screenshot and a Request a Demo button.
+8.5 How It Works Page
+A visual step-by-step journey from "Request a demo" to "Go live".
+Estimated time for each step.
+Short explanation of installation, set-up, training, data migration from spreadsheets or
+other tools, and ongoing support.
+Real Estate Website – Look & Feel Brief for Developers
+Page 6 of 14
+
+Call to action: Request a Demo.
+8.6 Security and Salesforce Fit Page
+This page is mainly for Salesforce admins and IT teams.
+Plain-language explanation of how the package works with a company's Salesforce,
+and where the data is kept.
+How access is controlled and how data is protected.
+Which Salesforce editions the package works with and how it is installed.
+Link to the AppExchange listing and to support or documentation.
+A short checklist for IT teams, and a contact option for technical questions.
+8.7 Pricing Page
+Either two to three plan cards (name, who it is for, key features, price or "Contact us")
+or a message saying pricing depends on team size and a demo will clarify it.
+A comparison table of what is included in each plan.
+A short list of pricing questions and answers.
+8.8 Customer Stories
+Cards with customer photo, company, quote and one key result.
+Click a card to read a full short case study (problem, solution, result).
+Optional customer video.
+8.9 Request a Demo Page (Most Important Page)
+Goal: Make requesting a demo quick, easy and reassuring.
+Layout: Two columns on desktop (stacked on mobile). Left: headline, three or four bullet
+points on what the visitor will get from the demo, a testimonial and trust logos. Right: the
+form.
+Form fields (keep it short; fewer fields means more submissions):
+FieldRequired?Notes
+Full nameYes
+Work emailYesMust check the format is valid
+Real Estate Website – Look & Feel Brief for Developers
+Page 7 of 14
+
+Behaviour:
+Clear error messages next to any field that has a problem, in friendly wording.
+A spam protection step that does not annoy real visitors (for example, an invisible
+check).
+After submitting, show a thank-you message ("Thanks! We'll contact you within one
+business day.") with what happens next.
+The visitor receives a confirmation email; the sales team receives an instant
+notification with all the details.
+Each demo request should be saved automatically as a lead in the company's own
+Salesforce, so the sales team can follow up straight away.
+Let the visitor pick a slot directly from the sales team's calendar and receive a calendar
+invite.
+Option to choose "online demo" or "in-person demo".
+FieldRequired?Notes
+Phone numberYesInclude country code selector
+Company nameYes
+Job title / roleOptional
+Type of companyOptionalDropdown: developer or builder, brokerage
+or agency, other
+Number of sales team membersOptionalDropdown: 1–10, 11–50, 51–200, 200+
+Do you use Salesforce today?OptionalDropdown: Yes, No, Evaluating
+What are you most interested
+in?
+OptionalTick boxes: Lead Management, Sales
+Management, Booking Management,
+Reports and Dashboards
+Preferred date and time for the
+demo
+OptionalDate picker and time slot
+Anything else you'd like us to
+know?
+OptionalShort text box
+Consent to be contactedYesTick box linked to Privacy Policy
+Real Estate Website – Look & Feel Brief for Developers
+Page 8 of 14
+
+8.10 Resources
+Articles, guides, real estate sales tips, release updates and downloadable checklists or
+brochures.
+Visitors can download a guide by entering their email, which creates a lead.
+Easy sharing to social media and a newsletter signup box.
+8.11 FAQ Page
+Questions grouped by topic (product, Salesforce requirements, set-up, data migration,
+pricing, security, support).
+Click-to-expand answers and a search box at the top.
+"Still have questions? Request a demo or contact us" at the bottom.
+8.12 About Us Page
+Company story, mission and values.
+Photos and short bios of the leadership team.
+Company milestones or timeline.
+Awards, certifications, Salesforce partner status or media mentions.
+Careers link.
+8.13 Contact Us Page
+Simple contact form (name, email, phone, message, topic).
+Email, phone, WhatsApp and office address(es).
+Embedded map showing the office location.
+Business hours.
+Links to social media.
+8.14 Legal Pages
+Privacy Policy, Terms of Use and Cookie Notice, linked from the footer and from the
+forms.
+Cookie consent banner on first visit.
+Real Estate Website – Look & Feel Brief for Developers
+Page 9 of 14
+
+9. Extra Features That Add Value
+These features go beyond the core requirements and are recommended to strengthen
+the site.
+#FeatureWhy it helpsPriority
+1Product video or animated
+walkthrough on Home and Features
+Shows the package quickly; people
+understand faster than by reading
+High
+2Interactive product tour (click-
+through screenshots of leads, sales
+and bookings)
+Lets visitors "try" the package
+before the demo
+High
+3Online demo booking with the sales
+team's calendar
+Removes back-and-forth emails;
+more demos booked
+High
+4Automatic confirmation and
+reminder emails
+Reduces no-showsHigh
+5Demo requests saved automatically
+as leads in the company's
+Salesforce
+No manual copying; faster follow-
+up
+High
+6Customer testimonials and case
+studies
+Builds trustHigh
+7Live chat or WhatsApp buttonCaptures visitors who are not
+ready for a demo
+High
+8AppExchange listing link, badge and
+reviews
+Adds third-party proof and sends
+visitors to install
+High
+9Savings calculatorTurns benefits into numbersMedium
+10Free trial or sandbox request optionLets interested companies test the
+package
+Medium
+11Downloadable brochure (with email
+capture)
+Collects leads who are not ready
+to book
+Medium
+12Release updates page (what's new
+in the package)
+Shows the product is actively
+improved
+Medium
+13Customer login or support link in
+the header
+Existing customers can find help
+quickly
+Medium
+Real Estate Website – Look & Feel Brief for Developers
+Page 10 of 14
+
+10. Experience Requirements
+10.1 Mobile and Tablet
+Many visitors will use phones, so the site must look and work well on mobile, tablet and
+desktop.
+Buttons and links must be big enough to tap easily.
+Forms must be easy to fill on a phone (right keyboard for email, phone and so on).
+Product screenshots must stay readable on small screens.
+10.2 Speed
+Pages should feel quick to open. Images and videos must be sized and compressed
+properly.
+Show a simple loading indicator if something takes time.
+10.3 Easy to Use and Accessible
+Text must have enough contrast against the background and be readable by people
+with low vision.
+All images need descriptions for screen readers.
+The site must be usable with a keyboard only.
+Clear, jargon-free wording; explain Salesforce terms where they appear.
+Visitors should reach the demo form within one or two clicks from any page.
+#FeatureWhy it helpsPriority
+14Webinar and event sign-upBuilds a pipeline of warm leadsMedium
+15Newsletter signupKeeps prospects engagedMedium
+16Multi-language supportReaches more customersMedium
+17Comparison page (package vs.
+spreadsheets or other tools)
+Helps decision makersLow
+18Exit-intent pop-up offering the
+demo or a guide
+Recovers visitors who are about to
+leave
+Low
+Real Estate Website – Look & Feel Brief for Developers
+Page 11 of 14
+
+10.4 Trust and Security
+Secure connection (padlock) on all pages.
+Privacy policy and consent visible near every form.
+Personal data from forms stored safely and visible only to authorised staff.
+10.5 Findability (Search Engines)
+Each page should have its own clear title and short description for Google.
+Clean, readable page addresses (for example, /features).
+Content written so that people searching for real estate CRM, lead management or
+booking management on Salesforce can find the site.
+10.6 Tracking and Reporting
+Track page visits, button clicks, demo form submissions and visits from the
+AppExchange so the business can see what is working.
+Show a simple report of demo requests per week and month to the business team.
+10.7 Easy Content Updates
+The business team should be able to change text, screenshots, testimonials, resources
+and FAQs themselves without calling a developer.
+Demo requests should be viewable in a simple list that can be exported to Excel.
+11. Content Needed From the Business Team
+The developer cannot start the final design without these:
+Product name, company logo and brand colours
+Final list of package features with short descriptions, grouped by Lead, Sales and
+Booking Management and Reports
+Screenshots or a demo video of the package, using sample data
+List of benefits and any proof points (numbers, results)
+AppExchange listing link and any ratings or badges that can be shown
+Supported Salesforce editions, installation steps and security wording
+Customer logos, testimonials and case studies (with permission)
+Team photos and company story
+Real Estate Website – Look & Feel Brief for Developers
+Page 12 of 14
+
+Contact details and office address
+Privacy Policy and Terms text (from the legal team)
+Pricing information (or the decision not to show it)
+Tone of voice guidance (formal or friendly)
+12. Out of Scope for Version 1
+Public property search or listings for buyers and renters (this website promotes the
+package only)
+Customer login area or self-service portal
+Online payments or online purchase of the package
+Changes to the Salesforce package itself
+Any of these can be added in a later phase.
+13. Acceptance Checklist (How We Know It Is Done)
+All pages in Section 6 are built and linked in the menu and footer.
+"Request a Demo" button is visible on every page and works.
+Demo form validates entries, shows the thank-you message, sends the confirmation
+email to the visitor and a notification to the sales team.
+Product screenshots for Lead, Sales and Booking Management are shown on the Home
+and Features pages.
+Site looks correct and is easy to use on phone, tablet and desktop.
+Pages open quickly and images are clear.
+Brand colours, logo and fonts are applied consistently.
+Salesforce and AppExchange names, logos and badges follow Salesforce's brand
+guidelines.
+Content can be edited by the business team without a developer.
+Cookie banner, Privacy Policy and Terms are in place.
+Tracking of visits and demo requests is working.
+Business team has reviewed and signed off on every page.
+Real Estate Website – Look & Feel Brief for Developers
+Page 13 of 14
+
+14. Document Approval
+RoleNameDateSign-off
+Business Analyst
+Product Owner / Business Sponsor
+Designer
+Developer
+Real Estate Website – Look & Feel Brief for Developers
+Page 14 of 14

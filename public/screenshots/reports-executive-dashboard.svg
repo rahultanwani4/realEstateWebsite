@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 380" width="100%" height="100%">
+  <rect width="720" height="380" rx="12" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5"/>
+
+  <!-- Top Bar -->
+  <path d="M0 12 Q0 0 12 0 L708 0 Q720 0 720 12 L720 36 L0 36 Z" fill="#F8FAFC"/>
+  <line x1="0" y1="36" x2="720" y2="36" stroke="#E2E8F0"/>
+  <circle cx="20" cy="18" r="4.5" fill="#EF4444"/>
+  <circle cx="36" cy="18" r="4.5" fill="#F59E0B"/>
+  <circle cx="52" cy="18" r="4.5" fill="#10B981"/>
+  <rect x="74" y="9" width="310" height="18" rx="4" fill="#FFFFFF" stroke="#E2E8F0"/>
+  <text x="86" y="22" font-family="system-ui, sans-serif" font-size="10.5" fill="#64748B">estateforce.lightning.force.com/analytics/executive-kpi-cockpit</text>
+  <rect x="580" y="9" width="124" height="18" rx="9" fill="#EFF6FF"/>
+  <text x="592" y="22" font-family="system-ui, sans-serif" font-size="10" fill="#2563EB" font-weight="700">● Live Tableau CRM</text>
+
+  <!-- Dashboard Top Header Strip -->
+  <g transform="translate(20, 48)">
+    <text x="0" y="20" font-family="system-ui, sans-serif" font-size="15" fill="#0F172A" font-weight="800">Executive Real Estate Revenue &amp; Absorption Cockpit</text>
+    <text x="0" y="36" font-family="system-ui, sans-serif" font-size="10.5" fill="#64748B">Consolidated sales metrics across 4 active residential &amp; plotted township phases</text>
+  </g>
+
+  <!-- 4 KPI Summary Cards -->
+  <g transform="translate(20, 96)">
+    <!-- KPI 1 -->
+    <rect width="160" height="74" rx="8" fill="#F8FAFC" stroke="#E2E8F0"/>
+    <text x="14" y="22" font-family="system-ui, sans-serif" font-size="9.5" fill="#64748B" font-weight="700">BOOKED GMV (MTD)</text>
+    <text x="14" y="48" font-family="system-ui, sans-serif" font-size="19" fill="#0F172A" font-weight="800">₹48.60 Cr</text>
+    <text x="14" y="64" font-family="system-ui, sans-serif" font-size="8.5" fill="#16A34A" font-weight="700">▲ +24% vs last month</text>
+
+    <!-- KPI 2 -->
+    <rect x="174" width="160" height="74" rx="8" fill="#F8FAFC" stroke="#E2E8F0"/>
+    <text x="188" y="22" font-family="system-ui, sans-serif" font-size="9.5" fill="#64748B" font-weight="700">UNITS BOOKED</text>
+    <text x="188" y="48" font-family="system-ui, sans-serif" font-size="19" fill="#2563EB" font-weight="800">32 Units</text>
+    <text x="188" y="64" font-family="system-ui, sans-serif" font-size="8.5" fill="#2563EB" font-weight="700">82% Tower B Absorption</text>
+
+    <!-- KPI 3 -->
+    <rect x="348" width="160" height="74" rx="8" fill="#F8FAFC" stroke="#E2E8F0"/>
+    <text x="362" y="22" font-family="system-ui, sans-serif" font-size="9.5" fill="#64748B" font-weight="700">AVG RESPONSE TIME</text>
+    <text x="362" y="48" font-family="system-ui, sans-serif" font-size="19" fill="#0F172A" font-weight="800">4m 12s</text>
+    <text x="362" y="64" font-family="system-ui, sans-serif" font-size="8.5" fill="#16A34A" font-weight="700">✓ 99.4% SLA Adherence</text>
+
+    <!-- KPI 4 -->
+    <rect x="522" width="158" height="74" rx="8" fill="#F0FDF4" stroke="#BBF7D0"/>
+    <text x="536" y="22" font-family="system-ui, sans-serif" font-size="9.5" fill="#166534" font-weight="700">COLLECTIONS (MTD)</text>
+    <text x="536" y="48" font-family="system-ui, sans-serif" font-size="19" fill="#15803D" font-weight="800">₹24.15 Cr</text>
+    <text x="536" y="64" font-family="system-ui, sans-serif" font-size="8.5" fill="#166534" font-weight="700">✓ 96% on-time milestone</text>
+  </g>
+
+  <!-- Lower Section: 2 Charts -->
+  <!-- Left Chart: Lead Source Conversion Bar Chart -->
+  <g transform="translate(20, 184)">
+    <rect width="334" height="180" rx="8" fill="#FFFFFF" stroke="#E2E8F0"/>
+    <rect width="334" height="28" rx="8" fill="#F8FAFC"/>
+    <text x="14" y="19" font-family="system-ui, sans-serif" font-size="11" fill="#0F172A" font-weight="700">Lead Source ROI &amp; Conversion Velocity</text>
+    
+    <!-- MagicBricks -->
+    <text x="14" y="54" font-family="system-ui, sans-serif" font-size="10" fill="#475569">MagicBricks (₹14.2 Cr)</text>
+    <rect x="14" y="60" width="220" height="16" rx="3" fill="#2563EB"/>
+    <text x="240" y="73" font-family="system-ui, sans-serif" font-size="10" fill="#2563EB" font-weight="700">68% Visit Turnout</text>
+
+    <!-- 99acres -->
+    <text x="14" y="94" font-family="system-ui, sans-serif" font-size="10" fill="#475569">99acres (₹11.8 Cr)</text>
+    <rect x="14" y="100" width="180" height="16" rx="3" fill="#3B82F6"/>
+    <text x="200" y="113" font-family="system-ui, sans-serif" font-size="10" fill="#3B82F6" font-weight="700">54% Visit Turnout</text>
+
+    <!-- Digital Google Ads -->
+    <text x="14" y="134" font-family="system-ui, sans-serif" font-size="10" fill="#475569">Google Ads (₹16.5 Cr)</text>
+    <rect x="14" y="140" width="260" height="16" rx="3" fill="#1D4ED8"/>
+    <text x="280" y="153" font-family="system-ui, sans-serif" font-size="10" fill="#1D4ED8" font-weight="700">72%</text>
+  </g>
+
+  <!-- Right Chart: Sales Rep Leaderboard -->
+  <g transform="translate(366, 184)">
+    <rect width="334" height="180" rx="8" fill="#FFFFFF" stroke="#E2E8F0"/>
+    <rect width="334" height="28" rx="8" fill="#F8FAFC"/>
+    <text x="14" y="19" font-family="system-ui, sans-serif" font-size="11" fill="#0F172A" font-weight="700">Rep Deal Closing Leaderboard (Q3)</text>
+
+    <!-- Rep 1 -->
+    <circle cx="26" cy="56" r="10" fill="#EFF6FF"/>
+    <text x="22" y="60" font-family="system-ui, sans-serif" font-size="10" fill="#2563EB" font-weight="800">1</text>
+    <text x="44" y="54" font-family="system-ui, sans-serif" font-size="10.5" fill="#0F172A" font-weight="700">Priya Mehta</text>
+    <text x="44" y="66" font-family="system-ui, sans-serif" font-size="8.5" fill="#64748B">14 Units Booked • ₹22.4 Cr</text>
+    <rect x="240" y="46" width="76" height="20" rx="4" fill="#ECFDF5"/>
+    <text x="248" y="60" font-family="system-ui, sans-serif" font-size="9" fill="#065F46" font-weight="700">138% Target</text>
+
+    <!-- Rep 2 -->
+    <circle cx="26" cy="96" r="10" fill="#F8FAFC"/>
+    <text x="22" y="100" font-family="system-ui, sans-serif" font-size="10" fill="#64748B" font-weight="800">2</text>
+    <text x="44" y="94" font-family="system-ui, sans-serif" font-size="10.5" fill="#0F172A" font-weight="700">Rahul Verma</text>
+    <text x="44" y="106" font-family="system-ui, sans-serif" font-size="8.5" fill="#64748B">11 Units Booked • ₹16.8 Cr</text>
+    <rect x="240" y="86" width="76" height="20" rx="4" fill="#EFF6FF"/>
+    <text x="248" y="100" font-family="system-ui, sans-serif" font-size="9" fill="#1E40AF" font-weight="700">112% Target</text>
+
+    <!-- Rep 3 -->
+    <circle cx="26" cy="136" r="10" fill="#F8FAFC"/>
+    <text x="22" y="140" font-family="system-ui, sans-serif" font-size="10" fill="#64748B" font-weight="800">3</text>
+    <text x="44" y="134" font-family="system-ui, sans-serif" font-size="10.5" fill="#0F172A" font-weight="700">Karan Singh</text>
+    <text x="44" y="146" font-family="system-ui, sans-serif" font-size="8.5" fill="#64748B">7 Units Booked • ₹9.4 Cr</text>
+    <rect x="240" y="126" width="76" height="20" rx="4" fill="#F1F5F9"/>
+    <text x="252" y="140" font-family="system-ui, sans-serif" font-size="9" fill="#475569" font-weight="700">94% Target</text>
+  </g>
+</svg>

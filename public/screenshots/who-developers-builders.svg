@@ -1,0 +1,148 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 440" width="100%" height="100%">
+  <defs>
+    <linearGradient id="headerGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E293B"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+    <filter id="cardShadow1" x="-4%" y="-4%" width="108%" height="112%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#0F172A" flood-opacity="0.06"/>
+    </filter>
+  </defs>
+
+  <!-- Frame Background -->
+  <rect width="720" height="440" rx="12" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5"/>
+
+  <!-- Top Window Bar -->
+  <path d="M0 12 Q0 0 12 0 L708 0 Q720 0 720 12 L720 36 L0 36 Z" fill="#F8FAFC"/>
+  <line x1="0" y1="36" x2="720" y2="36" stroke="#E2E8F0"/>
+  <circle cx="20" cy="18" r="4.5" fill="#EF4444"/>
+  <circle cx="36" cy="18" r="4.5" fill="#F59E0B"/>
+  <circle cx="52" cy="18" r="4.5" fill="#10B981"/>
+  <rect x="74" y="9" width="340" height="18" rx="4" fill="#FFFFFF" stroke="#E2E8F0"/>
+  <text x="86" y="22" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="10.5" fill="#64748B">estateforce.lightning.force.com/projects/greenfield-towers/matrix</text>
+  <rect x="580" y="9" width="124" height="18" rx="9" fill="#EFF6FF"/>
+  <text x="592" y="22" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="10" fill="#2563EB" font-weight="700">Multi-Tower View</text>
+
+  <!-- Project Header Banner -->
+  <g transform="translate(20, 48)">
+    <rect width="680" height="52" rx="8" fill="url(#headerGrad1)"/>
+    <text x="16" y="22" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="13" fill="#FFFFFF" font-weight="800">Greenfield Township Development — 4 Towers (560 Units)</text>
+    <text x="16" y="38" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="10.5" fill="#94A3B8">Phase 1 &amp; 2 Active • Booked GMV: ₹412 Cr • Absorption Rate: 78.4% • CLP Milestones Active</text>
+    <rect x="572" y="14" width="92" height="24" rx="4" fill="#2563EB"/>
+    <text x="584" y="30" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="10.5" fill="#FFFFFF" font-weight="700">Live Status</text>
+  </g>
+
+  <!-- Left: Multi-Tower Visual Matrix -->
+  <g transform="translate(20, 112)">
+    <rect width="390" height="308" rx="8" fill="#FFFFFF" stroke="#E2E8F0" filter="url(#cardShadow1)"/>
+    <rect width="390" height="28" rx="8" fill="#F8FAFC"/>
+    <text x="14" y="19" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="11" fill="#0F172A" font-weight="800">Tower B — Floor-Level Unit Availability</text>
+    
+    <!-- Legend Bar -->
+    <g transform="translate(14, 38)">
+      <circle cx="4" cy="6" r="3.5" fill="#10B981"/>
+      <text x="12" y="9" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="9" fill="#334155">Available (24)</text>
+
+      <circle cx="85" cy="6" r="3.5" fill="#F59E0B"/>
+      <text x="93" y="9" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="9" fill="#334155">Hold Lock (6)</text>
+
+      <circle cx="165" cy="6" r="3.5" fill="#EF4444"/>
+      <text x="173" y="9" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="9" fill="#334155">Booked (112)</text>
+
+      <circle cx="245" cy="6" r="3.5" fill="#64748B"/>
+      <text x="253" y="9" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="9" fill="#334155">Blocked (8)</text>
+    </g>
+
+    <!-- Floor Matrix Grid -->
+    <!-- Floor 14 -->
+    <text x="14" y="78" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="10" fill="#64748B" font-weight="700">Fl 14</text>
+    <rect x="46" y="66" width="76" height="24" rx="4" fill="#FEF3C7" stroke="#F59E0B" stroke-width="1.2"/>
+    <text x="54" y="82" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="9.5" fill="#B45309" font-weight="700">B-1401 [HOLD]</text>
+
+    <rect x="130" y="66" width="76" height="24" rx="4" fill="#ECFDF5" stroke="#10B981" stroke-width="1.2"/>
+    <text x="138" y="82" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="9.5" fill="#047857" font-weight="700">B-1402 [3BHK]</text>
+
+    <rect x="214" y="66" width="76" height="24" rx="4" fill="#FEE2E2" stroke="#EF4444" stroke-width="1.2"/>
+    <text x="222" y="82" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="9.5" fill="#B91C1C" font-weight="700">B-1403 [SOLD]</text>
+
+    <rect x="298" y="66" width="76" height="24" rx="4" fill="#FEE2E2" stroke="#EF4444" stroke-width="1.2"/>
+    <text x="306" y="82" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="9.5" fill="#B91C1C" font-weight="700">B-1404 [SOLD]</text>
+
+    <!-- Floor 12 -->
+    <text x="14" y="112" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="10" fill="#64748B" font-weight="700">Fl 12</text>
+    <rect x="46" y="100" width="76" height="24" rx="4" fill="#FEE2E2" stroke="#EF4444" stroke-width="1.2"/>
+    <text x="54" y="116" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="9.5" fill="#B91C1C" font-weight="700">B-1201 [SOLD]</text>
+
+    <rect x="130" y="100" width="76" height="24" rx="4" fill="#FEE2E2" stroke="#EF4444" stroke-width="1.2"/>
+    <text x="138" y="116" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="9.5" fill="#B91C1C" font-weight="700">B-1202 [SOLD]</text>
+
+    <rect x="214" y="100" width="76" height="24" rx="4" fill="#ECFDF5" stroke="#10B981" stroke-width="1.2"/>
+    <text x="222" y="116" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="9.5" fill="#047857" font-weight="700">B-1203 [4BHK]</text>
+
+    <rect x="298" y="100" width="76" height="24" rx="4" fill="#ECFDF5" stroke="#10B981" stroke-width="1.2"/>
+    <text x="306" y="116" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="9.5" fill="#047857" font-weight="700">B-1204 [3BHK]</text>
+
+    <!-- Floor 10 -->
+    <text x="14" y="146" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="10" fill="#64748B" font-weight="700">Fl 10</text>
+    <rect x="46" y="134" width="76" height="24" rx="4" fill="#FEF3C7" stroke="#F59E0B" stroke-width="1.2"/>
+    <text x="54" y="150" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="9.5" fill="#B45309" font-weight="700">B-1001 [HOLD]</text>
+
+    <rect x="130" y="134" width="76" height="24" rx="4" fill="#FEE2E2" stroke="#EF4444" stroke-width="1.2"/>
+    <text x="138" y="150" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="9.5" fill="#B91C1C" font-weight="700">B-1002 [SOLD]</text>
+
+    <rect x="214" y="134" width="76" height="24" rx="4" fill="#FEE2E2" stroke="#EF4444" stroke-width="1.2"/>
+    <text x="222" y="150" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="9.5" fill="#B91C1C" font-weight="700">B-1003 [SOLD]</text>
+
+    <rect x="298" y="134" width="76" height="24" rx="4" fill="#F1F5F9" stroke="#94A3B8" stroke-width="1.2"/>
+    <text x="306" y="150" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="9.5" fill="#475569" font-weight="700">B-1004 [REF]</text>
+
+    <!-- Live Lock Banner -->
+    <g transform="translate(14, 180)">
+      <rect width="360" height="114" rx="6" fill="#EFF6FF" stroke="#BFDBFE"/>
+      <text x="12" y="20" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="10.5" fill="#1D4ED8" font-weight="800">🔒 Active 60-Minute Holding Lock</text>
+      <text x="12" y="38" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="9.5" fill="#334155">Unit B-1401 locked by Rep: Rohan Mehta for Buyer: S. Singhania.</text>
+      <text x="12" y="54" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="9.5" fill="#334155">Remaining Lock Timer: 42 mins 18 secs • Double-selling blocked.</text>
+      <rect x="12" y="70" width="160" height="26" rx="4" fill="#2563EB"/>
+      <text x="24" y="87" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="10" fill="#FFFFFF" font-weight="700">Convert to Booking Token</text>
+    </g>
+  </g>
+
+  <!-- Right: Milestone CLP Cash Flow Tracker -->
+  <g transform="translate(426, 112)">
+    <rect width="274" height="308" rx="8" fill="#FFFFFF" stroke="#E2E8F0" filter="url(#cardShadow1)"/>
+    <rect width="274" height="28" rx="8" fill="#F8FAFC"/>
+    <text x="12" y="19" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="11" fill="#0F172A" font-weight="800">CLP Milestone Cash Inflows</text>
+
+    <!-- Slab Status 1 -->
+    <g transform="translate(12, 40)">
+      <rect width="250" height="54" rx="6" fill="#F0FDF4" stroke="#BBF7D0"/>
+      <text x="10" y="18" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="10.5" fill="#166534" font-weight="700">Tower B: 7th Slab Completed</text>
+      <text x="10" y="34" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="9.5" fill="#4B5563">Demand notices auto-sent: 42 units</text>
+      <text x="10" y="48" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="9.5" fill="#15803D" font-weight="800">₹8.40 Cr collected (92%)</text>
+    </g>
+
+    <!-- Slab Status 2 -->
+    <g transform="translate(12, 104)">
+      <rect width="250" height="54" rx="6" fill="#FEFCE8" stroke="#FEF08A"/>
+      <text x="10" y="18" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="10.5" fill="#854D0E" font-weight="700">Tower A: 12th Slab Casted</text>
+      <text x="10" y="34" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="9.5" fill="#4B5563">Engineers marked slab done today</text>
+      <text x="10" y="48" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="9.5" fill="#CA8A04" font-weight="800">WhatsApp payment links firing</text>
+    </g>
+
+    <!-- Executive Absorption Snapshot -->
+    <g transform="translate(12, 168)">
+      <rect width="250" height="126" rx="6" fill="#F8FAFC" stroke="#E2E8F0"/>
+      <text x="10" y="20" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="10.5" fill="#0F172A" font-weight="800">Executive Absorption</text>
+      
+      <text x="10" y="40" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="9.5" fill="#64748B">Phase 1 Inventory Booked</text>
+      <rect x="10" y="46" width="230" height="8" rx="4" fill="#E2E8F0"/>
+      <rect x="10" y="46" width="186" height="8" rx="4" fill="#2563EB"/>
+
+      <text x="10" y="74" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="9.5" fill="#64748B">Phase 2 Tower Absorption</text>
+      <rect x="10" y="80" width="230" height="8" rx="4" fill="#E2E8F0"/>
+      <rect x="10" y="80" width="144" height="8" rx="4" fill="#10B981"/>
+
+      <text x="10" y="108" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="9.5" fill="#0F172A" font-weight="700">Total Booked Revenue: ₹412.5 Cr</text>
+    </g>
+  </g>
+</svg>

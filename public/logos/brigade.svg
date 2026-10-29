@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 40" fill="none">
+  <!-- Brigade Prism Symbol -->
+  <polygon points="12,28 20,10 28,28" stroke="#0F172A" stroke-width="2.5" fill="none"/>
+  <polygon points="20,10 28,28 24,28 20,17" fill="#3B82F6"/>
+  <!-- Brigade Typography -->
+  <text x="36" y="24" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="16" font-weight="800" letter-spacing="1" fill="#0F172A">BRIGADE</text>
+  <text x="37" y="33" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="7" font-weight="600" letter-spacing="1" fill="#64748B">BUILDING POSITIVE EXPERIENCES</text>
+</svg>

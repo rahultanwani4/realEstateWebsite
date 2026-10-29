@@ -1,0 +1,3418 @@
+
+
+User Stories – Real Estate Salesforce Package
+Website
+Oct 23, 2026 ·
+User Stories – Real Estate Salesforce Package Website
+Page 1 of 47
+
+Global Elements and Visual Design
+StoryDescriptionAcceptance
+Criteria
+Fields & Data TypeValidations
+US-01 Global
+header
+As a visitor, I
+want a header
+with logo,
+menu and
+Request a
+Demo button
+on every page,
+so that I can
+navigate or
+book a demo
+from
+anywhere.
+1. Logo on the
+left links to
+Home.
+2. Menu in
+order: Features,
+Benefits, Who It
+Is For, How It
+Works,
+Customers,
+Resources,
+About, Contact;
+current page
+highlighted.
+3. Request a
+Demo button on
+the right, accent
+colour, opens
+the demo page;
+clicks recorded
+with source
+page.
+4. Small
+"Customer
+support" text
+link opens the
+external
+support site in a
+new tab.
+5. Header stays
+fixed while
+scrolling on all
+devices.
+6. On mobile the
+menu collapses
+behind a menu
+icon; the demo
+Logo – Image
+(SVG/PNG), Req
+Logo alt text – Text
+(100), Req
+Menu item label –
+Text (30), Req
+Menu item link –
+URL, Req
+Menu order –
+Number, Req
+Demo button label –
+Text (25), Req
+Support link URL –
+URL, Req
+Logo
+SVG/PNG, max
+200 KB
+Max 8 menu
+items
+Menu links
+must point to
+published
+pages
+URLs must be
+valid https
+User Stories – Real Estate Salesforce Package Website
+Page 2 of 47
+
+StoryDescriptionAcceptance
+Criteria
+Fields & Data TypeValidations
+button stays
+visible; menu
+works by
+keyboard.
+7. Labels, links
+and order are
+editable
+without a
+developer.
+User Stories – Real Estate Salesforce Package Website
+Page 3 of 47
+
+StoryDescriptionAcceptance
+Criteria
+Fields & Data TypeValidations
+US-02
+Global
+footer
+As a visitor, I
+want a footer
+with links,
+contact details
+and legal
+information, so
+that I can find
+anything or
+reach the
+company from
+the bottom of
+any page.
+1. Shows logo
+and one-line
+package
+description.
+2. Quick links to
+every main page
+and the
+AppExchange
+listing (opens in
+a new tab).
+3. Email (opens
+mail app),
+phone (tap-to-
+call) and office
+address.
+4. Social icons
+open profiles in
+a new tab and
+have screen-
+reader labels.
+5. Links to
+Privacy Policy,
+Terms of Use,
+Cookie Notice
+and Cookie
+settings.
+6. Copyright line
+shows the
+current year
+automatically.
+7. A smaller
+Request a Demo
+prompt opens
+the demo page.
+Package description
+– Text (150), Req
+Quick link label –
+Text (30), Req
+Quick link URL –
+URL, Req
+AppExchange URL –
+URL, Req
+Email – Email, Req
+Phone – Phone
+(+91), Req
+Office address –
+Long text (300), Req
+Social network –
+Dropdown
+(LinkedIn,
+Facebook,
+Instagram, X,
+YouTube)
+Social profile URL –
+URL
+Copyright holder –
+Text (100), Req
+Demo prompt text –
+Text (80), Req
+Valid email
+format
+Phone: +91
+followed by 10
+digits
+URLs must be
+valid https
+Description
+max 150
+characters
+User Stories – Real Estate Salesforce Package Website
+Page 4 of 47
+
+StoryDescriptionAcceptance
+Criteria
+Fields & Data TypeValidations
+US-03
+Floating
+chat or
+WhatsApp
+button
+As a visitor not
+ready for a
+demo, I want a
+small chat or
+WhatsApp
+button, so that
+I can ask a
+quick
+question.
+1. Fixed at the
+bottom-right
+corner of every
+page.
+2. Opens live
+chat, or
+WhatsApp with
+the sales
+number and a
+prefilled
+greeting.
+3. Does not
+cover the
+cookie banner
+or form buttons
+on mobile.
+4. Clicks are
+recorded.
+Help channel –
+Dropdown (Live
+chat, WhatsApp),
+Req
+WhatsApp number
+– Phone (+91), Req if
+WhatsApp
+Greeting – Text
+(200)
+Show on pages –
+Multi-select, Req
+WhatsApp
+number: +91
+followed by 10
+digits
+Greeting max
+200 characters
+User Stories – Real Estate Salesforce Package Website
+Page 5 of 47
+
+StoryDescriptionAcceptance
+Criteria
+Fields & Data TypeValidations
+US-04
+Visual
+design
+system
+As the
+business
+owner, I want
+one consistent
+visual style, so
+that the site
+looks
+professional
+and the demo
+button always
+stands out.
+1. One primary
+colour, one
+accent colour
+(used only for
+Request a
+Demo), neutral
+greys and white,
+defined once
+and reused.
+2. One font
+family; large
+headings; body
+text at least
+16px.
+3. One Request
+a Demo button
+style (colour,
+shape, size,
+hover and focus
+states) used
+everywhere.
+4. One line-icon
+style;
+decorative
+icons hidden
+from screen
+readers.
+5. Only subtle
+fade-ins and
+hover effects,
+switched off
+when the
+device asks for
+reduced motion.
+6. Generous
+white space;
+pages not
+cluttered.
+Primary colour –
+Text (hex), Req
+Accent colour – Text
+(hex), Req
+Neutral greys – Text
+(hex list), Req
+Font family – Text,
+Req
+Type scale –
+Number (px per
+level), Req
+Icon – Image (SVG),
+Req
+Icon label – Text (50)
+Valid 6-digit
+hex codes
+Contrast
+meets WCAG
+AA (4.5:1
+normal, 3:1
+large text)
+Body text not
+below 16px
+Animation max
+400 ms
+Icons must be
+SVG
+User Stories – Real Estate Salesforce Package Website
+Page 6 of 47
+
+StoryDescriptionAcceptance
+Criteria
+Fields & Data TypeValidations
+US-05
+Imagery and
+Salesforce
+brand use
+As a
+prospective
+customer, I
+want real
+product
+screenshots
+and genuine
+real estate
+photos, shown
+within
+Salesforce's
+brand rules, so
+that the site
+feels
+trustworthy.
+1. Product
+screenshots
+shown in simple
+device frames,
+with realistic
+sample data and
+no real
+customer
+information.
+2. Photos show
+real homes,
+buildings and
+sales teams; no
+obviously
+staged stock
+images.
+3. Every image
+has alt text and
+is compressed
+for fast loading.
+4. Salesforce
+name, logo,
+"Built on
+Salesforce"
+mark and
+AppExchange
+badge follow
+Salesforce's
+brand
+guidelines and
+appear only
+where
+permitted.
+5. A brand-
+compliance
+review is
+recorded before
+launch.
+Image – Image
+(PNG/JPG/WebP),
+Req
+Image type –
+Dropdown
+(Screenshot,
+Photo), Req
+Device frame –
+Dropdown
+(Desktop, Tablet,
+Phone, None)
+Alt text – Text (150),
+Req
+Caption – Text (120)
+Usage rights
+confirmed –
+Checkbox, Req for
+photos
+Screenshots
+min 1600px
+wide
+Photos max
+300 KB after
+compression
+Cannot publish
+without alt
+text
+Photo cannot
+publish until
+usage rights
+ticked
+Salesforce
+marks must
+not be altered
+or recoloured
+User Stories – Real Estate Salesforce Package Website
+Page 7 of 47
+
+User Stories – Real Estate Salesforce Package Website
+Page 8 of 47
+
+Home Page
+StoryDescriptionAcceptance
+Criteria
+Fields & Data
+Type
+Validations
+US-06
+Home hero
+and trust
+strip
+As a first-time
+visitor, I want a
+clear promise,
+the product
+and proof of
+trust at the top
+of the Home
+page, so that I
+understand and
+trust the
+package within
+seconds.
+1. Large headline
+(e.g. "Manage
+every lead, sale
+and booking in
+one place, on
+Salesforce") and
+one supporting
+sentence.
+2. Two buttons:
+Request a Demo
+(main, accent
+colour) and See
+Features
+(secondary).
+3. Large product
+screenshot or
+short muted video
+beside or behind
+the text; stacks
+below the text on
+mobile.
+4. Trust strip
+below: customer
+or partner logos,
+"Built on
+Salesforce" mark,
+AppExchange
+link, star rating
+and review count.
+5. Optional
+headline numbers
+appear only when
+entered.
+6. All content is
+editable by the
+business team.
+Headline – Text
+(90), Req
+Supporting
+sentence – Text
+(180), Req
+Button labels –
+Text (25), Req
+Hero media type
+– Dropdown
+(Screenshot,
+Video), Req
+Hero image or
+video – Image /
+Video (MP4), Req
+Poster image –
+Image, Req if
+video
+Customer logo –
+Image, Req
+Company name –
+Text (80), Req
+Logo permission
+– Checkbox, Req
+AppExchange
+rating – Number
+(0.0–5.0)
+Review count –
+Number
+Rating last
+checked – Date
+Headline number
+– Text (15) + label
+Text (40)
+Headline max
+90, sentence
+max 180
+characters
+Video max 10
+MB with poster
+image
+Logo cannot
+publish without
+permission
+3 to 12 logos
+Rating 0.0–5.0,
+one decimal;
+hidden if last
+checked over 90
+days ago
+User Stories – Real Estate Salesforce Package Website
+Page 9 of 47
+
+StoryDescriptionAcceptance
+Criteria
+Fields & Data
+Type
+Validations
+US-07
+Home
+content
+sections
+As a
+prospective
+customer, I
+want the Home
+page to show
+what the
+package covers,
+its benefits,
+how it works
+and what
+customers say,
+so that I am
+persuaded to
+request a demo.
+1. Three core
+cards (Lead,
+Sales, Booking
+Management),
+each with icon,
+one-line
+description and
+screenshot,
+linking to that
+area on the
+Features page.
+2. Three or four
+benefits, each
+with a simple
+picture, linking to
+the Benefits page.
+3. Enquiry-to-
+booking visual
+with four stages:
+enquiry arrives,
+rep follows up,
+deal progresses,
+unit is booked.
+4. Four-step how-
+it-works: Book a
+demo, We set it
+up, Your team is
+trained, Go live;
+links to How It
+Works.
+5. Two or three
+testimonials with
+name, photo and
+company.
+6. Coloured
+closing band with
+short message
+Card title – Text
+(40), Req
+Card description
+– Text (120), Req
+Card icon,
+screenshot –
+Image, Req
+Benefit title –
+Text (50), Req
+Benefit text –
+Text (140), Req
+Journey / step
+title – Text (40),
+Req
+Testimonial quote
+– Text (300), Req
+Customer name –
+Text (80), Req
+Company – Text
+(100), Req
+Customer photo
+– Image, Req
+Testimonial
+permission –
+Checkbox, Req
+Closing message
+– Text (100), Req
+Exactly 3 core
+cards
+3–4 benefits;
+exactly 4
+journey stages
+and 4 steps
+2–3 testimonials;
+none published
+without
+permission
+Quote max 300
+characters
+User Stories – Real Estate Salesforce Package Website
+Page 10 of 47
+
+StoryDescriptionAcceptance
+Criteria
+Fields & Data
+Type
+Validations
+and Request a
+Demo button.
+7. Sections stack
+in this order on
+mobile; all content
+editable.
+User Stories – Real Estate Salesforce Package Website
+Page 11 of 47
+
+Features and Benefits Pages
+StoryDescriptionAcceptance
+Criteria
+Fields & Data
+Type
+Validations
+US-08
+Features
+page layout
+and
+Salesforce fit
+As a visitor, I
+want a
+Features page
+I can navigate
+easily,
+including how
+the package
+fits Salesforce,
+so that I find
+the area I care
+about quickly.
+1. Short
+introduction at
+the top.
+2. Sticky side
+menu (desktop)
+or tabs (mobile):
+Lead
+Management,
+Sales
+Management,
+Booking
+Management,
+Reports and
+Dashboards,
+Works on
+Salesforce.
+3. The area in view
+is highlighted;
+each area has its
+own link address
+(e.g.
+/features#lead-
+management).
+4. Works on
+Salesforce section
+explains mobile
+access and fit
+with the
+company's
+Salesforce in plain
+language, with the
+"Built on
+Salesforce"
+message and
+AppExchange link
+where permitted.
+Page
+introduction –
+Text (300), Req
+Menu label –
+Text (40), Req
+Works on
+Salesforce text –
+Rich text (800),
+Req
+AppExchange
+URL – URL
+Introduction
+max 300
+characters
+URL must be
+valid https
+User Stories – Real Estate Salesforce Package Website
+Page 12 of 47
+
+StoryDescriptionAcceptance
+Criteria
+Fields & Data
+Type
+Validations
+5. Request a Demo
+button at the end
+of the page.
+User Stories – Real Estate Salesforce Package Website
+Page 13 of 47
+
+StoryDescriptionAcceptance
+Criteria
+Fields & Data
+Type
+Validations
+US-09
+Feature area
+sections
+As a real
+estate sales
+leader, I want
+each feature
+area explained
+with real
+screens, so
+that I see
+exactly what
+the package
+does for leads,
+sales,
+bookings and
+reporting.
+1. Lead
+Management:
+capture from
+every source,
+assignment,
+follow-ups, site
+visits; lead list,
+lead record and
+lead-journey
+graphic.
+2. Sales
+Management:
+pipeline, offers
+and deal progress,
+who is closing
+what; pipeline,
+deal stage and
+team
+performance
+screens.
+3. Booking
+Management:
+availability,
+holding and
+booking units,
+booking status,
+payment
+milestones;
+availability and
+booking screens
+and booking-
+journey graphic.
+4. Reports and
+Dashboards:
+dashboard
+screens with
+numbers readable
+on every device.
+Feature area –
+Dropdown
+(Lead, Sales,
+Booking,
+Reports), Req
+Feature title –
+Text (60), Req
+Description –
+Text (300), Req
+What this means
+for you – Text
+(150), Req
+Icon or
+screenshot –
+Image, Req
+Alt text – Text
+(150), Req
+Display order –
+Number, Req
+Description
+max 300,
+benefit
+sentence max
+150 characters
+Each area
+needs at least
+one feature to
+publish
+User Stories – Real Estate Salesforce Package Website
+Page 14 of 47
+
+StoryDescriptionAcceptance
+Criteria
+Fields & Data
+Type
+Validations
+5. Each feature
+shows icon or
+screenshot, title,
+2–3 line
+description and a
+"what this means
+for you" sentence.
+6. A Request a
+Demo button
+after each area
+opens the demo
+form with that
+area pre-ticked.
+7. Feature names
+and wording are
+editable.
+User Stories – Real Estate Salesforce Package Website
+Page 15 of 47
+
+StoryDescriptionAcceptance
+Criteria
+Fields & Data
+Type
+Validations
+US-10
+Benefits
+page
+As an owner,
+manager or
+admin, I want
+benefits
+explained in
+business
+terms for my
+role, with a
+before-and-
+after view, so
+that I see the
+value for me.
+1. Benefits
+grouped by role:
+Sales head, Sales
+executive, Owner
+or director,
+Salesforce admin.
+2. Each benefit
+has a bold
+headline, short
+explanation and,
+where supplied, a
+proof number (e.g.
+"Faster lead
+response").
+3. Before vs After
+comparison:
+spreadsheets and
+scattered tools
+against the
+package; stacks
+with labels on
+mobile.
+4. Request a
+Demo button at
+the end.
+Role – Dropdown
+(4 roles above),
+Req
+Benefit headline
+– Text (60), Req
+Benefit
+explanation –
+Text (250), Req
+Proof figure –
+Text (20)
+Proof approved –
+Checkbox
+Comparison
+topic – Text (50),
+Req
+Before text,
+After text – Text
+(150), Req
+Proof figure
+cannot publish
+unless
+approved
+Each role
+needs at least
+one benefit
+3–8 comparison
+rows
+User Stories – Real Estate Salesforce Package Website
+Page 16 of 47
+
+StoryDescriptionAcceptance
+Criteria
+Fields & Data
+Type
+Validations
+US-11 Savings
+calculator
+As an owner or
+director, I want
+to enter a few
+numbers
+about my
+team, so that I
+see an
+estimate of
+time saved
+and deals
+recovered.
+1. Visitor enters
+sales team size
+and leads per
+month (and
+optional average
+deal value in ₹).
+2. Shows
+estimated hours
+saved and deals
+recovered per
+month, updating
+instantly.
+3. A short note
+explains the
+assumptions.
+4. Request a
+Demo button
+beside the result.
+5. Business team
+can change the
+formula factors
+without a
+developer.
+Sales team size –
+Number, Req
+Leads per month
+– Number, Req
+Average deal
+value – Number
+(₹)
+Time saved per
+lead – Number
+(minutes),
+admin, Req
+Lead recovery
+rate – Number
+(%), admin, Req
+Assumptions
+note – Text
+(300), Req
+Team size:
+whole number
+1–5,000
+Leads: whole
+number 1–
+10,00,000
+Deal value
+positive if
+entered
+Recovery rate
+0–100
+Blank or invalid
+input shows a
+friendly
+message, no
+result
+User Stories – Real Estate Salesforce Package Website
+Page 17 of 47
+
+Who It Is For, How It Works, Security and Salesforce Fit
+StoryDescriptionAcceptance CriteriaFields & Data
+Type
+Validations
+US-12 Who It
+Is For page
+As a
+developer,
+brokerage or
+sales manager,
+I want a
+section about
+my type of
+business, so
+that I see the
+package
+solves my
+daily
+problems.
+1. Three sections:
+Developers and
+builders; Brokerages
+and agencies; Sales
+and management
+teams.
+2. Each describes the
+typical daily
+challenge and how
+the package solves it,
+with a matching
+screenshot.
+3. Each has a Request
+a Demo button that
+presets "Type of
+company" on the
+demo form where it
+applies.
+Audience –
+Dropdown
+(Developers
+and builders,
+Brokerages and
+agencies, Sales
+and
+management
+teams), Req
+Section title –
+Text (60), Req
+Challenge text –
+Text (400), Req
+Solution text –
+Text (400), Req
+Screenshot –
+Image, Req
+Alt text – Text
+(150), Req
+Challenge and
+solution max
+400
+characters
+each
+All three
+audiences
+must exist to
+publish
+User Stories – Real Estate Salesforce Package Website
+Page 18 of 47
+
+StoryDescriptionAcceptance CriteriaFields & Data
+Type
+Validations
+US-13 How It
+Works page
+As an owner
+or Salesforce
+admin, I want
+to see each
+step from
+demo to go-
+live and what
+each involves,
+so that I can
+plan the
+rollout.
+1. Visual step-by-step
+journey from
+"Request a demo" to
+"Go live", with an
+estimated time per
+step.
+2. Horizontal on
+desktop, vertical on
+mobile.
+3. Short plain-
+language blocks on
+installation, set-up,
+training, data
+migration from
+spreadsheets or
+other tools, and
+ongoing support.
+4. Request a Demo
+button at the end.
+Step name –
+Text (40), Req
+Step
+explanation –
+Text (150), Req
+Estimated
+duration – Text
+(30), Req
+Step order –
+Number, Req
+Onboarding
+topic –
+Dropdown
+(Installation,
+Set-up, Training,
+Data migration,
+Support), Req
+Topic summary
+– Text (200),
+Req
+Topic detail –
+Rich text
+(1,000)
+3–7 steps
+Duration
+mandatory for
+every step
+All five
+onboarding
+topics need a
+summary
+User Stories – Real Estate Salesforce Package Website
+Page 19 of 47
+
+StoryDescriptionAcceptance CriteriaFields & Data
+Type
+Validations
+US-14
+Security and
+Salesforce
+Fit page
+As a
+Salesforce
+admin or IT
+manager, I
+want clear
+facts on fit,
+data, access,
+editions and
+installation,
+plus a way to
+ask technical
+questions, so
+that I can
+complete our
+review.
+1. Plain-language
+explanation of how
+the package works
+within the company's
+Salesforce and
+where data is kept.
+2. How access is
+controlled and data is
+protected.
+3. List of supported
+Salesforce editions
+and short installation
+steps.
+4. Links to the
+AppExchange listing,
+support and
+documentation;
+AppExchange rating
+shown where
+permitted.
+5. Short IT checklist,
+printable or
+downloadable as
+PDF.
+6. "Ask a technical
+question" form sends
+to the technical
+team, shows a thank-
+you message and
+emails an
+acknowledgement.
+7. Request a Demo
+button at the end.
+Fit and data
+text – Rich text
+(1,500), Req
+Access and
+protection text
+– Rich text
+(1,500), Req
+Supported
+edition – Text
+(50), Req
+Installation step
+– Text (200),
+Req
+Checklist item –
+Text (150), Req
+Checklist PDF –
+File (PDF)
+Content
+approved by –
+Text (80), Req
+(internal)
+Form: Full name
+– Text (80), Req
+Form: Work
+email – Email,
+Req
+Form: Company
+– Text (100),
+Req
+Form: Question
+– Long text
+(1,000), Req
+Form: Consent
+– Checkbox,
+Req
+Cannot
+publish until
+approved
+At least one
+supported
+edition
+PDF max 5 MB
+Valid email
+format
+Question 10–
+1,000
+characters
+Consent must
+be ticked;
+invisible spam
+check must
+pass
+User Stories – Real Estate Salesforce Package Website
+Page 20 of 47
+
+Pricing and Customer Stories
+StoryDescriptionAcceptance CriteriaFields & Data
+Type
+Validations
+US-15
+Pricing
+page
+As an owner
+or director, I
+want to see
+pricing plans
+or understand
+how pricing is
+set, so that I
+can judge the
+cost.
+1. Business team picks a
+display mode: Plan
+cards or Contact for
+pricing.
+2. Plan cards: 2–3 cards
+with plan name, who it
+is for, key features and
+price (₹) or "Contact
+us".
+3. Contact for pricing:
+message that pricing
+depends on team size
+and a demo will clarify
+it.
+4. Comparison table of
+what each plan includes
+(plan cards mode only);
+usable on mobile.
+5. Short expandable list
+of pricing questions
+and answers.
+6. Each card or the
+message has a Request
+a Demo button; the
+chosen plan is passed
+to the demo form.
+Display mode
+– Dropdown
+(Plan cards,
+Contact for
+pricing), Req
+Plan name –
+Text (40), Req
+if cards
+Who it is for –
+Text (100), Req
+if cards
+Key features –
+Text list (5 ×
+80)
+Price –
+Number (₹)
+Billing period –
+Dropdown
+(Per user per
+month, Per
+year, One-
+time)
+Show
+"Contact us" –
+Checkbox
+Contact
+message –
+Text (250),
+Req if contact
+mode
+Comparison
+row – Text (60)
++ value per
+plan
+Dropdown
+2–3 plans in
+cards mode
+Each plan
+shows a price
+or "Contact
+us", not both
+Price must be
+positive
+Every
+comparison
+row needs a
+value for
+every plan
+Max 10 pricing
+questions
+User Stories – Real Estate Salesforce Package Website
+Page 21 of 47
+
+StoryDescriptionAcceptance CriteriaFields & Data
+Type
+Validations
+(Included, Not
+included,
+Note)
+Pricing
+question –
+Text (150);
+answer – Rich
+text (800)
+User Stories – Real Estate Salesforce Package Website
+Page 22 of 47
+
+StoryDescriptionAcceptance CriteriaFields & Data
+Type
+Validations
+US-16
+Customer
+stories and
+case
+studies
+As a
+prospective
+customer, I
+want to
+browse real
+customer
+results and
+read short
+case studies,
+so that I see
+proof from
+companies
+like mine.
+1. Grid of cards with
+customer photo,
+company, quote and
+one key result; filter by
+company type.
+2. Clicking a card opens
+a case study page with
+Problem, Solution and
+Result.
+3. Optional customer
+video on the case
+study, loading only
+when played, with
+captions.
+4. Each case study has
+its own address (e.g.
+/customers/company-
+name) and ends with a
+Request a Demo
+button.
+5. Only stories with
+recorded customer
+permission are shown.
+Customer
+photo,
+company logo
+– Image, Req
+Customer
+name – Text
+(80), Req
+Company –
+Text (100), Req
+Company type
+– Dropdown
+(Developer or
+builder,
+Brokerage or
+agency,
+Other), Req
+Quote – Text
+(250), Req
+Key result –
+Text (60), Req
+Problem,
+Solution,
+Result – Rich
+text (1,500
+each), Req
+Page address
+(slug) – Text
+(60), Req
+Video – Video
+(MP4) / URL;
+captions – File
+(VTT)
+Permission
+received –
+Checkbox,
+Req
+Cannot
+publish
+without
+permission
+Slug unique;
+lowercase
+letters,
+numbers,
+hyphens
+Problem,
+Solution and
+Result all
+required
+Video needs
+captions; max
+100 MB
+User Stories – Real Estate Salesforce Package Website
+Page 23 of 47
+
+Request a Demo
+StoryDescriptionAcceptance
+Criteria
+Fields & Data
+Type
+Validations
+US-17
+Request a
+Demo page
+and form
+As a
+prospective
+customer, I
+want a
+reassuring
+page with a
+short, easy
+form, so that I
+can request a
+demo in
+under a
+minute.
+1. Two columns on
+desktop (left:
+headline, 3–4
+bullets on what
+the demo covers,
+one testimonial,
+trust logos; right:
+form); stacked on
+mobile with the
+form first.
+2. Form shows the
+fields listed;
+required fields
+clearly marked.
+3. Friendly error
+messages appear
+next to the field
+on leaving it and
+on submit; focus
+moves to the first
+error; entered
+values are kept.
+4. Email and
+phone fields open
+the matching
+mobile keyboard;
+autofill works.
+5. Interest and
+company type are
+pre-filled when
+the visitor arrives
+from a related
+button; chosen
+pricing plan is
+stored.
+Full name –
+Text (80), Req
+Work email –
+Email, Req
+Country code
+– Dropdown,
+Req, fixed
+default +91
+(India)
+Phone
+number –
+Phone, Req
+Company
+name – Text
+(100), Req
+Job title / role
+– Text (80)
+Type of
+company –
+Dropdown
+(Developer or
+builder,
+Brokerage or
+agency,
+Other)
+Sales team
+size –
+Dropdown (1–
+10, 11–50, 51–
+200, 200+)
+Use
+Salesforce
+today? –
+Dropdown
+(Yes, No,
+Evaluating)
+Name 2–80
+characters; letters,
+spaces,
+apostrophe,
+hyphen, full stop
+Email valid format
+(name@domain.tld)
+Phone: exactly 10
+digits, starting 6, 7,
+8 or 9 (Indian
+mobile)
+Company 2–100
+characters
+Preferred date: not
+today or past, max
+60 days ahead,
+weekdays only
+Time slot required
+if date chosen
+Anything else max
+500 characters
+with counter
+Consent must be
+ticked
+Spam: hidden
+honeypot must be
+empty; max 5
+submits per
+address per 10
+minutes
+All text trimmed of
+leading and trailing
+spaces
+User Stories – Real Estate Salesforce Package Website
+Page 24 of 47
+
+StoryDescriptionAcceptance
+Criteria
+Fields & Data
+Type
+Validations
+6. Invisible spam
+check on submit;
+no puzzle for
+genuine visitors.
+7. On success the
+form is replaced
+by "Thanks! We'll
+contact you within
+one business day."
+and what happens
+next; submission
+recorded as a
+conversion;
+double submit
+prevented.
+Most
+interested in
+– Multi-select
+(Lead, Sales,
+Booking
+Management,
+Reports and
+Dashboards)
+Demo type –
+Dropdown
+(Online, In-
+person)
+Preferred
+date – Date
+Preferred
+time slot –
+Dropdown
+(10–12, 12–2,
+2–4, 4–6 IST)
+Anything else
+– Long text
+(500)
+Consent to
+be contacted
+– Checkbox,
+Req
+Plan of
+interest,
+source page,
+campaign –
+Text (hidden)
+User Stories – Real Estate Salesforce Package Website
+Page 25 of 47
+
+StoryDescriptionAcceptance
+Criteria
+Fields & Data
+Type
+Validations
+US-18 Demo
+emails:
+confirmation,
+sales alert
+and
+reminders
+As a visitor
+and as a sales
+team
+member, I
+want
+automatic
+emails after a
+demo request
+and before
+the demo, so
+that the
+visitor has a
+record, sales
+can act fast
+and fewer
+demos are
+missed.
+1. Visitor
+confirmation sent
+within 5 minutes
+with request
+summary, next
+steps, contact
+details and
+Privacy Policy link.
+2. Sales
+notification sent
+within 1 minute to
+configured
+addresses with
+every field, time,
+source page and
+campaign.
+3. Reminders sent
+24 hours and 1
+hour before a
+booked demo,
+with meeting link
+or address and
+reschedule/cancel
+links; none sent
+after cancellation.
+4. Templates,
+recipients and
+reminder timings
+are editable by
+the business
+team.
+Sender name
+– Text (60),
+Req
+Sender email
+– Email, Req
+Email subject
+– Text (100),
+Req
+Email
+template –
+Rich text
+with merge
+fields, Req
+Sales
+recipients –
+Email (list),
+Req
+Reminder
+timing –
+Number
+(hours
+before), Req
+Sender on a
+verified company
+domain
+At least one valid
+sales recipient
+Template must
+include recipient
+name merge field
+Reminder timing 1–
+72 hours
+User Stories – Real Estate Salesforce Package Website
+Page 26 of 47
+
+StoryDescriptionAcceptance
+Criteria
+Fields & Data
+Type
+Validations
+US-19 Save
+demo
+request as
+Salesforce
+lead
+As a sales
+team
+member, I
+want every
+demo request
+created as a
+lead in our
+Salesforce
+automatically,
+so that no
+one copies
+details by
+hand.
+1. Each valid
+submission
+creates a Lead
+within 1 minute,
+Lead Source
+"Website – Demo
+Request".
+2. Fields are
+mapped as listed.
+3. If a Lead or
+Contact with the
+same email exists,
+the request is
+attached to it
+instead of
+creating a
+duplicate.
+4. If Salesforce is
+unavailable the
+request is queued
+and retried; an
+alert is sent after
+3 failures; no
+submission is lost.
+Full name →
+First Name,
+Last Name
+(Text)
+Work email →
+Email (Email)
++91 + phone
+→ Phone
+(Phone)
+Company
+name →
+Company
+(Text)
+Job title →
+Title (Text)
+Type of
+company,
+team size,
+uses
+Salesforce,
+demo type →
+custom
+Picklists
+Most
+interested in
+→ custom
+Multi-select
+picklist
+Preferred
+date and slot
+→ custom
+Date/Time
+Anything else
+→
+Description
+(Long text)
+Name split on last
+space; single word
+goes to Last Name
+Picklist values must
+match Salesforce
+values exactly
+Phone stored in
++91XXXXXXXXXX
+format
+User Stories – Real Estate Salesforce Package Website
+Page 27 of 47
+
+StoryDescriptionAcceptance
+Criteria
+Fields & Data
+Type
+Validations
+Consent,
+consent date
+→ custom
+Checkbox,
+Date/Time
+Source page,
+campaign →
+custom Text
+US-20 Self-
+service demo
+slot booking
+As a
+prospective
+customer, I
+want to pick a
+demo slot
+from the
+sales team's
+calendar, so
+that I avoid
+back-and-
+forth emails.
+1. Form shows
+available slots
+from the sales
+team's live
+calendar in IST.
+2. Choosing a slot
+books it, blocks it
+in the rep's
+calendar and
+sends a calendar
+invite to visitor
+and rep.
+3. Online demos
+include a meeting
+link; in-person
+demos include the
+office address.
+4. Invite has
+reschedule and
+cancel links;
+booking details
+are added to the
+Salesforce lead.
+Selected slot
+– Date and
+time, Req
+when
+booking
+Assigned rep
+– Text
+(system)
+Slot length –
+Number
+(minutes),
+admin,
+default 30
+Only slots at least 4
+hours ahead
+A taken slot cannot
+be booked; visitor
+asked to pick
+another
+User Stories – Real Estate Salesforce Package Website
+Page 28 of 47
+
+Resources and FAQ
+StoryDescriptionAcceptance
+Criteria
+Fields & Data
+Type
+Validations
+US-21
+Resource
+library and
+release
+updates
+As a visitor, I
+want articles,
+guides, sales
+tips and
+release
+updates in one
+place that I can
+read and share,
+so that I learn
+at my own pace
+and see the
+product is
+actively
+improved.
+1. Resources
+page lists items
+as cards (image,
+type, title, date,
+summary),
+newest first, 12
+per page.
+2. Filter by type:
+Article, Guide,
+Sales tip, Release
+update,
+Download.
+3. Each item has
+its own page
+ending with a
+Request a Demo
+prompt.
+4. A "What's
+new" view lists
+release updates
+newest first with
+version, date and
+highlights; linked
+from the footer.
+5. Share buttons
+for LinkedIn, X,
+Facebook,
+WhatsApp, email
+and copy link;
+share previews
+show title,
+summary and
+image.
+6. Editors can
+draft, preview,
+publish and
+Title – Text (90),
+Req
+Resource type –
+Dropdown (5
+types above),
+Req
+Summary – Text
+(200), Req
+Body – Rich text,
+Req
+Cover image –
+Image, Req
+Author – Text
+(80)
+Publish date –
+Date, Req
+Page address
+(slug) – Text (80),
+Req
+Status –
+Dropdown
+(Draft,
+Published,
+Unpublished),
+Req
+Version number –
+Text (20), Req for
+release updates
+Slug unique;
+lowercase
+letters,
+numbers,
+hyphens
+Publish date
+required when
+Published
+Version
+number unique
+Share image
+min 1200 × 630
+px
+User Stories – Real Estate Salesforce Package Website
+Page 29 of 47
+
+StoryDescriptionAcceptance
+Criteria
+Fields & Data
+Type
+Validations
+unpublish
+without a
+developer.
+US-22 Gated
+downloads
+and
+newsletter
+signup
+As a visitor not
+yet ready for a
+demo, I want to
+download
+guides and
+subscribe to
+the newsletter,
+so that I get
+useful material,
+and the sales
+team gets a
+lead.
+1. Gated guides
+and brochures
+open a short
+form; after a valid
+submit the file
+downloads and a
+link is emailed.
+2. Each download
+creates a
+Salesforce lead
+with Lead Source
+"Website –
+Download" and
+the file name.
+3. Newsletter
+box on
+Resources
+pages; double
+opt-in
+confirmation
+email; confirmed
+subscribers
+added to the
+email tool and
+Salesforce.
+4. Every
+newsletter has
+an unsubscribe
+link.
+Work email –
+Email, Req
+Full name – Text
+(80)
+Company name –
+Text (100)
+Consent –
+Checkbox, Req
+Download file –
+File (PDF), Req
+(editor)
+Gated –
+Checkbox, Req
+(editor)
+Valid email
+format
+Consent must
+be ticked
+PDF max 20
+MB
+Already-
+subscribed
+email shows
+"You're already
+subscribed"
+Invisible spam
+check must
+pass
+User Stories – Real Estate Salesforce Package Website
+Page 30 of 47
+
+StoryDescriptionAcceptance
+Criteria
+Fields & Data
+Type
+Validations
+US-23 FAQ
+page
+As a
+prospective
+customer, I
+want FAQs
+grouped by
+topic with
+search, so that
+I quickly find
+my answer.
+1. Topics:
+Product,
+Salesforce
+requirements,
+Set-up, Data
+migration,
+Pricing, Security,
+Support.
+2. Answers
+expand and
+collapse by click
+or keyboard.
+3. Search box at
+the top filters
+questions and
+answers as the
+visitor types,
+highlighting
+matches.
+4. No results
+shows links to
+Contact Us and
+Request a Demo.
+5. Page ends with
+"Still have
+questions?
+Request a demo
+or contact us."
+6. Business team
+can add, edit,
+reorder and
+remove FAQs.
+Topic –
+Dropdown (7
+topics above),
+Req
+Question – Text
+(150), Req
+Answer – Rich
+text (1,500), Req
+Display order –
+Number, Req
+Status –
+Dropdown
+(Draft,
+Published), Req
+Search term –
+Text (100), visitor
+input
+No duplicate
+question within
+a topic
+Search starts
+after 2
+characters;
+ignores case
+and extra
+spaces
+User Stories – Real Estate Salesforce Package Website
+Page 31 of 47
+
+About Us, Contact Us and Legal
+StoryDescriptionAcceptance
+Criteria
+Fields & Data
+Type
+Validations
+US-24
+About
+Us page
+As a
+prospective
+customer or
+Salesforce
+partner, I
+want to
+know who is
+behind the
+package
+and their
+track
+record, so
+that I can
+trust the
+company.
+1. Company story,
+mission statement
+and values (title
+plus one line
+each).
+2. Leadership
+team with photo,
+name, role, short
+bio and optional
+LinkedIn link.
+3. Milestones
+timeline, oldest to
+newest; horizontal
+on desktop,
+vertical on mobile.
+4. Awards,
+certifications,
+Salesforce partner
+status and media
+mentions (media
+mentions link to
+the article).
+5. Careers link.
+Company
+story – Rich
+text (2,000),
+Req
+Mission – Text
+(250), Req
+Value title –
+Text (40);
+explanation –
+Text (150),
+Req
+Leader photo
+– Image, Req
+Leader name,
+role – Text
+(80), Req
+Leader bio –
+Text (400),
+Req
+LinkedIn URL
+– URL
+Milestone
+date – Date
+(month/year),
+Req; title –
+Text (60), Req
+Credential
+type –
+Dropdown
+(Award,
+Certification,
+Partner
+status, Media
+mention), Req
+3–6 values
+Bio max 400 characters
+LinkedIn URL must start
+with
+https://www.linkedin.com/
+Milestone date not in the
+future
+Media mentions must
+have a link
+User Stories – Real Estate Salesforce Package Website
+Page 32 of 47
+
+StoryDescriptionAcceptance
+Criteria
+Fields & Data
+Type
+Validations
+Credential
+title, issuer –
+Text (100),
+Req; link –
+URL; badge –
+Image
+Careers URL
+– URL, Req
+User Stories – Real Estate Salesforce Package Website
+Page 33 of 47
+
+StoryDescriptionAcceptance
+Criteria
+Fields & Data
+Type
+Validations
+US-25
+Contact
+Us page
+As a visitor,
+I want a
+contact
+form and all
+contact
+options in
+one place,
+so that I can
+reach the
+company
+the way I
+prefer.
+1. Contact form
+with name, email,
+phone, topic and
+message; friendly
+inline errors;
+thank-you
+message and
+acknowledgement
+email.
+2. Message goes
+to the inbox for
+the chosen topic
+and is saved in
+Salesforce (Lead
+for
+Sales/Partnership,
+Case for Support).
+3. Email, phone,
+WhatsApp, office
+address(es) and
+business hours;
+tap-to-call and
+WhatsApp work
+on mobile.
+4. Embedded map
+per office with
+"Get directions"; a
+static image
+shows until map
+cookies are
+accepted.
+5. Social media
+links open in a new
+tab.
+Full name –
+Text (80), Req
+Email – Email,
+Req
+Phone –
+Phone (+91)
+Topic –
+Dropdown
+(Sales,
+Technical,
+Partnership,
+Support,
+Other), Req
+Message –
+Long text
+(1,500), Req
+Consent –
+Checkbox,
+Req
+Office name –
+Text (60);
+address –
+Long text
+(300), Req
+Business
+hours – Text
+(100), Req
+Latitude,
+longitude –
+Number
+(decimal),
+Req
+Name 2–80 characters
+Valid email format
+Phone if entered: 10 digits
+starting 6–9
+Message 10–1,500
+characters
+Consent must be ticked;
+invisible spam check must
+pass
+Latitude −90 to 90;
+longitude −180 to 180
+User Stories – Real Estate Salesforce Package Website
+Page 34 of 47
+
+StoryDescriptionAcceptance
+Criteria
+Fields & Data
+Type
+Validations
+US-26
+Legal
+pages
+and
+form
+privacy
+notices
+As a visitor,
+I want clear
+legal pages
+and a
+privacy
+notice next
+to every
+form, so
+that I know
+how my
+data is used
+before I
+share it.
+1. Privacy Policy
+(/privacy-policy),
+Terms of Use
+(/terms-of-use)
+and Cookie Notice
+(/cookie-notice)
+pages, with text
+from the legal
+team and a "Last
+updated" date.
+2. All three linked
+from the footer.
+3. Every form
+shows a short
+privacy notice
+with a Privacy
+Policy link next to
+the submit button.
+4. Consent tick
+boxes are
+unticked by
+default; consent
+wording and
+timestamp are
+stored with each
+submission.
+Page title –
+Text (70), Req
+Legal text –
+Rich text, Req
+Last updated
+– Date, Req
+Approved by
+legal –
+Checkbox,
+Req
+Form privacy
+notice – Text
+(250), Req
+Consent
+wording –
+Text (250)
+Consent
+timestamp –
+Date and time
+(system)
+Legal page cannot publish
+unless approved
+Last updated not in the
+future
+Form cannot publish
+without a privacy notice
+User Stories – Real Estate Salesforce Package Website
+Page 35 of 47
+
+StoryDescriptionAcceptance
+Criteria
+Fields & Data
+Type
+Validations
+US-27
+Cookie
+consent
+banner
+As a first-
+time visitor,
+I want to
+choose
+which
+cookies I
+accept, so
+that I
+control how
+I am
+tracked.
+1. Banner on first
+visit: Accept all,
+Reject non-
+essential, Manage
+preferences.
+2. Preferences let
+the visitor switch
+Analytics and
+Marketing on or
+off; Essential
+always on.
+3. Analytics and
+marketing scripts
+load only after
+consent.
+4. Choice
+remembered for
+12 months;
+reopened from
+"Cookie settings"
+in the footer.
+5. Links to the
+Cookie Notice;
+usable by
+keyboard.
+Banner text –
+Text (300),
+Req
+Analytics
+consent –
+Checkbox
+Marketing
+consent –
+Checkbox
+Consent
+timestamp –
+Date and time
+(system)
+Consent
+duration –
+Number
+(months),
+Req
+Non-essential categories
+off until chosen
+Duration 1–12 months
+User Stories – Real Estate Salesforce Package Website
+Page 36 of 47
+
+Additional Features
+StoryDescriptionAcceptance
+Criteria
+Fields & Data
+Type
+Validations
+US-28
+Product video
+and
+interactive
+tour
+As a visitor, I
+want to watch a
+short product
+video and click
+through the
+product
+screens, so that
+I understand
+and "try" the
+package before
+a demo.
+1. Video or
+animated
+walkthrough on
+Home and
+Features; poster
+image first,
+loads only when
+played, captions
+available.
+2. Guided click-
+through tour of
+Lead, Sales and
+Booking
+Management
+screens with
+hotspots and
+short captions.
+3. Tour moves by
+buttons, arrow
+keys or swipe,
+shows progress
+(e.g. 3 of 12) and
+ends with
+Request a
+Demo.
+4. Video plays
+and tour
+completions are
+recorded.
+5. Business
+team can
+replace video,
+screenshots and
+captions.
+Video – Video
+(MP4) / URL,
+Req
+Poster image –
+Image, Req
+Captions – File
+(VTT), Req
+Tour area –
+Dropdown
+(Lead, Sales,
+Booking), Req
+Step screenshot
+– Image, Req
+Hotspot position
+– Number (x %,
+y %), Req
+Step caption –
+Text (150), Req
+Step order –
+Number, Req
+Video max 3
+minutes;
+cannot publish
+without
+captions
+Hotspot values
+0–100
+Max 20 steps
+per tour area
+User Stories – Real Estate Salesforce Package Website
+Page 37 of 47
+
+StoryDescriptionAcceptance
+Criteria
+Fields & Data
+Type
+Validations
+US-29 Free
+trial and event
+registration
+As a prospect
+not ready for a
+demo, I want to
+request a free
+trial or register
+for a webinar or
+event, so that I
+can learn more
+on my own
+terms.
+1. "Request a
+free trial" form
+on Features and
+Pricing pages;
+shows what
+happens next
+and expected
+timing.
+2. Events page
+lists upcoming
+webinars and
+events with
+title, date, time
+(IST), format and
+description;
+past events
+listed separately
+with optional
+recording.
+3. Event
+registration
+sends a
+confirmation
+email with
+calendar invite.
+4. Every trial
+request or
+registration
+creates a
+Salesforce lead
+tagged "Trial
+request" or the
+event name, and
+notifies sales.
+Full name – Text
+(80), Req
+Work email –
+Email, Req
+Phone – Phone
+(+91), Req for
+trial
+Company name
+– Text (100), Req
+Salesforce org
+type –
+Dropdown
+(Production,
+Sandbox, No
+Salesforce yet),
+Req for trial
+Consent –
+Checkbox, Req
+Event title – Text
+(90), Req
+(editor)
+Event date and
+time – Date and
+time, Req
+(editor)
+Format –
+Dropdown
+(Webinar, In-
+person), Req
+(editor)
+Capacity –
+Number (editor)
+Valid email
+format
+Phone: 10
+digits starting
+6–9
+Consent must
+be ticked;
+invisible spam
+check must
+pass
+Registration
+closes at start
+time or when
+capacity is
+reached
+Same email
+cannot register
+twice for one
+event
+User Stories – Real Estate Salesforce Package Website
+Page 38 of 47
+
+StoryDescriptionAcceptance
+Criteria
+Fields & Data
+Type
+Validations
+US-30 Multi-
+language
+support
+As a visitor who
+prefers another
+language, I want
+to view the site
+in my language,
+so that I
+understand it
+fully.
+1. Language
+switcher in
+header and
+footer; choice
+remembered.
+2. Every page,
+form message
+and email can be
+translated by
+the business
+team.
+3. Untranslated
+pages fall back
+to English.
+4. Each
+language has its
+own page
+addresses (e.g.
+/hi/features).
+Language –
+Dropdown
+(English plus
+chosen
+languages), Req
+Translated
+content – Text
+per content field
+Language active
+– Checkbox, Req
+A language
+cannot be
+activated until
+header, footer,
+Home and
+Request a
+Demo are
+translated
+US-31
+Comparison
+page
+As an owner or
+director, I want
+to compare the
+package with
+spreadsheets
+and other tools,
+so that I can
+justify the
+decision
+internally.
+1. Comparison
+table: the
+package vs
+spreadsheets vs
+other tools,
+across agreed
+criteria.
+2. Every claim
+approved by the
+business team
+before
+publishing.
+3. Request a
+Demo button at
+the end.
+Criterion – Text
+(60), Req
+Package /
+Spreadsheets /
+Other tools
+value – Text (80),
+Req
+Claims
+approved –
+Checkbox, Req
+Cannot publish
+unless claims
+approved
+Named
+competitors
+only with legal
+approval
+User Stories – Real Estate Salesforce Package Website
+Page 39 of 47
+
+StoryDescriptionAcceptance
+Criteria
+Fields & Data
+Type
+Validations
+US-32 Exit-
+intent offer
+As the business
+owner, I want
+visitors about to
+leave to be
+offered the
+demo or a guide,
+so that we
+recover some of
+them.
+1. On desktop, a
+pop-up appears
+when the
+pointer moves
+to leave the
+page.
+2. Shown at
+most once per
+visit; never on
+Request a Demo
+or while a form
+is being filled.
+3. Closes with a
+button, Escape
+key or click
+outside; works
+with screen
+readers.
+Headline – Text
+(60), Req
+Text – Text (150),
+Req
+Offer type –
+Dropdown
+(Demo, Guide),
+Req
+Active –
+Checkbox, Req
+Excluded pages
+– Multi-select
+Request a
+Demo page
+always
+excluded
+User Stories – Real Estate Salesforce Package Website
+Page 40 of 47
+
+Experience and Platform Requirements
+StoryDescriptionAcceptance
+Criteria
+Fields & Data
+Type
+Validations
+US-33
+Responsive and
+mobile-friendly
+site
+As a visitor on
+any device, I
+want every
+page to look
+and work well
+on my phone,
+tablet or
+desktop, so
+that I can
+evaluate the
+package
+anywhere.
+1. Pages adapt
+from 360px
+phones to
+desktop with no
+sideways
+scrolling and
+logical content
+order.
+2. Buttons and
+links at least 44 ×
+44px with space
+between them.
+3. Email, phone
+and number
+fields open the
+matching mobile
+keyboard; autofill
+works.
+4. Product
+screenshots use
+a mobile crop or
+tap-to-zoom so
+text stays
+readable.
+5. Tested on
+current iOS
+Safari, Android
+Chrome and
+desktop Chrome,
+Safari, Edge and
+Firefox.
+Mobile crop
+image – Image
+(per
+screenshot)
+Mobile crop
+min 720px wide
+User Stories – Real Estate Salesforce Package Website
+Page 41 of 47
+
+StoryDescriptionAcceptance
+Criteria
+Fields & Data
+Type
+Validations
+US-34 Fast
+pages and
+loading
+feedback
+As a visitor, I
+want pages to
+open quickly
+and to see
+when
+something is
+loading, so that
+I don't give up
+and leave.
+1. Images and
+videos resized,
+compressed, in
+modern formats,
+and loaded as
+the visitor
+scrolls.
+2. Main content
+visible within 2.5
+seconds on a
+typical 4G phone
+(proposed
+target, to
+confirm).
+3. Home,
+Features and
+Request a Demo
+score 90+ for
+mobile
+performance in
+Google
+Lighthouse
+(proposed
+target, to
+confirm).
+4. A loading
+indicator shows
+for any action
+over 0.5 seconds
+(form submit,
+calendar slots);
+failures show a
+friendly message
+with retry.
+NoneUploaded
+images over
+500 KB are
+auto-
+compressed or
+rejected with a
+message
+User Stories – Real Estate Salesforce Package Website
+Page 42 of 47
+
+StoryDescriptionAcceptance
+Criteria
+Fields & Data
+Type
+Validations
+US-35
+Accessibility
+and plain
+language
+As a visitor
+with low vision,
+a screen-
+reader user, a
+keyboard-only
+user or a non-
+technical
+owner, I want
+the site to be
+accessible and
+clear, so that I
+can use it fully
+and reach the
+demo form
+easily.
+1. Text meets
+WCAG 2.1 AA
+contrast; usable
+at 200% zoom;
+colour never the
+only signal.
+2. Meaningful
+images have alt
+text; decorative
+images hidden
+from screen
+readers; videos
+captioned.
+3. Everything
+works by
+keyboard in a
+logical order with
+a visible focus
+and a "Skip to
+main content"
+link.
+4. Plain, jargon-
+free wording;
+Salesforce terms
+explained inline
+or by tooltip
+(hover, tap and
+focus).
+5. The demo form
+is reachable
+within one or two
+clicks from every
+page, verified
+before launch.
+Alt text – Text
+(150), Req per
+image
+Decorative –
+Checkbox
+Glossary term
+– Text (40),
+Req
+Plain-language
+explanation –
+Text (200), Req
+Image cannot
+publish
+without alt text
+unless marked
+decorative
+Glossary terms
+unique
+User Stories – Real Estate Salesforce Package Website
+Page 43 of 47
+
+StoryDescriptionAcceptance
+Criteria
+Fields & Data
+Type
+Validations
+US-36 Site
+security and
+data protection
+As a visitor
+sharing my
+details, I want a
+secure site
+that protects
+my data, so
+that I can trust
+it with my
+information.
+1. All pages
+served over
+HTTPS with a
+valid, auto-
+renewed
+certificate; http
+redirects to
+https.
+2. Form
+submissions
+stored
+encrypted.
+3. Only
+authorised roles
+can view or
+export
+submissions;
+every view and
+export is logged.
+4. Submissions
+older than the
+agreed retention
+period are
+deleted
+automatically.
+User role –
+Dropdown
+(Admin, Sales,
+Editor), Req
+Retention
+period –
+Number
+(months), Req
+Editor role
+cannot view
+submissions
+Retention 1–60
+months
+User Stories – Real Estate Salesforce Package Website
+Page 44 of 47
+
+StoryDescriptionAcceptance
+Criteria
+Fields & Data
+Type
+Validations
+US-37 Search
+engine
+findability
+As the
+business
+owner, I want
+every page set
+up for search
+engines, so
+that real estate
+teams
+searching for a
+Salesforce
+CRM find us.
+1. Each page has
+a unique,
+editable search
+title, description
+and share image
+(defaults from
+page content if
+blank).
+2. Clean,
+readable
+addresses (e.g.
+/features);
+changed
+addresses
+redirect
+automatically.
+3. XML sitemap
+generated
+automatically;
+friendly "page
+not found" page
+links to Home
+and Request a
+Demo.
+4. Content
+targets phrases
+such as "real
+estate CRM",
+"lead
+management on
+Salesforce",
+"booking
+management on
+Salesforce"; one
+main heading per
+page; structured
+data added.
+Search title –
+Text (60), Req
+Search
+description –
+Text (160), Req
+Share image –
+Image
+Page address
+(slug) – Text
+(80), Req
+Redirect from /
+to – Text (255)
+Target search
+phrase – Text
+(60)
+Title max 60,
+description
+max 160
+characters
+Duplicate
+search titles
+show a warning
+Slug unique;
+lowercase
+letters,
+numbers,
+hyphens
+Redirect
+cannot loop or
+point to itself
+Exactly one
+main heading
+per page
+User Stories – Real Estate Salesforce Package Website
+Page 45 of 47
+
+StoryDescriptionAcceptance
+Criteria
+Fields & Data
+Type
+Validations
+US-38 Tracking
+and
+performance
+report
+As the
+business
+owner, I want
+visits and
+conversions
+tracked and
+summarised in
+a simple
+report, so that I
+can measure
+the site against
+its goals.
+1. Tracks page
+visits, Request a
+Demo clicks
+(with page), form
+submissions,
+downloads, chat
+clicks and visits
+from
+AppExchange;
+campaign tags
+captured.
+2. Tracking runs
+only after
+analytics
+consent.
+3. Report shows
+demo requests
+per week and
+month, % of
+visitors
+submitting the
+demo form, time
+on Features,
+AppExchange
+visits and
+returning
+visitors.
+4. Business team
+can view the
+report and pick a
+date range
+without help.
+Event name –
+Text (50), Req
+Source page –
+URL, Req
+Referrer – URL
+Campaign tags
+– Text (255)
+Timestamp –
+Date and time,
+Req
+Report date
+range – Date
+(start, end),
+Req
+Report period
+– Dropdown
+(Weekly,
+Monthly), Req
+No personal
+data (name,
+email, phone)
+sent to
+analytics
+End date not
+before start
+date
+User Stories – Real Estate Salesforce Package Website
+Page 46 of 47
+
+StoryDescriptionAcceptance
+Criteria
+Fields & Data
+Type
+Validations
+US-39 Content
+management
+and demo
+request export
+As the
+business team,
+I want to edit
+site content
+myself and
+view and
+export demo
+requests, so
+that we don't
+need a
+developer for
+day-to-day
+work.
+1. Editors create,
+edit, preview,
+schedule and
+publish text,
+screenshots,
+testimonials,
+resources and
+FAQs.
+2. Previous
+versions can be
+viewed and
+restored.
+3. Only Admins
+change settings,
+users and
+integrations.
+4. Admin and
+Sales users see a
+list of demo
+requests, newest
+first, filterable by
+date, company
+type, team size
+and interest, and
+searchable by
+name, email or
+company.
+5. Filtered list
+exports to Excel
+(.xlsx) in one
+click.
+User name –
+Text (80), Req
+User email –
+Email, Req
+Role –
+Dropdown
+(Admin, Editor,
+Sales), Req
+Content status
+– Dropdown
+(Draft,
+Scheduled,
+Published),
+Req
+Scheduled
+publish – Date
+and time
+Filters: date
+range – Date;
+company type,
+team size –
+Dropdown;
+interest –
+Multi-select;
+search – Text
+(100)
+Scheduled
+time must be in
+the future
+User email
+unique
+Only Admin
+and Sales can
+view or export
+demo requests
+End date not
+before start
+date
+User Stories – Real Estate Salesforce Package Website
+Page 47 of 47

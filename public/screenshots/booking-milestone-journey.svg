@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 380" width="100%" height="100%">
+  <rect width="720" height="380" rx="12" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5"/>
+
+  <!-- Top Bar -->
+  <path d="M0 12 Q0 0 12 0 L708 0 Q720 0 720 12 L720 36 L0 36 Z" fill="#F8FAFC"/>
+  <line x1="0" y1="36" x2="720" y2="36" stroke="#E2E8F0"/>
+  <circle cx="20" cy="18" r="4.5" fill="#EF4444"/>
+  <circle cx="36" cy="18" r="4.5" fill="#F59E0B"/>
+  <circle cx="52" cy="18" r="4.5" fill="#10B981"/>
+  <rect x="74" y="9" width="300" height="18" rx="4" fill="#FFFFFF" stroke="#E2E8F0"/>
+  <text x="86" y="22" font-family="system-ui, sans-serif" font-size="10.5" fill="#64748B">estateforce.lightning.force.com/bookings/unit-1403/milestones</text>
+  <rect x="580" y="9" width="124" height="18" rx="9" fill="#EFF6FF"/>
+  <text x="592" y="22" font-family="system-ui, sans-serif" font-size="10" fill="#2563EB" font-weight="700">● Real-Time Lock</text>
+
+  <!-- Title & Booking Status Header -->
+  <g transform="translate(20, 48)">
+    <rect width="680" height="54" rx="8" fill="#F1F5F9" stroke="#E2E8F0"/>
+    <text x="16" y="22" font-family="system-ui, sans-serif" font-size="14" fill="#0F172A" font-weight="800">Unit 1403 — 4BHK Grandview Residences (Tower B)</text>
+    <text x="16" y="38" font-family="system-ui, sans-serif" font-size="10.5" fill="#64748B">Buyer: Vikramaditya Sengupta • Allotment Price: ₹2,85,00,000 • Status: Allotment Letter Issued</text>
+    <rect x="560" y="14" width="104" height="26" rx="5" fill="#10B981"/>
+    <text x="574" y="31" font-family="system-ui, sans-serif" font-size="11" fill="#FFFFFF" font-weight="700">✓ BOOKED</text>
+  </g>
+
+  <!-- Left: Milestone Payment Schedule -->
+  <g transform="translate(20, 114)">
+    <rect width="440" height="248" rx="8" fill="#FFFFFF" stroke="#E2E8F0"/>
+    <rect width="440" height="28" rx="8" fill="#F8FAFC"/>
+    <text x="14" y="19" font-family="system-ui, sans-serif" font-size="11" fill="#0F172A" font-weight="700">Construction-Linked Payment Milestones (CLP Schedule)</text>
+    
+    <!-- Table Header -->
+    <rect x="12" y="36" width="416" height="22" fill="#F1F5F9" rx="3"/>
+    <text x="20" y="51" font-family="system-ui, sans-serif" font-size="9" fill="#64748B" font-weight="700">MILESTONE EVENT</text>
+    <text x="180" y="51" font-family="system-ui, sans-serif" font-size="9" fill="#64748B" font-weight="700">% DUE</text>
+    <text x="250" y="51" font-family="system-ui, sans-serif" font-size="9" fill="#64748B" font-weight="700">AMOUNT (₹)</text>
+    <text x="350" y="51" font-family="system-ui, sans-serif" font-size="9" fill="#64748B" font-weight="700">STATUS</text>
+
+    <!-- Row 1: Booking Token -->
+    <text x="20" y="78" font-family="system-ui, sans-serif" font-size="10" fill="#0F172A" font-weight="600">1. Booking Token</text>
+    <text x="180" y="78" font-family="system-ui, sans-serif" font-size="10" fill="#64748B">10%</text>
+    <text x="250" y="78" font-family="system-ui, sans-serif" font-size="10" fill="#0F172A" font-weight="700">₹28,50,000</text>
+    <rect x="340" y="66" width="80" height="18" rx="3" fill="#ECFDF5"/>
+    <text x="352" y="79" font-family="system-ui, sans-serif" font-size="9" fill="#065F46" font-weight="700">Paid &amp; Cleared</text>
+
+    <!-- Row 2: Foundation Complete -->
+    <text x="20" y="108" font-family="system-ui, sans-serif" font-size="10" fill="#0F172A" font-weight="600">2. Foundation Complete</text>
+    <text x="180" y="108" font-family="system-ui, sans-serif" font-size="10" fill="#64748B">15%</text>
+    <text x="250" y="108" font-family="system-ui, sans-serif" font-size="10" fill="#0F172A" font-weight="700">₹42,75,000</text>
+    <rect x="340" y="96" width="80" height="18" rx="3" fill="#ECFDF5"/>
+    <text x="352" y="109" font-family="system-ui, sans-serif" font-size="9" fill="#065F46" font-weight="700">Paid &amp; Cleared</text>
+
+    <!-- Row 3: 7th Floor Slab -->
+    <text x="20" y="138" font-family="system-ui, sans-serif" font-size="10" fill="#0F172A" font-weight="600">3. 7th Floor Slab (Current)</text>
+    <text x="180" y="138" font-family="system-ui, sans-serif" font-size="10" fill="#64748B">15%</text>
+    <text x="250" y="138" font-family="system-ui, sans-serif" font-size="10" fill="#0F172A" font-weight="700">₹42,75,000</text>
+    <rect x="340" y="126" width="80" height="18" rx="3" fill="#FEF3C7"/>
+    <text x="346" y="139" font-family="system-ui, sans-serif" font-size="9" fill="#92400E" font-weight="700">Notice Sent (8d)</text>
+
+    <!-- Row 4: 14th Floor Slab -->
+    <text x="20" y="168" font-family="system-ui, sans-serif" font-size="10" fill="#0F172A" font-weight="600">4. 14th Floor Slab</text>
+    <text x="180" y="168" font-family="system-ui, sans-serif" font-size="10" fill="#64748B">15%</text>
+    <text x="250" y="168" font-family="system-ui, sans-serif" font-size="10" fill="#64748B">₹42,75,000</text>
+    <rect x="340" y="156" width="80" height="18" rx="3" fill="#F1F5F9"/>
+    <text x="354" y="169" font-family="system-ui, sans-serif" font-size="9" fill="#64748B">Upcoming</text>
+
+    <!-- Row 5: Handover &amp; Registration -->
+    <text x="20" y="198" font-family="system-ui, sans-serif" font-size="10" fill="#0F172A" font-weight="600">5. Handover &amp; Key Handover</text>
+    <text x="180" y="198" font-family="system-ui, sans-serif" font-size="10" fill="#64748B">45%</text>
+    <text x="250" y="198" font-family="system-ui, sans-serif" font-size="10" fill="#64748B">₹1,28,25,000</text>
+    <rect x="340" y="186" width="80" height="18" rx="3" fill="#F1F5F9"/>
+    <text x="354" y="199" font-family="system-ui, sans-serif" font-size="9" fill="#64748B">Upcoming</text>
+
+    <line x1="12" y1="216" x2="428" y2="216" stroke="#E2E8F0"/>
+    <text x="20" y="234" font-family="system-ui, sans-serif" font-size="10" fill="#15803D" font-weight="700">Total Collected So Far: ₹71,25,000 (25%)</text>
+  </g>
+
+  <!-- Right: Automated Notice Dispatch Box -->
+  <g transform="translate(476, 114)">
+    <rect width="224" height="248" rx="8" fill="#1E293B"/>
+    <rect width="224" height="30" rx="8" fill="#0F172A"/>
+    <text x="14" y="20" font-family="system-ui, sans-serif" font-size="11" fill="#FFFFFF" font-weight="700">Automated Demand Dispatch</text>
+    
+    <rect x="14" y="44" width="196" height="52" rx="6" fill="#334155"/>
+    <text x="22" y="60" font-family="system-ui, sans-serif" font-size="9.5" fill="#38BDF8" font-weight="700">Email Demand Notice Dispatched</text>
+    <text x="22" y="74" font-family="system-ui, sans-serif" font-size="8.5" fill="#CBD5E1">PDF attachment with bank RTGS details</text>
+    <text x="22" y="86" font-family="system-ui, sans-serif" font-size="8" fill="#34D399">Delivered &amp; Opened by Buyer ✓</text>
+
+    <rect x="14" y="106" width="196" height="52" rx="6" fill="#334155"/>
+    <text x="22" y="122" font-family="system-ui, sans-serif" font-size="9.5" fill="#25D366" font-weight="700">WhatsApp Payment Link Sent</text>
+    <text x="22" y="136" font-family="system-ui, sans-serif" font-size="8.5" fill="#CBD5E1">Direct payment gateway checkout URL</text>
+    <text x="22" y="148" font-family="system-ui, sans-serif" font-size="8" fill="#34D399">Instant payment reconciliation ✓</text>
+
+    <!-- Direct Action Button -->
+    <rect x="14" y="174" width="196" height="36" rx="6" fill="#2563EB"/>
+    <text x="44" y="196" font-family="system-ui, sans-serif" font-size="11" fill="#FFFFFF" font-weight="700">Download Allotment PDF ↗</text>
+
+    <text x="18" y="232" font-family="system-ui, sans-serif" font-size="9" fill="#94A3B8">Locked natively on Salesforce platform</text>
+  </g>
+</svg>
