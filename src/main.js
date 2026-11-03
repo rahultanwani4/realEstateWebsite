@@ -1,26 +1,24 @@
 import { initHeader } from './components/Header.js';
 import { initFooter } from './components/Footer.js';
 import { initFloatingChat } from './components/FloatingChat.js';
-import { initExitIntentModal } from './components/ExitIntentModal.js';
 import { initGlossaryTooltips } from './components/GlossaryTooltip.js';
+import { initImageLightbox } from './components/ImageLightbox.js';
 import { initRouter } from './router.js';
 
-// Mount Global Header (US-01)
+// Mount Global Header
 initHeader('#header-root');
 
-// Mount Global Footer (US-02)
+// Mount Global Footer
 initFooter('#footer-root');
 
-// Mount Floating WhatsApp (US-03)
+// Mount Floating WhatsApp
 initFloatingChat('#floating-chat-root');
 
-// Mount Exit-Intent Recovery Modal (US-32)
-initExitIntentModal('#exit-intent-root');
-
-// Initialize Plain Language & Accessibility Tooltips (US-35)
+// Initialize Plain Language & Accessibility Tooltips
 initGlossaryTooltips();
 
-// Initialize Multi-Page Router (Section 6 & 8 of website_brief.pdf and US-06 to US-17)
+// Initialize High-Resolution Image Lightbox Inspection
+initImageLightbox();
+
+// Initialize Single-Page Router & Sections (#home, #features, #benefits, #how-it-works, #live-demo, #contact)
 initRouter();
-
-

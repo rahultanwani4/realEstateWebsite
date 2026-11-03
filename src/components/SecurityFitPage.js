@@ -508,7 +508,7 @@ function setupSecurityFitInteractivity(container) {
           company: companyInput.value.trim(),
           notes: `[Technical Inquiry] ${qText}`,
           description: `[Technical Inquiry] ${qText}`,
-          leadSource: 'Website – Technical Question'
+          leadSource: 'Website - Technical Question'
         });
       } catch (err) {
         console.warn('Technical question Salesforce submission notice:', err);

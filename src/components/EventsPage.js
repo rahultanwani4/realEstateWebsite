@@ -164,7 +164,7 @@ export function initEventsPage(mountTarget = '#events-page-root') {
                         <div class="space-y-1">
                           ${event.speakers.map(s => `
                             <p class="text-xs font-medium text-slate-800">
-                              <strong>${s.name}</strong> <span class="text-slate-500">— ${s.role}</span>
+                              <strong>${s.name}</strong> <span class="text-slate-500">- ${s.role}</span>
                             </p>
                           `).join('')}
                         </div>
@@ -439,7 +439,7 @@ function openRegistrationModal(event) {
           fullName,
           email,
           company,
-          leadSource: `Event – ${event.title}`,
+          leadSource: `Event - ${event.title}`,
           description: `Event Registration: ${event.title} (${event.dateTimeDisplay}) | Consent Timestamp: ${new Date().toISOString()}`
         });
 

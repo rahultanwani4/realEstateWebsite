@@ -20,7 +20,7 @@ const calendarConfig = siteConfig.requestDemoPage?.calendarBooking || {
   minAdvanceHours: 4,
   assignedRep: 'Vikram Malhotra (Real Estate CRM Specialist)',
   onlineMeetingLink: 'https://meet.google.com/estateforce-demo-live',
-  inPersonAddress: 'Cloud Certitude Real Estate Solutions Hub, Tower B, Sector 62, Noida, NCR, India'
+  inPersonAddress: 'Cloud Certitude, DG-B-1704 & 05, 17th Floor, Emaar Digital Green, Golf Course Extn. Road, Sector-61, Gurugram, Haryana 122011'
 };
 
 /**
@@ -34,15 +34,15 @@ export function getAvailableSlotsForDate(dateStr) {
   const bookedSlots = rawBookings ? JSON.parse(rawBookings) : [];
 
   const slots = [
-    '10:00 AM – 10:30 AM',
-    '10:45 AM – 11:15 AM',
-    '11:30 AM – 12:00 PM',
-    '12:15 PM – 12:45 PM',
-    '02:00 PM – 02:30 PM',
-    '02:45 PM – 03:15 PM',
-    '03:30 PM – 04:00 PM',
-    '04:15 PM – 04:45 PM',
-    '05:00 PM – 05:30 PM'
+    '10:00 AM - 10:30 AM',
+    '10:45 AM - 11:15 AM',
+    '11:30 AM - 12:00 PM',
+    '12:15 PM - 12:45 PM',
+    '02:00 PM - 02:30 PM',
+    '02:45 PM - 03:15 PM',
+    '03:30 PM - 04:00 PM',
+    '04:15 PM - 04:45 PM',
+    '05:00 PM - 05:30 PM'
   ];
 
   const now = new Date();
@@ -50,7 +50,7 @@ export function getAvailableSlotsForDate(dateStr) {
 
   return slots.map(slot => {
     // Parse start time to calculate 4-hour lead time restriction
-    const [startPart] = slot.split(' – ');
+    const [startPart] = slot.split(' - ');
     const [time, meridiem] = startPart.split(' ');
     let [hours, minutes] = time.split(':').map(Number);
     if (meridiem === 'PM' && hours < 12) hours += 12;
@@ -74,7 +74,7 @@ export function getAvailableSlotsForDate(dateStr) {
  * Generates an .ics calendar file for download
  */
 export function generateIcsFile({ title, description, location, startDate, slotText }) {
-  const [startPart] = slotText.split(' – ');
+  const [startPart] = slotText.split(' - ');
   const [time, meridiem] = startPart.split(' ');
   let [hours, minutes] = time.split(':').map(Number);
   if (meridiem === 'PM' && hours < 12) hours += 12;
@@ -115,7 +115,7 @@ export function generateIcsFile({ title, description, location, startDate, slotT
  * Generates a direct Google Calendar add event URL
  */
 export function getGoogleCalendarUrl({ title, description, location, startDate, slotText }) {
-  const [startPart] = slotText.split(' – ');
+  const [startPart] = slotText.split(' - ');
   const [time, meridiem] = startPart.split(' ');
   let [hours, minutes] = time.split(':').map(Number);
   if (meridiem === 'PM' && hours < 12) hours += 12;

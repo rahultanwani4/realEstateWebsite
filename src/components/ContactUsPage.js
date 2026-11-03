@@ -20,27 +20,23 @@ export function initContactUsPage(mountTarget = '#contact-us-page-root') {
 
   const data = siteConfig.contactUsPage || {};
   const office = data.office || {
-    name: 'Cloud Certitude Real Estate Solutions Hub',
-    address: 'A-Block, Sector 62, Noida, Uttar Pradesh 201309, India',
-    businessHours: 'Monday – Friday: 9:00 AM – 7:00 PM IST',
-    latitude: 28.6280,
-    longitude: 77.3649,
-    directionsUrl: 'https://maps.google.com/?q=28.6280,77.3649'
+    name: 'Cloud Certitude Headquarters',
+    address: 'DG-B-1704 & 05, 17th Floor, Emaar Digital Green, Golf Course Extn. Road, Sector-61, Gurugram, Haryana 122011'
   };
 
   const contact = data.directContact || {
-    salesEmail: 'sales@cloudcertitude.com',
-    supportEmail: 'support@estateforce.in',
-    phone: '+91 98765 43210',
-    phoneRaw: '+919876543210',
-    whatsapp: 'https://wa.me/919876543210'
+    salesEmail: 'info@cloudcertitude.com',
+    supportEmail: 'info@cloudcertitude.com',
+    phone: '+91 81309 70706',
+    phoneRaw: '+918130970706',
+    whatsapp: 'https://wa.me/918130970706'
   };
 
   const topics = data.topics || ['Sales', 'Technical', 'Partnership', 'Support', 'Other'];
 
   function render() {
     container.innerHTML = `
-      <section class="contact-us-page relative py-16 sm:py-20 lg:py-24 bg-slate-900 text-white scroll-mt-20 overflow-hidden" id="contact-us-section">
+      <section class="contact-us-page relative pt-10 pb-24 sm:pt-12 sm:pb-20 bg-slate-900 text-white overflow-hidden" id="contact-us-section">
         
         <!-- Ambient Background Glow -->
         <div class="absolute -top-40 -left-40 w-96 h-96 bg-blue-600/15 rounded-full blur-3xl pointer-events-none" aria-hidden="true"></div>
@@ -49,7 +45,7 @@ export function initContactUsPage(mountTarget = '#contact-us-page-root') {
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           
           <!-- Header -->
-          <div class="text-center max-w-3xl mx-auto mb-14">
+          <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
             <span class="inline-flex items-center gap-1.5 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-blue-400 bg-blue-950/80 border border-blue-800/60 rounded-full mb-3">
               <span class="w-2 h-2 rounded-full bg-blue-400"></span>
               <span>Get In Touch</span>
@@ -67,7 +63,7 @@ export function initContactUsPage(mountTarget = '#contact-us-page-root') {
             
             <!-- Left Column: Interactive Contact Form (US-25 Criterion 1) -->
             <div class="lg:col-span-7">
-              <div class="bg-white text-slate-900 rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-2xl relative" id="contact-form-card">
+              <div class="bg-white text-slate-900 rounded-2xl border border-slate-200 p-5 sm:p-8 pb-12 sm:pb-8 shadow-2xl relative" id="contact-form-card">
                 
                 <h2 class="text-xl font-extrabold text-slate-900 mb-1">Send Us a Direct Message</h2>
                 <p class="text-xs text-slate-500 mb-6">Our solutions engineers reply within 60 minutes during standard business hours.</p>
@@ -95,7 +91,7 @@ export function initContactUsPage(mountTarget = '#contact-us-page-root') {
                     <p class="field-error-msg hidden text-[11px] font-medium text-rose-600 mt-1" id="err-contact-name"></p>
                   </div>
 
-                  <!-- Email & Phone -->
+                  <!-- Email & Company -->
                   <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                       <label for="contact-email" class="block text-xs font-bold text-slate-700 uppercase mb-1">
@@ -111,11 +107,26 @@ export function initContactUsPage(mountTarget = '#contact-us-page-root') {
                     </div>
 
                     <div>
+                      <label for="contact-company" class="block text-xs font-bold text-slate-700 uppercase mb-1">
+                        Company <span class="font-normal text-slate-400 text-xs">(optional)</span>
+                      </label>
+                      <input type="text" 
+                             id="contact-company" 
+                             name="company" 
+                             maxlength="120"
+                             placeholder="e.g. Prestige Developers" 
+                             class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 bg-white text-sm text-slate-900 placeholder:text-slate-400 focus:border-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-100 transition-colors" />
+                    </div>
+                  </div>
+
+                  <!-- Phone & Topic -->
+                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
                       <label for="contact-phone" class="block text-xs font-bold text-slate-700 uppercase mb-1">
                         Phone <span class="font-normal text-slate-400 text-xs">(optional)</span>
                       </label>
                       <div class="flex gap-2">
-                        <span class="inline-flex items-center px-2.5 py-2 rounded-xl bg-slate-50 text-slate-700 font-bold text-xs border border-slate-300">🇮🇳 +91</span>
+                        <span class="inline-flex items-center justify-center px-3 py-2.5 rounded-xl bg-slate-50 text-slate-700 font-bold text-xs border border-slate-300 shrink-0">🇮🇳 +91</span>
                         <input type="tel" 
                                id="contact-phone" 
                                name="phone" 
@@ -124,30 +135,29 @@ export function initContactUsPage(mountTarget = '#contact-us-page-root') {
                       </div>
                       <p class="field-error-msg hidden text-[11px] font-medium text-rose-600 mt-1" id="err-contact-phone"></p>
                     </div>
+
+                    <div>
+                      <label for="contact-topic" class="block text-xs font-bold text-slate-700 uppercase mb-1">
+                        Inquiry Topic <span class="text-rose-500">*</span>
+                      </label>
+                      <select id="contact-topic" 
+                              name="interest" 
+                              required="" 
+                              class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 bg-white text-sm text-slate-900 focus:border-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-100 transition-colors">
+                        <option value="">Select a topic...</option>
+                        ${topics.map(t => `<option value="${t}">${t}</option>`).join('')}
+                      </select>
+                      <p class="field-error-msg hidden text-[11px] font-medium text-rose-600 mt-1" id="err-contact-topic"></p>
+                    </div>
                   </div>
 
-                  <!-- Topic Dropdown (US-25 Criterion 1) -->
-                  <div>
-                    <label for="contact-topic" class="block text-xs font-bold text-slate-700 uppercase mb-1">
-                      Inquiry Topic <span class="text-rose-500">*</span>
-                    </label>
-                    <select id="contact-topic" 
-                            name="topic" 
-                            required="" 
-                            class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 bg-white text-sm text-slate-900 focus:border-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-100 transition-colors">
-                      <option value="">Select a topic...</option>
-                      ${topics.map(t => `<option value="${t}">${t}</option>`).join('')}
-                    </select>
-                    <p class="field-error-msg hidden text-[11px] font-medium text-rose-600 mt-1" id="err-contact-topic"></p>
-                  </div>
-
-                  <!-- Message (10-1500 chars) -->
+                  <!-- Message / Description (10-1500 chars) -->
                   <div>
                     <label for="contact-message" class="block text-xs font-bold text-slate-700 uppercase mb-1">
                       Message <span class="text-rose-500">*</span>
                     </label>
                     <textarea id="contact-message" 
-                              name="message" 
+                              name="description" 
                               rows="4" 
                               minlength="10" 
                               maxlength="1500" 
@@ -178,9 +188,8 @@ export function initContactUsPage(mountTarget = '#contact-us-page-root') {
                     <span id="contact-btn-text">Send Message</span>
                   </button>
 
-                  <!-- Form Privacy Notice next to submit button (US-26 Criterion 3) -->
-                  <p class="mt-3 text-center text-xs text-slate-500">
-                    By submitting, you agree to our processing of your details per our <a href="/privacy-policy" target="_blank" class="text-blue-600 hover:underline font-semibold">Privacy Policy</a>.
+                  <p class="mt-4 mb-2 text-center text-xs text-slate-500 max-w-[280px] sm:max-w-none mx-auto leading-relaxed">
+                    We will only use your details to reply to your message.
                   </p>
 
                 </form>
@@ -229,31 +238,18 @@ export function initContactUsPage(mountTarget = '#contact-us-page-root') {
                 </a>
               </div>
 
-              <!-- Office & Hours -->
+              <!-- Office (Without working hours, clean card) -->
               <div class="bg-slate-800/60 border border-slate-700/60 rounded-2xl p-6 space-y-3">
-                <h3 class="text-base font-bold text-white mb-2">Corporate Headquarters</h3>
-                <p class="text-xs sm:text-sm text-slate-300 font-semibold">${office.name}</p>
-                <p class="text-xs text-slate-400 leading-relaxed">${office.address}</p>
-                <p class="text-xs text-blue-400 font-medium"><strong>Hours:</strong> ${office.businessHours}</p>
-              </div>
-
-              <!-- Map Embed & Directions (US-25 Criterion 4) -->
-              <div class="bg-slate-800/60 border border-slate-700/60 rounded-2xl p-5" id="contact-map-container">
-                <div class="rounded-xl overflow-hidden bg-slate-900 border border-slate-700 relative aspect-video flex items-center justify-center text-center p-4">
-                  <div class="space-y-2">
-                    <svg viewBox="0 0 24 24" width="28" height="28" class="text-rose-500 mx-auto" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-                    <p class="text-xs font-bold text-white">Cloud Certitude PropTech Hub</p>
-                    <p class="text-[11px] text-slate-400">Sector 62, Noida, NCR, India</p>
+                <div class="flex items-start gap-3.5">
+                  <span class="w-9 h-9 rounded-xl bg-blue-500/20 text-blue-400 flex items-center justify-center shrink-0 mt-0.5">
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                  </span>
+                  <div>
+                    <h3 class="text-base font-bold text-white mb-1.5">Corporate Headquarters</h3>
+                    <p class="text-xs sm:text-sm text-slate-300 font-semibold mb-1">${office.name}</p>
+                    <p class="text-xs text-slate-400 leading-relaxed">${office.address}</p>
                   </div>
                 </div>
-                <a href="${office.directionsUrl}" 
-                   id="office-directions-link"
-                   target="_blank" 
-                   rel="noopener noreferrer" 
-                   class="mt-4 w-full inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-xl bg-slate-700 hover:bg-slate-600 text-white text-xs font-bold transition-colors">
-                  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><polygon points="3 11 22 2 13 21 11 13 3 11"></polygon></svg>
-                  <span>Get Driving Directions</span>
-                </a>
               </div>
 
             </div>
@@ -274,6 +270,7 @@ export function initContactUsPage(mountTarget = '#contact-us-page-root') {
 
     const inputName = form.querySelector('#contact-full-name') || form.querySelector('#contact-name');
     const inputEmail = form.querySelector('#contact-email');
+    const inputCompany = form.querySelector('#contact-company');
     const inputPhone = form.querySelector('#contact-phone');
     const inputTopic = form.querySelector('#contact-topic');
     const inputMsg = form.querySelector('#contact-message');
@@ -305,6 +302,7 @@ export function initContactUsPage(mountTarget = '#contact-us-page-root') {
 
       const nameVal = inputName.value.trim();
       const emailVal = inputEmail.value.trim();
+      const companyVal = inputCompany ? inputCompany.value.trim() : '';
       const phoneVal = inputPhone.value.trim().replace(/\D/g, '');
       const topicVal = inputTopic.value;
       const msgVal = inputMsg.value.trim();
@@ -365,9 +363,10 @@ export function initContactUsPage(mountTarget = '#contact-us-page-root') {
         fullName: nameVal,
         email: emailVal,
         phone: phoneVal ? formatSalesforcePhone(phoneVal) : '',
-        company: 'Contact Inquirer',
+        company: companyVal || 'Not Specified',
         interest: topicVal,
-        notes: `[Contact Form - ${topicVal}]: ${msgVal}`,
+        description: msgVal,
+        leadSource: 'CC Real Estate Website - Demo Request',
         sourcePage: 'contact_us_page',
         consentGiven: true,
         consentWording: 'I agree to be contacted regarding my inquiry. We respect your privacy.',

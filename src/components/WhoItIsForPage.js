@@ -229,11 +229,12 @@ export function initWhoItIsForPage(mountTarget = '#who-it-is-for-page-root') {
               </div>
 
               <!-- Right Column: High-Resolution Screenshot in Clean Device Card (US-12 Criterion 2) -->
-              <div class="w-full">
-                <div class="bg-white rounded-xl overflow-hidden shadow-lg border border-slate-200/90 transition-transform duration-300 hover:-translate-y-1" role="region" aria-label="${aud.alt}">
+              <div class="w-full flex items-center justify-center">
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg border border-slate-200/90 transition-transform duration-300 hover:-translate-y-1 cursor-zoom-in max-w-full" role="region" aria-label="${aud.alt}">
                   <img src="${aud.screenshot}" 
                        alt="${aud.alt}" 
-                       class="w-full h-auto block" 
+                       class="w-full h-auto block select-none" 
+                       style="image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges;"
                        loading="lazy" />
                 </div>
               </div>

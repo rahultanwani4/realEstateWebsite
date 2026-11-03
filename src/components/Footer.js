@@ -1,5 +1,6 @@
 import siteConfig from '../data/site-config.json';
 import { recordDemoClick } from './Header.js';
+import { scrollToSection } from '../utils/scrollHelper.js';
 
 /**
  * Validates footer configuration against US-02 validation rules:
@@ -107,30 +108,15 @@ export function initFooter(mountSelector = '#footer-root') {
           
           <!-- Column 1: Brand Logo & One-line Description (US-02 Criterion 1) -->
           <div class="footer-col footer-col-brand">
-            <a href="${logo.homeUrl}" class="footer-logo-link" aria-label="EstateForce Home">
-              <img src="${logo.src}" alt="${logo.alt}" class="footer-logo-img" />
+            <a href="${logo.homeUrl}" class="footer-logo-link" aria-label="CC Real Estate Home">
+              <div class="flex items-center gap-3">
+                <img src="${logo.src}" alt="${logo.alt}" class="footer-logo-img" />
+                <span class="brand-title text-white">CC Real Estate</span>
+              </div>
             </a>
             <p class="footer-description">
               ${footerData.packageDescription}
             </p>
-
-            <!-- AppExchange Verified Badge Link (US-02 Criterion 2) -->
-            <div class="appexchange-badge-box">
-              <a href="${footerData.appExchange.url}" 
-                 target="${footerData.appExchange.openInNewTab ? '_blank' : '_self'}" 
-                 rel="noopener noreferrer" 
-                 class="appexchange-link"
-                 id="footer-appexchange-link">
-                <svg class="sf-cloud-icon" viewBox="0 0 24 24" width="16" height="16" fill="#0284C7">
-                  <path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96z"/>
-                </svg>
-                <span>Salesforce AppExchange</span>
-                <svg class="external-icon" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                  <polyline points="15 3 21 3 21 9"></polyline>
-                </svg>
-              </a>
-            </div>
           </div>
 
           <!-- Column 2 & 3: Grouped Quick Links (US-02 Criterion 2) -->
@@ -199,23 +185,12 @@ export function initFooter(mountSelector = '#footer-root') {
         </div>
       </div>
 
-      <!-- Bottom Bar: Dynamic Copyright & Legal Links (US-02 Criterion 5, 6) -->
+      <!-- Bottom Bar: Dynamic Copyright -->
       <div class="footer-bottom">
-        <div class="footer-container footer-bottom-inner">
+        <div class="footer-container footer-bottom-inner" style="justify-content: center; text-align: center;">
           <p class="copyright-line">
             © ${currentYear} ${footerData.legal.copyrightHolder}
           </p>
-          <ul class="legal-nav">
-            ${footerData.legal.links.map(item => `
-              <li>
-                <a href="${item.url}" 
-                   class="legal-link"
-                   ${item.isAction ? 'id="cookie-settings-trigger"' : ''}>
-                  ${item.label}
-                </a>
-              </li>
-            `).join('')}
-          </ul>
         </div>
       </div>
     </footer>
@@ -230,11 +205,27 @@ export function initFooter(mountSelector = '#footer-root') {
 function setupFooterInteractivity() {
   const footerDemoBtn = document.getElementById('footer-demo-button');
   if (footerDemoBtn) {
-    footerDemoBtn.addEventListener('click', () => {
+    footerDemoBtn.addEventListener('click', (e) => {
+      const href = footerDemoBtn.getAttribute('href');
+      if (href && href.startsWith('#')) {
+        e.preventDefault();
+        scrollToSection(href.substring(1));
+      }
       const source = footerDemoBtn.getAttribute('data-source-page') || 'global_footer';
       recordDemoClick(source);
     });
   }
+
+  // Smooth scroll for footer anchor links
+  document.querySelectorAll('.footer-link, .footer-logo-link').forEach(link => {
+    link.addEventListener('click', (e) => {
+      const href = link.getAttribute('href');
+      if (href && href.startsWith('#')) {
+        e.preventDefault();
+        scrollToSection(href.substring(1));
+      }
+    });
+  });
 
   const cookieSettingsBtn = document.getElementById('cookie-settings-trigger');
   if (cookieSettingsBtn) {

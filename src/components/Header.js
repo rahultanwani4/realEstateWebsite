@@ -1,11 +1,8 @@
 import siteConfig from '../data/site-config.json';
+import { scrollToSection } from '../utils/scrollHelper.js';
 
 /**
- * Validates header configuration against US-01 validation rules:
- * - Logo SVG/PNG, max 200 KB
- * - Max 8 menu items
- * - Menu links must point to published pages
- * - URLs must be valid https (or relative anchor/path)
+ * Validates header configuration
  */
 function validateHeaderConfig(config) {
   const { header } = config;
@@ -19,12 +16,11 @@ function validateHeaderConfig(config) {
     ...header,
     menuItems: publishedItems
       .sort((a, b) => (a.order || 0) - (b.order || 0))
-      .slice(0, 8)
   };
 }
 
 /**
- * Records telemetry event for Request a Demo button clicks (US-01 Criterion 3)
+ * Records telemetry event for Request a Demo button clicks
  */
 export function recordDemoClick(sourcePage = 'global_header') {
   const eventData = {
@@ -35,73 +31,35 @@ export function recordDemoClick(sourcePage = 'global_header') {
   };
 
   window.dispatchEvent(new CustomEvent('estateforce:demo_click', { detail: eventData }));
-  console.log('[Telemetry US-01] Demo button clicked:', eventData);
-
-  // Discreet toast notification
-  showToast('Demo request registered');
 }
 
 /**
- * Discreet, minimal toast notification helper
- */
-function showToast(message) {
-  let toast = document.getElementById('telemetry-toast');
-  if (!toast) {
-    toast = document.createElement('div');
-    toast.id = 'telemetry-toast';
-    toast.className = 'telemetry-toast';
-    document.body.appendChild(toast);
-  }
-  toast.innerHTML = `
-    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-      <polyline points="20 6 9 17 4 12"></polyline>
-    </svg>
-    <span>${message}</span>
-  `;
-  toast.classList.add('show');
-  clearTimeout(toast._timeout);
-  toast._timeout = setTimeout(() => {
-    toast.classList.remove('show');
-  }, 2800);
-}
-
-/**
- * Initializes the Global Header (US-01) with clean, minimal, enterprise styling
+ * Initializes the Global Single-Page Header matching SurveyResults.online layout
  */
 export function initHeader(mountSelector = '#header-root') {
   const container = document.querySelector(mountSelector);
   if (!container) return;
 
   const headerData = validateHeaderConfig(siteConfig);
-  const { logo, supportLink, menuItems, demoButton } = headerData;
-  const currentHash = window.location.hash || '#home';
+  const { logo, menuItems, demoButton } = headerData;
 
-  // Render Single Clean, Unified Header (No heavy top-bar clutter)
   container.innerHTML = `
     <header class="site-header" id="site-header" role="banner">
       <div class="header-container">
         
-        <!-- Brand Logo on left (US-01 Criterion 1) -->
-        <a href="${logo.homeUrl}" class="brand-logo-link" id="brand-logo" aria-label="EstateForce Home" title="EstateForce - Return to Home Page">
+        <!-- Brand Logo on left: Cloud Certitude side logo + CC Real Estate -->
+        <a href="#home" class="brand-logo-link" id="brand-logo" aria-label="CC Real Estate Home" title="CC Real Estate - Return to Top">
           <img src="${logo.src}" alt="${logo.alt}" class="brand-logo-img" />
+          <span class="brand-title">CC Real Estate</span>
         </a>
 
-        <!-- Clean Desktop Navigation (US-01 Criterion 2) -->
+        <!-- Desktop Navigation: Features, Benefits, How It Works, Live Demo, Contact -->
         <nav class="desktop-nav" aria-label="Primary Navigation">
           <ul class="nav-menu" id="desktop-nav-menu">
-            <li class="nav-item">
-              <a href="/" 
-                 class="nav-link ${currentHash === '/' || currentHash === '#home' ? 'is-active' : ''}" 
-                 id="nav-link-home"
-                 data-section="home"
-                 title="Return to Home Page">
-                Home
-              </a>
-            </li>
-            ${menuItems.map(item => `
+            ${menuItems.map((item, idx) => `
               <li class="nav-item">
                 <a href="${item.link}" 
-                   class="nav-link ${currentHash === item.link ? 'is-active' : ''}" 
+                   class="nav-link ${idx === 0 ? 'is-active' : ''}" 
                    id="nav-link-${item.id}"
                    data-section="${item.link.replace('#', '')}">
                   ${item.label}
@@ -111,31 +69,16 @@ export function initHeader(mountSelector = '#header-root') {
           </ul>
         </nav>
 
-        <!-- Right Side: Clean Support Link & Demo CTA (US-01 Criterion 3, 4) -->
+        <!-- Right Side: Primary Request a Demo CTA (Smooth-scrolls to #contact) -->
         <div class="header-actions">
-          <a href="${supportLink.url}" 
-             target="${supportLink.openInNewTab ? '_blank' : '_self'}" 
-             rel="noopener noreferrer" 
-             class="support-link"
-             id="header-support-link"
-             title="${supportLink.label}">
-            <span>Support</span>
-            <svg class="external-icon" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-              <polyline points="15 3 21 3 21 9"></polyline>
-              <line x1="10" y1="14" x2="21" y2="3"></line>
-            </svg>
-          </a>
-
-          <!-- Primary Demo Button: Clean, solid accent, always visible (US-01 Criterion 3, 6) -->
-          <a href="${demoButton.link}" 
+          <a href="${demoButton?.link || '#contact'}" 
              class="btn-request-demo" 
-             id="${demoButton.id}"
-             data-source-page="${demoButton.sourcePage}">
-            ${demoButton.label}
+             id="${demoButton?.id || 'global-demo-button'}"
+             data-source-page="${demoButton?.sourcePage || 'global_header'}">
+            ${demoButton?.label || 'Request a Demo'}
           </a>
 
-          <!-- Minimalist Mobile Menu Toggle (US-01 Criterion 6) -->
+          <!-- Mobile Menu Toggle -->
           <button type="button" 
                   class="mobile-menu-toggle" 
                   id="mobile-menu-toggle" 
@@ -153,55 +96,49 @@ export function initHeader(mountSelector = '#header-root') {
       <!-- Mobile Dropdown Drawer -->
       <div class="mobile-drawer-backdrop" id="mobile-drawer-backdrop"></div>
       <div class="mobile-nav-drawer" id="mobile-nav-drawer" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
+        <div class="mobile-drawer-header">
+          <a href="#home" class="brand-logo-link">
+            <img src="${logo.src}" alt="${logo.alt}" class="brand-logo-img" />
+            <span class="brand-title">CC Real Estate</span>
+          </a>
+          <button type="button" id="mobile-drawer-close-btn" class="p-2 text-slate-500 hover:text-slate-900" aria-label="Close Menu">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+          </button>
+        </div>
         <ul class="mobile-nav-list" id="mobile-nav-list">
-          <li class="mobile-nav-item">
-            <a href="/" 
-               class="mobile-nav-link ${currentHash === '/' || currentHash === '#home' ? 'is-active' : ''}" 
-               data-section="home"
-               title="Return to Home Page">
-              Home
-            </a>
-          </li>
-          ${menuItems.map(item => `
+          ${menuItems.map((item, idx) => `
             <li class="mobile-nav-item">
               <a href="${item.link}" 
-                 class="mobile-nav-link ${currentHash === item.link ? 'is-active' : ''}" 
+                 class="mobile-nav-link ${idx === 0 ? 'is-active' : ''}" 
                  data-section="${item.link.replace('#', '')}">
                 ${item.label}
               </a>
             </li>
           `).join('')}
-          <li class="mobile-nav-item mobile-support-item">
-            <a href="${supportLink.url}" 
-               target="${supportLink.openInNewTab ? '_blank' : '_self'}" 
-               rel="noopener noreferrer" 
-               class="mobile-nav-link">
-              <span>Customer Support</span>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                <polyline points="15 3 21 3 21 9"></polyline>
-                <line x1="10" y1="14" x2="21" y2="3"></line>
-              </svg>
-            </a>
-          </li>
         </ul>
+        <div class="mobile-drawer-footer">
+          <a href="${demoButton?.link || '#contact'}" class="btn-request-demo w-full text-center block">
+            ${demoButton?.label || 'Request a Demo'}
+          </a>
+        </div>
       </div>
     </header>
   `;
 
   setupHeaderInteractivity();
+  initScrollSpy();
 }
 
 /**
- * Minimalist, robust event handlers
+ * Event handlers for sticky state, drawer, and smooth anchor scrolling
  */
 function setupHeaderInteractivity() {
   const header = document.getElementById('site-header');
   const toggleBtn = document.getElementById('mobile-menu-toggle');
+  const closeBtn = document.getElementById('mobile-drawer-close-btn');
   const drawer = document.getElementById('mobile-nav-drawer');
   const backdrop = document.getElementById('mobile-drawer-backdrop');
   const demoButtons = document.querySelectorAll('.btn-request-demo');
-  const navLinks = document.querySelectorAll('.nav-link, .mobile-nav-link');
 
   // Sticky header border on scroll
   const onScroll = () => {
@@ -216,22 +153,22 @@ function setupHeaderInteractivity() {
 
   // Mobile menu open / close
   const openMenu = () => {
-    toggleBtn.setAttribute('aria-expanded', 'true');
-    drawer.classList.add('is-open');
-    backdrop.classList.add('is-open');
+    toggleBtn?.setAttribute('aria-expanded', 'true');
+    drawer?.classList.add('is-open');
+    backdrop?.classList.add('is-open');
     document.body.style.overflow = 'hidden';
-    const firstLink = drawer.querySelector('a');
+    const firstLink = drawer?.querySelector('a');
     if (firstLink) firstLink.focus();
   };
 
   const closeMenu = () => {
-    toggleBtn.setAttribute('aria-expanded', 'false');
-    drawer.classList.remove('is-open');
-    backdrop.classList.remove('is-open');
+    toggleBtn?.setAttribute('aria-expanded', 'false');
+    drawer?.classList.remove('is-open');
+    backdrop?.classList.remove('is-open');
     document.body.style.overflow = '';
   };
 
-  toggleBtn.addEventListener('click', () => {
+  toggleBtn?.addEventListener('click', () => {
     const isExpanded = toggleBtn.getAttribute('aria-expanded') === 'true';
     if (isExpanded) {
       closeMenu();
@@ -240,49 +177,85 @@ function setupHeaderInteractivity() {
     }
   });
 
-  backdrop.addEventListener('click', closeMenu);
+  closeBtn?.addEventListener('click', closeMenu);
+  backdrop?.addEventListener('click', closeMenu);
 
-  // Close mobile drawer when clicking any link inside it
-  const mobileNavLinks = drawer.querySelectorAll('.mobile-nav-link');
-  mobileNavLinks.forEach(link => {
-    link.addEventListener('click', closeMenu);
+  // Smooth scroll with precise header offset and auto-close drawer on link click
+  const allNavLinks = document.querySelectorAll('.nav-link, .mobile-nav-link, .brand-logo-link');
+  allNavLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      const href = link.getAttribute('href');
+      if (href && href.startsWith('#')) {
+        e.preventDefault();
+        closeMenu();
+        const targetId = href.substring(1);
+        scrollToSection(targetId);
+        history.pushState(null, '', href);
+        setActiveNavRoute(href);
+      }
+    });
   });
 
   window.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && toggleBtn.getAttribute('aria-expanded') === 'true') {
+    if (e.key === 'Escape' && toggleBtn?.getAttribute('aria-expanded') === 'true') {
       closeMenu();
       toggleBtn.focus();
     }
   });
 
-  // Demo click tracking
   demoButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const sourcePage = btn.getAttribute('data-source-page') || 'global_header';
-      recordDemoClick(sourcePage);
+    btn.addEventListener('click', (e) => {
+      const href = btn.getAttribute('href');
+      if (href && href.startsWith('#')) {
+        e.preventDefault();
+        closeMenu();
+        scrollToSection(href.substring(1));
+        history.pushState(null, '', href);
+      }
+      recordDemoClick(btn.getAttribute('data-source-page') || 'global_header');
     });
   });
 }
 
 /**
- * Highlights current active route in the header menu (US-01 Criterion 2)
+ * Initializes single-page ScrollSpy to highlight the active navbar item as user scrolls
  */
-export function setActiveNavRoute(routePath = '/') {
-  const cleanPath = (routePath || '').split('?')[0].split('#')[0];
+function initScrollSpy() {
+  const sections = ['home', 'features', 'benefits', 'how-it-works', 'live-demo', 'about', 'contact'];
+  const sectionElements = sections
+    .map(id => document.getElementById(id))
+    .filter(Boolean);
+
+  if (sectionElements.length === 0) return;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.id;
+        setActiveNavRoute(`#${id}`);
+      }
+    });
+  }, {
+    rootMargin: '-20% 0px -60% 0px',
+    threshold: 0
+  });
+
+  sectionElements.forEach(el => observer.observe(el));
+}
+
+/**
+ * Highlights current active anchor in navigation
+ */
+export function setActiveNavRoute(routeAnchor = '#home') {
+  const cleanAnchor = routeAnchor.startsWith('#') ? routeAnchor : `#${routeAnchor.replace('/', '')}`;
   const allNavLinks = document.querySelectorAll('.desktop-nav .nav-link, .mobile-nav-drawer .mobile-nav-link');
   
   allNavLinks.forEach(link => {
     const href = link.getAttribute('href');
-    if (!href) return;
-    const cleanHref = href.split('?')[0].split('#')[0];
-    
-    if (cleanPath && cleanHref === cleanPath && cleanPath !== '/') {
-      link.classList.add('is-active');
-    } else if (cleanPath === '/' && (cleanHref === '/' || cleanHref === '#home')) {
+    if (href === cleanAnchor) {
       link.classList.add('is-active');
     } else {
       link.classList.remove('is-active');
     }
   });
 }
-

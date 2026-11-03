@@ -104,7 +104,7 @@ export function initLegalPage(mountTarget = '#legal-page-root', documentType = '
                 <span class="text-[11px] font-bold uppercase tracking-wider text-slate-400 block mb-2">Governing Entity</span>
                 <p class="text-xs text-slate-600 font-medium leading-relaxed">
                   Cloud Certitude Solutions Pvt. Ltd.<br>
-                  Sector 62, Noida, India<br>
+                  Gurugram, Haryana, India<br>
                   CIN: Enterprise ISV Partner
                 </p>
               </div>

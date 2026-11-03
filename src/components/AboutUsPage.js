@@ -52,7 +52,7 @@ export function initAboutUsPage(mountTarget = '#about-us-page-root') {
               ${data.companyStory}
             </p>
             <p>
-              Rather than forcing developers onto rigid standalone software that locks property data into external proprietary silos, EstateForce is architected 100% natively on the Salesforce Lightning platform — giving property enterprises complete data sovereignty, uncompromised auditability, and immediate multi-project scalability.
+              Rather than forcing developers onto rigid standalone software that locks property data into external proprietary silos, EstateForce is architected 100% natively on the Salesforce Lightning platform - giving property enterprises complete data sovereignty, uncompromised auditability, and immediate multi-project scalability.
             </p>
           </div>
           <div class="lg:col-span-5">

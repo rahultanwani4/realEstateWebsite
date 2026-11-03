@@ -130,39 +130,39 @@ export function initHowItWorksPage(mountTarget = '#how-it-works-page-root') {
   const data = validateHowItWorksConfig(siteConfig);
 
   container.innerHTML = `
-    <section class="how-it-works-page relative py-16 sm:py-20 lg:py-24 bg-white border-t border-slate-200 scroll-mt-20" id="how-it-works-section" aria-labelledby="how-heading">
+    <section class="how-it-works-page relative pt-10 pb-16 sm:pt-12 sm:pb-20 bg-white border-t border-slate-200" id="how-it-works-section" aria-labelledby="how-heading">
       
       <!-- Top Introduction Banner -->
-      <div class="text-center mb-12 sm:mb-16 max-w-4xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-10 sm:mb-14 max-w-4xl mx-auto px-4 sm:px-6">
         <span class="inline-flex items-center px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-blue-600 bg-blue-50 border border-blue-200 rounded-full mb-3.5">Deployment &amp; Onboarding</span>
-        <h1 class="text-3xl sm:text-4xl lg:text-[40px] font-extrabold text-slate-900 tracking-tight leading-tight mb-3.5" id="how-heading">How EstateForce Works &amp; Deploys</h1>
+        <h1 class="text-3xl sm:text-4xl lg:text-[40px] font-extrabold text-slate-900 tracking-tight leading-tight mb-3.5" id="how-heading">How CC Real Estate Works &amp; Deploys</h1>
         <p class="text-sm sm:text-base text-slate-600 max-w-2xl mx-auto leading-relaxed">${data.pageIntroduction}</p>
       </div>
 
-      <!-- US-13 Criterion 1 & 2: Step-by-Step Visual Journey (Horizontal on desktop, vertical on mobile) -->
+      <!-- US-13 Criterion 1 & 2: Step-by-Step Visual Journey (Horizontal on desktop, 2x2 on tablet/laptop, vertical on mobile) -->
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16 sm:mb-20">
         
-        <div class="text-center mb-10">
+        <div class="text-center mb-8 sm:mb-10">
           <span class="text-xs font-extrabold uppercase tracking-widest text-slate-400">Implementation Timeline</span>
           <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mt-1 mb-2">${data.journeyTitle}</h2>
-          <p class="text-sm text-slate-600 max-w-xl mx-auto">${data.journeySubtitle}</p>
+          <p class="text-xs sm:text-sm text-slate-600 max-w-xl mx-auto leading-relaxed">${data.journeySubtitle}</p>
         </div>
 
-        <!-- Timeline Container (Horizontal grid on desktop, vertical stacked list on mobile) -->
+        <!-- Timeline Container -->
         <div class="relative">
           
-          <!-- Connecting Bar on Desktop (hidden on mobile) -->
+          <!-- Connecting Bar on Desktop (hidden on mobile and tablet) -->
           <div class="hidden lg:block absolute top-[28px] left-[6%] right-[6%] h-1 bg-slate-200 -z-0" aria-hidden="true"></div>
 
           <!-- The Steps (US-13 Criterion 1: 3-7 steps with duration per step) -->
-          <div class="grid grid-cols-1 lg:grid-cols-4 gap-6 lg:gap-5 relative z-10">
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6 lg:gap-5 relative z-10">
             ${data.steps.map((step) => `
               <div class="journey-step-card bg-white border border-slate-200 rounded-2xl p-5 sm:p-6 shadow-sm hover:shadow-md hover:border-blue-300 transition-all duration-200 flex flex-col justify-between" id="${step.id}">
                 <div>
                   
                   <!-- Top Row: Step Number Circle & Duration Pill -->
                   <div class="flex items-center justify-between gap-3 mb-4">
-                    <div class="w-12 h-12 rounded-full bg-blue-600 text-white font-extrabold text-base flex items-center justify-center shadow-md shadow-blue-500/25 shrink-0">
+                    <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-blue-600 text-white font-extrabold text-sm sm:text-base flex items-center justify-center shadow-md shadow-blue-500/25 shrink-0">
                       0${step.order}
                     </div>
                     <span class="inline-flex items-center gap-1.5 px-3 py-1 bg-slate-100 text-slate-700 text-xs font-bold rounded-full border border-slate-200">
@@ -199,23 +199,23 @@ export function initHowItWorksPage(mountTarget = '#how-it-works-page-root') {
       <!-- US-13 Criterion 3: Five Plain-Language Onboarding Blocks -->
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16 sm:mb-20">
         
-        <div class="text-center mb-10">
-          <span class="text-xs font-extrabold uppercase tracking-widest text-slate-400">Onboarding Scope</span>
-          <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mt-1 mb-2">${data.onboardingSectionTitle}</h2>
-          <p class="text-sm text-slate-600 max-w-xl mx-auto">${data.onboardingSectionSubtitle}</p>
+        <div class="text-center mb-8 sm:mb-12">
+          <span class="inline-flex items-center gap-1.5 px-3 py-1 bg-blue-50 text-blue-700 text-xs font-extrabold uppercase tracking-widest rounded-full border border-blue-200/80 mb-2">Onboarding Scope</span>
+          <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight mt-1 mb-2.5">${data.onboardingSectionTitle}</h2>
+          <p class="text-xs sm:text-sm md:text-base text-slate-600 max-w-2xl mx-auto leading-relaxed">${data.onboardingSectionSubtitle}</p>
 
-          <!-- Onboarding Topic Selector Tabs -->
-          <div class="flex justify-center w-full overflow-x-auto mt-6 pb-1" style="scrollbar-width: none;">
-            <div class="inline-flex items-center gap-1.5 sm:gap-2 bg-slate-100 p-1.5 rounded-full border border-slate-200 max-w-full" role="tablist" aria-label="Select onboarding topic">
+          <!-- Onboarding Topic Selector Tabs (responsive flex-wrap capsule on mobile, sleek pill bar on desktop & laptop) -->
+          <div class="w-full max-w-4xl mx-auto mt-6 sm:mt-8 px-2 sm:px-0 flex justify-center">
+            <div class="inline-flex flex-wrap items-center justify-center gap-1.5 sm:gap-2 bg-slate-100/95 p-1.5 rounded-2xl sm:rounded-full border border-slate-200/90 shadow-xs max-w-full" role="tablist" aria-label="Select onboarding topic">
               ${data.onboardingTopics.map((top, idx) => `
                 <button type="button" 
-                        class="how-topic-tab inline-flex items-center gap-2 px-3.5 sm:px-5 py-2 rounded-full text-xs sm:text-sm font-bold transition-all duration-200 whitespace-nowrap cursor-pointer ${idx === 0 ? 'bg-white text-blue-600 shadow-sm border border-slate-200 font-extrabold is-active' : 'text-slate-600 hover:text-blue-600'}" 
+                        class="how-topic-tab inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 lg:px-5 py-2 sm:py-2.5 rounded-xl sm:rounded-full text-xs sm:text-sm font-bold transition-all duration-200 whitespace-nowrap cursor-pointer select-none ${idx === 0 ? 'bg-white text-blue-600 shadow-sm border border-slate-200 font-extrabold is-active' : 'text-slate-600 hover:text-blue-600 hover:bg-white/50'}" 
                         id="tab-${top.id}" 
                         data-topic="${top.id}"
                         role="tab" 
                         aria-selected="${idx === 0 ? 'true' : 'false'}" 
                         aria-controls="panel-${top.id}">
-                  <span class="flex items-center justify-center text-current shrink-0" aria-hidden="true">${TOPIC_ICONS[top.topic] || ''}</span>
+                  <span class="flex items-center justify-center text-current shrink-0 w-3.5 h-3.5 sm:w-4 sm:h-4" aria-hidden="true">${TOPIC_ICONS[top.topic] || ''}</span>
                   <span>${top.topic}</span>
                 </button>
               `).join('')}
@@ -231,56 +231,115 @@ export function initHowItWorksPage(mountTarget = '#how-it-works-page-root') {
                  role="tabpanel" 
                  aria-labelledby="tab-${top.id}">
               
-              <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 sm:p-10 lg:p-12 shadow-sm grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-8 lg:gap-12 items-start">
+              <div class="bg-gradient-to-br from-white to-slate-50/70 border border-slate-200/90 rounded-2xl sm:rounded-3xl p-4 sm:p-7 lg:p-10 shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col justify-between">
                 
-                <!-- Left Column: Topic Description, Summary & Detail -->
-                <div>
-                  <div class="flex items-center gap-3 mb-3">
-                    <span class="inline-block px-3 py-1 bg-blue-100 text-blue-700 text-xs font-bold uppercase tracking-wider rounded-lg border border-blue-200">${top.badge}</span>
-                    <span class="text-xs font-bold text-slate-400 uppercase tracking-wider">Module 0${idx + 1} of 05</span>
-                  </div>
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-8 lg:gap-10 items-stretch">
+                  
+                  <!-- Left Column (7 cols): Topic Description, Summary & Detail -->
+                  <div class="lg:col-span-7 flex flex-col justify-between">
+                    <div>
+                      <!-- Top Meta: Badge + Module counter + Step indicator dots -->
+                      <div class="flex items-center justify-between gap-3 mb-3 sm:mb-3.5 flex-wrap">
+                        <div class="flex items-center gap-2">
+                          <span class="inline-block px-2.5 sm:px-3 py-1 bg-blue-50 text-blue-700 text-[11px] sm:text-xs font-extrabold uppercase tracking-wider rounded-lg border border-blue-200">${top.badge}</span>
+                          <span class="text-[11px] sm:text-xs font-bold text-slate-400 uppercase tracking-wider">Module 0${idx + 1} of 05</span>
+                        </div>
+                        
+                        <!-- Module Progress Indicator Dots on Tablet/Desktop -->
+                        <div class="hidden sm:flex items-center gap-1.5" aria-hidden="true" title="Module ${idx + 1} of 5">
+                          ${data.onboardingTopics.map((_, dotIdx) => `
+                            <span class="h-2 rounded-full transition-all duration-300 ${dotIdx === idx ? 'w-6 bg-blue-600' : 'w-2 bg-slate-200'}"></span>
+                          `).join('')}
+                        </div>
+                      </div>
 
-                  <h3 class="text-2xl sm:text-3xl font-extrabold text-slate-900 leading-snug tracking-tight mb-4">${top.title}</h3>
+                      <h3 class="text-xl sm:text-2xl lg:text-[28px] font-extrabold text-slate-900 leading-snug tracking-tight mb-3 sm:mb-4">${top.title}</h3>
 
-                  <!-- Topic Summary (<= 200 chars) -->
-                  <div class="p-4 rounded-xl bg-white border border-slate-200 mb-5 shadow-xs">
-                    <div class="flex items-center gap-2 text-xs font-extrabold uppercase tracking-wider text-slate-500 mb-1.5">
-                      <svg viewBox="0 0 24 24" width="14" height="14" class="w-3.5 h-3.5 text-blue-600 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                        <circle cx="12" cy="12" r="10"></circle>
-                        <line x1="12" y1="16" x2="12" y2="12"></line>
-                        <line x1="12" y1="8" x2="12.01" y2="8"></line>
-                      </svg>
-                      <span>Plain-Language Summary</span>
+                      <!-- Topic Summary (<= 200 chars) -->
+                      <div class="p-3.5 sm:p-4 rounded-xl bg-blue-50/50 border border-blue-100/90 mb-4 sm:mb-5 shadow-xs">
+                        <div class="flex items-center gap-2 text-xs font-extrabold uppercase tracking-wider text-blue-700 mb-1.5">
+                          <svg viewBox="0 0 24 24" width="14" height="14" class="w-3.5 h-3.5 text-blue-600 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="12" y1="16" x2="12" y2="12"></line>
+                            <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                          </svg>
+                          <span>Plain-Language Summary</span>
+                        </div>
+                        <p class="text-xs sm:text-sm font-medium text-slate-700 leading-relaxed m-0">${top.topicSummary}</p>
+                      </div>
+
+                      <!-- Topic In-Depth Detail -->
+                      <div class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
+                        <p class="m-0">${top.topicDetail}</p>
+                      </div>
                     </div>
-                    <p class="text-sm font-medium text-slate-700 leading-relaxed m-0">${top.topicSummary}</p>
                   </div>
 
-                  <!-- Topic In-Depth Detail -->
-                  <div class="text-sm text-slate-600 leading-relaxed mb-6">
-                    <p class="m-0">${top.topicDetail}</p>
+                  <!-- Right Column (5 cols): Deliverables Checklist & Architecture Assurance -->
+                  <div class="lg:col-span-5 flex flex-col justify-between">
+                    <div class="bg-white border border-slate-200/90 rounded-xl sm:rounded-2xl p-4 sm:p-6 shadow-xs flex flex-col justify-between h-full">
+                      <div>
+                        <div class="flex items-center justify-between pb-3 mb-3.5 border-b border-slate-100">
+                          <h4 class="text-xs font-extrabold uppercase tracking-wider text-slate-600 flex items-center gap-2">
+                            <span class="w-2 h-2 rounded-full bg-blue-600"></span>
+                            Included In This Module
+                          </h4>
+                          <span class="text-[10.5px] sm:text-[11px] font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200/60">Verified Deliverable</span>
+                        </div>
+                        
+                        <ul class="list-none p-0 m-0 flex flex-col gap-3 sm:gap-3.5 mb-5" aria-label="Key deliverables for ${top.topic}">
+                          ${top.keyHighlights.map(h => `
+                            <li class="flex items-start gap-2.5 sm:gap-3 text-xs sm:text-sm font-semibold text-slate-800 leading-snug">
+                              <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-emerald-50 text-emerald-600 border border-emerald-200/80 shrink-0 mt-0.5" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" width="12" height="12" class="w-3 h-3 shrink-0" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+                                  <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                              </span>
+                              <span>${h}</span>
+                            </li>
+                          `).join('')}
+                        </ul>
+                      </div>
+
+                      <div class="p-3 sm:p-4 rounded-xl bg-slate-50 border border-slate-200/80 text-[11px] sm:text-xs text-slate-600 leading-relaxed flex items-start gap-2.5">
+                        <span class="text-base shrink-0 leading-none" aria-hidden="true">🛡️</span>
+                        <span>Administered under standard Salesforce governance, role hierarchies, and enterprise SOC2 compliance.</span>
+                      </div>
+                    </div>
                   </div>
+
                 </div>
 
-                <!-- Right Column: Deliverables Checklist & Architecture Assurance -->
-                <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-xs">
-                  <h4 class="text-xs font-extrabold uppercase tracking-wider text-slate-500 mb-4">Included In This Module:</h4>
-                  <ul class="list-none p-0 m-0 flex flex-col gap-3 mb-6" aria-label="Key deliverables for ${top.topic}">
-                    ${top.keyHighlights.map(h => `
-                      <li class="flex items-start gap-2.5 text-sm font-semibold text-slate-800 leading-snug">
-                        <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-emerald-50 text-emerald-600 shrink-0 mt-0.5" aria-hidden="true">
-                          <svg viewBox="0 0 24 24" width="13" height="13" class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="20 6 9 17 4 12"></polyline>
-                          </svg>
-                        </span>
-                        <span>${h}</span>
-                      </li>
-                    `).join('')}
-                  </ul>
+                <!-- Dynamic Next / Previous Module Navigation Controls -->
+                <div class="mt-5 pt-4 border-t border-slate-200/80 flex items-center justify-between gap-2">
+                  <button type="button" 
+                          class="how-nav-btn how-nav-prev inline-flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm font-bold text-slate-600 hover:text-blue-600 transition-colors px-3 py-2 rounded-xl hover:bg-slate-100 ${idx === 0 ? 'opacity-0 pointer-events-none' : ''}" 
+                          data-target="${idx > 0 ? data.onboardingTopics[idx - 1].id : ''}"
+                          aria-label="Go to previous module">
+                    <svg viewBox="0 0 24 24" width="14" height="14" class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="15 18 9 12 15 6"></polyline>
+                    </svg>
+                    <span class="hidden sm:inline">Previous Module</span>
+                    <span class="sm:hidden">Prev</span>
+                  </button>
 
-                  <div class="p-4 rounded-lg bg-slate-50 border border-slate-200 text-xs text-slate-600 leading-relaxed flex items-start gap-3">
-                    <span class="text-blue-600 font-bold text-sm shrink-0">🛡️</span>
-                    <span>Administered under standard Salesforce governance, role hierarchies, and SOC2 compliance.</span>
+                  <!-- Centered Module Progress Dots -->
+                  <div class="flex items-center gap-1.5" aria-hidden="true">
+                    ${data.onboardingTopics.map((_, dotIdx) => `
+                      <span class="h-1.5 rounded-full transition-all duration-300 ${dotIdx === idx ? 'w-4 sm:w-5 bg-blue-600' : 'w-1.5 bg-slate-300'}"></span>
+                    `).join('')}
                   </div>
+
+                  <button type="button" 
+                          class="how-nav-btn how-nav-next inline-flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm font-bold text-blue-600 hover:text-blue-700 transition-colors px-3 py-2 rounded-xl hover:bg-blue-50 ${idx === data.onboardingTopics.length - 1 ? 'opacity-0 pointer-events-none' : ''}" 
+                          data-target="${idx < data.onboardingTopics.length - 1 ? data.onboardingTopics[idx + 1].id : ''}"
+                          aria-label="Go to next module">
+                    <span class="hidden sm:inline">Next: ${idx < data.onboardingTopics.length - 1 ? data.onboardingTopics[idx + 1].topic : ''}</span>
+                    <span class="sm:hidden">Next</span>
+                    <svg viewBox="0 0 24 24" width="14" height="14" class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                  </button>
                 </div>
 
               </div>
@@ -333,15 +392,16 @@ export function initHowItWorksPage(mountTarget = '#how-it-works-page-root') {
 }
 
 /**
- * Sets up onboarding topic tabs and demo button telemetry for US-13
+ * Sets up onboarding topic tabs, navigation buttons, and demo button telemetry for US-13
  */
 function setupHowItWorksInteractivity(container) {
   const topicTabs = container.querySelectorAll('.how-topic-tab');
   const panels = container.querySelectorAll('.how-topic-panel');
+  const navBtns = container.querySelectorAll('.how-nav-btn');
   const demoBtn = container.querySelector('#how-it-works-bottom-demo-btn');
 
   const TAB_ACTIVE_CLASSES = ['bg-white', 'text-blue-600', 'shadow-sm', 'border', 'border-slate-200', 'font-extrabold', 'is-active'];
-  const TAB_INACTIVE_CLASSES = ['text-slate-600', 'hover:text-blue-600'];
+  const TAB_INACTIVE_CLASSES = ['text-slate-600', 'hover:text-blue-600', 'hover:bg-white/50'];
 
   function activateTopic(topicId) {
     if (!topicId) return;
@@ -370,10 +430,32 @@ function setupHowItWorksInteractivity(container) {
     });
   }
 
-  topicTabs.forEach(btn => {
+  topicTabs.forEach((btn, index) => {
     btn.addEventListener('click', () => {
       const topicId = btn.dataset.topic;
       activateTopic(topicId);
+    });
+
+    // Keyboard navigation (ArrowLeft and ArrowRight)
+    btn.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') {
+        const nextIdx = (index + 1) % topicTabs.length;
+        topicTabs[nextIdx].focus();
+        activateTopic(topicTabs[nextIdx].dataset.topic);
+      } else if (e.key === 'ArrowLeft') {
+        const prevIdx = (index - 1 + topicTabs.length) % topicTabs.length;
+        topicTabs[prevIdx].focus();
+        activateTopic(topicTabs[prevIdx].dataset.topic);
+      }
+    });
+  });
+
+  navBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const targetTopicId = btn.dataset.target;
+      if (targetTopicId) {
+        activateTopic(targetTopicId);
+      }
     });
   });
 

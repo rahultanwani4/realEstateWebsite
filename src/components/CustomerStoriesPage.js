@@ -281,7 +281,7 @@ export function initCustomerStoriesPage(mountTarget = '#customer-stories-page-ro
     const contentEl = container.querySelector('#case-study-modal-content');
     const demoBtn = container.querySelector('#modal-request-demo-btn');
 
-    if (titleEl) titleEl.textContent = `${story.company} — Operational Transformation`;
+    if (titleEl) titleEl.textContent = `${story.company} - Operational Transformation`;
     if (demoBtn) demoBtn.href = `#request-demo?source=case_study_${story.slug}&company_type=${encodeURIComponent(story.companyType)}`;
 
     if (contentEl) {
@@ -387,7 +387,7 @@ export function initCustomerStoriesPage(mountTarget = '#customer-stories-page-ro
                   <span>Captions: Enabled [en-IN]</span>
                 </div>
                 <p class="text-xs sm:text-sm text-slate-200 max-w-md">"EstateForce gave our sales floor real-time visibility across 560 units and completely eliminated spreadsheet friction."</p>
-                <span class="text-[11px] text-slate-400 mt-2">— ${story.customerName}, ${story.company}</span>
+                <span class="text-[11px] text-slate-400 mt-2">- ${story.customerName}, ${story.company}</span>
               </div>
             `;
           }

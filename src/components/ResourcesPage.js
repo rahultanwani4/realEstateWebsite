@@ -603,13 +603,13 @@ export function initResourcesPage(mountTarget = '#resources-page-root') {
 
         const docTitle = activeGatedDownload?.title || 'EstateForce Guide';
 
-        // Submit to Salesforce with Lead Source "Website – Download" (US-22 Criterion 2)
+        // Submit to Salesforce with Lead Source "Website - Download" (US-22 Criterion 2)
         try {
           await submitToSalesforceWebToLead({
             fullName: name || 'Download Visitor',
             email,
             company,
-            leadSource: 'Website – Download',
+            leadSource: 'Website - Download',
             notes: `[Gated Download Requested]: ${docTitle}`,
             sourcePage: 'gated_download_modal',
             consentGiven: true,
@@ -643,7 +643,7 @@ export function initResourcesPage(mountTarget = '#resources-page-root') {
             <p class="text-xs text-slate-600 mb-4">
               We have also dispatched a permanent download link to <strong>${email}</strong>.
             </p>
-            <p class="text-[11px] text-slate-400 mb-6">Registered in Salesforce as Lead Source: Website – Download.</p>
+            <p class="text-[11px] text-slate-400 mb-6">Registered in Salesforce as Lead Source: Website - Download.</p>
             <button id="finish-gated-btn" class="px-5 py-2.5 rounded-xl bg-blue-600 text-white font-bold text-xs hover:bg-blue-700">
               Close Window
             </button>
@@ -705,7 +705,7 @@ export function initResourcesPage(mountTarget = '#resources-page-root') {
             fullName: name || 'Newsletter Subscriber',
             email: normalizedEmail,
             company: 'Newsletter Subscriber',
-            leadSource: 'Website – Newsletter',
+            leadSource: 'Website - Newsletter',
             notes: 'Subscribed to EstateForce Monthly Real Estate CRM Newsletter (Double Opt-In Sent)',
             sourcePage: 'resources_newsletter_box'
           });

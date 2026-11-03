@@ -26,7 +26,7 @@ const MAX_FAILURES_BEFORE_ALERT = 3;
 const sfConfig = siteConfig.requestDemoPage?.salesforce || {
   orgId: '00D2w00000P3aAc',
   actionUrl: 'https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00D2w00000P3aAc',
-  leadSource: 'Website – Demo Request',
+  leadSource: 'CC Real Estate Website - Demo Request',
   retUrlPath: '/request-demo?status=success'
 };
 
@@ -117,37 +117,30 @@ export function buildWebToLeadFormData(lead) {
     ? `${window.location.origin}${sfConfig.retUrlPath}`
     : `https://estateforce.in${sfConfig.retUrlPath}`;
 
-  // Structured description incorporating all specialized real estate fields
-  const structuredDescription = [
-    lead.leadSource ? `Inquiry Type: ${lead.leadSource}` : '',
-    lead.notes || lead.message || lead.description ? `Details: ${lead.notes || lead.message || lead.description}` : '',
-    lead.interest ? `Interested in: ${lead.interest}` : '',
-    '--- EstateForce Lead Profile ---',
-    lead.jobTitle ? `Job Title: ${lead.jobTitle}` : '',
-    lead.companyType ? `Company Type: ${lead.companyType}` : '',
-    lead.teamSize ? `Sales Team Size: ${lead.teamSize} users` : '',
-    lead.usesSalesforce ? `Uses Salesforce Today: ${lead.usesSalesforce}` : '',
-    lead.demoType ? `Demo Format: ${lead.demoType}` : '',
+  // Direct user message passed straight to standard Salesforce description field
+  const userMessage = (lead.description || lead.message || lead.notes || '').trim();
+
+  // If there are specific demo schedule slots selected, append cleanly
+  const extraDetails = [
     lead.preferredDate ? `Preferred Date: ${lead.preferredDate}` : '',
     lead.preferredTimeSlot ? `Preferred Time Slot: ${lead.preferredTimeSlot}` : '',
-    Array.isArray(lead.mostInterestedIn) && lead.mostInterestedIn.length > 0
-      ? `Interested In: ${lead.mostInterestedIn.join(', ')}`
-      : '',
-    lead.planOfInterest ? `Plan: ${lead.planOfInterest}` : '',
-    lead.sourcePage ? `Source Page: ${lead.sourcePage}` : 'Source Page: website',
-    lead.campaign ? `Campaign: ${lead.campaign}` : 'Campaign: website_q4_2026',
-    lead.consentGiven ? `Consent: Granted (${lead.consentWording || 'Privacy Policy accepted'}) at ${lead.consentTimestamp || new Date().toISOString()}` : '',
-    `Submission Timestamp: ${new Date().toISOString()}`
-  ].filter(Boolean).join('\n');
+    lead.teamSize ? `Sales Team Size: ${lead.teamSize}` : '',
+    lead.companyType ? `Company Type: ${lead.companyType}` : ''
+  ].filter(Boolean);
+
+  const finalDescription = extraDetails.length > 0
+    ? (userMessage ? `${userMessage}\n\n${extraDetails.join(' | ')}` : extraDetails.join(' | '))
+    : userMessage;
 
   const formData = new FormData();
   formData.append('oid', sfConfig.orgId);
   formData.append('retURL', returnUrl);
-  formData.append('lead_source', lead.leadSource || sfConfig.leadSource || 'Website – Demo Request');
+  formData.append('lead_source', lead.leadSource || sfConfig.leadSource || 'CC Real Estate Website - Demo Request');
+  formData.append('website', '');
   formData.append('first_name', firstName);
   formData.append('last_name', lastName);
   formData.append('email', lead.email || lead.workEmail || '');
-  formData.append('company', lead.company || lead.companyName || '');
+  formData.append('company', lead.company || lead.companyName || 'Not Specified');
   if (phoneFormatted) {
     formData.append('phone', phoneFormatted);
   }
@@ -157,14 +150,55 @@ export function buildWebToLeadFormData(lead) {
   if (lead.jobTitle) {
     formData.append('title', lead.jobTitle);
   }
-  formData.append('description', structuredDescription);
+  formData.append('description', finalDescription);
 
-  return { formData, description: structuredDescription, firstName, lastName, phoneFormatted, returnUrl };
+  return { formData, description: finalDescription, firstName, lastName, phoneFormatted, returnUrl };
+}
+
+/**
+ * Submits lead directly via a hidden form to a hidden iframe (native browser POST)
+ * This guarantees 100% compliance with Salesforce Web-to-Lead servlet.
+ */
+function submitViaHiddenIframe(formData) {
+  if (typeof document === 'undefined') return;
+  try {
+    let iframe = document.getElementById('sf-webtolead-iframe');
+    if (!iframe) {
+      iframe = document.createElement('iframe');
+      iframe.id = 'sf-webtolead-iframe';
+      iframe.name = 'sf-webtolead-iframe';
+      iframe.style.display = 'none';
+      iframe.setAttribute('aria-hidden', 'true');
+      document.body.appendChild(iframe);
+    }
+
+    const form = document.createElement('form');
+    form.method = 'POST';
+    form.action = sfConfig.actionUrl;
+    form.target = 'sf-webtolead-iframe';
+    form.style.display = 'none';
+
+    for (const [key, value] of formData.entries()) {
+      const input = document.createElement('input');
+      input.type = 'hidden';
+      input.name = key;
+      input.value = value;
+      form.appendChild(input);
+    }
+
+    document.body.appendChild(form);
+    form.submit();
+    setTimeout(() => {
+      try { form.remove(); } catch (e) {}
+    }, 2000);
+  } catch (err) {
+    console.warn('[Salesforce] Iframe submission fallback note:', err);
+  }
 }
 
 /**
  * Submits lead to Salesforce Web-to-Lead
- * Supports live POST with mode 'no-cors' and hidden iframe fallback
+ * Uses both native hidden iframe POST and fetch POST with fallback queue
  */
 export async function submitToSalesforceWebToLead(lead) {
   const { isDuplicate } = checkLeadDeduplication(lead.email || lead.workEmail);
@@ -180,11 +214,19 @@ export async function submitToSalesforceWebToLead(lead) {
   }
 
   try {
-    // 1. Primary method: fetch POST with no-cors to Salesforce Web-to-Lead endpoint
-    const response = await fetch(sfConfig.actionUrl, {
+    // 1. Submit via native hidden iframe (guarantees standard form submission to servlet)
+    submitViaHiddenIframe(formData);
+
+    // 2. Also submit via fetch with url-encoded params for API reliability
+    const urlParams = new URLSearchParams();
+    for (const [key, value] of formData.entries()) {
+      urlParams.append(key, value);
+    }
+
+    await fetch(sfConfig.actionUrl, {
       method: 'POST',
       mode: 'no-cors',
-      body: formData
+      body: urlParams
     });
 
     // Record submission for deduplication tracking
@@ -200,7 +242,8 @@ export async function submitToSalesforceWebToLead(lead) {
       firstName,
       lastName,
       company: lead.company || lead.companyName,
-      leadSource: sfConfig.leadSource,
+      leadSource: lead.leadSource || sfConfig.leadSource || 'CC Real Estate Website - Demo Request',
+      description: lead.description || lead.message || lead.notes,
       isDuplicate
     });
 
@@ -256,10 +299,15 @@ export async function processQueuedLeads() {
   for (const item of queue) {
     try {
       const { formData } = buildWebToLeadFormData(item.lead);
+      submitViaHiddenIframe(formData);
+      const urlParams = new URLSearchParams();
+      for (const [key, value] of formData.entries()) {
+        urlParams.append(key, value);
+      }
       await fetch(sfConfig.actionUrl, {
         method: 'POST',
         mode: 'no-cors',
-        body: formData
+        body: urlParams
       });
       recordSubmittedLead(item.lead);
       console.log('[Salesforce US-19] Successfully processed queued lead:', item.lead.email);

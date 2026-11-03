@@ -7,7 +7,7 @@ import { submitToSalesforceWebToLead, formatSalesforcePhone } from '../services/
  * Criteria:
  * 1. "Request a free trial" form on Features and Pricing pages.
  * 2. Shows what happens next and expected timing.
- * 3. Every trial request creates a Salesforce lead tagged "Website – Free Trial".
+ * 3. Every trial request creates a Salesforce lead tagged "Website - Free Trial".
  * 4. Fields: Full name (req), Work email (req), Phone (+91 req), Company name (req),
  *    Salesforce org type (req), Consent (req).
  */
@@ -111,7 +111,7 @@ export function openFreeTrialModal(defaultOrgType = 'Production Salesforce Org')
               <label for="trial-phone" class="block text-xs font-bold text-slate-700">Phone (+91) *</label>
               <div class="relative">
                 <span class="absolute inset-y-0 left-0 pl-3 flex items-center text-xs font-bold text-slate-400 select-none">+91</span>
-                <input type="tel" id="trial-phone" name="phone" required placeholder="9876543210" maxlength="10"
+                <input type="tel" id="trial-phone" name="phone" required placeholder="8130970706" maxlength="10"
                        class="w-full pl-11 pr-3.5 py-2 rounded-xl border border-slate-200 text-sm focus:border-blue-600 focus:ring-2 focus:ring-blue-100 outline-none" />
               </div>
             </div>
@@ -227,7 +227,7 @@ export function openFreeTrialModal(defaultOrgType = 'Production Salesforce Org')
           email,
           phone,
           company,
-          leadSource: 'Website – Free Trial',
+          leadSource: 'Website - Free Trial',
           description: `Free Trial Request | Org Type: ${orgType} | Consent Timestamp: ${new Date().toISOString()}`
         });
 

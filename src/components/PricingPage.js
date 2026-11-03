@@ -236,7 +236,7 @@ export function initPricingPage(mountTarget = '#pricing-page-root') {
                         if (val === 'Included') {
                           cellContent = `<span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-emerald-100 text-emerald-700" title="Included"><svg viewBox="0 0 24 24" width="12" height="12" class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>`;
                         } else if (val === 'Not included') {
-                          cellContent = `<span class="text-slate-300 font-bold text-base" title="Not included">—</span>`;
+                          cellContent = `<span class="text-slate-300 font-bold text-base" title="Not included">-</span>`;
                         } else {
                           cellContent = `<span class="inline-block px-2 py-0.5 bg-slate-100 text-slate-700 text-[11px] font-semibold rounded">${val}</span>`;
                         }

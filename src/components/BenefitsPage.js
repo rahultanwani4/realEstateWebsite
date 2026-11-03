@@ -1,5 +1,4 @@
 import siteConfig from '../data/site-config.json';
-import { initRoiCalculator } from './RoiCalculator.js';
 
 /**
  * Validates US-10 Benefits Page configurations
@@ -103,8 +102,8 @@ export function initBenefitsPage(mountSelector = '#benefits-page-root') {
                             <polyline points="20 6 9 17 4 12"></polyline>
                           </svg>
                         </span>
-                        ${b.proofFigure && b.proofApproved ? `
-                          <span class="proof-number-badge">${b.proofFigure}</span>
+                        ${(b.badge || (b.proofFigure && b.proofApproved)) ? `
+                          <span class="proof-number-badge">${b.badge || b.proofFigure}</span>
                         ` : ''}
                       </div>
 
@@ -125,9 +124,9 @@ export function initBenefitsPage(mountSelector = '#benefits-page-root') {
       <section class="comparison-matrix-section" id="comparison" aria-label="Before vs After Comparison Matrix">
         <div class="benefits-page-container">
           <div class="section-header-centered">
-            <span class="section-tag-pill">Operational Transformation</span>
-            <h2 class="section-main-heading">Spreadsheets vs. Native Salesforce</h2>
-            <p class="section-sub-copy">See the stark contrast between running high-stakes real estate projects on disconnected Excel files versus an automated, native Salesforce package.</p>
+            <span class="section-tag-pill">${data.comparisonBadge || 'Operational Transformation'}</span>
+            <h2 class="section-main-heading">${data.comparisonTitle || 'Spreadsheets vs. Native Salesforce'}</h2>
+            <p class="section-sub-copy">${data.comparisonSubtitle || 'See how EstateForce transforms traditional real estate operations into a centralized, structured, and automated Salesforce-powered business process.'}</p>
           </div>
 
           <!-- Comparison Table (Desktop Grid / Mobile Stacked Cards) -->
@@ -152,11 +151,11 @@ export function initBenefitsPage(mountSelector = '#benefits-page-root') {
                     <strong>${row.topic}</strong>
                   </div>
                   <div class="comp-cell-before" role="cell">
-                    <span class="mobile-status-tag is-before">Without EstateForce</span>
+                    <span class="mobile-status-tag is-before">Before (Spreadsheets &amp; Manual Tools)</span>
                     <p>${row.before}</p>
                   </div>
                   <div class="comp-cell-after" role="cell">
-                    <span class="mobile-status-tag is-after">With EstateForce</span>
+                    <span class="mobile-status-tag is-after">After (EstateForce on Salesforce)</span>
                     <p>${row.after}</p>
                   </div>
                 </div>
@@ -164,8 +163,28 @@ export function initBenefitsPage(mountSelector = '#benefits-page-root') {
             </div>
           </div>
 
-          <!-- US-11: Interactive ROI & Savings Calculator -->
-          <div id="roi-calculator-mount"></div>
+          <!-- Visual Operational Highlights below Comparison Table -->
+          <div class="comparison-highlights-wrapper">
+            <div class="comparison-highlights-header">
+              <span class="section-tag-pill">Core Highlights</span>
+              <h3 class="comparison-highlights-title">Key Operational Capabilities Delivered</h3>
+            </div>
+            <div class="comparison-highlights-grid">
+              ${(data.comparisonHighlights || []).map(h => `
+                <div class="comparison-highlight-card">
+                  <div class="comp-highlight-icon-wrap" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                  </div>
+                  <div class="comp-highlight-content">
+                    <h4 class="comp-highlight-title">${h.title}</h4>
+                    <p class="comp-highlight-desc">${h.description}</p>
+                  </div>
+                </div>
+              `).join('')}
+            </div>
+          </div>
 
           <!-- Final Conversion Band -->
           <div class="benefits-final-cta-band">
@@ -194,9 +213,6 @@ export function initBenefitsPage(mountSelector = '#benefits-page-root') {
 
   // Attach tab switching interactivity for role selector
   setupRoleTabs(container);
-
-  // Mount US-11 Interactive ROI & Savings Calculator
-  initRoiCalculator(container.querySelector('#roi-calculator-mount'));
 
   // Attach demo telemetry listener
   const demoBtn = container.querySelector('#benefits-bottom-demo-btn');

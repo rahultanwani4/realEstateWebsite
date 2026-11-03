@@ -13,8 +13,8 @@ const REMINDERS_STORAGE_KEY = 'estateforce_scheduled_reminders';
 
 const emailConfig = siteConfig.requestDemoPage?.emailNotifications || {
   senderName: 'EstateForce Demos',
-  senderEmail: 'support@cloudcertitude.com',
-  salesRecipients: ['sales@cloudcertitude.com'],
+  senderEmail: 'info@cloudcertitude.com',
+  salesRecipients: ['info@cloudcertitude.com'],
   reminderTimingHours: [24, 1],
   privacyPolicyLink: '/privacy',
   confirmationSubject: 'Your EstateForce Demo Request Confirmation - Next Steps',
@@ -69,7 +69,7 @@ export function renderVisitorConfirmationEmail(lead) {
         </ol>
 
         <div style="margin-top: 32px; padding-top: 20px; border-top: 1px solid #e2e8f0; font-size: 13px; color: #64748b;">
-          <p style="margin: 0 0 8px;">Need immediate assistance? Contact us at <strong>${siteConfig.requestDemoPage?.successMessage?.contactEmail || 'support@estateforce.in'}</strong> or call <strong>${siteConfig.requestDemoPage?.successMessage?.contactPhone || '+91 98765 43210'}</strong>.</p>
+          <p style="margin: 0 0 8px;">Need immediate assistance? Contact us at <strong>${siteConfig.requestDemoPage?.successMessage?.contactEmail || 'info@cloudcertitude.com'}</strong> or call <strong>${siteConfig.requestDemoPage?.successMessage?.contactPhone || '+91 81309 70706'}</strong>.</p>
           <p style="margin: 0;">We respect your privacy. View our <a href="${emailConfig.privacyPolicyLink}" style="color: #2563eb; text-decoration: underline;">Privacy Policy</a>.</p>
         </div>
       </div>

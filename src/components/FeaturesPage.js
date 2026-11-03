@@ -1,5 +1,4 @@
 import siteConfig from '../data/site-config.json';
-import { openProductTourModal } from './ProductTourModal.js';
 import { openFreeTrialModal } from './FreeTrialModal.js';
 
 /**
@@ -48,14 +47,11 @@ export function initFeaturesPage(mountSelector = '#features-page-root') {
           <h1 class="features-page-headline">Engineered for High-Velocity Property Sales</h1>
           <p class="features-page-subtext">${data.pageIntroduction}</p>
           <div class="mt-6 flex flex-wrap items-center justify-center gap-3">
-            <button type="button" 
-                    id="features-open-tour-btn"
-                    class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-blue-600 text-white font-bold text-xs hover:bg-blue-500 shadow-sm transition-all">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                <polygon points="5 3 19 12 5 21 5 3"></polygon>
-              </svg>
-              <span>Take Interactive Screen Tour</span>
-            </button>
+            <a href="#contact" 
+               class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-blue-600 text-white font-bold text-xs hover:bg-blue-500 shadow-sm transition-all">
+              <span>Request a Demo</span>
+              <span>→</span>
+            </a>
             <button type="button" 
                     id="features-open-trial-btn"
                     class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border border-slate-300 bg-white text-slate-800 font-bold text-xs hover:bg-slate-50 transition-all">
@@ -245,11 +241,6 @@ export function initFeaturesPage(mountSelector = '#features-page-root') {
 
   // Attach event telemetry for area demo buttons
   setupDemoClickListeners(container);
-
-  // Attach interactive tour modal listener (US-28)
-  container.querySelector('#features-open-tour-btn')?.addEventListener('click', () => {
-    openProductTourModal('Lead');
-  });
 
   // Attach free trial modal listener (US-29)
   container.querySelector('#features-open-trial-btn')?.addEventListener('click', () => {
