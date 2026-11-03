@@ -178,9 +178,6 @@ export function openProcessDetailsModal(moduleId) {
 
   modal.innerHTML = `
     <div class="process-modal-dialog">
-      <!-- Drag Handle for Mobile Bottom Sheet -->
-      <div class="sheet-drag-handle" aria-hidden="true"></div>
-
       <!-- Modal Header -->
       <div class="process-modal-header">
         <div class="process-modal-header-info">
