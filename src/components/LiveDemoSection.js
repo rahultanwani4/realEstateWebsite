@@ -24,7 +24,7 @@ export function initLiveDemoSection(mountTarget = '#live-demo') {
     subheadline: 'Watch how our native Salesforce package automates lead management, accelerates deal velocity, and simplifies unit bookings in real time.',
     video: {
       title: 'EstateForce End-to-End Real Estate Tour',
-      poster: '/dashboard-hero.png',
+      poster: '/dashboard-hero.webp',
       src: '/demo-video.mp4',
       captionsSrc: '/demo-captions.vtt',
       durationDisplay: '4:30 min'
@@ -117,7 +117,7 @@ export function initLiveDemoSection(mountTarget = '#live-demo') {
               controls 
               playsinline
               preload="metadata"
-              poster="${data.video?.poster || '/dashboard-hero.png'}"
+              poster="${data.video?.poster || '/dashboard-hero.webp'}"
               aria-label="EstateForce Guided Product Tour Video with Audio and Closed Captions">
               <source src="${data.video?.src || '/demo-video.mp4'}" type="video/mp4" />
               <track 
@@ -317,10 +317,10 @@ function setupLiveDemoInteractivity(container, data) {
     if (!videoContainer) return;
 
     const tourSteps = [
-      { img: '/screenshots/lead-management-preview.png', title: '1. Automated Lead Capture & Round-Robin Routing', text: 'Incoming enquiries from portals and WhatsApp populate Salesforce Leads instantly.' },
-      { img: '/screenshots/sales-management-preview.png', title: '2. Deal Pipeline, Stages & Activity Timeline', text: 'Follow every buyer through custom stages: site visits, negotiations, and pricing approvals.' },
-      { img: '/screenshots/booking-management-preview.png', title: '3. Unit Inventory Grid & Milestone Payment Journeys', text: 'Sales reps lock units on the live architectural floor plan and generate digital booking vouchers.' },
-      { img: '/dashboard-hero.png', title: '4. Executive Dashboards & Revenue Velocity', text: 'Real-time sales velocity, lead conversion ratios, and collection milestones natively in Salesforce.' }
+      { img: '/screenshots/lead-management-preview.webp', title: '1. Automated Lead Capture & Round-Robin Routing', text: 'Incoming enquiries from portals and WhatsApp populate Salesforce Leads instantly.' },
+      { img: '/screenshots/sales-management-preview.webp', title: '2. Deal Pipeline, Stages & Activity Timeline', text: 'Follow every buyer through custom stages: site visits, negotiations, and pricing approvals.' },
+      { img: '/screenshots/booking-management-preview.webp', title: '3. Unit Inventory Grid & Milestone Payment Journeys', text: 'Sales reps lock units on the live architectural floor plan and generate digital booking vouchers.' },
+      { img: '/dashboard-hero.webp', title: '4. Executive Dashboards & Revenue Velocity', text: 'Real-time sales velocity, lead conversion ratios, and collection milestones natively in Salesforce.' }
     ];
 
     let currentStepIdx = 0;

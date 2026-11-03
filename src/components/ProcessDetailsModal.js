@@ -10,7 +10,7 @@ export const processDetailsData = {
     title: 'Turn Every Enquiry into a Sales Opportunity',
     tag: 'Lead Management',
     badge: 'Enquiry Capture & Conversion',
-    image: '/screenshots/real-estate-enquiry-dashboard.png',
+    image: '/screenshots/real-estate-enquiry-dashboard.webp',
     imageAlt: 'Salesforce Real Estate New Enquiry Form with Customer Details and Project Interests',
     overview: 'A successful property sale starts with a well-managed enquiry. EstateForce gives your sales team a central place to capture prospective buyers, understand their requirements, and follow their progress from the first interaction through qualification and conversion.',
     keyMetrics: [
@@ -57,7 +57,7 @@ export const processDetailsData = {
     title: 'Manage Every Customer Interaction with Confidence',
     tag: 'Sales Management',
     badge: 'Project & Visit Management',
-    image: '/screenshots/project-add-on-dashboard.png',
+    image: '/screenshots/project-add-on-dashboard.webp',
     imageAlt: 'Salesforce Project Add-On Dashboard with Site Visit History and Statuses',
     overview: 'Property buyers often compare more than one development before making a decision. EstateForce helps sales teams manage multiple project interests under a single customer enquiry, organise site visits, record outcomes, and take the next step towards an offer.',
     keyMetrics: [
@@ -104,7 +104,7 @@ export const processDetailsData = {
     title: 'Simplify Unit Selection and the Booking Journey',
     tag: 'Booking Management',
     badge: 'Inventory & Booking Operations',
-    image: '/screenshots/salesforce-booking-form-record.png',
+    image: '/screenshots/salesforce-booking-form-record.webp',
     imageAlt: 'Salesforce Booking Form Record Page with Lifecycle Status Chevrons and Demands',
     overview: 'Once a buyer is ready to proceed, the booking process needs accurate inventory information, clear pricing, and reliable documentation. EstateForce connects unit selection, availability checks, additional charges, booking submission, payment-plan association, and customer letters in a structured workflow.',
     keyMetrics: [
@@ -203,7 +203,9 @@ export function openProcessDetailsModal(moduleId) {
           <img src="${data.image}" 
                alt="${data.imageAlt}" 
                class="process-modal-screen-img" 
-               loading="eager" />
+               loading="eager" 
+               decoding="async"
+               fetchpriority="high" />
           <div class="process-modal-screen-overlay">
             <span class="process-modal-zoom-pill">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
@@ -318,4 +320,24 @@ export function openProcessDetailsModal(moduleId) {
   });
 
   document.addEventListener('keydown', handleKey);
+}
+
+// Prefetch process modal images in background on idle so modal opens instantly
+if (typeof window !== 'undefined') {
+  const prefetchModalScreens = () => {
+    const list = [
+      '/screenshots/real-estate-enquiry-dashboard.webp',
+      '/screenshots/project-add-on-dashboard.webp',
+      '/screenshots/salesforce-booking-form-record.webp'
+    ];
+    list.forEach(src => {
+      const img = new Image();
+      img.src = src;
+    });
+  };
+  if ('requestIdleCallback' in window) {
+    window.requestIdleCallback(prefetchModalScreens);
+  } else {
+    setTimeout(prefetchModalScreens, 1500);
+  }
 }

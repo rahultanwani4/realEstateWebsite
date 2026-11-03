@@ -195,7 +195,8 @@ export function initHomeContent(mountSelector = '#home-content-root') {
                     <img src="${card.screenshot}" 
                          alt="${card.title} Salesforce interface preview" 
                          class="core-card-screenshot-img" 
-                         loading="lazy" />
+                         loading="lazy"
+                         decoding="async" />
                     <div class="card-screen-hover-badge">
                       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
                       <span>Click for Process Details</span>

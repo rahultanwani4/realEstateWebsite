@@ -35,7 +35,7 @@
   },
   "header": {
     "logo": {
-      "src": "/cloudcertitude-logo.png",
+      "src": "/cloudcertitude-logo.webp",
       "alt": "CC Real Estate - Cloud Certitude",
       "homeUrl": "#home"
     },
@@ -101,7 +101,7 @@
       "notes": "Official Built on Salesforce and AppExchange badges used unaltered per Salesforce Brand Central guidelines."
     },
     "heroScreenshot": {
-      "src": "/dashboard-hero.png",
+      "src": "/dashboard-hero.webp",
       "type": "Screenshot",
       "deviceFrame": "Desktop",
       "alt": "EstateForce Salesforce CRM Enquiry Dashboard showing lead conversion by source, site visits done, and customer feedback analytics",
@@ -198,7 +198,7 @@
         "subtitle": "Enquiry Capture & Conversion",
         "description": "Capture enquiries from web forms and walk-ins, manage qualification stages, and convert prospects into customer accounts and offers.",
         "icon": "lead",
-        "screenshot": "/screenshots/lead-card-preview.png",
+        "screenshot": "/screenshots/lead-card-preview.webp",
         "link": "/features#lead-management",
         "badge": "Enquiry Capture & Conversion",
         "features": [
@@ -213,7 +213,7 @@
         "subtitle": "Project & Visit Management",
         "description": "Manage customer interests across multiple projects, coordinate site visits, and move promising prospects towards an offer.",
         "icon": "sales",
-        "screenshot": "/screenshots/sales-card-preview.png",
+        "screenshot": "/screenshots/sales-card-preview.webp",
         "link": "/features#sales-management",
         "badge": "Project & Visit Management",
         "features": [
@@ -228,7 +228,7 @@
         "subtitle": "Inventory & Booking Operations",
         "description": "Manage unit selection, validate availability, consolidate booking costs, and support booking documents and payment milestones.",
         "icon": "booking",
-        "screenshot": "/screenshots/booking-card-preview.png",
+        "screenshot": "/screenshots/booking-card-preview.webp",
         "link": "/features#booking-management",
         "badge": "Inventory & Booking Operations",
         "features": [
@@ -374,7 +374,7 @@
     "subheadline": "Watch a 4-minute guided walkthrough of our native Salesforce package managing real estate leads, pipeline stages, and unit bookings with zero manual friction.",
     "video": {
       "title": "CC Real Estate End-to-End Real Estate Tour",
-      "poster": "/dashboard-hero.png",
+      "poster": "/dashboard-hero.webp",
       "src": "/demo-video.mp4",
       "captionsSrc": "/demo-captions.vtt",
       "durationDisplay": "4:30 min"
@@ -536,8 +536,8 @@
         "description": "Capture enquiries in real time from MagicBricks, 99acres, Facebook ads, and walk-in desks directly into Salesforce. Intelligent round-robin rules instantly allocate leads to available sales reps with zero manual spreadsheet copying.",
         "whatThisMeans": "Your reps connect with qualified buyers in under 5 minutes, preventing lead leakage and boosting initial site-visit conversions.",
         "icon": "lead",
-        "screenshot": "/screenshots/lead-record-screen.png",
-        "journeyGraphic": "/screenshots/lead-journey-flow.png",
+        "screenshot": "/screenshots/lead-record-screen.webp",
+        "journeyGraphic": "/screenshots/lead-journey-flow.webp",
         "alt": "EstateForce native Salesforce Lead record screen and automated round-robin routing diagram",
         "displayOrder": 1,
         "capabilities": [
@@ -556,7 +556,7 @@
         "description": "Give your sales team full mobile visibility on opportunities, follow-up cadences, and scheduled site visits. Field reps log geotagged check-ins, record buyer unit preferences, and trigger instant discount approval workflows on the move.",
         "whatThisMeans": "Sales directors gain real-time transparency into rep performance and deal stages without waiting for end-of-day Excel reports.",
         "icon": "sales",
-        "screenshot": "/screenshots/sales-deal-stages.png",
+        "screenshot": "/screenshots/sales-deal-stages.webp",
         "alt": "EstateForce deal stage pipeline board and rep site-visit tracking screen",
         "displayOrder": 2,
         "capabilities": [
@@ -575,7 +575,7 @@
         "description": "Eliminate double-booking forever with a visual unit matrix across towers, floors, and typologies. Reps apply timed holds, ingest token payments, configure customized payment plans, and trigger automated construction-linked demand letters.",
         "whatThisMeans": "Lock deals instantly on the sales floor with 100% accurate unit inventory and zero conflicting reservation disputes.",
         "icon": "booking",
-        "screenshot": "/screenshots/booking-milestone-journey.png",
+        "screenshot": "/screenshots/booking-milestone-journey.webp",
         "alt": "EstateForce unit inventory matrix and construction-linked milestone demand letters screen",
         "displayOrder": 3,
         "capabilities": [
@@ -877,7 +877,7 @@
           "Automated slab-completion CLP payment demand letters",
           "Township-level revenue absorption and overdue collection aging"
         ],
-        "screenshot": "/screenshots/who-developers-builders.png",
+        "screenshot": "/screenshots/who-developers-builders.webp",
         "alt": "EstateForce multi-tower inventory matrix and construction-linked milestone billing schedule for property developers",
         "demoButtonLabel": "Request a Demo for Developers"
       },
@@ -894,7 +894,7 @@
           "Automated broker commission calculation & payout audit trails",
           "One-click WhatsApp project brochure & cost estimation dispatch"
         ],
-        "screenshot": "/screenshots/who-brokerages-agencies.png",
+        "screenshot": "/screenshots/who-brokerages-agencies.webp",
         "alt": "EstateForce mobile unit inventory hold lock and channel partner commission tracking view for real estate brokerages",
         "demoButtonLabel": "Request a Demo for Brokerages"
       },
@@ -911,7 +911,7 @@
           "Mandatory GPS geotagged site-visit check-ins via mobile",
           "Instant mobile push notifications for manager discount approvals"
         ],
-        "screenshot": "/screenshots/who-sales-management.png",
+        "screenshot": "/screenshots/who-sales-management.webp",
         "alt": "EstateForce sales rep mobile GPS visit verification and automated manager discount approval workflow on Salesforce",
         "demoButtonLabel": "Request a Demo for Sales Teams"
       }
@@ -1988,7 +1988,7 @@
       "title": "EstateForce in 2 Minutes: Enterprise Real Estate on Salesforce",
       "durationSeconds": 118,
       "durationDisplay": "1:58",
-      "poster": "/screenshots/lead-management-preview.png",
+      "poster": "/screenshots/lead-management-preview.webp",
       "videoUrl": "https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ",
       "captionsUrl": "/captions/product-tour.vtt",
       "captionsAvailable": true,
@@ -2003,7 +2003,7 @@
           {
             "order": 1,
             "title": "Portal Lead Ingestion",
-            "screenshot": "/screenshots/lead-management-preview.png",
+            "screenshot": "/screenshots/lead-management-preview.webp",
             "hotspot": {
               "x": 22,
               "y": 35
@@ -2013,7 +2013,7 @@
           {
             "order": 2,
             "title": "Round-Robin Assignment",
-            "screenshot": "/screenshots/lead-management-preview.png",
+            "screenshot": "/screenshots/lead-management-preview.webp",
             "hotspot": {
               "x": 65,
               "y": 42
@@ -2023,7 +2023,7 @@
           {
             "order": 3,
             "title": "5-Minute SLA Watchdog",
-            "screenshot": "/screenshots/lead-management-preview.png",
+            "screenshot": "/screenshots/lead-management-preview.webp",
             "hotspot": {
               "x": 78,
               "y": 25
@@ -2033,7 +2033,7 @@
           {
             "order": 4,
             "title": "Site Visit Scheduling",
-            "screenshot": "/screenshots/lead-management-preview.png",
+            "screenshot": "/screenshots/lead-management-preview.webp",
             "hotspot": {
               "x": 50,
               "y": 68
@@ -2050,7 +2050,7 @@
           {
             "order": 1,
             "title": "Front-Desk Check-in",
-            "screenshot": "/screenshots/sales-management-preview.png",
+            "screenshot": "/screenshots/sales-management-preview.webp",
             "hotspot": {
               "x": 28,
               "y": 30
@@ -2060,7 +2060,7 @@
           {
             "order": 2,
             "title": "Interactive Cost Sheet Builder",
-            "screenshot": "/screenshots/sales-management-preview.png",
+            "screenshot": "/screenshots/sales-management-preview.webp",
             "hotspot": {
               "x": 55,
               "y": 45
@@ -2070,7 +2070,7 @@
           {
             "order": 3,
             "title": "Discount Approval Matrix",
-            "screenshot": "/screenshots/sales-management-preview.png",
+            "screenshot": "/screenshots/sales-management-preview.webp",
             "hotspot": {
               "x": 75,
               "y": 38
@@ -2080,7 +2080,7 @@
           {
             "order": 4,
             "title": "Deal Pipeline Dashboard",
-            "screenshot": "/screenshots/sales-management-preview.png",
+            "screenshot": "/screenshots/sales-management-preview.webp",
             "hotspot": {
               "x": 45,
               "y": 70
@@ -2097,7 +2097,7 @@
           {
             "order": 1,
             "title": "Live Interactive Inventory Matrix",
-            "screenshot": "/screenshots/booking-management-preview.png",
+            "screenshot": "/screenshots/booking-management-preview.webp",
             "hotspot": {
               "x": 35,
               "y": 28
@@ -2107,7 +2107,7 @@
           {
             "order": 2,
             "title": "Instant 15-Minute Hold",
-            "screenshot": "/screenshots/booking-management-preview.png",
+            "screenshot": "/screenshots/booking-management-preview.webp",
             "hotspot": {
               "x": 58,
               "y": 48
@@ -2117,7 +2117,7 @@
           {
             "order": 3,
             "title": "Payment Gateway Token Capture",
-            "screenshot": "/screenshots/booking-management-preview.png",
+            "screenshot": "/screenshots/booking-management-preview.webp",
             "hotspot": {
               "x": 72,
               "y": 62
@@ -2127,7 +2127,7 @@
           {
             "order": 4,
             "title": "RERA Milestone Demand Letter",
-            "screenshot": "/screenshots/booking-management-preview.png",
+            "screenshot": "/screenshots/booking-management-preview.webp",
             "hotspot": {
               "x": 48,
               "y": 75

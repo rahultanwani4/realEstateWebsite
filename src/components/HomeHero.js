@@ -134,11 +134,15 @@ export function initHomeHero(mountSelector = '#app') {
 
             <!-- Workspace Body: Real Salesforce Product Screenshot -->
             <div class="dashboard-inner overflow-hidden rounded-b-xl bg-slate-900 cursor-zoom-in group relative" title="Click to inspect in full resolution">
-              <img src="${imageryAndBrand?.heroScreenshot?.src || '/dashboard-hero.png'}" 
+              <img src="${imageryAndBrand?.heroScreenshot?.src || '/dashboard-hero.webp'}" 
                    alt="${imageryAndBrand?.heroScreenshot?.alt || 'EstateForce Real Estate Salesforce CRM Workspace'}" 
                    class="w-full h-auto block shadow-inner"
                    style="image-rendering: auto;"
-                   loading="eager" />
+                   loading="eager"
+                   fetchpriority="high"
+                   decoding="async"
+                   width="1280"
+                   height="720" />
               <div class="absolute bottom-3 right-3 bg-slate-900/80 backdrop-blur text-white text-xs font-semibold px-2.5 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1.5 border border-slate-700/60 pointer-events-none">
                 <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
                 <span>Click to expand 100%</span>
