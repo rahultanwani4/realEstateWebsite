@@ -196,7 +196,7 @@
         "id": "lead-management",
         "title": "Lead Management",
         "subtitle": "Enquiry Capture & Conversion",
-        "description": "Capture enquiries through web forms and walk-ins, manage qualification stages, and convert eligible prospects into customer accounts, contacts, and offers.",
+        "description": "Capture enquiries from web forms and walk-ins, manage qualification stages, and convert prospects into customer accounts and offers.",
         "icon": "lead",
         "screenshot": "/screenshots/lead-card-preview.png",
         "link": "/features#lead-management",

@@ -1236,7 +1236,8 @@ section[id] {
   display: none;
 }
 
-.core-card-body {
+.core-card-body,
+.core-card-accordion-body {
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -2254,8 +2255,19 @@ section[id] {
   padding: 28px;
   display: flex;
   flex-direction: column;
+  height: 100%;
   transition: transform var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast);
   box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.04);
+}
+
+.core-card-accordion-header {
+  display: block;
+}
+
+.core-card-accordion-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 
 .core-feature-card:hover {
@@ -2269,6 +2281,7 @@ section[id] {
   align-items: center;
   gap: 14px;
   margin-bottom: 16px;
+  min-height: 52px;
 }
 
 .card-icon-wrapper {
@@ -2325,7 +2338,7 @@ section[id] {
   color: var(--color-ink-soft);
   line-height: 1.55;
   margin-bottom: 18px;
-  min-height: 66px;
+  min-height: 72px;
 }
 
 .core-card-screenshot-frame {
@@ -2340,6 +2353,7 @@ section[id] {
   position: relative;
   display: flex;
   flex-direction: column;
+  flex-shrink: 0;
   transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
 }
 
