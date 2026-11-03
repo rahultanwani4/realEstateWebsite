@@ -371,21 +371,14 @@
   "liveDemo": {
     "badge": "Interactive Product Showcase",
     "headline": "See CC Real Estate in Action",
-    "subheadline": "Watch a 4-minute guided walkthrough of our native Salesforce package managing real estate leads, pipeline stages, and unit bookings with zero manual friction.",
+    "subheadline": "Watch a full guided walkthrough of our native Salesforce package managing real estate leads, pipeline stages, and unit bookings with zero manual friction.",
     "video": {
-      "title": "CC Real Estate End-to-End Real Estate Tour",
+      "title": "CC Real Estate End-to-End Product Tour",
       "poster": "/dashboard-hero.webp",
       "src": "/demo-video.mp4",
       "captionsSrc": "/demo-captions.vtt",
-      "durationDisplay": "4:30 min"
-    },
-    "chapters": [
-      { "time": "00:00", "seconds": 0, "title": "Overview & Salesforce Native Setup" },
-      { "time": "01:05", "seconds": 65, "title": "Lead Capture & WhatsApp Automation" },
-      { "time": "02:18", "seconds": 138, "title": "Pipeline Deals & Site Visits" },
-      { "time": "03:30", "seconds": 210, "title": "Unit Inventory & Booking Voucher" },
-      { "time": "04:15", "seconds": 255, "title": "Executive Dashboards & Reports" }
-    ]
+      "durationDisplay": "6:10 min"
+    }
   },
   "footer": {
     "packageDescription": "The all-in-one real estate sales, lead automation, and unit booking package built natively on Salesforce.",

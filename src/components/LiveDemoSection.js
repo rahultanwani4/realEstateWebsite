@@ -63,20 +63,20 @@ export function initLiveDemoSection(mountTarget = '#live-demo') {
 
           <!-- Audio & Captions Confirmation Strip -->
           <div class="mt-6 inline-flex flex-wrap items-center justify-center gap-3 sm:gap-6 text-xs text-slate-300 bg-slate-800/80 border border-slate-700/80 rounded-full px-4 py-2">
+            <span class="flex items-center gap-1.5 text-blue-400 font-semibold">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                <polygon points="10 8 16 12 10 16 10 8"></polygon>
+              </svg>
+              <span>Full HD 1080p Recording</span>
+            </span>
+            <span class="text-slate-600">•</span>
             <span class="flex items-center gap-1.5 text-emerald-400 font-semibold">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                 <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
                 <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
               </svg>
-              <span>Audio Supported (Narration)</span>
-            </span>
-            <span class="text-slate-600">•</span>
-            <span class="flex items-center gap-1.5 text-blue-400 font-semibold">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="2" y="4" width="20" height="16" rx="2"></rect>
-                <path d="M10 9H8a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h2M16 9h-2a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h2"></path>
-              </svg>
-              <span>Closed Captions (WebVTT .vtt)</span>
+              <span>Live Audio Narration</span>
             </span>
             <span class="text-slate-600">•</span>
             <span class="flex items-center gap-1.5 text-amber-300 font-semibold">
@@ -84,7 +84,7 @@ export function initLiveDemoSection(mountTarget = '#live-demo') {
                 <circle cx="12" cy="12" r="10"></circle>
                 <polyline points="12 6 12 12 16 14"></polyline>
               </svg>
-              <span>${data.video?.durationDisplay || '4:30 min'} Tour</span>
+              <span>${data.video?.durationDisplay || '6:10 min'} Tour</span>
             </span>
           </div>
         </div>
@@ -98,7 +98,7 @@ export function initLiveDemoSection(mountTarget = '#live-demo') {
               <span class="w-3 h-3 rounded-full bg-red-500/80 inline-block"></span>
               <span class="w-3 h-3 rounded-full bg-amber-500/80 inline-block"></span>
               <span class="w-3 h-3 rounded-full bg-emerald-500/80 inline-block"></span>
-              <span class="ml-2 font-mono text-slate-300 hidden sm:inline">EstateForce Guided Tour • 100% Native on Salesforce</span>
+              <span class="ml-2 font-mono text-slate-300 hidden sm:inline">CC Real Estate Guided Tour - 100% Native on Salesforce</span>
             </div>
             <div class="flex items-center gap-3">
               <span class="text-[11px] bg-blue-900/50 border border-blue-700/50 text-blue-300 px-2.5 py-0.5 rounded-full font-medium">
@@ -110,24 +110,17 @@ export function initLiveDemoSection(mountTarget = '#live-demo') {
           <!-- Video Viewport Frame -->
           <div class="relative w-full aspect-video bg-black flex items-center justify-center overflow-hidden" id="video-frame-container">
             
-            <!-- Real HTML5 Video Element with Sound & WebVTT Captions -->
+            <!-- Real HTML5 Video Element with Sound & On-Demand Zero-Preload Loading -->
             <video 
               id="live-demo-video-tag" 
-              class="w-full h-full object-cover" 
+              class="w-full h-full object-contain bg-black" 
               controls 
               playsinline
-              preload="metadata"
-              poster="${data.video?.poster || '/dashboard-hero.webp'}"
-              aria-label="EstateForce Guided Product Tour Video with Audio and Closed Captions">
+              preload="none"
+              poster="${data.video?.poster || '/demo-video-poster.webp'}"
+              aria-label="CC Real Estate Guided Product Tour Video with Audio">
               <source src="${data.video?.src || '/demo-video.mp4'}" type="video/mp4" />
-              <track 
-                id="live-demo-captions-track"
-                kind="captions" 
-                src="${data.video?.captionsSrc || '/demo-captions.vtt'}" 
-                srclang="en" 
-                label="English Captions" 
-                default />
-              Your browser does not support HTML5 video with audio and subtitles.
+              Your browser does not support HTML5 video with audio.
             </video>
 
             <!-- Video Poster / Launch Overlay (Before play) -->
@@ -136,7 +129,7 @@ export function initLiveDemoSection(mountTarget = '#live-demo') {
                 type="button" 
                 id="btn-trigger-demo-play" 
                 class="group flex items-center justify-center w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-blue-600 hover:bg-blue-500 text-white shadow-2xl transition-transform duration-200 hover:scale-110 active:scale-95 focus:outline-none focus:ring-4 focus:ring-blue-500/40"
-                aria-label="Play product walkthrough video with sound and captions">
+                aria-label="Play product walkthrough video with sound">
                 <svg class="w-9 h-9 sm:w-10 sm:h-10 ml-1.5 fill-current text-white transition-transform group-hover:scale-105" viewBox="0 0 24 24">
                   <polygon points="5 3 19 12 5 21 5 3"></polygon>
                 </svg>
@@ -146,43 +139,8 @@ export function initLiveDemoSection(mountTarget = '#live-demo') {
                 ${data.video?.title || 'Watch Complete Package Walkthrough'}
               </h3>
               <p class="mt-2 text-xs sm:text-sm text-slate-300 max-w-md">
-                Click to play with full audio narration and live closed captions (${data.video?.durationDisplay || '4:30 min'}).
+                Click to play with full audio narration (${data.video?.durationDisplay || '6:10 min'}).
               </p>
-            </div>
-
-            <!-- Synced Dynamic Captions Overlay Banner (Displayed during play) -->
-            <div id="dynamic-captions-box" class="absolute bottom-14 left-1/2 -translate-x-1/2 bg-slate-900/95 text-white text-xs sm:text-sm font-medium px-4 py-2 rounded-lg max-w-xl text-center pointer-events-none border border-slate-700/80 shadow-lg opacity-0 transition-opacity duration-200 z-20">
-              <span id="dynamic-captions-text">EstateForce: Native Salesforce Real Estate Package</span>
-            </div>
-          </div>
-
-          <!-- Video Chapters Bar -->
-          <div class="bg-slate-900 border-t border-slate-800 p-3 sm:p-4">
-            <div class="flex items-center justify-between mb-2">
-              <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider flex items-center gap-1.5">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <line x1="8" y1="6" x2="21" y2="6"></line>
-                  <line x1="8" y1="12" x2="21" y2="12"></line>
-                  <line x1="8" y1="18" x2="21" y2="18"></line>
-                  <line x1="3" y1="6" x2="3.01" y2="6"></line>
-                  <line x1="3" y1="12" x2="3.01" y2="12"></line>
-                  <line x1="3" y1="18" x2="3.01" y2="18"></line>
-                </svg>
-                <span>Jump to Chapter:</span>
-              </span>
-              <span class="text-[11px] text-slate-500">Click any topic to skip ahead</span>
-            </div>
-
-            <div class="flex flex-wrap gap-2" id="video-chapters-list">
-              ${(data.chapters || []).map((ch, idx) => `
-                <button 
-                  type="button" 
-                  class="video-chapter-btn flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium border border-slate-700/80 bg-slate-800 hover:bg-slate-700 text-slate-200 transition-colors ${idx === 0 ? 'border-blue-500 text-blue-300' : ''}" 
-                  data-seconds="${ch.seconds}">
-                  <span class="font-mono text-blue-400 text-[11px] font-bold">${ch.time}</span>
-                  <span>${ch.title}</span>
-                </button>
-              `).join('')}
             </div>
           </div>
 
@@ -210,28 +168,12 @@ export function initLiveDemoSection(mountTarget = '#live-demo') {
 }
 
 /**
- * Handles play, captions, chapter scrubbing and fallback tour simulation
+ * Handles video playback with zero initial load impact
  */
 function setupLiveDemoInteractivity(container, data) {
   const video = container.querySelector('#live-demo-video-tag');
   const overlay = container.querySelector('#video-play-overlay');
   const triggerBtn = container.querySelector('#btn-trigger-demo-play');
-  const captionsBox = container.querySelector('#dynamic-captions-box');
-  const captionsText = container.querySelector('#dynamic-captions-text');
-  const chapterBtns = container.querySelectorAll('.video-chapter-btn');
-
-  // Scripted Fallback Captions & Timings for Demonstration
-  const captionScript = [
-    { start: 0, end: 4, text: "Welcome to EstateForce - the premier real estate CRM built natively on Salesforce." },
-    { start: 4, end: 9, text: "Eliminate fragmented spreadsheets and unify your entire property sales lifecycle in one place." },
-    { start: 9, end: 15, text: "Portal enquiries from 99acres, MagicBricks, Housing, and WhatsApp flow directly into Lightning Leads." },
-    { start: 15, end: 21, text: "Automated round-robin distribution assigns incoming buyers to available sales executives in real time." },
-    { start: 21, end: 27, text: "Track deals through customized property stages: from site visit scheduled to pricing negotiation." },
-    { start: 27, end: 33, text: "Our interactive unit inventory matrix displays live tower, floor, and flat availability instantly." },
-    { start: 33, end: 40, text: "Block units, calculate milestone payment schedules, and generate stamped booking vouchers with one click." },
-    { start: 40, end: 47, text: "Executive dashboards deliver real-time visibility into inventory turnover, team velocity, and revenue." },
-    { start: 47, end: 55, text: "Ready to test EstateForce in your own Salesforce org? Click below to request a guided sandbox demo." }
-  ];
 
   function startPlayback() {
     if (overlay) {
@@ -240,10 +182,12 @@ function setupLiveDemoInteractivity(container, data) {
     }
 
     if (video) {
+      // Transition from zero-preload to auto only on user interaction
+      if (video.preload === 'none') {
+        video.preload = 'auto';
+      }
       video.play().catch(err => {
-        console.log('[LiveDemo] Local video file playback notice:', err.message);
-        // If local mp4 is not yet in /public, start interactive simulation
-        startSimulatedTour();
+        console.log('[LiveDemo] Video playback notice:', err.message);
       });
     }
   }
@@ -261,55 +205,14 @@ function setupLiveDemoInteractivity(container, data) {
     });
   }
 
-  // Update dynamic captions on video timeupdate
   if (video) {
-    video.addEventListener('timeupdate', () => {
-      const cur = video.currentTime;
-      const currentCaption = captionScript.find(c => cur >= c.start && cur <= c.end);
-      if (currentCaption && captionsBox && captionsText) {
-        captionsText.textContent = currentCaption.text;
-        captionsBox.style.opacity = '1';
-      } else if (captionsBox) {
-        captionsBox.style.opacity = '0';
-      }
-
-      // Highlight active chapter
-      let activeIdx = 0;
-      data.chapters?.forEach((ch, idx) => {
-        if (cur >= ch.seconds) activeIdx = idx;
-      });
-      chapterBtns.forEach((btn, idx) => {
-        if (idx === activeIdx) {
-          btn.classList.add('border-blue-500', 'text-blue-300');
-        } else {
-          btn.classList.remove('border-blue-500', 'text-blue-300');
-        }
-      });
-    });
-
     video.addEventListener('ended', () => {
       if (overlay) {
         overlay.style.opacity = '1';
         overlay.style.pointerEvents = 'auto';
       }
-      if (captionsBox) {
-        captionsBox.style.opacity = '0';
-      }
     });
   }
-
-  // Chapter buttons scrubbing
-  chapterBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const sec = parseFloat(btn.dataset.seconds || '0');
-      if (video) {
-        video.currentTime = sec;
-        startPlayback();
-      }
-      chapterBtns.forEach(b => b.classList.remove('border-blue-500', 'text-blue-300'));
-      btn.classList.add('border-blue-500', 'text-blue-300');
-    });
-  });
 
   // Fallback visual tour simulation with real CRM screenshots & synced captions
   function startSimulatedTour() {
