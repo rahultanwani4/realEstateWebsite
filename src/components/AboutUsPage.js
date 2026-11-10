@@ -32,7 +32,7 @@ export function initAboutUsPage(mountTarget = '#about-us-page-root') {
         <div class="text-center max-w-3xl mx-auto mb-16 sm:mb-20">
           <span class="inline-flex items-center gap-1.5 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-blue-400 bg-blue-950/80 border border-blue-800/60 rounded-full mb-3">
             <span class="w-2 h-2 rounded-full bg-blue-400"></span>
-            <span>About EstateForce &amp; Cloud Certitude</span>
+            <span>About CC Real Estate &amp; Cloud Certitude</span>
           </span>
           <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
             ${data.headline || 'Built by Salesforce Architects. Engineered for Real Estate Leaders.'}
@@ -52,7 +52,7 @@ export function initAboutUsPage(mountTarget = '#about-us-page-root') {
               ${data.companyStory}
             </p>
             <p>
-              Rather than forcing developers onto rigid standalone software that locks property data into external proprietary silos, EstateForce is architected 100% natively on the Salesforce Lightning platform - giving property enterprises complete data sovereignty, uncompromised auditability, and immediate multi-project scalability.
+              Rather than forcing developers onto rigid standalone software that locks property data into external proprietary silos, CC Real Estate is architected 100% natively on the Salesforce Lightning platform - giving property enterprises complete data sovereignty, uncompromised auditability, and immediate multi-project scalability.
             </p>
           </div>
           <div class="lg:col-span-5">

@@ -173,14 +173,14 @@ export function initWhoItIsForPage(mountTarget = '#who-it-is-for-page-root') {
                     <p class="text-sm leading-relaxed text-slate-700 m-0">${aud.challengeText}</p>
                   </div>
 
-                  <!-- How EstateForce Solves It Card (US-12 Criterion 2) -->
-                  <div class="p-4 sm:p-5 rounded-xl bg-blue-50/70 border border-blue-200/80 transition-shadow duration-200 hover:shadow-sm" role="region" aria-label="How EstateForce solves this challenge for ${aud.audience}">
+                  <!-- How CC Real Estate Solves It Card (US-12 Criterion 2) -->
+                  <div class="p-4 sm:p-5 rounded-xl bg-blue-50/70 border border-blue-200/80 transition-shadow duration-200 hover:shadow-sm" role="region" aria-label="How CC Real Estate solves this challenge for ${aud.audience}">
                     <div class="inline-flex items-center gap-2 text-xs font-extrabold uppercase tracking-wider text-blue-700 mb-2">
                       <svg viewBox="0 0 24 24" width="16" height="16" class="w-4 h-4 text-blue-600 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                         <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
                         <polyline points="22 4 12 14.01 9 11.01"></polyline>
                       </svg>
-                      <span>How EstateForce on Salesforce Solves It</span>
+                      <span>How CC Real Estate on Salesforce Solves It</span>
                     </div>
                     <p class="text-sm leading-relaxed text-slate-700 m-0">${aud.solutionText}</p>
                   </div>

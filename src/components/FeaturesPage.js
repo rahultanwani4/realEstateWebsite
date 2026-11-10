@@ -184,7 +184,7 @@ export function initFeaturesPage(mountSelector = '#features-page-root') {
                    target="_blank" 
                    rel="noopener noreferrer" 
                    class="appexchange-verified-pill"
-                   aria-label="View EstateForce verified package on Salesforce AppExchange">
+                   aria-label="View CC Real Estate verified package on Salesforce AppExchange">
                   <img src="${data.worksOnSalesforce.appExchangeBadgeSrc}" alt="Salesforce AppExchange verified badge" width="130" height="32" />
                   <span>Verified 4.9 ★ ↗</span>
                 </a>
@@ -216,7 +216,7 @@ export function initFeaturesPage(mountSelector = '#features-page-root') {
             <!-- US-08 Criterion 5: End-of-page Request a Demo button -->
             <div class="features-end-cta-row">
               <div class="end-cta-box">
-                <h3 class="end-cta-title">Ready to see EstateForce inside your Salesforce sandbox?</h3>
+                <h3 class="end-cta-title">Ready to see CC Real Estate inside your Salesforce sandbox?</h3>
                 <p class="end-cta-sub">Our certified Salesforce solutions engineers will walk through your project inventory and custom lead sources.</p>
                 <a href="#request-demo?area=all" class="btn-features-final-demo btn-cta-demo" id="features-bottom-demo-btn">
                   <span>${data.worksOnSalesforce.demoButtonLabel}</span>

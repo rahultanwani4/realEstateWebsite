@@ -60,7 +60,7 @@ export function openProductTourModal(defaultArea = 'Lead') {
         <div class="px-5 py-4 border-b border-slate-100 flex items-center justify-between bg-slate-50/80 gap-3">
           <div class="flex items-center gap-2">
             <span class="w-2.5 h-2.5 rounded-full bg-blue-600 animate-pulse"></span>
-            <span class="text-xs font-bold uppercase tracking-wider text-slate-500">EstateForce Interactive Tour</span>
+            <span class="text-xs font-bold uppercase tracking-wider text-slate-500">CC Real Estate Interactive Tour</span>
           </div>
 
           <!-- Area Switcher Pills -->
@@ -106,7 +106,7 @@ export function openProductTourModal(defaultArea = 'Lead') {
                   ${video.badge || 'Official Product Tour'}
                 </span>
                 <h3 class="text-xl sm:text-2xl font-extrabold text-white max-w-lg mx-auto tracking-tight">
-                  ${video.title || 'EstateForce in 2 Minutes'}
+                  ${video.title || 'CC Real Estate in 2 Minutes'}
                 </h3>
                 <p class="text-xs sm:text-sm text-slate-300 max-w-md mx-auto">
                   Captions available in English (VTT compliant). Video runtime: ${video.durationDisplay}.

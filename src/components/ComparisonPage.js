@@ -79,7 +79,7 @@ export function initComparisonPage(mountTarget = '#app') {
         <!-- US-31 Criterion 1: Comparison Table with Mobile Scroll Container -->
         <div class="bg-white rounded-3xl border border-slate-200 shadow-xl overflow-hidden mb-16">
           <div class="overflow-x-auto">
-            <table class="w-full text-left border-collapse min-w-[760px]" aria-label="Comparison of EstateForce vs Spreadsheets vs Legacy CRMs">
+            <table class="w-full text-left border-collapse min-w-[760px]" aria-label="Comparison of CC Real Estate vs Spreadsheets vs Legacy CRMs">
               <thead>
                 <tr class="border-b border-slate-200 bg-slate-50/80">
                   <th scope="col" class="py-5 px-6 text-xs font-extrabold uppercase tracking-wider text-slate-500 w-1/3">
@@ -88,7 +88,7 @@ export function initComparisonPage(mountTarget = '#app') {
                   <th scope="col" class="py-5 px-6 text-xs font-extrabold uppercase tracking-wider text-blue-700 bg-blue-50/70 border-x border-blue-100 w-1/4">
                     <div class="flex items-center gap-2">
                       <span class="w-2.5 h-2.5 rounded-full bg-blue-600"></span>
-                      <span>EstateForce (Native SF)</span>
+                      <span>CC Real Estate (Native SF)</span>
                     </div>
                   </th>
                   <th scope="col" class="py-5 px-6 text-xs font-extrabold uppercase tracking-wider text-slate-700 w-1/5">

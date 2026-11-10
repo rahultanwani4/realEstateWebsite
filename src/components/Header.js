@@ -247,7 +247,16 @@ function initScrollSpy() {
  * Highlights current active anchor in navigation
  */
 export function setActiveNavRoute(routeAnchor = '#home') {
-  const cleanAnchor = routeAnchor.startsWith('#') ? routeAnchor : `#${routeAnchor.replace('/', '')}`;
+  if (!routeAnchor) {
+    document.querySelectorAll('.desktop-nav .nav-link, .mobile-nav-drawer .mobile-nav-link').forEach(link => {
+      link.classList.remove('is-active');
+    });
+    return;
+  }
+
+  const cleanAnchor = typeof routeAnchor === 'string' && routeAnchor.startsWith('#') 
+    ? routeAnchor 
+    : `#${String(routeAnchor || '').replace('/', '')}`;
   const allNavLinks = document.querySelectorAll('.desktop-nav .nav-link, .mobile-nav-drawer .mobile-nav-link');
   
   allNavLinks.forEach(link => {

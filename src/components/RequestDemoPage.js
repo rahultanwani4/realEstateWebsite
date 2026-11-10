@@ -135,7 +135,7 @@ export function initRequestDemoPage(mountTarget = '#request-demo-page-root') {
               <span>1-on-1 Personalized Walkthrough</span>
             </span>
             <h1 class="text-3xl sm:text-4xl lg:text-[42px] font-extrabold text-white tracking-tight leading-tight" id="demo-heading">
-              ${data.headline || 'Experience EstateForce Tailored to Your Projects'}
+              ${data.headline || 'Experience CC Real Estate Tailored to Your Projects'}
             </h1>
             <p class="text-sm sm:text-base text-slate-300 max-w-2xl mt-2 leading-relaxed">
               ${data.subheadline || 'Request a tailored walkthrough. See real-time inventory locking, instant WhatsApp cadences, and milestone demand letters in action.'}
@@ -349,7 +349,7 @@ export function initRequestDemoPage(mountTarget = '#request-demo-page-root') {
                                maxlength="120" 
                                required="" 
                                autocomplete="organization" 
-                               placeholder="e.g. Prestige Developers" 
+                               placeholder="e.g. Horizon Developers" 
                                class="w-full rounded-lg border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 focus:border-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-100 transition-colors" />
                       </div>
                       <p class="field-error-msg hidden text-[11px] font-medium text-rose-600 mt-1" id="err-company"></p>
@@ -425,7 +425,7 @@ export function initRequestDemoPage(mountTarget = '#request-demo-page-root') {
                            name="consent" 
                            class="mt-1 w-4 h-4 rounded text-blue-600 border-slate-300 focus:ring-blue-500 cursor-pointer" />
                     <label for="demo-consent" class="text-xs text-slate-600 leading-relaxed cursor-pointer">
-                      I agree to receive communications from EstateForce regarding product demonstrations and real estate CRM updates.
+                      I agree to receive communications from CC Real Estate regarding product demonstrations and real estate CRM updates.
                     </label>
                   </div>
 
@@ -623,23 +623,56 @@ export function initRequestDemoPage(mountTarget = '#request-demo-page-root') {
     }
 
     function validatePhone() {
-      const val = inputPhone.value.trim().replace(/\D/g, '');
-      if (val) {
-        inputPhone.value = val;
-        if (val.length !== 10 || !/^[6-9]\d{9}$/.test(val)) {
-          showFieldError(inputPhone, 'err-phone', 'Please enter a valid 10-digit Indian mobile number');
-          return false;
-        }
+      const raw = inputPhone.value.trim();
+      if (!raw) {
+        clearFieldError(inputPhone, 'err-phone');
+        return true;
+      }
+      const val = raw.replace(/\D/g, '');
+      if (val.length !== 10 || !/^[6-9]\d{9}$/.test(val)) {
+        showFieldError(inputPhone, 'err-phone', 'Please enter a valid 10-digit Indian mobile number');
+        return false;
       }
       clearFieldError(inputPhone, 'err-phone');
       return true;
     }
 
-    inputFirstName.addEventListener('blur', validateFirstName);
-    inputLastName.addEventListener('blur', validateLastName);
-    inputEmail.addEventListener('blur', validateEmail);
-    inputCompany.addEventListener('blur', validateCompany);
-    inputPhone.addEventListener('blur', validatePhone);
+    if (inputFirstName) {
+      inputFirstName.addEventListener('blur', validateFirstName);
+      inputFirstName.addEventListener('input', () => {
+        if (inputFirstName.classList.contains('border-rose-400')) validateFirstName();
+      });
+    }
+
+    if (inputLastName) {
+      inputLastName.addEventListener('blur', validateLastName);
+      inputLastName.addEventListener('input', () => {
+        if (inputLastName.classList.contains('border-rose-400')) validateLastName();
+      });
+    }
+
+    if (inputEmail) {
+      inputEmail.addEventListener('blur', validateEmail);
+      inputEmail.addEventListener('input', () => {
+        if (inputEmail.classList.contains('border-rose-400')) validateEmail();
+      });
+    }
+
+    if (inputCompany) {
+      inputCompany.addEventListener('blur', validateCompany);
+      inputCompany.addEventListener('input', () => {
+        if (inputCompany.classList.contains('border-rose-400')) validateCompany();
+      });
+    }
+
+    if (inputPhone) {
+      inputPhone.addEventListener('blur', validatePhone);
+      inputPhone.addEventListener('input', () => {
+        if (inputPhone.classList.contains('border-rose-400') || inputPhone.value.replace(/\D/g, '').length >= 10) {
+          validatePhone();
+        }
+      });
+    }
 
     // Form submit handler
     form.addEventListener('submit', async (e) => {
@@ -704,7 +737,7 @@ export function initRequestDemoPage(mountTarget = '#request-demo-page-root') {
         description: inputDescription.value.trim(),
         leadSource: 'CC Real Estate Website - Demo Request',
         consentGiven,
-        consentWording: 'I agree to receive communications from EstateForce regarding product demonstrations and real estate CRM updates.',
+        consentWording: 'I agree to receive communications from CC Real Estate regarding product demonstrations and real estate CRM updates.',
         consentTimestamp: consentGiven ? new Date().toISOString() : null,
         timestamp: new Date().toISOString()
       };

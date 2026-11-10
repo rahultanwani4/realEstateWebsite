@@ -338,28 +338,34 @@ function openRegistrationModal(event) {
             <div class="space-y-1">
               <label for="reg-fullname" class="block text-xs font-bold text-slate-700">Full Name *</label>
               <input type="text" id="reg-fullname" name="fullName" required maxlength="80" placeholder="e.g. Radhika Kulkarni"
-                     class="w-full px-3.5 py-2 rounded-xl border border-slate-200 text-xs sm:text-sm focus:border-blue-600 focus:ring-2 focus:ring-blue-100 outline-none" />
+                     class="w-full px-3.5 py-2 rounded-xl border border-slate-200 text-xs sm:text-sm focus:border-blue-600 focus:ring-2 focus:ring-blue-100 outline-none transition-colors" />
+              <p class="field-error-msg hidden text-[11px] font-medium text-rose-600 mt-1" id="err-reg-fullname"></p>
             </div>
 
             <div class="space-y-1">
               <label for="reg-email" class="block text-xs font-bold text-slate-700">Work Email *</label>
               <input type="email" id="reg-email" name="email" required placeholder="name@company.com"
-                     class="w-full px-3.5 py-2 rounded-xl border border-slate-200 text-xs sm:text-sm focus:border-blue-600 focus:ring-2 focus:ring-blue-100 outline-none" />
+                     class="w-full px-3.5 py-2 rounded-xl border border-slate-200 text-xs sm:text-sm focus:border-blue-600 focus:ring-2 focus:ring-blue-100 outline-none transition-colors" />
+              <p class="field-error-msg hidden text-[11px] font-medium text-rose-600 mt-1" id="err-reg-email"></p>
             </div>
 
             <div class="space-y-1">
               <label for="reg-company" class="block text-xs font-bold text-slate-700">Company Name *</label>
               <input type="text" id="reg-company" name="company" required maxlength="100" placeholder="UrbanCraft Realty"
-                     class="w-full px-3.5 py-2 rounded-xl border border-slate-200 text-xs sm:text-sm focus:border-blue-600 focus:ring-2 focus:ring-blue-100 outline-none" />
+                     class="w-full px-3.5 py-2 rounded-xl border border-slate-200 text-xs sm:text-sm focus:border-blue-600 focus:ring-2 focus:ring-blue-100 outline-none transition-colors" />
+              <p class="field-error-msg hidden text-[11px] font-medium text-rose-600 mt-1" id="err-reg-company"></p>
             </div>
 
             <!-- Consent Checkbox (Unticked by default per US-26 Criterion 4) -->
-            <div class="flex items-start gap-2 pt-1">
-              <input type="checkbox" id="reg-consent" name="consent" required
-                     class="mt-0.5 w-4 h-4 rounded text-blue-600 border-slate-300 focus:ring-blue-500 cursor-pointer" />
-              <label for="reg-consent" class="text-xs text-slate-600 leading-normal cursor-pointer">
-                I agree to receive the event access link and related educational resources.
-              </label>
+            <div class="pt-1">
+              <div class="flex items-start gap-2">
+                <input type="checkbox" id="reg-consent" name="consent" required
+                       class="mt-0.5 w-4 h-4 rounded text-blue-600 border-slate-300 focus:ring-blue-500 cursor-pointer" />
+                <label for="reg-consent" class="text-xs text-slate-600 leading-normal cursor-pointer">
+                  I agree to receive the event access link and related educational resources.
+                </label>
+              </div>
+              <p class="field-error-msg hidden text-[11px] font-medium text-rose-600 mt-1" id="err-reg-consent"></p>
             </div>
 
             <!-- Form Privacy Notice next to submit button (US-26 Criterion 3) -->
@@ -393,6 +399,106 @@ function openRegistrationModal(event) {
     const form = modalEl.querySelector('#event-reg-form');
     if (!form) return;
 
+    const inputName = form.querySelector('#reg-fullname');
+    const inputEmail = form.querySelector('#reg-email');
+    const inputCompany = form.querySelector('#reg-company');
+    const inputConsent = form.querySelector('#reg-consent');
+
+    function showFieldError(inputEl, errId, msg) {
+      if (inputEl) {
+        inputEl.classList.add('border-rose-400', 'bg-rose-50/20');
+        inputEl.classList.remove('border-slate-200');
+        inputEl.setAttribute('aria-invalid', 'true');
+      }
+      const errEl = form.querySelector(`#${errId}`);
+      if (errEl) {
+        errEl.textContent = msg;
+        errEl.classList.remove('hidden');
+      }
+    }
+
+    function clearFieldError(inputEl, errId) {
+      if (inputEl) {
+        inputEl.classList.remove('border-rose-400', 'bg-rose-50/20');
+        inputEl.classList.add('border-slate-200');
+        inputEl.removeAttribute('aria-invalid');
+      }
+      const errEl = form.querySelector(`#${errId}`);
+      if (errEl) {
+        errEl.textContent = '';
+        errEl.classList.add('hidden');
+      }
+    }
+
+    function validateName() {
+      if (!inputName) return true;
+      const val = inputName.value.trim();
+      if (!val || val.length < 2) {
+        showFieldError(inputName, 'err-reg-fullname', 'Please enter your full name (at least 2 characters).');
+        return false;
+      }
+      clearFieldError(inputName, 'err-reg-fullname');
+      return true;
+    }
+
+    function validateEmail() {
+      if (!inputEmail) return true;
+      const val = inputEmail.value.trim();
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!val || !emailRegex.test(val)) {
+        showFieldError(inputEmail, 'err-reg-email', 'Please enter a valid work email.');
+        return false;
+      }
+      clearFieldError(inputEmail, 'err-reg-email');
+      return true;
+    }
+
+    function validateCompany() {
+      if (!inputCompany) return true;
+      const val = inputCompany.value.trim();
+      if (!val) {
+        showFieldError(inputCompany, 'err-reg-company', 'Please enter your company name.');
+        return false;
+      }
+      clearFieldError(inputCompany, 'err-reg-company');
+      return true;
+    }
+
+    function validateConsent() {
+      if (!inputConsent) return true;
+      if (!inputConsent.checked) {
+        showFieldError(inputConsent, 'err-reg-consent', 'Please tick the consent checkbox.');
+        return false;
+      }
+      clearFieldError(inputConsent, 'err-reg-consent');
+      return true;
+    }
+
+    if (inputName) {
+      inputName.addEventListener('blur', validateName);
+      inputName.addEventListener('input', () => {
+        if (inputName.getAttribute('aria-invalid') === 'true') validateName();
+      });
+    }
+
+    if (inputEmail) {
+      inputEmail.addEventListener('blur', validateEmail);
+      inputEmail.addEventListener('input', () => {
+        if (inputEmail.getAttribute('aria-invalid') === 'true') validateEmail();
+      });
+    }
+
+    if (inputCompany) {
+      inputCompany.addEventListener('blur', validateCompany);
+      inputCompany.addEventListener('input', () => {
+        if (inputCompany.getAttribute('aria-invalid') === 'true') validateCompany();
+      });
+    }
+
+    if (inputConsent) {
+      inputConsent.addEventListener('change', validateConsent);
+    }
+
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
       const formData = new FormData(form);
@@ -403,26 +509,14 @@ function openRegistrationModal(event) {
         return;
       }
 
-      const fullName = (formData.get('fullName') || '').trim();
-      const email = (formData.get('email') || '').trim();
-      const company = (formData.get('company') || '').trim();
-      const consent = formData.get('consent');
+      const isNameValid = validateName();
+      const isEmailValid = validateEmail();
+      const isCompanyValid = validateCompany();
+      const isConsentValid = validateConsent();
 
-      // Validations
-      if (!fullName || fullName.length < 2) {
-        renderModal({ isSubmitting: false, isSuccess: false, error: 'Please enter your full name (at least 2 characters).' });
-        return;
-      }
-      if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-        renderModal({ isSubmitting: false, isSuccess: false, error: 'Please enter a valid work email.' });
-        return;
-      }
-      if (!company) {
-        renderModal({ isSubmitting: false, isSuccess: false, error: 'Please enter your company name.' });
-        return;
-      }
-      if (!consent) {
-        renderModal({ isSubmitting: false, isSuccess: false, error: 'Please tick the consent checkbox.' });
+      if (!isNameValid || !isEmailValid || !isCompanyValid || !isConsentValid) {
+        const firstErr = form.querySelector('.border-rose-400, [aria-invalid="true"]');
+        if (firstErr) firstErr.focus();
         return;
       }
 

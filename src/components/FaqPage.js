@@ -24,7 +24,7 @@ export function initFaqPage(mountTarget = '#faq-page-root') {
 
   const data = siteConfig.faqPage || {
     headline: 'Frequently Asked Questions',
-    subheadline: 'Everything you need to know about EstateForce real estate package.',
+    subheadline: 'Everything you need to know about CC Real Estate package.',
     topics: ['Product', 'Salesforce requirements', 'Set-up', 'Data migration', 'Pricing', 'Security', 'Support'],
     faqs: []
   };

@@ -208,7 +208,7 @@ export function initPricingPage(mountTarget = '#pricing-page-root') {
             <div class="text-center mb-8">
               <span class="text-xs font-extrabold uppercase tracking-widest text-slate-400">Detailed Matrix</span>
               <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mt-1 mb-2">${data.comparisonTableTitle}</h2>
-              <p class="text-sm text-slate-600 max-w-xl mx-auto">Compare feature availability across all three EstateForce package tiers.</p>
+              <p class="text-sm text-slate-600 max-w-xl mx-auto">Compare feature availability across all three CC Real Estate package tiers.</p>
             </div>
 
             <!-- Table Container with Horizontal Scroll Containment -->

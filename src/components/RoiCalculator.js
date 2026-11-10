@@ -292,12 +292,12 @@ export function initRoiCalculator(mountTarget = '#roi-calculator-mount') {
                 <div class="comp-bar-baseline" id="comp-bar-baseline" style="width: 78%;" title="Current baseline bookings">
                   <span class="bar-tag">Baseline</span>
                 </div>
-                <div class="comp-bar-estateforce" id="comp-bar-estateforce" style="width: 22%;" title="EstateForce incremental bookings">
-                  <span class="bar-tag">+EstateForce</span>
+                <div class="comp-bar-estateforce" id="comp-bar-estateforce" style="width: 22%;" title="CC Real Estate incremental bookings">
+                  <span class="bar-tag">+CC Real Estate</span>
                 </div>
               </div>
               <div class="comp-bar-legend">
-                <span class="legend-item"><span class="legend-dot baseline-dot"></span> Without EstateForce</span>
+                <span class="legend-item"><span class="legend-dot baseline-dot"></span> Without CC Real Estate</span>
                 <span class="legend-item"><span class="legend-dot estateforce-dot"></span> Reclaimed with 5-min SLA</span>
               </div>
             </div>

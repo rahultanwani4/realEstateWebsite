@@ -329,17 +329,21 @@ export function initResourcesPage(mountTarget = '#resources-page-root') {
               </div>
               <div>
                 <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Work Email *</label>
-                <input type="email" id="gated-email" required="" placeholder="you@company.com" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm" />
+                <input type="email" id="gated-email" required="" placeholder="you@company.com" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm transition-colors" />
+                <p class="field-error-msg hidden text-[11px] font-medium text-rose-600 mt-1" id="err-gated-email"></p>
               </div>
               <div>
                 <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Company Name</label>
-                <input type="text" id="gated-company" placeholder="e.g. Prestige Developers" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm" />
+                <input type="text" id="gated-company" placeholder="e.g. Horizon Developers" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm" />
               </div>
-              <div class="flex items-start gap-2 pt-1">
-                <input type="checkbox" id="gated-consent" required="" class="mt-0.5 w-4 h-4 rounded text-blue-600 border-slate-300" />
-                <label for="gated-consent" class="text-xs text-slate-600 leading-snug">
-                  I consent to receive this resource and periodic PropTech updates. <span class="text-rose-500">*</span>
-                </label>
+              <div class="pt-1">
+                <div class="flex items-start gap-2">
+                  <input type="checkbox" id="gated-consent" required="" class="mt-0.5 w-4 h-4 rounded text-blue-600 border-slate-300" />
+                  <label for="gated-consent" class="text-xs text-slate-600 leading-snug">
+                    I consent to receive this resource and periodic PropTech updates. <span class="text-rose-500">*</span>
+                  </label>
+                </div>
+                <p class="field-error-msg hidden text-[11px] font-medium text-rose-600 mt-1" id="err-gated-consent"></p>
               </div>
               <button type="submit" id="gated-submit-btn" class="w-full py-3 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs sm:text-sm shadow-md transition-all cursor-pointer">
                 Download Now &amp; Send to Email
@@ -477,7 +481,7 @@ export function initResourcesPage(mountTarget = '#resources-page-root') {
 
         <div class="mt-8 pt-6 border-t border-slate-200 p-6 rounded-2xl bg-slate-900 text-white flex flex-col sm:flex-row items-center justify-between gap-4">
           <div>
-            <h3 class="text-base font-extrabold text-white">Ready to see EstateForce live on Salesforce?</h3>
+            <h3 class="text-base font-extrabold text-white">Ready to see CC Real Estate live on Salesforce?</h3>
             <p class="text-xs text-slate-300 mt-1">Get a tailored 30-minute sandbox walkthrough matching your property types.</p>
           </div>
           <button id="modal-request-demo-btn" class="px-5 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-extrabold shrink-0 shadow-lg cursor-pointer">
@@ -582,26 +586,82 @@ export function initResourcesPage(mountTarget = '#resources-page-root') {
     // Handle Gated Download Form Submission (US-22 Criterion 1 & 2)
     const gatedForm = container.querySelector('#gated-download-form');
     if (gatedForm) {
+      const emailInput = container.querySelector('#gated-email');
+      const consentInput = container.querySelector('#gated-consent');
+
+      function validateGatedEmail() {
+        if (!emailInput) return true;
+        const val = emailInput.value.trim();
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        const errEl = container.querySelector('#err-gated-email');
+        if (!val || !emailRegex.test(val)) {
+          emailInput.classList.add('border-rose-400', 'bg-rose-50/20');
+          emailInput.classList.remove('border-slate-300');
+          if (errEl) {
+            errEl.textContent = 'Please enter a valid work email address.';
+            errEl.classList.remove('hidden');
+          }
+          return false;
+        }
+        emailInput.classList.remove('border-rose-400', 'bg-rose-50/20');
+        emailInput.classList.add('border-slate-300');
+        if (errEl) {
+          errEl.textContent = '';
+          errEl.classList.add('hidden');
+        }
+        return true;
+      }
+
+      function validateGatedConsent() {
+        if (!consentInput) return true;
+        const errEl = container.querySelector('#err-gated-consent');
+        if (!consentInput.checked) {
+          if (errEl) {
+            errEl.textContent = 'Please accept the consent checkbox to download.';
+            errEl.classList.remove('hidden');
+          }
+          return false;
+        }
+        if (errEl) {
+          errEl.textContent = '';
+          errEl.classList.add('hidden');
+        }
+        return true;
+      }
+
+      if (emailInput) {
+        emailInput.addEventListener('blur', validateGatedEmail);
+        emailInput.addEventListener('input', () => {
+          if (emailInput.classList.contains('border-rose-400')) validateGatedEmail();
+        });
+      }
+
+      if (consentInput) {
+        consentInput.addEventListener('change', validateGatedConsent);
+      }
+
       gatedForm.addEventListener('submit', async (e) => {
         e.preventDefault();
         const hp = container.querySelector('#gated-hp-website');
         if (hp && hp.value.trim() !== '') return;
 
+        const isEmailOk = validateGatedEmail();
+        const isConsentOk = validateGatedConsent();
+        if (!isEmailOk || !isConsentOk) {
+          const firstErr = gatedForm.querySelector('.border-rose-400');
+          if (firstErr) firstErr.focus();
+          return;
+        }
+
         const name = container.querySelector('#gated-name')?.value.trim();
         const email = container.querySelector('#gated-email')?.value.trim();
         const company = container.querySelector('#gated-company')?.value.trim() || 'Real Estate Enterprise';
-        const consent = container.querySelector('#gated-consent')?.checked;
-
-        if (!email || !consent) {
-          alert('Please enter your work email and accept the consent checkbox to download.');
-          return;
-        }
 
         const submitBtn = container.querySelector('#gated-submit-btn');
         submitBtn.disabled = true;
         submitBtn.textContent = 'Generating Download...';
 
-        const docTitle = activeGatedDownload?.title || 'EstateForce Guide';
+        const docTitle = activeGatedDownload?.title || 'CC Real Estate Guide';
 
         // Submit to Salesforce with Lead Source "Website - Download" (US-22 Criterion 2)
         try {
@@ -689,7 +749,7 @@ export function initResourcesPage(mountTarget = '#resources-page-root') {
         if (subs.includes(normalizedEmail)) {
           if (msgEl) {
             msgEl.className = 'text-xs font-semibold text-amber-300 mt-2 block';
-            msgEl.textContent = "You're already subscribed to the EstateForce newsletter.";
+            msgEl.textContent = "You're already subscribed to the CC Real Estate newsletter.";
           }
           return;
         }
@@ -706,7 +766,7 @@ export function initResourcesPage(mountTarget = '#resources-page-root') {
             email: normalizedEmail,
             company: 'Newsletter Subscriber',
             leadSource: 'Website - Newsletter',
-            notes: 'Subscribed to EstateForce Monthly Real Estate CRM Newsletter (Double Opt-In Sent)',
+            notes: 'Subscribed to CC Real Estate Monthly Real Estate CRM Newsletter (Double Opt-In Sent)',
             sourcePage: 'resources_newsletter_box'
           });
         } catch (err) {}

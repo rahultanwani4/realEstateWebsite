@@ -6,25 +6,46 @@ import { initLiveDemoSection } from './components/LiveDemoSection.js';
 import { initAboutSection } from './components/AboutSection.js';
 import { initContactUsPage } from './components/ContactUsPage.js';
 import { initLegalPage } from './components/LegalPage.js';
+import { initPricingPage } from './components/PricingPage.js';
+import { initFaqPage } from './components/FaqPage.js';
+import { initRequestDemoPage } from './components/RequestDemoPage.js';
+import { initWhoItIsForPage } from './components/WhoItIsForPage.js';
+import { initResourcesPage } from './components/ResourcesPage.js';
+import { initCustomerStoriesPage } from './components/CustomerStoriesPage.js';
+import { initSecurityFitPage } from './components/SecurityFitPage.js';
+import { initComparisonPage } from './components/ComparisonPage.js';
+import { initEventsPage } from './components/EventsPage.js';
+import { initAboutUsPage } from './components/AboutUsPage.js';
+import { initNotFoundPage } from './components/NotFoundPage.js';
 import { setActiveNavRoute } from './components/Header.js';
 import { scrollToSection } from './utils/scrollHelper.js';
 import siteConfig from './data/site-config.json';
 
 /**
- * Single-Page Architecture (Inspired by SurveyResults.online)
+ * Single-Page Architecture (Home Landing Experience)
  * 
  * Order of Sections:
  * 1. #home         -> Hero Banner & Trust Proof Strip
- * 2. #features     -> Core Functional Cards & 4-Stage Enquiry-to-Booking Journey
- * 3. #benefits     -> Role-Based Advantages, Before vs After Matrix & Interactive ROI Calculator
+ * 2. #features     -> Core Functional Cards & 6-Stage Enquiry-to-Handover Journey
+ * 3. #benefits     -> Role-Based Advantages, Before vs After Matrix
  * 4. #how-it-works -> 14-Day Rapid Deployment Roadmap & 5 Onboarding Pillars
- * 5. #live-demo    -> Interactive Video Player with Audio, Closed Captions & Chapters
+ * 5. #live-demo    -> Guided Product Tour Video Walkthrough
  * 6. #about        -> Backed by Cloud Certitude (Summit Partner, Real Estate Projects Portfolio)
  * 7. #contact      -> Inbound Inquiry & Request a Demo Desk (Salesforce Web-to-Lead)
  */
 export function renderSinglePage(rootSelector = '#app') {
   const root = typeof rootSelector === 'string' ? document.querySelector(rootSelector) : rootSelector;
   if (!root) return;
+
+  // If already rendered on the single page, avoid destroying DOM; just handle anchor scroll
+  if (root.querySelector('#single-page-site')) {
+    const hash = window.location.hash;
+    if (hash && hash.length > 1) {
+      scrollToSection(hash);
+      setActiveNavRoute(hash);
+    }
+    return;
+  }
 
   root.innerHTML = `
     <div class="single-page-site" id="single-page-site">
@@ -38,7 +59,7 @@ export function renderSinglePage(rootSelector = '#app') {
         <div id="features-root"></div>
       </section>
 
-      <!-- 3. Benefits: Role Tabs, Comparison Matrix & ROI Calculator (#benefits) -->
+      <!-- 3. Benefits: Role Tabs, Comparison Matrix & ROI Highlights (#benefits) -->
       <section id="benefits">
         <div id="benefits-root"></div>
       </section>
@@ -48,7 +69,7 @@ export function renderSinglePage(rootSelector = '#app') {
         <div id="how-it-works-root"></div>
       </section>
 
-      <!-- 5. Live Demo: Video Player with Audio & Captions (#live-demo) -->
+      <!-- 5. Live Demo: Guided Walkthrough Video (#live-demo) -->
       <section id="live-demo">
         <div id="live-demo-root"></div>
       </section>
@@ -85,11 +106,11 @@ export function renderSinglePage(rootSelector = '#app') {
 }
 
 /**
- * Route mapping for single-page application with anchor scrolling
+ * Route mapping for single-page application and dedicated pages
  */
 export const routes = {
   '/': {
-    title: 'EstateForce | Real Estate Salesforce Package',
+    title: 'CC Real Estate | Real Estate Salesforce Package by Cloud Certitude',
     render: (root) => renderSinglePage(root)
   },
   '/home': {
@@ -114,7 +135,10 @@ export const routes = {
     redirect: '/#about'
   },
   '/about-us': {
-    redirect: '/#about'
+    title: 'About Us & Leadership | CC Real Estate by Cloud Certitude',
+    render: (root) => {
+      initAboutUsPage(root);
+    }
   },
   '/contact': {
     redirect: '/#contact'
@@ -122,26 +146,92 @@ export const routes = {
   '/contact-us': {
     redirect: '/#contact'
   },
+  '/pricing': {
+    title: 'Pricing Plans & Transparent Licensing | CC Real Estate',
+    render: (root) => {
+      initPricingPage(root);
+    }
+  },
+  '/faq': {
+    title: 'Frequently Asked Questions | CC Real Estate',
+    render: (root) => {
+      initFaqPage(root);
+    }
+  },
+  '/faqs': {
+    redirect: '/faq'
+  },
   '/request-demo': {
-    redirect: '/#contact'
+    title: 'Request a Live Demo | CC Real Estate',
+    render: (root) => {
+      initRequestDemoPage(root);
+    }
+  },
+  '/who-it-is-for': {
+    title: 'Who It Is For - Operating Models | CC Real Estate',
+    render: (root) => {
+      initWhoItIsForPage(root);
+    }
+  },
+  '/resources': {
+    title: 'Resource Library, Sales Tips & Release Updates | CC Real Estate',
+    render: (root) => {
+      initResourcesPage(root);
+    }
+  },
+  '/customers': {
+    title: 'Customer Stories & Case Studies | CC Real Estate',
+    render: (root) => {
+      initCustomerStoriesPage(root);
+    }
+  },
+  '/security': {
+    title: 'Security, Salesforce Fit & IT Governance | CC Real Estate',
+    render: (root) => {
+      initSecurityFitPage(root);
+    }
+  },
+  '/security-and-fit': {
+    redirect: '/security'
+  },
+  '/compare': {
+    title: 'CC Real Estate vs Spreadsheets & Legacy CRMs | Comparison Matrix',
+    render: (root) => {
+      initComparisonPage(root);
+    }
+  },
+  '/comparison': {
+    redirect: '/compare'
+  },
+  '/events': {
+    title: 'Events & Webinars | CC Real Estate Series',
+    render: (root) => {
+      initEventsPage(root);
+    }
+  },
+  '/webinars': {
+    redirect: '/events'
   },
   '/privacy-policy': {
-    title: 'Privacy Policy | EstateForce',
+    title: 'Privacy Policy | CC Real Estate',
     render: (root) => {
       initLegalPage(root, 'privacyPolicy');
     }
   },
   '/terms-of-use': {
-    title: 'Terms of Use | EstateForce',
+    title: 'Terms of Use | CC Real Estate',
     render: (root) => {
       initLegalPage(root, 'termsOfUse');
     }
   },
   '/cookie-notice': {
-    title: 'Cookie Notice | EstateForce',
+    title: 'Cookie Notice | CC Real Estate',
     render: (root) => {
       initLegalPage(root, 'cookieNotice');
     }
+  },
+  '/legal': {
+    redirect: '/privacy-policy'
   }
 };
 
@@ -172,13 +262,13 @@ export function navigateTo(url, replace = false) {
 }
 
 /**
- * Updates SEO meta description tag dynamically
+ * Updates SEO meta description and document title dynamically
  */
 function updateSeoMeta(path, title) {
   const seoConfig = siteConfig.seo;
   const routeMeta = seoConfig?.routes?.[path];
 
-  document.title = routeMeta?.title || title || seoConfig?.defaultTitle || 'EstateForce | Real Estate Salesforce Package';
+  document.title = routeMeta?.title || title || seoConfig?.defaultTitle || 'CC Real Estate | Real Estate Salesforce Package by Cloud Certitude';
 
   let metaDesc = document.querySelector('meta[name="description"]');
   if (!metaDesc) {
@@ -190,7 +280,7 @@ function updateSeoMeta(path, title) {
 }
 
 /**
- * Renders the active route or single page
+ * Renders the active route, dedicated page, or 404 Not Found
  */
 export function handleRoute() {
   const path = getCurrentPath();
@@ -220,23 +310,84 @@ export function handleRoute() {
 
   if (route && route.render) {
     updateSeoMeta(path, route.title);
+    appRoot.innerHTML = '';
     route.render('#app');
+    setActiveNavRoute(path);
+
+    // If anchor is present in URL (e.g. /pricing#faq), scroll to it
+    const hash = window.location.hash;
+    if (hash && hash.length > 1 && !hash.startsWith('#/')) {
+      setTimeout(() => {
+        const targetEl = document.querySelector(hash);
+        if (targetEl) {
+          targetEl.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 80);
+    } else {
+      window.scrollTo(0, 0);
+    }
+  } else if (!route && path !== '/') {
+    // 404 Page (Friendly Page Not Found) for unknown or made-up addresses
+    updateSeoMeta(path, 'Page Not Found | CC Real Estate');
+    appRoot.innerHTML = '';
+    initNotFoundPage('#app');
+    setActiveNavRoute(null);
+    window.scrollTo(0, 0);
   } else {
-    // Default to single page if unknown path
+    // Default to single page for '/'
     renderSinglePage('#app');
   }
 }
 
 /**
- * Initializes router and listening on browser popstate / hashchange
+ * Initializes router, link interception, and listening on browser popstate / hashchange
  */
 export function initRouter() {
+  // Global click interceptor for internal routing links
+  document.addEventListener('click', (e) => {
+    const anchor = e.target.closest('a');
+    if (!anchor) return;
+
+    const href = anchor.getAttribute('href');
+    if (!href) return;
+
+    // Ignore external links, mailto, tel, or links intended for new tabs
+    if (
+      href.startsWith('http://') ||
+      href.startsWith('https://') ||
+      href.startsWith('mailto:') ||
+      href.startsWith('tel:') ||
+      anchor.getAttribute('target') === '_blank'
+    ) {
+      return;
+    }
+
+    // Intercept internal routing links (/pricing, /faq, /request-demo, etc.)
+    if (href.startsWith('/') && !href.startsWith('//')) {
+      e.preventDefault();
+      navigateTo(href);
+      return;
+    }
+
+    // Intercept hash anchors when NOT on single page (e.g. clicking #features while on /pricing or 404)
+    if (href.startsWith('#') && !document.querySelector('#single-page-site')) {
+      e.preventDefault();
+      navigateTo(`/${href}`);
+      return;
+    }
+  });
+
   window.addEventListener('popstate', handleRoute);
   window.addEventListener('hashchange', () => {
     const hash = window.location.hash;
     if (hash && hash.startsWith('#') && !hash.startsWith('#/')) {
-      scrollToSection(hash);
-      setActiveNavRoute(hash);
+      const singlePage = document.querySelector('#single-page-site');
+      if (singlePage) {
+        scrollToSection(hash);
+        setActiveNavRoute(hash);
+      } else {
+        handleRoute();
+      }
     } else {
       handleRoute();
     }

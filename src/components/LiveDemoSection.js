@@ -1,4 +1,4 @@
-import siteConfig from '../data/site-config.json';
+  import siteConfig from '../data/site-config.json';
 
 /**
  * Live Demo Section Component
@@ -20,10 +20,10 @@ export function initLiveDemoSection(mountTarget = '#live-demo') {
 
   const data = siteConfig.liveDemo || {
     badge: 'Interactive Product Showcase',
-    headline: 'See EstateForce in Action',
+    headline: 'See CC Real Estate in Action',
     subheadline: 'Watch how our native Salesforce package automates lead management, accelerates deal velocity, and simplifies unit bookings in real time.',
     video: {
-      title: 'EstateForce End-to-End Real Estate Tour',
+      title: 'CC Real Estate End-to-End Real Estate Tour',
       poster: '/dashboard-hero.webp',
       src: '/demo-video.mp4',
       captionsSrc: '/demo-captions.vtt',

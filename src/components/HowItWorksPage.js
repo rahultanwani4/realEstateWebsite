@@ -1,4 +1,5 @@
 import siteConfig from '../data/site-config.json';
+import { scrollToSection } from '../utils/scrollHelper.js';
 
 /**
  * Validates US-13 How It Works Page configuration:
@@ -135,7 +136,7 @@ export function initHowItWorksPage(mountTarget = '#how-it-works-page-root') {
       <!-- Top Introduction Banner -->
       <div class="text-center mb-10 sm:mb-14 max-w-4xl mx-auto px-4 sm:px-6">
         <span class="inline-flex items-center px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-blue-600 bg-blue-50 border border-blue-200 rounded-full mb-3.5">Deployment &amp; Onboarding</span>
-        <h1 class="text-3xl sm:text-4xl lg:text-[40px] font-extrabold text-slate-900 tracking-tight leading-tight mb-3.5" id="how-heading">How CC Real Estate Works &amp; Deploys</h1>
+        <h2 class="text-3xl sm:text-4xl lg:text-[40px] font-extrabold text-slate-900 tracking-tight leading-tight mb-3.5" id="how-heading">How CC Real Estate Works &amp; Deploys</h2>
         <p class="text-sm sm:text-base text-slate-600 max-w-2xl mx-auto leading-relaxed">${data.pageIntroduction}</p>
       </div>
 
@@ -144,7 +145,7 @@ export function initHowItWorksPage(mountTarget = '#how-it-works-page-root') {
         
         <div class="text-center mb-8 sm:mb-10">
           <span class="text-xs font-extrabold uppercase tracking-widest text-slate-400">Implementation Timeline</span>
-          <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mt-1 mb-2">${data.journeyTitle}</h2>
+          <h3 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mt-1 mb-2">${data.journeyTitle}</h3>
           <p class="text-xs sm:text-sm text-slate-600 max-w-xl mx-auto leading-relaxed">${data.journeySubtitle}</p>
         </div>
 
@@ -364,7 +365,7 @@ export function initHowItWorksPage(mountTarget = '#how-it-works-page-root') {
             <p class="text-sm sm:text-base text-slate-300 leading-relaxed mb-8">${data.closingCta.subtext}</p>
             
             <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <a href="#request-demo?source=how_it_works" 
+              <a href="#contact" 
                  class="btn-how-demo btn-cta-demo inline-flex items-center justify-center gap-2.5 h-12 px-8 rounded-full font-bold text-sm text-white bg-blue-600 hover:bg-blue-500 hover:-translate-y-0.5 shadow-lg shadow-blue-500/30 transition-all duration-200 no-underline"
                  id="how-it-works-bottom-demo-btn">
                 <span>${data.closingCta.buttonLabel}</span>
@@ -460,7 +461,12 @@ function setupHowItWorksInteractivity(container) {
   });
 
   if (demoBtn) {
-    demoBtn.addEventListener('click', () => {
+    demoBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      scrollToSection('contact');
+      if (window.location.hash !== '#contact') {
+        history.pushState(null, '', '#contact');
+      }
       window.dispatchEvent(new CustomEvent('estateforce:demo_click', {
         detail: {
           source: 'how_it_works_page',

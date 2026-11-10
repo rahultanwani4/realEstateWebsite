@@ -96,13 +96,15 @@ export function openFreeTrialModal(defaultOrgType = 'Production Salesforce Org')
             <div class="space-y-1">
               <label for="trial-fullname" class="block text-xs font-bold text-slate-700">Full Name *</label>
               <input type="text" id="trial-fullname" name="fullName" required maxlength="80" placeholder="e.g. Vikram Sharma"
-                     class="w-full px-3.5 py-2 rounded-xl border border-slate-200 text-sm focus:border-blue-600 focus:ring-2 focus:ring-blue-100 outline-none" />
+                     class="w-full px-3.5 py-2 rounded-xl border border-slate-200 text-sm focus:border-blue-600 focus:ring-2 focus:ring-blue-100 outline-none transition-colors" />
+              <p class="field-error-msg hidden text-[11px] font-medium text-rose-600 mt-1" id="err-trial-fullname"></p>
             </div>
 
             <div class="space-y-1">
               <label for="trial-email" class="block text-xs font-bold text-slate-700">Work Email *</label>
               <input type="email" id="trial-email" name="email" required placeholder="name@company.com"
-                     class="w-full px-3.5 py-2 rounded-xl border border-slate-200 text-sm focus:border-blue-600 focus:ring-2 focus:ring-blue-100 outline-none" />
+                     class="w-full px-3.5 py-2 rounded-xl border border-slate-200 text-sm focus:border-blue-600 focus:ring-2 focus:ring-blue-100 outline-none transition-colors" />
+              <p class="field-error-msg hidden text-[11px] font-medium text-rose-600 mt-1" id="err-trial-email"></p>
             </div>
           </div>
 
@@ -112,14 +114,16 @@ export function openFreeTrialModal(defaultOrgType = 'Production Salesforce Org')
               <div class="relative">
                 <span class="absolute inset-y-0 left-0 pl-3 flex items-center text-xs font-bold text-slate-400 select-none">+91</span>
                 <input type="tel" id="trial-phone" name="phone" required placeholder="8130970706" maxlength="10"
-                       class="w-full pl-11 pr-3.5 py-2 rounded-xl border border-slate-200 text-sm focus:border-blue-600 focus:ring-2 focus:ring-blue-100 outline-none" />
+                       class="w-full pl-11 pr-3.5 py-2 rounded-xl border border-slate-200 text-sm focus:border-blue-600 focus:ring-2 focus:ring-blue-100 outline-none transition-colors" />
               </div>
+              <p class="field-error-msg hidden text-[11px] font-medium text-rose-600 mt-1" id="err-trial-phone"></p>
             </div>
 
             <div class="space-y-1">
               <label for="trial-company" class="block text-xs font-bold text-slate-700">Company Name *</label>
-              <input type="text" id="trial-company" name="company" required maxlength="100" placeholder="Prestige Developers"
-                     class="w-full px-3.5 py-2 rounded-xl border border-slate-200 text-sm focus:border-blue-600 focus:ring-2 focus:ring-blue-100 outline-none" />
+              <input type="text" id="trial-company" name="company" required maxlength="100" placeholder="Horizon Developers"
+                     class="w-full px-3.5 py-2 rounded-xl border border-slate-200 text-sm focus:border-blue-600 focus:ring-2 focus:ring-blue-100 outline-none transition-colors" />
+              <p class="field-error-msg hidden text-[11px] font-medium text-rose-600 mt-1" id="err-trial-company"></p>
             </div>
           </div>
 
@@ -134,12 +138,15 @@ export function openFreeTrialModal(defaultOrgType = 'Production Salesforce Org')
           </div>
 
           <!-- Consent Checkbox (Unticked by default per US-26 Criterion 4) -->
-          <div class="flex items-start gap-2.5 pt-1">
-            <input type="checkbox" id="trial-consent" name="consent" required
-                   class="mt-1 w-4 h-4 rounded text-blue-600 border-slate-300 focus:ring-blue-500 cursor-pointer" />
-            <label for="trial-consent" class="text-xs text-slate-600 leading-relaxed cursor-pointer">
-              I agree to receive sandbox trial setup details from EstateForce. I understand I can withdraw consent at any time.
-            </label>
+          <div class="pt-1">
+            <div class="flex items-start gap-2.5">
+              <input type="checkbox" id="trial-consent" name="consent" required
+                     class="mt-1 w-4 h-4 rounded text-blue-600 border-slate-300 focus:ring-blue-500 cursor-pointer" />
+              <label for="trial-consent" class="text-xs text-slate-600 leading-relaxed cursor-pointer">
+                I agree to receive sandbox trial setup details from CC Real Estate. I understand I can withdraw consent at any time.
+              </label>
+            </div>
+            <p class="field-error-msg hidden text-[11px] font-medium text-rose-600 mt-1" id="err-trial-consent"></p>
           </div>
 
           <!-- Form Privacy Notice next to submit button (US-26 Criterion 3) -->
@@ -180,6 +187,128 @@ export function openFreeTrialModal(defaultOrgType = 'Production Salesforce Org')
     const form = trialModalEl.querySelector('#free-trial-form');
     if (!form) return;
 
+    const inputName = form.querySelector('#trial-fullname');
+    const inputEmail = form.querySelector('#trial-email');
+    const inputPhone = form.querySelector('#trial-phone');
+    const inputCompany = form.querySelector('#trial-company');
+    const inputConsent = form.querySelector('#trial-consent');
+
+    function showFieldError(inputEl, errId, msg) {
+      if (inputEl) {
+        inputEl.classList.add('border-rose-400', 'bg-rose-50/20');
+        inputEl.classList.remove('border-slate-200');
+        inputEl.setAttribute('aria-invalid', 'true');
+      }
+      const errEl = form.querySelector(`#${errId}`);
+      if (errEl) {
+        errEl.textContent = msg;
+        errEl.classList.remove('hidden');
+      }
+    }
+
+    function clearFieldError(inputEl, errId) {
+      if (inputEl) {
+        inputEl.classList.remove('border-rose-400', 'bg-rose-50/20');
+        inputEl.classList.add('border-slate-200');
+        inputEl.removeAttribute('aria-invalid');
+      }
+      const errEl = form.querySelector(`#${errId}`);
+      if (errEl) {
+        errEl.textContent = '';
+        errEl.classList.add('hidden');
+      }
+    }
+
+    function validateName() {
+      if (!inputName) return true;
+      const val = inputName.value.trim();
+      if (!val || val.length < 2) {
+        showFieldError(inputName, 'err-trial-fullname', 'Please enter your full name (at least 2 characters).');
+        return false;
+      }
+      clearFieldError(inputName, 'err-trial-fullname');
+      return true;
+    }
+
+    function validateEmail() {
+      if (!inputEmail) return true;
+      const val = inputEmail.value.trim();
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!val || !emailRegex.test(val)) {
+        showFieldError(inputEmail, 'err-trial-email', 'Please enter a valid work email address.');
+        return false;
+      }
+      clearFieldError(inputEmail, 'err-trial-email');
+      return true;
+    }
+
+    function validatePhone() {
+      if (!inputPhone) return true;
+      const raw = inputPhone.value.trim();
+      const digits = raw.replace(/\D/g, '');
+      if (!digits || digits.length !== 10 || !['6', '7', '8', '9'].includes(digits[0])) {
+        showFieldError(inputPhone, 'err-trial-phone', 'Please enter a valid 10-digit Indian phone number starting with 6, 7, 8, or 9.');
+        return false;
+      }
+      clearFieldError(inputPhone, 'err-trial-phone');
+      return true;
+    }
+
+    function validateCompany() {
+      if (!inputCompany) return true;
+      const val = inputCompany.value.trim();
+      if (!val) {
+        showFieldError(inputCompany, 'err-trial-company', 'Please enter your company or developer firm name.');
+        return false;
+      }
+      clearFieldError(inputCompany, 'err-trial-company');
+      return true;
+    }
+
+    function validateConsent() {
+      if (!inputConsent) return true;
+      if (!inputConsent.checked) {
+        showFieldError(inputConsent, 'err-trial-consent', 'Please tick the consent checkbox to receive your sandbox trial credentials.');
+        return false;
+      }
+      clearFieldError(inputConsent, 'err-trial-consent');
+      return true;
+    }
+
+    if (inputName) {
+      inputName.addEventListener('blur', validateName);
+      inputName.addEventListener('input', () => {
+        if (inputName.getAttribute('aria-invalid') === 'true') validateName();
+      });
+    }
+
+    if (inputEmail) {
+      inputEmail.addEventListener('blur', validateEmail);
+      inputEmail.addEventListener('input', () => {
+        if (inputEmail.getAttribute('aria-invalid') === 'true') validateEmail();
+      });
+    }
+
+    if (inputPhone) {
+      inputPhone.addEventListener('blur', validatePhone);
+      inputPhone.addEventListener('input', () => {
+        if (inputPhone.getAttribute('aria-invalid') === 'true' || inputPhone.value.replace(/\D/g, '').length >= 10) {
+          validatePhone();
+        }
+      });
+    }
+
+    if (inputCompany) {
+      inputCompany.addEventListener('blur', validateCompany);
+      inputCompany.addEventListener('input', () => {
+        if (inputCompany.getAttribute('aria-invalid') === 'true') validateCompany();
+      });
+    }
+
+    if (inputConsent) {
+      inputConsent.addEventListener('change', validateConsent);
+    }
+
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
       const formData = new FormData(form);
@@ -190,34 +319,23 @@ export function openFreeTrialModal(defaultOrgType = 'Production Salesforce Org')
         return;
       }
 
+      const isNameValid = validateName();
+      const isEmailValid = validateEmail();
+      const isPhoneValid = validatePhone();
+      const isCompanyValid = validateCompany();
+      const isConsentValid = validateConsent();
+
+      if (!isNameValid || !isEmailValid || !isPhoneValid || !isCompanyValid || !isConsentValid) {
+        const firstErr = form.querySelector('.border-rose-400, [aria-invalid="true"]');
+        if (firstErr) firstErr.focus();
+        return;
+      }
+
       const fullName = (formData.get('fullName') || '').trim();
       const email = (formData.get('email') || '').trim();
       const phone = (formData.get('phone') || '').trim().replace(/\D/g, '');
       const company = (formData.get('company') || '').trim();
       const orgType = formData.get('orgType');
-      const consent = formData.get('consent');
-
-      // Validations
-      if (!fullName || fullName.length < 2) {
-        render({ isSubmitting: false, isSuccess: false, error: 'Please enter your full name (at least 2 characters).' });
-        return;
-      }
-      if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-        render({ isSubmitting: false, isSuccess: false, error: 'Please enter a valid work email address.' });
-        return;
-      }
-      if (!phone || phone.length !== 10 || !/^[6-9]/.test(phone)) {
-        render({ isSubmitting: false, isSuccess: false, error: 'Please enter a valid 10-digit Indian phone number starting with 6, 7, 8, or 9.' });
-        return;
-      }
-      if (!company) {
-        render({ isSubmitting: false, isSuccess: false, error: 'Please enter your company or developer firm name.' });
-        return;
-      }
-      if (!consent) {
-        render({ isSubmitting: false, isSuccess: false, error: 'Please tick the consent checkbox to receive your sandbox trial credentials.' });
-        return;
-      }
 
       render({ isSubmitting: true, isSuccess: false, error: null });
 

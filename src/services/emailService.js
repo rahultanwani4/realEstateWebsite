@@ -12,12 +12,12 @@ const EMAIL_LOG_STORAGE_KEY = 'estateforce_sent_demo_emails';
 const REMINDERS_STORAGE_KEY = 'estateforce_scheduled_reminders';
 
 const emailConfig = siteConfig.requestDemoPage?.emailNotifications || {
-  senderName: 'EstateForce Demos',
+  senderName: 'CC Real Estate Demos',
   senderEmail: 'info@cloudcertitude.com',
   salesRecipients: ['info@cloudcertitude.com'],
   reminderTimingHours: [24, 1],
   privacyPolicyLink: '/privacy',
-  confirmationSubject: 'Your EstateForce Demo Request Confirmation - Next Steps',
+  confirmationSubject: 'Your CC Real Estate Demo Request Confirmation - Next Steps',
   salesAlertSubject: '🔥 Hot Lead: New Real Estate Demo Request from {company_name}'
 };
 
@@ -37,17 +37,17 @@ export function populateEmailTemplate(template = '', mergeData = {}) {
  * Renders visitor confirmation email (US-18 Criterion 1)
  */
 export function renderVisitorConfirmationEmail(lead) {
-  const subject = `Your EstateForce Demo Request Confirmation - Next Steps`;
+  const subject = `Your CC Real Estate Demo Request Confirmation - Next Steps`;
   const bodyHtml = `
     <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; max-width: 600px; margin: 0 auto; color: #1e293b; line-height: 1.6;">
       <div style="background-color: #2563eb; padding: 24px; text-align: center; border-radius: 12px 12px 0 0;">
-        <h1 style="color: #ffffff; margin: 0; font-size: 24px; font-weight: 700;">EstateForce</h1>
-        <p style="color: #bfdbfe; margin: 4px 0 0; font-size: 14px;">Real Estate Package Built on Salesforce</p>
+        <h2 style="color: #ffffff; margin: 0; font-size: 24px; font-weight: 700;">CC Real Estate</h2>
+        <p style="color: #bfdbfe; margin: 4px 0 0; font-size: 14px;">Real Estate Package Built on Salesforce by Cloud Certitude</p>
       </div>
       <div style="padding: 32px 24px; background-color: #ffffff; border: 1px solid #e2e8f0; border-top: none; border-radius: 0 0 12px 12px;">
         <p style="font-size: 16px; margin-top: 0;">Hi <strong>${lead.fullName || 'there'}</strong>,</p>
         <p style="font-size: 15px; color: #475569;">
-          Thank you for requesting a tailored walkthrough of EstateForce for <strong>${lead.company || lead.companyName}</strong>. We have received your request and assigned a senior real estate solutions architect.
+          Thank you for requesting a tailored walkthrough of CC Real Estate for <strong>${lead.company || lead.companyName}</strong>. We have received your request and assigned a senior real estate solutions architect.
         </p>
         
         <div style="background-color: #f8fafc; border-left: 4px solid #2563eb; padding: 16px 20px; margin: 24px 0; border-radius: 0 8px 8px 0;">
@@ -64,7 +64,7 @@ export function renderVisitorConfirmationEmail(lead) {
         <h3 style="font-size: 15px; color: #0f172a; margin-top: 24px;">Next Steps:</h3>
         <ol style="font-size: 14px; color: #475569; padding-left: 20px;">
           <li>Our solutions team is reviewing your requirements and preparing a customized sandbox.</li>
-          <li>You will receive a calendar invite with direct meeting link credentials within 60 minutes.</li>
+          <li>You will receive a calendar invite with direct meeting link credentials within 1 business day.</li>
           <li>Feel free to reply directly to this email with any specific floor plans or CRM questions you'd like us to focus on.</li>
         </ol>
 

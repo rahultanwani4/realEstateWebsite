@@ -3,10 +3,15 @@
  * @param {string} targetId - Target section ID (with or without #)
  */
 export function scrollToSection(targetId) {
-  const cleanId = (targetId || '').replace(/^#/, '');
+  let cleanId = (targetId || '').replace(/^#/, '').split('?')[0];
   if (!cleanId || cleanId === 'home') {
     window.scrollTo({ top: 0, behavior: 'smooth' });
     return;
+  }
+
+  // Handle aliases for the demo and contact section
+  if (cleanId === 'request-demo' || cleanId === 'demo' || cleanId === 'contact-us') {
+    cleanId = 'contact';
   }
 
   const targetEl = document.getElementById(cleanId);

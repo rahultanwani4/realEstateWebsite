@@ -120,7 +120,7 @@ export function initHomeHero(mountSelector = '#app') {
           <div class="mockup-glow" aria-hidden="true"></div>
 
           <!-- Desktop Device Frame (US-05 Criterion 1) -->
-          <div class="dashboard-frame device-frame-desktop" role="region" aria-label="EstateForce Salesforce CRM Dashboard Demonstration">
+          <div class="dashboard-frame device-frame-desktop" role="region" aria-label="CC Real Estate Salesforce CRM Dashboard Demonstration">
             
             <!-- Browser Top Bar -->
             <div class="window-topbar">
@@ -129,13 +129,13 @@ export function initHomeHero(mountSelector = '#app') {
                 <span class="window-dot"></span>
                 <span class="window-dot"></span>
               </div>
-              <div class="window-url-pill">app.salesforce.com/estateforce</div>
+              <div class="window-url-pill">app.salesforce.com/cc-real-estate</div>
             </div>
 
             <!-- Workspace Body: Real Salesforce Product Screenshot -->
             <div class="dashboard-inner overflow-hidden rounded-b-xl bg-slate-900 cursor-zoom-in group relative" title="Click to inspect in full resolution">
               <img src="${imageryAndBrand?.heroScreenshot?.src || '/dashboard-hero.webp'}" 
-                   alt="${imageryAndBrand?.heroScreenshot?.alt || 'EstateForce Real Estate Salesforce CRM Workspace'}" 
+                   alt="${imageryAndBrand?.heroScreenshot?.alt || 'CC Real Estate Salesforce CRM Workspace'}" 
                    class="w-full h-auto block shadow-inner"
                    style="image-rendering: auto;"
                    loading="eager"

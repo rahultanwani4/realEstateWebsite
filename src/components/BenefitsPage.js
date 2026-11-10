@@ -1,4 +1,5 @@
 import siteConfig from '../data/site-config.json';
+import { scrollToSection } from '../utils/scrollHelper.js';
 
 /**
  * Validates US-10 Benefits Page configurations
@@ -57,7 +58,7 @@ export function initBenefitsPage(mountSelector = '#benefits-page-root') {
       <section class="benefits-intro-banner" aria-label="Benefits Page Introduction">
         <div class="benefits-intro-container">
           <span class="section-tag-pill">Quantifiable Business Value</span>
-          <h1 class="benefits-page-headline">Tailored for Every Real Estate Stakeholder</h1>
+          <h2 class="benefits-page-headline">Tailored for Every Real Estate Stakeholder</h2>
           <p class="benefits-page-subtext">${data.pageIntroduction}</p>
         </div>
       </section>
@@ -126,7 +127,7 @@ export function initBenefitsPage(mountSelector = '#benefits-page-root') {
           <div class="section-header-centered">
             <span class="section-tag-pill">${data.comparisonBadge || 'Operational Transformation'}</span>
             <h2 class="section-main-heading">${data.comparisonTitle || 'Spreadsheets vs. Native Salesforce'}</h2>
-            <p class="section-sub-copy">${data.comparisonSubtitle || 'See how EstateForce transforms traditional real estate operations into a centralized, structured, and automated Salesforce-powered business process.'}</p>
+            <p class="section-sub-copy">${data.comparisonSubtitle || 'See how CC Real Estate transforms traditional real estate operations into a centralized, structured, and automated Salesforce-powered business process.'}</p>
           </div>
 
           <!-- Comparison Table (Desktop Grid / Mobile Stacked Cards) -->
@@ -139,7 +140,7 @@ export function initBenefitsPage(mountSelector = '#benefits-page-root') {
               </div>
               <div class="comp-col-after" role="columnheader">
                 <span class="status-indicator is-after"></span>
-                <span>After (EstateForce on Salesforce)</span>
+                <span>After (CC Real Estate on Salesforce)</span>
               </div>
             </div>
 
@@ -155,7 +156,7 @@ export function initBenefitsPage(mountSelector = '#benefits-page-root') {
                     <p>${row.before}</p>
                   </div>
                   <div class="comp-cell-after" role="cell">
-                    <span class="mobile-status-tag is-after">After (EstateForce on Salesforce)</span>
+                    <span class="mobile-status-tag is-after">After (CC Real Estate on Salesforce)</span>
                     <p>${row.after}</p>
                   </div>
                 </div>
@@ -194,7 +195,7 @@ export function initBenefitsPage(mountSelector = '#benefits-page-root') {
                 <p class="final-cta-sub">Book a 30-minute tailored walkthrough with our certified real estate Salesforce consultants.</p>
               </div>
               <div class="final-cta-action">
-                <a href="#request-demo?source=benefits_page" class="btn-benefits-demo btn-cta-demo" id="benefits-bottom-demo-btn">
+                <a href="#contact" class="btn-benefits-demo btn-cta-demo" id="benefits-bottom-demo-btn">
                   <span>Request a Demo</span>
                   <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                     <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -214,10 +215,15 @@ export function initBenefitsPage(mountSelector = '#benefits-page-root') {
   // Attach tab switching interactivity for role selector
   setupRoleTabs(container);
 
-  // Attach demo telemetry listener
+  // Attach demo telemetry listener and smooth scrolling
   const demoBtn = container.querySelector('#benefits-bottom-demo-btn');
   if (demoBtn) {
-    demoBtn.addEventListener('click', () => {
+    demoBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      scrollToSection('contact');
+      if (window.location.hash !== '#contact') {
+        history.pushState(null, '', '#contact');
+      }
       window.dispatchEvent(new CustomEvent('estateforce:demo_click', {
         detail: {
           source: 'benefits_page_bottom',

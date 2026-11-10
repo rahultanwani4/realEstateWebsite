@@ -96,7 +96,7 @@ export function initCustomerStoriesPage(mountTarget = '#customer-stories-page-ro
             </svg>
             <span>Verified Customer Results</span>
           </span>
-          <h1 class="text-3xl sm:text-4xl lg:text-[40px] font-extrabold text-slate-900 tracking-tight leading-tight mb-3.5" id="customers-heading">Real Estate Leaders Running on EstateForce</h1>
+          <h1 class="text-3xl sm:text-4xl lg:text-[40px] font-extrabold text-slate-900 tracking-tight leading-tight mb-3.5" id="customers-heading">Real Estate Leaders Running on CC Real Estate</h1>
           <p class="text-sm sm:text-base text-slate-600 max-w-2xl mx-auto leading-relaxed mb-8">${data.pageIntroduction}</p>
 
           <!-- Company Type Filter Pills (Criterion 1) -->
@@ -386,7 +386,7 @@ export function initCustomerStoriesPage(mountTarget = '#customer-stories-page-ro
                   <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
                   <span>Captions: Enabled [en-IN]</span>
                 </div>
-                <p class="text-xs sm:text-sm text-slate-200 max-w-md">"EstateForce gave our sales floor real-time visibility across 560 units and completely eliminated spreadsheet friction."</p>
+                <p class="text-xs sm:text-sm text-slate-200 max-w-md">"CC Real Estate gave our sales floor real-time visibility across 560 units and completely eliminated spreadsheet friction."</p>
                 <span class="text-[11px] text-slate-400 mt-2">- ${story.customerName}, ${story.company}</span>
               </div>
             `;

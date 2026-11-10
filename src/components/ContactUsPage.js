@@ -50,9 +50,9 @@ export function initContactUsPage(mountTarget = '#contact-us-page-root') {
               <span class="w-2 h-2 rounded-full bg-blue-400"></span>
               <span>Get In Touch</span>
             </span>
-            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
               ${data.headline || 'Contact Our Real Estate Solutions Desk'}
-            </h1>
+            </h2>
             <p class="text-sm sm:text-base text-slate-300 mt-2 leading-relaxed">
               ${data.subheadline || 'Whether you need a live sandbox walkthrough, custom architecture guidance, or customer support, our team is ready.'}
             </p>
@@ -66,7 +66,7 @@ export function initContactUsPage(mountTarget = '#contact-us-page-root') {
               <div class="bg-white text-slate-900 rounded-2xl border border-slate-200 p-5 sm:p-8 pb-12 sm:pb-8 shadow-2xl relative" id="contact-form-card">
                 
                 <h2 class="text-xl font-extrabold text-slate-900 mb-1">Send Us a Direct Message</h2>
-                <p class="text-xs text-slate-500 mb-6">Our solutions engineers reply within 60 minutes during standard business hours.</p>
+                <p class="text-xs text-slate-500 mb-6">Our solutions engineers typically reply within 1 business day (Mon–Sat, 9:30 AM – 6:30 PM IST).</p>
 
                 <form id="contact-us-form" novalidate="" class="space-y-4">
                   
@@ -114,7 +114,7 @@ export function initContactUsPage(mountTarget = '#contact-us-page-root') {
                              id="contact-company" 
                              name="company" 
                              maxlength="120"
-                             placeholder="e.g. Prestige Developers" 
+                             placeholder="e.g. Horizon Developers" 
                              class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 bg-white text-sm text-slate-900 placeholder:text-slate-400 focus:border-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-100 transition-colors" />
                     </div>
                   </div>
@@ -278,7 +278,11 @@ export function initContactUsPage(mountTarget = '#contact-us-page-root') {
     const inputHoneypot = form.querySelector('#contact-hp-website');
 
     function showError(el, errId, msg) {
-      if (el) el.classList.add('border-rose-400', 'bg-rose-50/20');
+      if (el) {
+        el.classList.add('border-rose-400', 'bg-rose-50/20');
+        el.classList.remove('border-slate-300');
+        el.setAttribute('aria-invalid', 'true');
+      }
       const err = form.querySelector(`#${errId}`);
       if (err) {
         err.textContent = msg;
@@ -287,7 +291,11 @@ export function initContactUsPage(mountTarget = '#contact-us-page-root') {
     }
 
     function clearError(el, errId) {
-      if (el) el.classList.remove('border-rose-400', 'bg-rose-50/20');
+      if (el) {
+        el.classList.remove('border-rose-400', 'bg-rose-50/20');
+        el.classList.add('border-slate-300');
+        el.removeAttribute('aria-invalid');
+      }
       const err = form.querySelector(`#${errId}`);
       if (err) {
         err.textContent = '';
@@ -295,10 +303,133 @@ export function initContactUsPage(mountTarget = '#contact-us-page-root') {
       }
     }
 
+    function validateName() {
+      if (!inputName) return true;
+      const val = inputName.value.trim();
+      if (!val || val.length < 2 || val.length > 80) {
+        showError(inputName, 'err-contact-name', 'Name must be between 2 and 80 characters');
+        return false;
+      }
+      clearError(inputName, 'err-contact-name');
+      return true;
+    }
+
+    function validateEmail() {
+      if (!inputEmail) return true;
+      const val = inputEmail.value.trim();
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!val || !emailRegex.test(val)) {
+        showError(inputEmail, 'err-contact-email', 'Please enter a valid work email');
+        return false;
+      }
+      clearError(inputEmail, 'err-contact-email');
+      return true;
+    }
+
+    function validatePhone() {
+      if (!inputPhone) return true;
+      const raw = inputPhone.value.trim();
+      if (!raw) {
+        clearError(inputPhone, 'err-contact-phone');
+        return true;
+      }
+      const phoneVal = raw.replace(/\D/g, '');
+      if (phoneVal.length !== 10 || !['6', '7', '8', '9'].includes(phoneVal[0])) {
+        showError(inputPhone, 'err-contact-phone', 'Please enter 10 digits starting with 6, 7, 8, or 9');
+        return false;
+      }
+      clearError(inputPhone, 'err-contact-phone');
+      return true;
+    }
+
+    function validateTopic() {
+      if (!inputTopic) return true;
+      if (!inputTopic.value) {
+        showError(inputTopic, 'err-contact-topic', 'Please select an inquiry topic');
+        return false;
+      }
+      clearError(inputTopic, 'err-contact-topic');
+      return true;
+    }
+
+    function validateMessage() {
+      if (!inputMsg) return true;
+      const val = inputMsg.value.trim();
+      if (!val || val.length < 10 || val.length > 1500) {
+        showError(inputMsg, 'err-contact-message', 'Message must be between 10 and 1,500 characters');
+        return false;
+      }
+      clearError(inputMsg, 'err-contact-message');
+      return true;
+    }
+
+    function validateConsent() {
+      if (!inputConsent) return true;
+      if (!inputConsent.checked) {
+        showError(inputConsent, 'err-contact-consent', 'You must agree to the privacy policy');
+        return false;
+      }
+      clearError(inputConsent, 'err-contact-consent');
+      return true;
+    }
+
+    // Inline field validation listeners on blur and input
+    if (inputName) {
+      inputName.addEventListener('blur', validateName);
+      inputName.addEventListener('input', () => {
+        if (inputName.getAttribute('aria-invalid') === 'true') validateName();
+      });
+    }
+
+    if (inputEmail) {
+      inputEmail.addEventListener('blur', validateEmail);
+      inputEmail.addEventListener('input', () => {
+        if (inputEmail.getAttribute('aria-invalid') === 'true') validateEmail();
+      });
+    }
+
+    if (inputPhone) {
+      inputPhone.addEventListener('blur', validatePhone);
+      inputPhone.addEventListener('input', () => {
+        if (inputPhone.getAttribute('aria-invalid') === 'true' || inputPhone.value.trim().length >= 10) {
+          validatePhone();
+        }
+      });
+    }
+
+    if (inputTopic) {
+      inputTopic.addEventListener('change', validateTopic);
+      inputTopic.addEventListener('blur', validateTopic);
+    }
+
+    if (inputMsg) {
+      inputMsg.addEventListener('blur', validateMessage);
+      inputMsg.addEventListener('input', () => {
+        if (inputMsg.getAttribute('aria-invalid') === 'true') validateMessage();
+      });
+    }
+
+    if (inputConsent) {
+      inputConsent.addEventListener('change', validateConsent);
+    }
+
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
 
       if (inputHoneypot && inputHoneypot.value.trim() !== '') return;
+
+      const isNameValid = validateName();
+      const isEmailValid = validateEmail();
+      const isPhoneValid = validatePhone();
+      const isTopicValid = validateTopic();
+      const isMsgValid = validateMessage();
+      const isConsentValid = validateConsent();
+
+      if (!isNameValid || !isEmailValid || !isPhoneValid || !isTopicValid || !isMsgValid || !isConsentValid) {
+        const firstErr = form.querySelector('.border-rose-400, [aria-invalid="true"]');
+        if (firstErr) firstErr.focus();
+        return;
+      }
 
       const nameVal = inputName.value.trim();
       const emailVal = inputEmail.value.trim();
@@ -306,53 +437,6 @@ export function initContactUsPage(mountTarget = '#contact-us-page-root') {
       const phoneVal = inputPhone.value.trim().replace(/\D/g, '');
       const topicVal = inputTopic.value;
       const msgVal = inputMsg.value.trim();
-
-      let hasError = false;
-
-      if (!nameVal || nameVal.length < 2 || nameVal.length > 80) {
-        showError(inputName, 'err-contact-name', 'Name must be between 2 and 80 characters');
-        hasError = true;
-      } else {
-        clearError(inputName, 'err-contact-name');
-      }
-
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      if (!emailVal || !emailRegex.test(emailVal)) {
-        showError(inputEmail, 'err-contact-email', 'Please enter a valid work email');
-        hasError = true;
-      } else {
-        clearError(inputEmail, 'err-contact-email');
-      }
-
-      if (phoneVal && (phoneVal.length !== 10 || !['6', '7', '8', '9'].includes(phoneVal[0]))) {
-        showError(inputPhone, 'err-contact-phone', 'Please enter 10 digits starting with 6, 7, 8, or 9');
-        hasError = true;
-      } else {
-        clearError(inputPhone, 'err-contact-phone');
-      }
-
-      if (!topicVal) {
-        showError(inputTopic, 'err-contact-topic', 'Please select an inquiry topic');
-        hasError = true;
-      } else {
-        clearError(inputTopic, 'err-contact-topic');
-      }
-
-      if (!msgVal || msgVal.length < 10 || msgVal.length > 1500) {
-        showError(inputMsg, 'err-contact-message', 'Message must be between 10 and 1,500 characters');
-        hasError = true;
-      } else {
-        clearError(inputMsg, 'err-contact-message');
-      }
-
-      if (!inputConsent.checked) {
-        showError(inputConsent, 'err-contact-consent', 'You must agree to the privacy policy');
-        hasError = true;
-      } else {
-        clearError(inputConsent, 'err-contact-consent');
-      }
-
-      if (hasError) return;
 
       const submitBtn = form.querySelector('#contact-submit-btn');
       const btnText = form.querySelector('#contact-btn-text');

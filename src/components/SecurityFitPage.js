@@ -148,7 +148,7 @@ export function initSecurityFitPage(mountTarget = '#security-fit-page-root') {
           <div>
             <span class="text-xs font-extrabold uppercase tracking-widest text-slate-400">Environment Compatibility</span>
             <h3 class="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight mt-1 mb-4">Supported Salesforce Editions</h3>
-            <p class="text-sm text-slate-600 mb-5 leading-relaxed">EstateForce is fully supported and optimized across all major enterprise Lightning environments:</p>
+            <p class="text-sm text-slate-600 mb-5 leading-relaxed">CC Real Estate is fully supported and optimized across all major enterprise Lightning environments:</p>
             
             <ul class="list-none p-0 m-0 flex flex-col gap-3">
               ${data.supportedEditions.map(ed => `
@@ -427,6 +427,115 @@ function setupSecurityFitInteractivity(container) {
 
   // Technical Form validation and submission
   if (form) {
+    const nameInput = form.querySelector('#tech_full_name');
+    const emailInput = form.querySelector('#tech_work_email');
+    const companyInput = form.querySelector('#tech_company');
+    const questionInput = form.querySelector('#tech_question');
+    const consentInput = form.querySelector('#tech_consent');
+
+    function showErr(el, errId) {
+      if (el) {
+        el.classList.add('border-rose-400', 'bg-rose-50/20');
+        el.setAttribute('aria-invalid', 'true');
+      }
+      container.querySelector(`#${errId}`)?.classList.remove('hidden');
+    }
+
+    function clearErr(el, errId) {
+      if (el) {
+        el.classList.remove('border-rose-400', 'bg-rose-50/20');
+        el.removeAttribute('aria-invalid');
+      }
+      container.querySelector(`#${errId}`)?.classList.add('hidden');
+    }
+
+    function validateTechName() {
+      if (!nameInput) return true;
+      const val = nameInput.value.trim();
+      if (!val || val.length > 80) {
+        showErr(nameInput, 'err-tech_full_name');
+        return false;
+      }
+      clearErr(nameInput, 'err-tech_full_name');
+      return true;
+    }
+
+    function validateTechEmail() {
+      if (!emailInput) return true;
+      const val = emailInput.value.trim();
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!val || !emailRegex.test(val)) {
+        showErr(emailInput, 'err-tech_work_email');
+        return false;
+      }
+      clearErr(emailInput, 'err-tech_work_email');
+      return true;
+    }
+
+    function validateTechCompany() {
+      if (!companyInput) return true;
+      const val = companyInput.value.trim();
+      if (!val || val.length > 100) {
+        showErr(companyInput, 'err-tech_company');
+        return false;
+      }
+      clearErr(companyInput, 'err-tech_company');
+      return true;
+    }
+
+    function validateTechQuestion() {
+      if (!questionInput) return true;
+      const qText = questionInput.value.trim();
+      if (qText.length < 10 || qText.length > 1000) {
+        showErr(questionInput, 'err-tech_question');
+        return false;
+      }
+      clearErr(questionInput, 'err-tech_question');
+      return true;
+    }
+
+    function validateTechConsent() {
+      if (!consentInput) return true;
+      if (!consentInput.checked) {
+        showErr(consentInput, 'err-tech_consent');
+        return false;
+      }
+      clearErr(consentInput, 'err-tech_consent');
+      return true;
+    }
+
+    if (nameInput) {
+      nameInput.addEventListener('blur', validateTechName);
+      nameInput.addEventListener('input', () => {
+        if (nameInput.getAttribute('aria-invalid') === 'true') validateTechName();
+      });
+    }
+
+    if (emailInput) {
+      emailInput.addEventListener('blur', validateTechEmail);
+      emailInput.addEventListener('input', () => {
+        if (emailInput.getAttribute('aria-invalid') === 'true') validateTechEmail();
+      });
+    }
+
+    if (companyInput) {
+      companyInput.addEventListener('blur', validateTechCompany);
+      companyInput.addEventListener('input', () => {
+        if (companyInput.getAttribute('aria-invalid') === 'true') validateTechCompany();
+      });
+    }
+
+    if (questionInput) {
+      questionInput.addEventListener('blur', validateTechQuestion);
+      questionInput.addEventListener('input', () => {
+        if (questionInput.getAttribute('aria-invalid') === 'true') validateTechQuestion();
+      });
+    }
+
+    if (consentInput) {
+      consentInput.addEventListener('change', validateTechConsent);
+    }
+
     form.addEventListener('submit', (e) => {
       e.preventDefault();
 
@@ -437,57 +546,17 @@ function setupSecurityFitInteractivity(container) {
         return;
       }
 
-      const nameInput = form.querySelector('#tech_full_name');
-      const emailInput = form.querySelector('#tech_work_email');
-      const companyInput = form.querySelector('#tech_company');
-      const questionInput = form.querySelector('#tech_question');
-      const consentInput = form.querySelector('#tech_consent');
+      const isNameValid = validateTechName();
+      const isEmailValid = validateTechEmail();
+      const isCompanyValid = validateTechCompany();
+      const isQuestionValid = validateTechQuestion();
+      const isConsentValid = validateTechConsent();
 
-      let isValid = true;
-
-      // Validate name
-      if (!nameInput.value.trim() || nameInput.value.trim().length > 80) {
-        container.querySelector('#err-tech_full_name')?.classList.remove('hidden');
-        isValid = false;
-      } else {
-        container.querySelector('#err-tech_full_name')?.classList.add('hidden');
+      if (!isNameValid || !isEmailValid || !isCompanyValid || !isQuestionValid || !isConsentValid) {
+        const firstErr = form.querySelector('.border-rose-400, [aria-invalid="true"]');
+        if (firstErr) firstErr.focus();
+        return;
       }
-
-      // Validate email format
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      if (!emailRegex.test(emailInput.value.trim())) {
-        container.querySelector('#err-tech_work_email')?.classList.remove('hidden');
-        isValid = false;
-      } else {
-        container.querySelector('#err-tech_work_email')?.classList.add('hidden');
-      }
-
-      // Validate company
-      if (!companyInput.value.trim() || companyInput.value.trim().length > 100) {
-        container.querySelector('#err-tech_company')?.classList.remove('hidden');
-        isValid = false;
-      } else {
-        container.querySelector('#err-tech_company')?.classList.add('hidden');
-      }
-
-      // Validate question length (10 - 1000 chars)
-      const qText = questionInput.value.trim();
-      if (qText.length < 10 || qText.length > 1000) {
-        container.querySelector('#err-tech_question')?.classList.remove('hidden');
-        isValid = false;
-      } else {
-        container.querySelector('#err-tech_question')?.classList.add('hidden');
-      }
-
-      // Validate consent
-      if (!consentInput.checked) {
-        container.querySelector('#err-tech_consent')?.classList.remove('hidden');
-        isValid = false;
-      } else {
-        container.querySelector('#err-tech_consent')?.classList.add('hidden');
-      }
-
-      if (!isValid) return;
 
       // Fire telemetry event
       window.dispatchEvent(new CustomEvent('estateforce:technical_inquiry', {

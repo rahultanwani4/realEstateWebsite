@@ -12,7 +12,7 @@ export const processDetailsData = {
     badge: 'Enquiry Capture & Conversion',
     image: '/screenshots/real-estate-enquiry-dashboard.webp',
     imageAlt: 'Salesforce Real Estate New Enquiry Form with Customer Details and Project Interests',
-    overview: 'A successful property sale starts with a well-managed enquiry. EstateForce gives your sales team a central place to capture prospective buyers, understand their requirements, and follow their progress from the first interaction through qualification and conversion.',
+    overview: 'A successful property sale starts with a well-managed enquiry. CC Real Estate gives your sales team a central place to capture prospective buyers, understand their requirements, and follow their progress from the first interaction through qualification and conversion.',
     keyMetrics: [
       { label: 'Capture Channels', value: 'Web & Walk-in' },
       { label: 'Customer Matching', value: 'Pre-Conversion' },
@@ -59,7 +59,7 @@ export const processDetailsData = {
     badge: 'Project & Visit Management',
     image: '/screenshots/project-add-on-dashboard.webp',
     imageAlt: 'Salesforce Project Add-On Dashboard with Site Visit History and Statuses',
-    overview: 'Property buyers often compare more than one development before making a decision. EstateForce helps sales teams manage multiple project interests under a single customer enquiry, organise site visits, record outcomes, and take the next step towards an offer.',
+    overview: 'Property buyers often compare more than one development before making a decision. CC Real Estate helps sales teams manage multiple project interests under a single customer enquiry, organise site visits, record outcomes, and take the next step towards an offer.',
     keyMetrics: [
       { label: 'Project Tracking', value: 'Multi-Project' },
       { label: 'Site Visits', value: 'Assigned & Tracked' },
@@ -106,7 +106,7 @@ export const processDetailsData = {
     badge: 'Inventory & Booking Operations',
     image: '/screenshots/salesforce-booking-form-record.webp',
     imageAlt: 'Salesforce Booking Form Record Page with Lifecycle Status Chevrons and Demands',
-    overview: 'Once a buyer is ready to proceed, the booking process needs accurate inventory information, clear pricing, and reliable documentation. EstateForce connects unit selection, availability checks, additional charges, booking submission, payment-plan association, and customer letters in a structured workflow.',
+    overview: 'Once a buyer is ready to proceed, the booking process needs accurate inventory information, clear pricing, and reliable documentation. CC Real Estate connects unit selection, availability checks, additional charges, booking submission, payment-plan association, and customer letters in a structured workflow.',
     keyMetrics: [
       { label: 'Inventory Search', value: 'Project to Unit' },
       { label: 'Availability Checks', value: 'Pre-Booking Active' },
@@ -323,7 +323,7 @@ export function openProcessDetailsModal(moduleId) {
 }
 
 // Prefetch process modal images in background on idle so modal opens instantly
-if (typeof window !== 'undefined') {
+if (typeof window !== 'undefined' && typeof Image !== 'undefined') {
   const prefetchModalScreens = () => {
     const list = [
       '/screenshots/real-estate-enquiry-dashboard.webp',
